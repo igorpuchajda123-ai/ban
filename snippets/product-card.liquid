@@ -7,6 +7,7 @@
   if settings.card_hover_image and product.media.size > 1
     assign img_2 = product.media[1].preview_image
   endif
+  assign img_alt = img_1.alt | default: product.title
   assign img_sizes = sizes | default: '(min-width: 990px) 25vw, 50vw'
   assign loading = 'lazy'
   if lazy == false
@@ -24,7 +25,7 @@
         widths: '300, 450, 600, 750, 900',
         sizes: img_sizes,
         loading: loading,
-        alt: img_1.alt | default: product.title,
+        alt: img_alt,
         class: 'card__img-1'
       }}
       {%- if img_2 -%}
@@ -77,7 +78,7 @@
         <div class="card__swatches" aria-label="{{ 'products.product.colors_count' | t: count: family.products_count }}">
           {%- for sibling in family.products limit: 5 -%}
             <a class="card__swatch" href="{{ sibling.url }}" title="{{ sibling.title | escape }}">
-              {{ sibling.featured_image | image_url: width: 64, height: 64, crop: 'center' | image_tag: loading: 'lazy', alt: sibling.title }}
+              {{ sibling.featured_image | image_url: width: 80 | image_tag: loading: 'lazy', alt: sibling.title }}
             </a>
           {%- endfor -%}
           {%- if family.products_count > 5 -%}

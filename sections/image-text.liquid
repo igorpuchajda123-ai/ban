@@ -48,7 +48,8 @@
       <div class="split__media{% if section.settings.shape == 'blob' %} split__media--blob{% endif %} reveal" style="--ratio: {{ section.settings.ratio }};">
         <div class="media">
           {%- if section.settings.image != blank -%}
-            {{ section.settings.image | image_url: width: 1600 | image_tag: widths: '500, 750, 1000, 1300, 1600', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy', alt: section.settings.image.alt | default: heading | strip_html }}
+            {%- assign img_alt = section.settings.image.alt | default: heading | strip_html -%}
+            {{ section.settings.image | image_url: width: 1600 | image_tag: widths: '500, 750, 1000, 1300, 1600', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy', alt: img_alt }}
           {%- else -%}
             {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
           {%- endif -%}

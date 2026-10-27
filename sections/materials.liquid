@@ -29,7 +29,7 @@
         {%- for block in section.blocks -%}
           <div class="materials__img{% if forloop.first %} is-active{% endif %}" data-panel-img="{{ forloop.index0 }}">
             {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 1200 | image_tag: widths: '500, 800, 1200', sizes: '(min-width: 990px) 45vw, 100vw', loading: 'lazy', alt: block.settings.image.alt | default: '' }}
+              {{ block.settings.image | image_url: width: 1200 | image_tag: widths: '500, 800, 1200', sizes: '(min-width: 990px) 45vw, 100vw', loading: 'lazy', alt: block.settings.image.alt }}
             {%- else -%}
               {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}

@@ -3,7 +3,8 @@
   <p class="eyebrow">{{ article.published_at | time_tag: format: 'date' }}</p>
   <h1>{{ article.title }}</h1>
   {%- if article.image -%}
-    <div class="article__hero">{{ article.image | image_url: width: 1600 | image_tag: widths: '600, 900, 1200, 1600', sizes: '(min-width: 990px) 46rem, 100vw', loading: 'eager', fetchpriority: 'high', alt: article.image.alt | default: article.title }}</div>
+    {%- assign a_alt = article.image.alt | default: article.title -%}
+    <div class="article__hero">{{ article.image | image_url: width: 1600 | image_tag: widths: '600, 900, 1200, 1600', sizes: '(min-width: 990px) 46rem, 100vw', loading: 'eager', fetchpriority: 'high', alt: a_alt }}</div>
   {%- endif -%}
   <div class="rte">{{ article.content }}</div>
   <p style="margin-top:3rem"><a class="link-arrow" href="{{ blog.url }}">{{ 'blog.back' | t }} {% render 'icon', name: 'arrow' %}</a></p>

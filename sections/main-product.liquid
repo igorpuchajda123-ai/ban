@@ -27,11 +27,12 @@
   <div class="product" data-product data-section="{{ section.id }}" data-url="{{ product.url }}">
     {%- comment -%} Galeria {%- endcomment -%}
     <div class="gallery">
-      <div class="gallery__grid" data-gallery>
+      <div class="gallery__grid{% if settings.card_image_fit == 'contain' %} gallery__grid--contain{% endif %}" data-gallery>
         {%- for media in product.media -%}
           <button type="button" class="gallery__item" data-lightbox-open="{{ forloop.index0 }}" aria-label="{{ 'products.product.zoom' | t }} {{ forloop.index }}/{{ media_count }}">
             {%- if media.media_type == 'image' -%}
               {%- liquid
+                assign media_alt = media.alt | default: product.title
                 assign loading = 'lazy'
                 assign priority = 'auto'
                 if forloop.first
@@ -47,7 +48,7 @@
                 sizes: img_sizes,
                 loading: loading,
                 fetchpriority: priority,
-                alt: media.alt | default: product.title
+                alt: media_alt
               }}
             {%- else -%}
               {{ media | media_tag: image_size: '1200x', autoplay: false, loop: true, controls: true }}
@@ -130,7 +131,7 @@
                   {%- for sibling in siblings limit: block.settings.limit -%}
                     {%- assign sibling_color = sibling.title | split: ' - ' | last -%}
                     <a class="swatch{% unless sibling.available %} is-soldout{% endunless %}" href="{{ sibling.url }}" title="{{ sibling_color | escape }}" {% if sibling.id == product.id %}aria-current="true"{% endif %}>
-                      {{ sibling.featured_image | image_url: width: 140, height: 140, crop: 'center' | image_tag: loading: 'lazy', alt: sibling_color }}
+                      {{ sibling.featured_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: sibling_color }}
                     </a>
                   {%- endfor -%}
                 </div>
@@ -141,14 +142,14 @@
             {%- unless product.has_only_default_variant -%}
               <div {{ block.shopify_attributes }} data-variant-picker>
                 {%- for option in product.options_with_values -%}
-                  <fieldset class="pills-wrap" style="border:0; padding:0; margin:0 0 1.25rem;">
-                    <legend class="option-label" style="width:100%">
+                  <div class="option-group">
+                    <div class="option-label" id="OptionLabel-{{ section.id }}-{{ forloop.index }}">
                       <span><strong>{{ option.name }}{% if forloop.index == size_option_index %} (EU){% endif %}:</strong> <span class="value" data-option-value="{{ forloop.index0 }}">{% if product.selected_variant or product.has_only_default_variant %}{{ option.selected_value }}{% else %}{{ 'products.product.select_size' | t }}{% endif %}</span></span>
                       {%- if forloop.index == size_option_index and block.settings.show_size_guide -%}
                         <button type="button" data-modal-open="SizeGuide">{% render 'icon', name: 'ruler' %}{{ 'size_guide.open' | t }}</button>
                       {%- endif -%}
-                    </legend>
-                    <div class="pills" role="radiogroup">
+                    </div>
+                    <div class="pills" role="radiogroup" aria-labelledby="OptionLabel-{{ section.id }}-{{ forloop.index }}">
                       {%- assign option_index = forloop.index0 -%}
                       {%- for value in option.values -%}
                         {%- liquid
@@ -174,7 +175,7 @@
                         </div>
                       {%- endfor -%}
                     </div>
-                  </fieldset>
+                  </div>
                 {%- endfor -%}
                 <p class="size-hint" data-size-hint hidden>{% render 'icon', name: 'check' %}<span></span></p>
               </div>
@@ -315,7 +316,8 @@
   <div class="lightbox__track" data-lightbox-track>
     {%- for media in product.media -%}
       {%- if media.media_type == 'image' -%}
-        {{ media.preview_image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '1200, 1800, 2400', sizes: '100vw', alt: media.alt | default: product.title }}
+        {%- assign media_alt = media.alt | default: product.title -%}
+        {{ media.preview_image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '1200, 1800, 2400', sizes: '100vw', alt: media_alt }}
       {%- endif -%}
     {%- endfor -%}
   </div>

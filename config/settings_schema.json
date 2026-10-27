@@ -53,8 +53,8 @@
         { "value": "1 / 1", "label": "Kwadrat" }, { "value": "4 / 5", "label": "Pionowe 4:5" }, { "value": "3 / 4", "label": "Pionowe 3:4" }
       ], "default": "1 / 1" },
       { "type": "select", "id": "card_image_fit", "label": "Dopasowanie zdjęcia", "options": [
-        { "value": "cover", "label": "Wypełnij" }, { "value": "contain", "label": "Całe zdjęcie (packshot)" }
-      ], "default": "cover" },
+        { "value": "cover", "label": "Wypełnij (przytnij)" }, { "value": "contain", "label": "Całe zdjęcie (packshot)" }
+      ], "default": "contain", "info": "Dotyczy kart produktów i galerii na stronie produktu." },
       { "type": "checkbox", "id": "card_hover_image", "label": "Drugie zdjęcie po najechaniu", "default": true },
       { "type": "checkbox", "id": "card_quick_link", "label": "Przycisk „Wybierz rozmiar” po najechaniu", "default": true },
       { "type": "checkbox", "id": "card_show_vendor", "label": "Pokaż markę", "default": false },

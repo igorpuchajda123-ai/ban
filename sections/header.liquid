@@ -17,9 +17,10 @@
       {%- if request.page_type == 'index' -%}<h1 class="visually-hidden">{{ shop.name }} – {{ 'header.tagline' | t }}</h1>{%- endif -%}
       <a href="{{ routes.root_url }}" class="header__logo" aria-label="{{ shop.name }}">
         {%- if settings.logo != blank -%}
+          {%- assign logo_sizes = settings.logo_width | append: 'px' -%}
           {{ settings.logo | image_url: width: 480 | image_tag:
             widths: '160, 240, 320, 480',
-            sizes: settings.logo_width | append: 'px',
+            sizes: logo_sizes,
             alt: logo_alt,
             loading: 'eager',
             fetchpriority: 'high'
