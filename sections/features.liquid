@@ -1,0 +1,86 @@
+{%- liquid
+  assign d_eyebrow = 'sections.features.eyebrow' | t
+  assign d_heading = 'sections.features.heading_html' | t
+  assign d_text = 'sections.features.text' | t
+  assign style_class = ''
+  case section.settings.style
+    when 'surface'
+      assign style_class = 'section--surface'
+    when 'dark'
+      assign style_class = 'section--dark'
+  endcase
+-%}
+<section class="section {{ style_class }}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="container container--wide">
+    <div class="section-head section-head--center reveal">
+      <div>
+        <p class="eyebrow">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+        <h2>{{ section.settings.heading | default: d_heading }}</h2>
+        <p class="lead">{{ section.settings.text | default: d_text }}</p>
+      </div>
+    </div>
+    <div class="features" style="--cols: {{ section.settings.columns }};">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign base = 'features.' | append: block.settings.preset
+          assign d_title = base | append: '.title' | t
+          assign d_body = base | append: '.text' | t
+        -%}
+        <div class="feature reveal" data-delay="{{ forloop.index0 | modulo: 4 }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <span class="feature__icon">{{ block.settings.image | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' }}</span>
+          {%- else -%}
+            <span class="feature__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          {%- endif -%}
+          <h3 class="feature__title">{{ block.settings.title | default: d_title }}</h3>
+          <p class="feature__text">{{ block.settings.text | default: d_body }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Filozofia barefoot",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "text", "id": "text", "label": "Opis" },
+    { "type": "range", "id": "columns", "label": "Kolumny", "min": 2, "max": 4, "step": 1, "default": 4 },
+    { "type": "select", "id": "style", "label": "Tło", "options": [
+      { "value": "default", "label": "Jasne" }, { "value": "surface", "label": "Beżowe" }, { "value": "dark", "label": "Ciemne" }
+    ], "default": "default" },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Cecha",
+      "settings": [
+        { "type": "select", "id": "preset", "label": "Gotowa treść", "options": [
+          { "value": "toe_box", "label": "Szeroki nosek" },
+          { "value": "zero_drop", "label": "Zero drop" },
+          { "value": "sole", "label": "Podeszwa 3 mm" },
+          { "value": "flex", "label": "Elastyczność" },
+          { "value": "leather", "label": "Skóra naturalna" },
+          { "value": "fit", "label": "Wysokie podbicie / WIDE" },
+          { "value": "proprio", "label": "Propriocepcja" },
+          { "value": "bones", "label": "Rozwój kości" }
+        ], "default": "toe_box" },
+        { "type": "image_picker", "id": "image", "label": "Ikona (opcjonalnie)" },
+        { "type": "text", "id": "title", "label": "Własny tytuł" },
+        { "type": "textarea", "id": "text", "label": "Własny opis" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Filozofia barefoot", "blocks": [
+    { "type": "feature", "settings": { "preset": "toe_box" } },
+    { "type": "feature", "settings": { "preset": "zero_drop" } },
+    { "type": "feature", "settings": { "preset": "sole" } },
+    { "type": "feature", "settings": { "preset": "flex" } }
+  ] }]
+}
+{% endschema %}

@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": true,
+        "center_content": true
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "surface": false,
+        "padding_top": 32,
+        "padding_bottom": 96
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "preset": "shipping"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "preset": "returns"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "preset": "size"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "show_contact": false,
+        "open_first": false,
+        "schema": false,
+        "surface": true,
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "main",
+    "form",
+    "faq"
+  ]
+}

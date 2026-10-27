@@ -1,0 +1,569 @@
+{
+  "general": {
+    "close": "Luk",
+    "previous": "Forrige",
+    "next": "Næste",
+    "meta": {
+      "page": "Side {{ page }}"
+    },
+    "breadcrumbs": {
+      "home": "Forside",
+      "label": "Brødkrummesti"
+    },
+    "pagination": {
+      "label": "Sidenavigation",
+      "previous": "Forrige side",
+      "next": "Næste side",
+      "page": "Side {{ number }}"
+    },
+    "errors": {
+      "generic": "Noget gik galt. Prøv igen."
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Gå til indhold"
+  },
+  "header": {
+    "menu": "Menu",
+    "search": "Søg",
+    "account": "Konto",
+    "cart": "Kurv",
+    "main_navigation": "Hovednavigation",
+    "tagline": "barfodssko i læder til børn",
+    "promo_text": "Helis WIDE – mere plads til buttede små fødder"
+  },
+  "announcement": {
+    "free_shipping": "Gratis fragt",
+    "delivery": "Levering på 3–5 hverdage",
+    "returns": "14 dages returret",
+    "handmade": "Håndsyet i naturlæder"
+  },
+  "localization": {
+    "country_label": "Land / valuta",
+    "language_label": "Sprog",
+    "update": "Opdater"
+  },
+  "search": {
+    "title": "Søgning",
+    "placeholder": "Hvad leder du efter? F.eks. Helis, hjemmesko, sandaler…",
+    "popular": "Populære søgninger",
+    "products": "Produkter",
+    "view_all": "Se alle resultater for “{{ terms }}”",
+    "no_results": "Ingen resultater for “{{ terms }}”. Tjek stavningen, eller prøv et andet ord.",
+    "results_for": "Resultater for “{{ terms }}”"
+  },
+  "newsletter": {
+    "eyebrow": "Nyhedsbrev",
+    "heading_html": "Se de nye farver <em>først</em>",
+    "text": "En gang imellem: nye modeller, gode råd om sund fodudvikling og tilbud kun for abonnenter.",
+    "email": "Din e-mailadresse",
+    "submit": "Tilmeld",
+    "success": "Tak! Tjek din indbakke – du hører snart fra os.",
+    "consent": "Ved tilmelding accepterer du vores privatlivspolitik. Du kan altid afmelde dig igen."
+  },
+  "footer": {
+    "about": "OBEX laver barfodssko i læder til børn, håndsyet af naturlige materialer. Vi designer dem, så små fødder kan vokse frit – som på bare fødder.",
+    "contact": "Kontakt"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "heading_html": "Vi hjælper <em>gerne</em>",
+    "text": "Har du spørgsmål om størrelse, en ordre eller en returnering? Skriv til os – vi svarer på hverdage.",
+    "phone": "Telefon",
+    "hours": "Åbningstider",
+    "hours_value": "Man–fre 8.00–16.00 (CET)",
+    "company": "Virksomhedsoplysninger",
+    "name": "Navn",
+    "email": "E-mail",
+    "order": "Ordrenummer (valgfrit)",
+    "message": "Besked",
+    "send": "Send besked",
+    "success": "Tak for din besked! Vi svarer så hurtigt som muligt.",
+    "reply_time": "Vi svarer normalt inden for 1 hverdag."
+  },
+  "cart": {
+    "title": "Kurv",
+    "empty": "Din kurv er tom",
+    "empty_text": "Find det par, hvor dit barn føler sig som på bare fødder.",
+    "continue": "Gå til butikken",
+    "remove": "Fjern",
+    "subtotal": "I alt",
+    "taxes_included_shipping": "Inkl. moms. Fragt beregnes ved betaling.",
+    "taxes_shipping": "Moms og fragt beregnes ved betaling.",
+    "checkout": "Gå til betaling",
+    "view_cart": "Se kurven",
+    "note": "Bemærkninger til ordren",
+    "free_shipping_remaining_html": "Du mangler <strong>{{ amount }}</strong> for at få gratis fragt",
+    "free_shipping_reached_html": "<strong>Du har gratis fragt!</strong>",
+    "free_shipping_progress": "Fremskridt mod gratis fragt"
+  },
+  "collection": {
+    "eyebrow": "Kollektion",
+    "all_collections": "Alle kollektioner",
+    "filters": "Filtre",
+    "sort": "Sortér",
+    "from": "Fra",
+    "to": "Til",
+    "apply": "Anvend",
+    "clear": "Ryd filtre",
+    "show_results": "Vis resultater",
+    "related": "Relaterede kollektioner",
+    "empty": "Ingen produkter matcher de valgte filtre.",
+    "product_count": {
+      "one": "{{ count }} produkt",
+      "other": "{{ count }} produkter"
+    }
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "empty": "De første artikler er på vej.",
+    "back": "Tilbage til bloggen"
+  },
+  "password": {
+    "heading": "Vi åbner snart",
+    "notify": "Giv mig besked",
+    "owner": "Er du butiksejer?",
+    "password": "Adgangskode",
+    "enter": "Gå ind"
+  },
+  "gift_card": {
+    "title": "Dit gavekort",
+    "disabled": "Dette gavekort er ikke aktivt.",
+    "expires_on": "Gyldigt til {{ date }}",
+    "shop": "Gå til butikken"
+  },
+  "templates": {
+    "404": {
+      "title": "Siden blev ikke fundet",
+      "text": "Siden kan være flyttet, eller adressen indeholder en tastefejl. Tag et kig på vores kollektioner."
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Læg i kurven",
+      "added": "Lagt i kurven",
+      "sold_out": "Udsolgt",
+      "unavailable": "Ikke tilgængelig",
+      "select_size": "Vælg størrelse",
+      "choose_size": "Vælg størrelse",
+      "on_sale": "Tilbud",
+      "new": "Nyhed",
+      "sale_price": "Tilbudspris",
+      "regular_price": "Normalpris",
+      "price_from_html": "fra {{ price }}",
+      "sizes_range": "Str. {{ from }}–{{ to }}",
+      "color": "Farve",
+      "colors_count": {
+        "one": "{{ count }} farve",
+        "other": "{{ count }} farver"
+      },
+      "quantity": "Antal",
+      "quantity_decrease": "Færre",
+      "quantity_increase": "Flere",
+      "tax_included": "Inkl. moms",
+      "tax_excluded": "Ekskl. moms",
+      "shipping_policy_html": "<a href=\"{{ link }}\">fragt</a> beregnes ved betaling",
+      "zoom": "Forstør billede"
+    },
+    "assurance": {
+      "delivery_html": "<strong>Levering på {{ days }} hverdage</strong> – {{ country }}",
+      "returns_html": "<strong>{{ days }} dages returret</strong> – uden begrundelse",
+      "handmade_html": "<strong>Håndsyet</strong> i naturlæder",
+      "secure_html": "<strong>Sikker betaling</strong> via krypteret forbindelse"
+    },
+    "highlights": {
+      "leather": "Naturlæder",
+      "zero_drop": "Zero drop",
+      "flex": "Fleksibel sål på 3 mm",
+      "handmade": "Håndsyet"
+    },
+    "tabs": {
+      "description": "Beskrivelse",
+      "specs": "Detaljer og materialer",
+      "care": "Pleje",
+      "shipping": "Levering og returnering",
+      "care_html": "<p>Tør snavs af med en blød, let fugtig klud. Vask ikke skoene i vaskemaskine, og tør dem ikke på en radiator eller i direkte sollys – lad dem tørre ved stuetemperatur.</p><p>Behandl af og til læderet med naturlig voks eller imprægnering til glat læder, så det forbliver blødt og bedre kan modstå fugt.</p>",
+      "shipping_html": "<p>Vi sender normalt ordrer inden for 24 timer på hverdage. Pris og forventet leveringstid til dit land kan du se ved betaling, før du betaler.</p><p>Du har {{ days }} dages returret på ubrugte sko. Vil du bytte størrelse, går det hurtigst, hvis du returnerer parret og afgiver en ny ordre.</p>"
+    }
+  },
+  "size_guide": {
+    "open": "Størrelsesguide",
+    "eyebrow": "Valg af størrelse",
+    "title": "Find den rette størrelse",
+    "section_heading_html": "Størrelses<em>beregner</em>",
+    "section_text": "Indtast dit barns fodlængde i millimeter – så fremhæver vi størrelsen med passende plads til at vokse.",
+    "tab_find": "Find størrelse",
+    "tab_measure": "Sådan måler du foden",
+    "find_heading": "Indtast fodlængden",
+    "find_text": "Tabellen viser, hvor meget voksetillæg der er i hver størrelse. Mål begge fødder, og brug målet for den længste.",
+    "input_label": "Fodlængde (mm)",
+    "input_placeholder": "f.eks. 144",
+    "result_empty_html": "Vi anbefaler <strong>{{ min }}–{{ max }} mm</strong> plads mellem foden og indersålen.",
+    "recommended_size": "Anbefalet størrelse",
+    "perfect": "Voksetillæg: __MARGIN__ mm",
+    "too_small": "For lille",
+    "apply": "Vælg denne størrelse",
+    "th_size": "Str. (EU)",
+    "th_insole": "Indersål",
+    "th_margin": "Tillæg",
+    "step1_title": "Hælen mod væggen",
+    "step1_text": "Læg et stykke papir på et plant gulv helt op ad væggen. Lad barnet stå på papiret, så hælen lige rører væggen.",
+    "step2_title": "Markér den længste tå",
+    "step2_text": "Tegn en streg ud for den længste tå, og hold blyanten lodret. Barnet skal stå op, ikke sidde.",
+    "step3_title": "Mål begge fødder",
+    "step3_text": "Fødderne er ofte en smule forskellige – brug altid målet for den længste.",
+    "step4_title": "Indtast målet i millimeter",
+    "step4_text": "Mål afstanden fra papirets kant til stregen, og indtast den i beregneren."
+  },
+  "sections": {
+    "hero": {
+      "eyebrow": "Barfodssko i læder til børn",
+      "heading_html": "De første skridt – <em>som på bare fødder</em>",
+      "text": "Blødt naturlæder, en tynd og fleksibel sål og god plads til tæerne. Håndsyet med omtanke for sunde små fødder.",
+      "button_1": "Se kollektionen",
+      "button_2": "Vores historie",
+      "badge_1": "Naturlæder",
+      "badge_2": "Håndsyet",
+      "badge_3": "Str. 19–33"
+    },
+    "collection_tiles": {
+      "eyebrow": "Kollektioner",
+      "heading_html": "Til hver <em>lejlighed</em>",
+      "view_all": "Alle kollektioner",
+      "models": {
+        "one": "{{ count }} model",
+        "other": "{{ count }} modeller"
+      }
+    },
+    "featured_collection": {
+      "eyebrow": "Bestsellere",
+      "heading_html": "Forældrenes <em>favoritter</em>",
+      "view_all": "Se alle"
+    },
+    "features": {
+      "eyebrow": "Hvorfor barfodssko",
+      "heading_html": "Designet <em>til fødder, der vokser</em>",
+      "text": "Hver eneste detalje har ét formål: at give barnets fod den frihed, den har brug for til at udvikle sig sundt."
+    },
+    "materials": {
+      "eyebrow": "Materialer",
+      "heading_html": "Fra naturen, <em>fra håndværkerens hænder</em>"
+    },
+    "testimonials": {
+      "eyebrow": "Anmeldelser",
+      "heading_html": "Det siger <em>forældrene</em>",
+      "rating": "Bedømmelse: {{ rating }} ud af 5",
+      "verified": "Verificeret køb",
+      "verified_customer": "OBEX-kunde",
+      "translated": "oversat fra polsk"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "heading_html": "Har du <em>spørgsmål?</em>",
+      "text": "Her er svarene på det, forældre oftest spørger os om.",
+      "contact": "Skriv til os"
+    },
+    "related": {
+      "eyebrow": "Anbefalet",
+      "heading_html": "Du vil måske <em>også kunne lide</em>"
+    }
+  },
+  "usp": {
+    "health": {
+      "title": "Sund udvikling",
+      "text": "Understøtter barnets naturlige motorik og en god kropsholdning."
+    },
+    "flexible": {
+      "title": "Fuld fleksibilitet",
+      "text": "Den bløde sål giver bevægelsesfrihed og fornemmelse for underlaget."
+    },
+    "leather": {
+      "title": "Naturlæder",
+      "text": "Åndbare materialer, nøje udvalgt."
+    },
+    "shipping": {
+      "title": "Hurtig afsendelse",
+      "text": "Vi sender normalt ordrer inden for 24 timer."
+    },
+    "handmade": {
+      "title": "Håndsyet",
+      "text": "Hvert par laves med omhu for detaljen."
+    },
+    "returns": {
+      "title": "14 dages returret",
+      "text": "Prøv skoene derhjemme i ro og mag."
+    }
+  },
+  "materials": {
+    "leather": {
+      "title": "Naturlæder",
+      "text": "Vi laver vores sko af naturlæder, der er blødt og smidigt, så det former sig efter foden og lader den ånde. Det indvendige læder og den stødabsorberende indersål beskytter mod gnavesår og giver barnet fuld komfort og den naturlige fornemmelse af at gå på bare fødder."
+    },
+    "rubber": {
+      "title": "Termogummi",
+      "text": "Grundlaget for vores sko er en ultrafleksibel sål af termogummi. Den kombinerer holdbarhed med blødhed og giver foden naturlig bevægelsesfrihed. Høj slidstyrke og godt greb giver sikkerhed under leg, og materialet er stadig let."
+    },
+    "handmade": {
+      "title": "Håndsyet",
+      "text": "Vores sko er resultatet af passion og håndværksmæssig præcision. Hvert par er håndlavet med omhu for selv den mindste detalje. Vi bruger kun nøje udvalgte, naturlige materialer for at sikre holdbarhed og enestående komfort."
+    }
+  },
+  "features": {
+    "toe_box": {
+      "title": "God plads til tæerne",
+      "text": "Formet efter foden, ikke efter skoen. Tæerne har plads til at sprede sig og finde balancen ved hvert skridt."
+    },
+    "zero_drop": {
+      "title": "Zero drop",
+      "text": "Hæl og tæer i samme højde. Den flade sål understøtter en naturlig holdning i hele kroppen."
+    },
+    "sole": {
+      "title": "Sål på 3 mm",
+      "text": "Den tynde sål af termogummi lader barnet mærke underlaget og beskytter samtidig mod sten og hård beton."
+    },
+    "flex": {
+      "title": "Fuld fleksibilitet",
+      "text": "Skoen bøjer i alle retninger sammen med foden – musklerne arbejder og styrkes ved hvert skridt."
+    },
+    "leather": {
+      "title": "Naturlæder",
+      "text": "Blødt, åndbart glat læder og ruskind, der former sig efter foden uden at gnave."
+    },
+    "fit": {
+      "title": "Nemme at tage på",
+      "text": "Den brede åbning og velcrolukningen passer også til buttede fødder og høj vrist. Udvalgte modeller findes i en WIDE-version."
+    },
+    "proprio": {
+      "title": "Fornemmelse for underlaget",
+      "text": "Fødderne har utroligt mange nerveender. Informationen om underlaget hjælper barnet med at lære balance og koordination."
+    },
+    "bones": {
+      "title": "Knogler i vækst",
+      "text": "Et barns fod består i høj grad af brusk, der først bliver til knogle gennem mange år. Derfor er det vigtigt, at skoen ikke klemmer."
+    }
+  },
+  "reviews": {
+    "r1": {
+      "title": "Kvalitet, der kan klare alt",
+      "text": "Min børnehavedreng er en vulkan af energi, så sko har det ikke let hos ham. Disse lædersko klarer fint de daglige vilde lege på legepladsen.",
+      "author": ""
+    },
+    "r2": {
+      "title": "Som om hun gik barfodet!",
+      "text": "Før tog min datter straks alle sko af igen. Sålen i OBEX er så fleksibel og let, at hun slet ikke lægger mærke til, at hun har dem på. Hun elskede dem fra første dag.",
+      "author": "Patrycja, mor til Zosia"
+    },
+    "r3": {
+      "title": "Blødt læder og smukt design",
+      "text": "Det er sjældent, at sunde børnesko ser så elegante ud. Naturlæderet er meget blødt, og der er ingen gnavesår – heller ikke på varme dage. Jeg kan varmt anbefale dem.",
+      "author": ""
+    },
+    "r4": {
+      "title": "Endelig sko, der passer!",
+      "text": "Vi ledte længe efter sko til vores søns høje vrist og buttede fod. WIDE-modellen ramte plet. De er på på et sekund, intet trykker, og han løber rundt i dem med et smil.",
+      "author": "Anna, mor til Ignaś"
+    },
+    "r5": {
+      "title": "Perfekte til de første skridt",
+      "text": "Vores fysioterapeut anbefalede skoene. De er utroligt lette, og sålen bøjer i alle retninger. Vi kan tydeligt se, hvor meget mere stabilt vores datter finder balancen.",
+      "author": ""
+    },
+    "r6": {
+      "title": "",
+      "text": "De bedste barfodssko, vi har haft! Blødt læder, og den fleksible sål lader vores søn løbe, som om han var barfodet. Helt klart pengene værd.",
+      "author": "Katarzyna M."
+    },
+    "r7": {
+      "title": "",
+      "text": "Jeg ledte efter sko, der ikke klemte min datters tæer, og endelig fandt jeg OBEX. Kvaliteten er imponerende – man kan se det polske håndværk i hver eneste søm.",
+      "author": "Agnieszka W."
+    },
+    "r8": {
+      "title": "",
+      "text": "Smukt design og naturlige materialer. Skoene er meget lette og nemme at få på, også med høj vrist. Vi kommer igen efter de næste størrelser!",
+      "author": "Tomasz P."
+    }
+  },
+  "faq": {
+    "size": {
+      "q": "Hvilken størrelse skal jeg vælge, og hvor meget plads skal der være?",
+      "a_html": "<p>Lad barnet stå med foden på et stykke papir op ad væggen, markér den længste tå, og mål afstanden i millimeter. Indtast målet i størrelsesberegneren på produktsiden – den fremhæver størrelsen med det anbefalede voksetillæg.</p>"
+    },
+    "care": {
+      "q": "Hvordan passer jeg på mine OBEX-sko?",
+      "a_html": "<p>Vask ikke skoene i vaskemaskine, og tør dem ikke på en radiator. Tør snavs af med en fugtig klud. Brug naturlig voks eller imprægnering til glat læder, så læderet forbliver blødt og bedre kan modstå fugt.</p>"
+    },
+    "sole": {
+      "q": "Hvorfor er sålen så tynd?",
+      "a_html": "<p>Det er et bevidst valg, som fysioterapeuter anbefaler. Sålen af termogummi er 3 mm tyk, så barnet kan mærke underlaget (propriocepsis). Det understøtter udviklingen af fodens muskler og kropsholdningen. Sålen er meget fleksibel, men beskytter mod glasskår, sten og hård beton.</p>"
+    },
+    "wide": {
+      "q": "Passer skoene til en buttet fod med høj vrist?",
+      "a_html": "<p>Ja. Den brede åbning og den praktiske velcrolukning gør skoene nemme at tage på og lader dem tilpasse både smalle og mere buttede fødder. Til børn med en tydeligt bredere fod har vi lavet modellen Helis WIDE.</p>"
+    },
+    "returns": {
+      "q": "Hvordan foregår returnering og ombytning?",
+      "a_html": "<p>Du har 14 dage til at prøve skoene derhjemme i ro og mag. Passer størrelsen ikke, kan du returnere ubrugte sko. Vil du bytte, går det hurtigst, hvis du returnerer parret og afgiver en ny ordre på den rigtige størrelse.</p>"
+    },
+    "shipping": {
+      "q": "Sender I til Danmark?",
+      "a_html": "<p>Ja. Vi sender normalt ordrer inden for 24 timer på hverdage, og leveringen tager typisk 3–5 hverdage. Priserne vises i danske kroner, og den præcise fragtpris ser du ved betaling, før du betaler.</p>"
+    },
+    "indoor_outdoor": {
+      "q": "Hvad er forskellen på Indoor- og Outdoor-modellerne?",
+      "a_html": "<p>Indoor-modellerne er bløde hjemmesko til hjemmet og børnehaven. Outdoor-modellerne har den samme fleksible barfodskonstruktion, men er beregnet til at gå udendørs. Alle er lavet af naturlæder.</p>"
+    },
+    "first_steps": {
+      "q": "Hvornår kan et barn begynde at gå i barfodssko?",
+      "a_html": "<p>Vores mindste størrelse er 19 (indersål 125 mm), som normalt passer til børn, der tager deres første skridt. Den bløde, fleksible sål står ikke i vejen, når barnet lærer at gå. Er du i tvivl om fodens udvikling, er det en god idé at spørge en fysioterapeut.</p>"
+    }
+  },
+  "marquee": {
+    "barefoot": "Barfodssko fra de første skridt",
+    "leather": "Naturlæder",
+    "handmade": "Håndsyet",
+    "wide": "Plads til hver eneste tå",
+    "zero_drop": "Zero drop"
+  },
+  "content": {
+    "home": {
+      "story": {
+        "eyebrow": "OBEX-filosofien",
+        "heading_html": "Lad fødderne vokse, <em>som naturen har tænkt det</em>",
+        "text_html": "<p>Vi tror på, at den bedste støtte til en fod i vækst er ikke at holde den unødigt fast. Vi designer OBEX-sko, så de efterligner det at gå på bare fødder – og giver børn præcis det, de har brug for for at vokse sundt.</p>",
+        "button": "Læs vores historie",
+        "badge": "Håndsyet"
+      },
+      "point_shape": {
+        "title": "Anatomisk form",
+        "text": "God plads foran giver tæerne mulighed for at sprede sig naturligt og finde balancen."
+      },
+      "point_zero_drop": {
+        "title": "Flad sål (zero drop)",
+        "text": "Samme højde fra hæl til tå understøtter en god holdning i hele kroppen."
+      },
+      "point_flex": {
+        "title": "Fuld fleksibilitet",
+        "text": "De bløde materialer bøjer i alle retninger og styrker musklerne ved hvert skridt."
+      },
+      "wide": {
+        "eyebrow": "Helis WIDE",
+        "heading_html": "Mere plads, <em>samme komfort</em>",
+        "text_html": "<p>Hver fod vokser i sit eget tempo. Til børn med en bredere fod og høj vrist har vi skabt Helis WIDE. Den bredere sål giver tæerne fuld frihed, og den nydesignede overdel trykker ikke på vristen.</p>",
+        "button": "Se WIDE-modellerne",
+        "badge": "WIDE"
+      }
+    },
+    "about": {
+      "intro": {
+        "eyebrow": "Om os",
+        "heading_html": "Vores <em>historie</em>",
+        "text_html": "<p>Bag hvert par OBEX-sko står omsorg for sund udvikling og kærlighed til ægte håndværk. Fra den første skitse til den sidste søm går vi efter kvalitet og en kompromisløs tilgang til små fødders anatomi.</p>"
+      },
+      "passion": {
+        "eyebrow": "Begyndelsen",
+        "heading_html": "Af passion for <em>de første skridt</em>",
+        "text_html": "<p>OBEX blev skabt ud fra en enkel overbevisning: et barns fod er en præcis mekanisme, der fortjener den bedst mulige omsorg. Fra starten har vi lavet sko, der ikke begrænser, men støtter barnets naturlige udvikling.</p>"
+      },
+      "material": {
+        "eyebrow": "Materialer",
+        "heading_html": "<em>Naturlige materialer</em> af høj kvalitet",
+        "text_html": "<p>Vi vælger det, naturen giver os. Glat læder og ruskind giver en enestående blødhed og pasform, lader foden ånde og kan klare selv de vildeste lege – med diskret elegance og praktiske løsninger.</p>"
+      },
+      "craft": {
+        "eyebrow": "Håndværk",
+        "heading_html": "Håndarbejde og <em>mesterlig præcision</em>",
+        "text_html": "<p>Hjertet i OBEX er traditionelt håndværk. Hvert par er resultatet af håndarbejde, hvor omhu for detaljen er garantien for kvalitet. Sådan kontrollerer vi hver søm, og skoene bliver ikke kun smukke, men først og fremmest holdbare og sikre.</p>"
+      },
+      "barefoot": {
+        "eyebrow": "Filosofi",
+        "heading_html": "Barfod: <em>tættere på naturen</em>",
+        "text_html": "<p>Når vi designer vores såler, følger vi barfodsprincippet. For at muskler og ledbånd kan udvikle sig sundt, skal barnets fod kunne mærke underlaget og arbejde uhindret. Vores fleksible såler giver naturlig bevægelse og beskytter samtidig.</p>",
+        "button": "Se kollektionen"
+      }
+    },
+    "size": {
+      "intro": {
+        "eyebrow": "Guide",
+        "heading_html": "Sådan vælger du <em>størrelse</em>",
+        "text_html": "<p>Den rigtige størrelse er det vigtigste skridt mod en sund fodudvikling. Alle små fødder er forskellige, så vi har lavet en enkel guide og en beregner, der viser størrelsen med passende plads.</p>"
+      },
+      "measure": {
+        "eyebrow": "Trin 1",
+        "heading_html": "Sådan måler du <em>foden korrekt</em>",
+        "text_html": "<p>Lad barnet stå på et stykke papir, så hælen lige rører væggen. Hold blyanten lodret, tegn en streg ud for den længste tå, og mål afstanden fra papirets kant. Mål begge fødder – de kan være lidt forskellige. Brug altid målet for den længste.</p>"
+      },
+      "width": {
+        "eyebrow": "Bredde",
+        "heading_html": "Vi tænker også på <em>fodens bredde</em>",
+        "text_html": "<p>Vores sko har en bred, anatomisk tåkappe, så de passer til både normale og brede fødder. Tæerne kan sprede sig frit, når barnet går, og det giver en stabil holdning. Til tydeligt brede fødder anbefaler vi Helis WIDE.</p>"
+      },
+      "calculator": {
+        "eyebrow": "Beregner",
+        "heading_html": "Brug vores <em>størrelsesberegner</em>",
+        "text_html": "<p>På hver produktside finder du vores størrelsesberegner. Indtast fodlængden i millimeter – så lægger den et sundt voksetillæg til og viser den ideelle størrelse til dit barn.</p>"
+      },
+      "frequency": {
+        "eyebrow": "Kontrol",
+        "heading_html": "Hvor tit skal <em>størrelsen tjekkes?</em>",
+        "text_html": "<p>Børns fødder vokser i spring. Vi anbefaler at måle hver 2. måned frem til 1 år, hver 3. måned fra 1 til 3 år og hver 4.–6. måned i børnehavealderen. Snubler barnet oftere end før, er det tid til at måle igen.</p>",
+        "button": "Se kollektionen"
+      }
+    },
+    "care": {
+      "intro": {
+        "eyebrow": "Pleje",
+        "heading_html": "Sådan passer du på <em>dine OBEX-sko</em>",
+        "text_html": "<p>Vores sko er lavet af naturlæder, der ånder og former sig efter foden. Fire enkle regler er nok til, at de bevarer deres flotte udseende og egenskaber.</p>"
+      },
+      "leather": {
+        "eyebrow": "Materiale",
+        "heading_html": "<em>Naturlæder</em> af høj kvalitet",
+        "text_html": "<p>Alle OBEX-produkter er lavet af naturlæder, der giver små fødder god ventilation og komfort. Husk et par enkle regler, så skoene længe bevarer deres blødhed og smidighed.</p>"
+      },
+      "cloth": {
+        "eyebrow": "Rengøring",
+        "heading_html": "Kun en <em>fugtig klud</em>",
+        "text_html": "<p>Fjern hverdagens snavs med en blød, let fugtig klud. Det er den sikreste måde at friske det naturlige materiale op på uden at skade dets sarte, åndbare struktur.</p>"
+      },
+      "no_wash": {
+        "eyebrow": "Vigtigt",
+        "heading_html": "Aldrig <em>i vaskemaskinen</em>",
+        "text_html": "<p>Kom aldrig OBEX-sko i vaskemaskinen. Meget vand, centrifugering og vaskemiddel ødelægger læderets struktur, så det bliver hårdt og mister formen for altid.</p>"
+      },
+      "drying": {
+        "eyebrow": "Tørring",
+        "heading_html": "Naturlig <em>tørring</em>",
+        "text_html": "<p>Bliver skoene våde, så lad dem tørre ved stuetemperatur. Undgå radiatorer og direkte sollys – hurtig tørring udtørrer læderet og kan give revner.</p>"
+      }
+    },
+    "facts": {
+      "intro": {
+        "eyebrow": "Fakta",
+        "heading_html": "Børnefødder <em>og barfodssko</em>",
+        "text_html": "<p>Lidt fakta om, hvordan børns fødder udvikler sig – og hvorfor det betyder så meget, hvad de har på, når de tager deres første skridt.</p>"
+      },
+      "cartilage": {
+        "eyebrow": "Fakta 1",
+        "heading_html": "Et barns fod er <em>mest brusk</em>",
+        "text_html": "<p>En nyfødts fødder har endnu ikke fuldt udviklede knogler – de består i høj grad af blød, elastisk brusk, der først hærdes med tiden. Forbeningen tager mange år, og derfor er det i de første leveår så let at deformere foden med stive sko eller sko i forkert størrelse.</p>"
+      },
+      "proprio": {
+        "eyebrow": "Fakta 2",
+        "heading_html": "Fødderne er <em>et vindue til verden</em>",
+        "text_html": "<p>Fødderne har rigtig mange nerveender. Når barnet går barfodet eller i barfodssko, får hjernen en konstant strøm af information om underlaget: om det er hårdt, blødt, koldt, skrånende eller glat. Det er afgørende for at lære balance og koordination.</p>"
+      },
+      "shape": {
+        "eyebrow": "Fakta 3",
+        "heading_html": "Formet efter foden, <em>ikke efter skoen</em>",
+        "text_html": "<p>Traditionelle børnesko har ofte en smal snude, der klemmer tæerne. OBEX-sko har en bred, anatomisk tåkappe, så tæerne kan sprede sig som en vifte ved hvert skridt. Det er vigtigt for stabiliteten og for udviklingen af fodbuen.</p>"
+      },
+      "zero_drop": {
+        "eyebrow": "Fakta 4",
+        "heading_html": "Zero drop – <em>balancen starter i hælen</em>",
+        "text_html": "<p>Mange traditionelle sko har en hævet hæl, som flytter barnets tyngdepunkt og belaster forfoden. I OBEX-sko er hæl og tæer i samme højde. Det understøtter en naturlig holdning og gør det lettere at lære at gå stabilt.</p>",
+        "button": "Se kollektionen"
+      }
+    }
+  }
+}

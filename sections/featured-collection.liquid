@@ -1,0 +1,63 @@
+{%- liquid
+  assign c = section.settings.collection
+  assign d_eyebrow = 'sections.featured_collection.eyebrow' | t
+  assign d_heading = 'sections.featured_collection.heading_html' | t
+  assign cols = section.settings.columns
+-%}
+<section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="container container--wide">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+        <h2>{{ section.settings.heading | default: d_heading }}</h2>
+      </div>
+      <div style="display:flex; align-items:center; gap:1.5rem;">
+        {%- if c != blank -%}
+          <a class="link-arrow" href="{{ c.url }}">{{ 'sections.featured_collection.view_all' | t }} {% render 'icon', name: 'arrow' %}</a>
+        {%- endif -%}
+        {%- if section.settings.layout == 'slider' -%}
+          <div class="slider-nav">
+            <button type="button" data-slider-prev="Slider-{{ section.id }}" aria-label="{{ 'general.previous' | t }}">{% render 'icon', name: 'arrow' %}</button>
+            <button type="button" data-slider-next="Slider-{{ section.id }}" aria-label="{{ 'general.next' | t }}">{% render 'icon', name: 'arrow' %}</button>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- capture sizes -%}(min-width: 990px) calc(100vw / {{ cols }}), (min-width: 750px) 42vw, 78vw{%- endcapture -%}
+    <div class="{% if section.settings.layout == 'slider' %}slider slider--bleed{% else %}product-grid{% endif %}" id="Slider-{{ section.id }}" style="--cols: {{ cols }};">
+      {%- if c != blank and c.products_count > 0 -%}
+        {%- for product in c.products limit: section.settings.limit -%}
+          <div class="reveal" data-delay="{{ forloop.index0 | modulo: 4 }}">{% render 'product-card', product: product, sizes: sizes %}</div>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..4) -%}
+          <div class="card">
+            <div class="card__media">{{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+            <div class="card__info"><p class="card__title">{{ shop.name }}</p></div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Wybrane produkty",
+  "settings": [
+    { "type": "collection", "id": "collection", "label": "Kolekcja" },
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "select", "id": "layout", "label": "Układ", "options": [
+      { "value": "slider", "label": "Karuzela" }, { "value": "grid", "label": "Siatka" }
+    ], "default": "slider" },
+    { "type": "range", "id": "columns", "label": "Kolumny (desktop)", "min": 3, "max": 5, "step": 1, "default": 4 },
+    { "type": "range", "id": "limit", "label": "Liczba produktów", "min": 4, "max": 16, "step": 1, "default": 8 },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": false },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "presets": [{ "name": "Wybrane produkty" }]
+}
+{% endschema %}

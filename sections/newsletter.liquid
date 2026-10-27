@@ -1,0 +1,53 @@
+{%- liquid
+  assign d_heading = 'newsletter.heading_html' | t
+  assign d_text = 'newsletter.text' | t
+  assign style_class = ''
+  case section.settings.style
+    when 'surface'
+      assign style_class = 'section--surface'
+    when 'dark'
+      assign style_class = 'section--dark'
+  endcase
+-%}
+<section class="section {{ style_class }}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="container newsletter reveal">
+    <div>
+      <p class="eyebrow">{{ 'newsletter.eyebrow' | t }}</p>
+      <h2>{{ section.settings.heading | default: d_heading }}</h2>
+      <p class="lead" style="margin:0">{{ section.settings.text | default: d_text }}</p>
+    </div>
+    <div>
+      {%- assign form_id = 'Newsletter-' | append: section.id -%}
+      {%- form 'customer', id: form_id -%}
+        <input type="hidden" name="contact[tags]" value="newsletter,{{ localization.country.iso_code }},{{ request.locale.iso_code }}">
+        {%- if form.posted_successfully? -%}
+          <p class="form-message form-message--success" role="status">{{ 'newsletter.success' | t }}</p>
+        {%- elsif form.errors -%}
+          <p class="form-message form-message--error" role="alert">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>
+        {%- endif -%}
+        <div class="newsletter__form">
+          <label class="visually-hidden" for="NewsletterEmail-{{ section.id }}">{{ 'newsletter.email' | t }}</label>
+          <input type="email" name="contact[email]" id="NewsletterEmail-{{ section.id }}" placeholder="{{ 'newsletter.email' | t }}" autocomplete="email" required>
+          <button class="btn" type="submit">{{ 'newsletter.submit' | t }}</button>
+        </div>
+        <p class="newsletter__note">{{ 'newsletter.consent' | t }}</p>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek", "info": "Puste = tekst domyślny tłumaczony automatycznie (PL/IT/DA)." },
+    { "type": "text", "id": "text", "label": "Opis" },
+    { "type": "select", "id": "style", "label": "Tło", "options": [
+      { "value": "default", "label": "Jasne" }, { "value": "surface", "label": "Beżowe" }, { "value": "dark", "label": "Ciemne" }
+    ], "default": "surface" },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 }
+  ],
+  "presets": [{ "name": "Newsletter" }]
+}
+{% endschema %}

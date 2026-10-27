@@ -1,0 +1,31 @@
+{%- comment -%}
+  Przełącznik rynku (kraj → waluta) i języka. Parametry: id (unikalny), stacked (bool)
+  Działa z Shopify Markets: PL (PLN), IT (EUR), DK (DKK) + języki pl / it / da.
+{%- endcomment -%}
+{%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
+  {%- form 'localization', id: id, class: 'localization-form', data-localization-form: '' -%}
+    <div class="localization{% if stacked %} localization--stacked{% endif %}">
+      {%- if localization.available_countries.size > 1 and settings.show_country_selector -%}
+        <label class="visually-hidden" for="{{ id }}-country">{{ 'localization.country_label' | t }}</label>
+        <select class="localization__select" id="{{ id }}-country" name="country_code" data-autosubmit>
+          {%- for country in localization.available_countries -%}
+            <option value="{{ country.iso_code }}" {% if country.iso_code == localization.country.iso_code %}selected{% endif %}>
+              {{- country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+            </option>
+          {%- endfor -%}
+        </select>
+      {%- endif -%}
+      {%- if localization.available_languages.size > 1 and settings.show_language_selector -%}
+        <label class="visually-hidden" for="{{ id }}-language">{{ 'localization.language_label' | t }}</label>
+        <select class="localization__select" id="{{ id }}-language" name="language_code" data-autosubmit>
+          {%- for language in localization.available_languages -%}
+            <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}selected{% endif %}>
+              {%- if stacked -%}{{ language.endonym_name | capitalize }}{%- else -%}{{ language.iso_code | upcase }}{%- endif -%}
+            </option>
+          {%- endfor -%}
+        </select>
+      {%- endif -%}
+      <noscript><button class="btn btn--outline" type="submit">{{ 'localization.update' | t }}</button></noscript>
+    </div>
+  {%- endform -%}
+{%- endif -%}

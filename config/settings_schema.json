@@ -1,0 +1,122 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "OBEX Atelier",
+    "theme_version": "1.0.0",
+    "theme_author": "OBEX",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://help.shopify.com"
+  },
+  {
+    "name": "Logo i ikona",
+    "settings": [
+      { "type": "image_picker", "id": "logo", "label": "Logo" },
+      { "type": "range", "id": "logo_width", "label": "Szerokość logo", "min": 60, "max": 240, "step": 4, "unit": "px", "default": 112 },
+      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "Kwadrat 64×64 px lub większy" },
+      { "type": "image_picker", "id": "share_image", "label": "Obraz do udostępniania (Facebook, Messenger)", "info": "1200×630 px. Używany, gdy strona nie ma własnego zdjęcia." }
+    ]
+  },
+  {
+    "name": "Kolory",
+    "settings": [
+      { "type": "color", "id": "color_background", "label": "Tło", "default": "#F7F3EE" },
+      { "type": "color", "id": "color_surface", "label": "Tło sekcji (beż)", "default": "#EFE8DF" },
+      { "type": "color", "id": "color_surface_alt", "label": "Tło sekcji (piasek)", "default": "#E5DACB" },
+      { "type": "color", "id": "color_text", "label": "Tekst", "default": "#261C14" },
+      { "type": "color", "id": "color_accent", "label": "Akcent (przyciski)", "default": "#5C4332" },
+      { "type": "color", "id": "color_accent_contrast", "label": "Tekst na przyciskach", "default": "#FFFFFF" },
+      { "type": "color", "id": "color_honey", "label": "Miód (detale)", "default": "#C89B7B" },
+      { "type": "color", "id": "color_sage", "label": "Szałwia (potwierdzenia)", "default": "#8A9A7E" },
+      { "type": "color", "id": "color_sale", "label": "Promocja", "default": "#B4532A" },
+      { "type": "color", "id": "color_dark", "label": "Ciemne tło (stopka)", "default": "#2A1F17" }
+    ]
+  },
+  {
+    "name": "Typografia",
+    "settings": [
+      { "type": "font_picker", "id": "type_header_font", "label": "Nagłówki", "default": "fraunces_n4", "info": "Wybierz font z polskimi i duńskimi znakami (ą, ę, ł, æ, ø, å)." },
+      { "type": "range", "id": "heading_scale", "label": "Skala nagłówków", "min": 80, "max": 130, "step": 5, "unit": "%", "default": 100 },
+      { "type": "font_picker", "id": "type_body_font", "label": "Tekst", "default": "dm_sans_n4" }
+    ]
+  },
+  {
+    "name": "Układ",
+    "settings": [
+      { "type": "range", "id": "page_width", "label": "Maks. szerokość strony", "min": 1100, "max": 1600, "step": 20, "unit": "px", "default": 1360 },
+      { "type": "range", "id": "radius", "label": "Zaokrąglenie rogów", "min": 0, "max": 24, "step": 2, "unit": "px", "default": 12 }
+    ]
+  },
+  {
+    "name": "Karty produktów",
+    "settings": [
+      { "type": "select", "id": "card_image_ratio", "label": "Proporcje zdjęcia", "options": [
+        { "value": "1 / 1", "label": "Kwadrat" }, { "value": "4 / 5", "label": "Pionowe 4:5" }, { "value": "3 / 4", "label": "Pionowe 3:4" }
+      ], "default": "1 / 1" },
+      { "type": "select", "id": "card_image_fit", "label": "Dopasowanie zdjęcia", "options": [
+        { "value": "cover", "label": "Wypełnij" }, { "value": "contain", "label": "Całe zdjęcie (packshot)" }
+      ], "default": "cover" },
+      { "type": "checkbox", "id": "card_hover_image", "label": "Drugie zdjęcie po najechaniu", "default": true },
+      { "type": "checkbox", "id": "card_quick_link", "label": "Przycisk „Wybierz rozmiar” po najechaniu", "default": true },
+      { "type": "checkbox", "id": "card_show_vendor", "label": "Pokaż markę", "default": false },
+      { "type": "checkbox", "id": "card_show_sizes", "label": "Pokaż zakres rozmiarów", "default": true },
+      { "type": "checkbox", "id": "card_show_swatches", "label": "Miniatury kolorów (metapole rodzina_produktow)", "default": true },
+      { "type": "text", "id": "badge_new_tag", "label": "Tag dla etykiety „Nowość”", "default": "Nowość" },
+      { "type": "text", "id": "badge_wide_tag", "label": "Tag dla etykiety „WIDE”", "default": "Model Helis Wide" }
+    ]
+  },
+  {
+    "name": "Rynki: dostawa i zwroty",
+    "settings": [
+      { "type": "paragraph", "content": "Ustawienia per rynek. Kwoty wpisuj w walucie rynku (PL – PLN, IT – EUR, DK – DKK). 0 = brak paska darmowej dostawy." },
+      { "type": "header", "content": "Polska" },
+      { "type": "number", "id": "free_shipping_pl", "label": "Darmowa dostawa od (PLN)", "default": 0 },
+      { "type": "text", "id": "delivery_pl", "label": "Czas dostawy (dni robocze)", "default": "1–2" },
+      { "type": "header", "content": "Włochy" },
+      { "type": "number", "id": "free_shipping_it", "label": "Darmowa dostawa od (EUR)", "default": 0 },
+      { "type": "text", "id": "delivery_it", "label": "Czas dostawy (dni robocze)", "default": "3–5" },
+      { "type": "header", "content": "Dania" },
+      { "type": "number", "id": "free_shipping_dk", "label": "Darmowa dostawa od (DKK)", "default": 0 },
+      { "type": "text", "id": "delivery_dk", "label": "Czas dostawy (dni robocze)", "default": "3–5" },
+      { "type": "header", "content": "Pozostałe kraje" },
+      { "type": "number", "id": "free_shipping_other", "label": "Darmowa dostawa od (waluta kraju)", "default": 0 },
+      { "type": "text", "id": "delivery_other", "label": "Czas dostawy (dni robocze)", "default": "3–7" },
+      { "type": "header", "content": "Zwroty" },
+      { "type": "number", "id": "return_days", "label": "Dni na zwrot", "default": 14 }
+    ]
+  },
+  {
+    "name": "Rozmiary",
+    "settings": [
+      { "type": "textarea", "id": "size_table", "label": "Tabela: rozmiar EU : długość wkładki (mm)", "info": "Jedna para na linię lub po przecinku, np. 19:125", "default": "19:125, 20:130, 21:140, 22:145, 23:151, 24:157, 25:162, 26:168, 27:177, 28:182, 29:188, 30:195, 31:201, 32:207, 33:211" },
+      { "type": "number", "id": "size_margin_min", "label": "Zalecany zapas – min. (mm)", "default": 5 },
+      { "type": "number", "id": "size_margin_max", "label": "Zalecany zapas – maks. (mm)", "default": 7 },
+      { "type": "image_picker", "id": "size_guide_image", "label": "Ilustracja „Jak zmierzyć stopę”" },
+      { "type": "text", "id": "breadcrumb_collection", "label": "Kolekcja w okruszkach na karcie produktu (uchwyt)", "default": "all", "info": "Np. „all” lub „kapcie”. Gdy produkt w niej nie jest – pierwsza kolekcja produktu." }
+    ]
+  },
+  {
+    "name": "Kraj i język",
+    "settings": [
+      { "type": "checkbox", "id": "show_country_selector", "label": "Wybór kraju / waluty", "default": true },
+      { "type": "checkbox", "id": "show_language_selector", "label": "Wybór języka", "default": true }
+    ]
+  },
+  {
+    "name": "Kontakt i firma",
+    "settings": [
+      { "type": "text", "id": "contact_phone", "label": "Telefon", "default": "+48 604 522 566" },
+      { "type": "text", "id": "contact_hours", "label": "Godziny pracy", "info": "Puste = „Pn–Pt 8:00–16:00 (CET)” w języku odwiedzającego." },
+      { "type": "textarea", "id": "company_details", "label": "Dane firmy (nazwa, adres, NIP)", "info": "Zwiększa wiarygodność na rynkach zagranicznych. Przetłumacz w Translate & Adapt, jeśli trzeba." }
+    ]
+  },
+  {
+    "name": "Media społecznościowe",
+    "settings": [
+      { "type": "text", "id": "social_instagram_link", "label": "Instagram" },
+      { "type": "text", "id": "social_facebook_link", "label": "Facebook" },
+      { "type": "text", "id": "social_tiktok_link", "label": "TikTok" },
+      { "type": "text", "id": "social_youtube_link", "label": "YouTube" },
+      { "type": "text", "id": "social_pinterest_link", "label": "Pinterest" }
+    ]
+  }
+]

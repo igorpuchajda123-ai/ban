@@ -1,0 +1,143 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "settings": {
+        "content_key": "size.intro",
+        "heading_tag": "h1",
+        "center": true,
+        "style": "default",
+        "padding_top": 80,
+        "padding_bottom": 32,
+        "show_page_content": false,
+        "use_page_title": true
+      }
+    },
+    "calculator": {
+      "type": "size-guide",
+      "settings": {
+        "surface": true,
+        "padding_top": 80,
+        "padding_bottom": 96
+      }
+    },
+    "measure": {
+      "type": "image-text",
+      "settings": {
+        "image": "shopify://shop_images/unnamed-3_3.jpg",
+        "media_position": "left",
+        "ratio": "4 / 5",
+        "shape": "rounded",
+        "content_key": "size.measure",
+        "number": "01",
+        "style": "default",
+        "padding_top": 112,
+        "padding_bottom": 48,
+        "button_style": "link",
+        "show_badge": false
+      }
+    },
+    "width": {
+      "type": "image-text",
+      "settings": {
+        "image": "shopify://shop_images/unnamed-4_3.jpg",
+        "media_position": "right",
+        "ratio": "4 / 5",
+        "shape": "blob",
+        "content_key": "size.width",
+        "number": "02",
+        "style": "default",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "button_style": "link",
+        "show_badge": false
+      }
+    },
+    "calc": {
+      "type": "image-text",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_vcyfxcvcyfxcvcyf_2.jpg",
+        "media_position": "left",
+        "ratio": "4 / 5",
+        "shape": "rounded",
+        "content_key": "size.calculator",
+        "number": "03",
+        "style": "default",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "button_style": "link",
+        "show_badge": false
+      }
+    },
+    "frequency": {
+      "type": "image-text",
+      "settings": {
+        "image": "shopify://shop_images/unnamed-2_3.jpg",
+        "media_position": "right",
+        "ratio": "4 / 5",
+        "shape": "rounded",
+        "content_key": "size.frequency",
+        "number": "04",
+        "style": "default",
+        "padding_top": 48,
+        "padding_bottom": 112,
+        "button_style": "button",
+        "show_badge": false,
+        "link": "shopify://collections/all"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "preset": "size"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "preset": "wide"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "preset": "first_steps"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "preset": "returns"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {
+        "show_contact": true,
+        "contact_link": "shopify://pages/contact",
+        "open_first": false,
+        "schema": true,
+        "surface": true,
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "calculator",
+    "measure",
+    "width",
+    "calc",
+    "frequency",
+    "faq"
+  ]
+}

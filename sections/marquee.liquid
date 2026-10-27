@@ -1,0 +1,52 @@
+{%- liquid
+  assign items = ''
+  for block in section.blocks
+    assign key = 'marquee.' | append: block.settings.preset
+    assign d = key | t
+    assign txt = block.settings.text | default: d
+    assign items = items | append: txt | append: '|||'
+  endfor
+  assign items = items | split: '|||'
+-%}
+<div class="marquee{% if section.settings.surface %} section--surface{% endif %}" style="--speed: {{ section.settings.speed }}s;" {{ section.shopify_attributes }} aria-hidden="true">
+  <div class="marquee__track">
+    {%- for n in (1..2) -%}
+      {%- for i in (1..3) -%}
+        {%- for txt in items -%}<span class="marquee__item">{{ txt }}</span>{%- endfor -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Przewijany tekst",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "range", "id": "speed", "label": "Prędkość (sek. na cykl)", "min": 20, "max": 90, "step": 5, "default": 45 },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Hasło",
+      "settings": [
+        { "type": "select", "id": "preset", "label": "Gotowe hasło", "options": [
+          { "value": "barefoot", "label": "Barefoot od pierwszych kroków" },
+          { "value": "leather", "label": "Naturalna skóra" },
+          { "value": "handmade", "label": "Szyte ręcznie" },
+          { "value": "wide", "label": "Miejsce dla palców" },
+          { "value": "zero_drop", "label": "Zero drop" }
+        ], "default": "barefoot" },
+        { "type": "text", "id": "text", "label": "Własny tekst" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Przewijany tekst", "blocks": [
+    { "type": "item", "settings": { "preset": "barefoot" } },
+    { "type": "item", "settings": { "preset": "leather" } },
+    { "type": "item", "settings": { "preset": "handmade" } },
+    { "type": "item", "settings": { "preset": "wide" } }
+  ] }]
+}
+{% endschema %}

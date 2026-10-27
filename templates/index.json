@@ -1,0 +1,141 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "layout": "overlay",
+        "image": "shopify://shop_images/IMG_5139.jpg",
+        "link_1": "shopify://collections/rodzina-helis",
+        "link_2": "shopify://pages/historia-marki",
+        "show_badges": true,
+        "height": 88,
+        "height_mobile": 82,
+        "overlay": 45,
+        "v_align": "flex-end"
+      }
+    },
+    "usp": {
+      "type": "usp-bar",
+      "blocks": {
+        "u1": { "type": "usp", "settings": { "preset": "health" } },
+        "u2": { "type": "usp", "settings": { "preset": "flexible" } },
+        "u3": { "type": "usp", "settings": { "preset": "leather" } },
+        "u4": { "type": "usp", "settings": { "preset": "shipping" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4"],
+      "settings": { "surface": false }
+    },
+    "tiles": {
+      "type": "collection-tiles",
+      "blocks": {
+        "t1": { "type": "collection", "settings": { "collection": "indoor", "image": "shopify://shop_images/IMG_5160.jpg", "title": "" } },
+        "t2": { "type": "collection", "settings": { "collection": "buty-outdoor", "image": "shopify://shop_images/IMG_5158.jpg", "title": "" } },
+        "t3": { "type": "collection", "settings": { "collection": "rodzina-balerina", "image": "shopify://shop_images/IMG_5157.jpg", "title": "" } },
+        "t4": { "type": "collection", "settings": { "collection": "rodzina-helis", "image": "shopify://shop_images/IMG_5156.jpg", "title": "" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"],
+      "settings": { "ratio": "3 / 4", "surface": false, "padding_top": 96, "padding_bottom": 48 }
+    },
+    "bestsellers": {
+      "type": "featured-collection",
+      "settings": { "collection": "bestsellery", "layout": "slider", "columns": 4, "limit": 10, "surface": false, "padding_top": 48, "padding_bottom": 96 }
+    },
+    "story": {
+      "type": "image-text",
+      "blocks": {
+        "p1": { "type": "point", "settings": { "content_key": "home.point_shape" } },
+        "p2": { "type": "point", "settings": { "content_key": "home.point_zero_drop" } },
+        "p3": { "type": "point", "settings": { "content_key": "home.point_flex" } }
+      },
+      "block_order": ["p1", "p2", "p3"],
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_unt8s8unt8s8unt8.jpg",
+        "media_position": "left",
+        "ratio": "4 / 5",
+        "shape": "rounded",
+        "content_key": "home.story",
+        "link": "shopify://pages/historia-marki",
+        "button_style": "link",
+        "show_badge": true,
+        "style": "surface",
+        "padding_top": 112,
+        "padding_bottom": 112
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "preset": "toe_box" } },
+        "f2": { "type": "feature", "settings": { "preset": "zero_drop" } },
+        "f3": { "type": "feature", "settings": { "preset": "sole" } },
+        "f4": { "type": "feature", "settings": { "preset": "flex" } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"],
+      "settings": { "columns": 4, "style": "default", "padding_top": 112, "padding_bottom": 96 }
+    },
+    "wide": {
+      "type": "image-text",
+      "settings": {
+        "image": "shopify://shop_images/IMG_5169.jpg",
+        "media_position": "right",
+        "ratio": "4 / 5",
+        "shape": "blob",
+        "content_key": "home.wide",
+        "link": "shopify://collections/helis-wide-indoor-collection",
+        "button_style": "button",
+        "show_badge": false,
+        "style": "default",
+        "padding_top": 48,
+        "padding_bottom": 112
+      }
+    },
+    "marquee": {
+      "type": "marquee",
+      "blocks": {
+        "m1": { "type": "item", "settings": { "preset": "barefoot" } },
+        "m2": { "type": "item", "settings": { "preset": "leather" } },
+        "m3": { "type": "item", "settings": { "preset": "handmade" } },
+        "m4": { "type": "item", "settings": { "preset": "wide" } },
+        "m5": { "type": "item", "settings": { "preset": "zero_drop" } }
+      },
+      "block_order": ["m1", "m2", "m3", "m4", "m5"],
+      "settings": { "speed": 50, "surface": false }
+    },
+    "materials": {
+      "type": "materials",
+      "blocks": {
+        "leather": { "type": "material", "settings": { "preset": "leather", "image": "shopify://shop_images/IMG_5085.jpg" } },
+        "rubber": { "type": "material", "settings": { "preset": "rubber", "image": "shopify://shop_images/IMG_5084.png" } },
+        "handmade": { "type": "material", "settings": { "preset": "handmade", "image": "shopify://shop_images/naklejki-handmade-stamp_jpg.jpg" } }
+      },
+      "block_order": ["leather", "rubber", "handmade"],
+      "settings": { "surface": true, "padding_top": 112, "padding_bottom": 112 }
+    },
+    "reviews": {
+      "type": "testimonials",
+      "blocks": {
+        "r2": { "type": "review", "settings": { "preset": "r2", "image": "shopify://shop_images/IMG_4371.jpg", "rating": 5 } },
+        "r4": { "type": "review", "settings": { "preset": "r4", "image": "shopify://shop_images/13755.jpg", "rating": 5 } },
+        "r5": { "type": "review", "settings": { "preset": "r5", "image": "shopify://shop_images/11676.jpg", "rating": 5 } },
+        "r3": { "type": "review", "settings": { "preset": "r3", "image": "shopify://shop_images/IMG_4369.jpg", "rating": 5 } },
+        "r1": { "type": "review", "settings": { "preset": "r1", "image": "shopify://shop_images/f1f3a2054494b88ea7ddffa93fd2.jpg", "rating": 5 } }
+      },
+      "block_order": ["r2", "r4", "r5", "r3", "r1"],
+      "settings": { "surface": false, "padding_top": 112, "padding_bottom": 96 }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "question", "settings": { "preset": "size" } },
+        "q2": { "type": "question", "settings": { "preset": "sole" } },
+        "q3": { "type": "question", "settings": { "preset": "wide" } },
+        "q4": { "type": "question", "settings": { "preset": "indoor_outdoor" } },
+        "q5": { "type": "question", "settings": { "preset": "shipping" } },
+        "q6": { "type": "question", "settings": { "preset": "returns" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
+      "settings": { "show_contact": true, "contact_link": "shopify://pages/contact", "open_first": true, "schema": true, "surface": true, "padding_top": 112, "padding_bottom": 112 }
+    }
+  },
+  "order": ["hero", "usp", "tiles", "bestsellers", "story", "features", "wide", "marquee", "materials", "reviews", "faq"]
+}

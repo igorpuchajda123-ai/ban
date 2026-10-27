@@ -1,0 +1,88 @@
+{%- comment -%}
+  Tabela rozmiarów + kalkulator (dane w Ustawienia motywu → Rozmiary).
+  Używane jako modal (karta produktu) i inline (sekcja „Przewodnik rozmiarów”, inline: true).
+{%- endcomment -%}
+{%- liquid
+  assign rows = settings.size_table | strip | newline_to_br | replace: '<br />', ',' | split: ','
+  assign uid = 'Sizer'
+  if inline
+    assign uid = 'SizerInline'
+  endif
+-%}
+{%- capture sizer -%}
+  <div class="tabs" role="tablist" data-tabs-simple>
+    <button type="button" role="tab" aria-selected="true" aria-controls="{{ uid }}-find" id="{{ uid }}-tab-find">{{ 'size_guide.tab_find' | t }}</button>
+    <button type="button" role="tab" aria-selected="false" aria-controls="{{ uid }}-measure" id="{{ uid }}-tab-measure">{{ 'size_guide.tab_measure' | t }}</button>
+  </div>
+
+  <div class="sizer" id="{{ uid }}-find" role="tabpanel" aria-labelledby="{{ uid }}-tab-find" data-sizer data-min="{{ settings.size_margin_min }}" data-max="{{ settings.size_margin_max }}">
+    <div>
+      <h3 class="h4">{{ 'size_guide.find_heading' | t }}</h3>
+      <p class="muted">{{ 'size_guide.find_text' | t }}</p>
+      <label class="small" for="{{ uid }}-input" style="font-weight:500; display:block; margin-bottom:.4rem;">{{ 'size_guide.input_label' | t }}</label>
+      <div class="sizer__input">
+        <input type="number" id="{{ uid }}-input" inputmode="numeric" min="80" max="260" placeholder="{{ 'size_guide.input_placeholder' | t }}" data-sizer-input>
+        <span class="sizer__unit">mm</span>
+      </div>
+      <div class="sizer__result" aria-live="polite" data-sizer-result>
+        <span class="sizer__result-text">{{ 'size_guide.result_empty_html' | t: min: settings.size_margin_min, max: settings.size_margin_max }}</span>
+      </div>
+      {%- unless inline -%}
+        <button type="button" class="btn btn--block" style="margin-top:1rem" data-sizer-apply hidden>{{ 'size_guide.apply' | t }}</button>
+      {%- endunless -%}
+    </div>
+    <div class="size-table__wrap">
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th scope="col">{{ 'size_guide.th_size' | t }}</th>
+            <th scope="col">{{ 'size_guide.th_insole' | t }}</th>
+            <th scope="col">{{ 'size_guide.th_margin' | t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in rows -%}
+            {%- assign parts = row | strip | split: ':' -%}
+            {%- if parts.size == 2 -%}
+              <tr data-size="{{ parts[0] | strip }}" data-length="{{ parts[1] | strip }}">
+                <td>{{ parts[0] | strip }}</td>
+                <td>{{ parts[1] | strip }} mm</td>
+                <td data-margin>–</td>
+              </tr>
+            {%- endif -%}
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sizer" id="{{ uid }}-measure" role="tabpanel" aria-labelledby="{{ uid }}-tab-measure" hidden>
+    <div>
+      {%- if settings.size_guide_image != blank -%}
+        <div class="media" style="aspect-ratio: 4 / 3;">
+          {{ settings.size_guide_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '(min-width: 750px) 40vw, 90vw', alt: '' }}
+        </div>
+      {%- endif -%}
+    </div>
+    <ol class="steps">
+      <li><div><strong>{{ 'size_guide.step1_title' | t }}</strong><p>{{ 'size_guide.step1_text' | t }}</p></div></li>
+      <li><div><strong>{{ 'size_guide.step2_title' | t }}</strong><p>{{ 'size_guide.step2_text' | t }}</p></div></li>
+      <li><div><strong>{{ 'size_guide.step3_title' | t }}</strong><p>{{ 'size_guide.step3_text' | t }}</p></div></li>
+      <li><div><strong>{{ 'size_guide.step4_title' | t }}</strong><p>{{ 'size_guide.step4_text' | t }}</p></div></li>
+    </ol>
+  </div>
+{%- endcapture -%}
+
+{%- if inline -%}
+  <div class="size-guide-inline">{{ sizer }}</div>
+{%- else -%}
+  <div class="modal" id="SizeGuide" data-modal aria-hidden="true">
+    <button class="modal__overlay" type="button" data-modal-close tabindex="-1" aria-label="{{ 'general.close' | t }}"></button>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="SizeGuideTitle">
+      <button class="icon-btn modal__close" type="button" data-modal-close>{% render 'icon', name: 'close' %}<span class="visually-hidden">{{ 'general.close' | t }}</span></button>
+      <p class="eyebrow">{{ 'size_guide.eyebrow' | t }}</p>
+      <h2 class="h2" id="SizeGuideTitle">{{ 'size_guide.title' | t }}</h2>
+      {{ sizer }}
+    </div>
+  </div>
+{%- endif -%}

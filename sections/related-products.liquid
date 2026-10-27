@@ -1,0 +1,53 @@
+{%- comment -%}
+  Rekomendacje: najpierw inne kolory z tej samej rodziny (opcjonalnie), potem rekomendacje Shopify.
+{%- endcomment -%}
+{%- liquid
+  assign d_heading = 'sections.related.heading_html' | t
+-%}
+<section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;"
+  data-recommendations data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.limit }}&intent=related" {{ section.shopify_attributes }}>
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    <div class="container container--wide">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">{{ 'sections.related.eyebrow' | t }}</p>
+          <h2>{{ section.settings.heading | default: d_heading }}</h2>
+        </div>
+        <div class="slider-nav">
+          <button type="button" data-slider-prev="Slider-{{ section.id }}" aria-label="{{ 'general.previous' | t }}">{% render 'icon', name: 'arrow' %}</button>
+          <button type="button" data-slider-next="Slider-{{ section.id }}" aria-label="{{ 'general.next' | t }}">{% render 'icon', name: 'arrow' %}</button>
+        </div>
+      </div>
+      <div class="slider slider--bleed" id="Slider-{{ section.id }}" style="--cols: 4;">
+        {%- for rec in recommendations.products -%}
+          {% render 'product-card', product: rec, sizes: '(min-width: 990px) 25vw, 78vw' %}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+<script>
+  (() => {
+    const el = document.currentScript.previousElementSibling;
+    if (!el || el.children.length) return;
+    fetch(el.dataset.url).then((r) => r.text()).then((text) => {
+      const html = new DOMParser().parseFromString(text, 'text/html');
+      const fresh = html.querySelector('[data-recommendations]');
+      if (fresh && fresh.innerHTML.trim()) el.innerHTML = fresh.innerHTML;
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Polecane produkty",
+  "settings": [
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek", "info": "Puste = tekst domyślny (PL/IT/DA)." },
+    { "type": "range", "id": "limit", "label": "Liczba produktów", "min": 4, "max": 10, "step": 1, "default": 8 },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": false },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,575 @@
+{
+  "general": {
+    "close": "Zamknij",
+    "previous": "Poprzedni",
+    "next": "Następny",
+    "meta": {
+      "page": "Strona {{ page }}"
+    },
+    "breadcrumbs": {
+      "home": "Strona główna",
+      "label": "Okruszki"
+    },
+    "pagination": {
+      "label": "Paginacja",
+      "previous": "Poprzednia strona",
+      "next": "Następna strona",
+      "page": "Strona {{ number }}"
+    },
+    "errors": {
+      "generic": "Coś poszło nie tak. Spróbuj ponownie."
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Przejdź do treści"
+  },
+  "header": {
+    "menu": "Menu",
+    "search": "Szukaj",
+    "account": "Konto",
+    "cart": "Koszyk",
+    "main_navigation": "Nawigacja główna",
+    "tagline": "skórzane buty barefoot dla dzieci",
+    "promo_text": "Helis WIDE – więcej miejsca dla pulchnych stópek"
+  },
+  "announcement": {
+    "free_shipping": "Darmowa wysyłka",
+    "delivery": "Dostawa w 3–5 dni roboczych",
+    "returns": "14 dni na zwrot",
+    "handmade": "Ręcznie szyte z naturalnej skóry"
+  },
+  "localization": {
+    "country_label": "Kraj / waluta",
+    "language_label": "Język",
+    "update": "Zmień"
+  },
+  "search": {
+    "title": "Wyszukiwanie",
+    "placeholder": "Czego szukasz? Np. Helis, kapcie, sandałki…",
+    "popular": "Popularne",
+    "products": "Produkty",
+    "view_all": "Zobacz wszystkie wyniki dla „{{ terms }}”",
+    "no_results": "Brak wyników dla „{{ terms }}”. Sprawdź pisownię lub wpisz inną frazę.",
+    "results_for": "Wyniki dla „{{ terms }}”"
+  },
+  "newsletter": {
+    "eyebrow": "Newsletter",
+    "heading_html": "Nowe kolory <em>jako pierwsi</em>",
+    "text": "Raz na jakiś czas: premiery modeli, porady o zdrowym rozwoju stóp i oferty tylko dla subskrybentów.",
+    "email": "Twój adres e-mail",
+    "submit": "Zapisz się",
+    "success": "Dziękujemy! Sprawdź skrzynkę – wkrótce się odezwiemy.",
+    "consent": "Zapisując się, akceptujesz politykę prywatności. Możesz zrezygnować w każdej chwili."
+  },
+  "footer": {
+    "about": "OBEX to skórzane buty barefoot dla dzieci, szyte ręcznie z naturalnych materiałów. Projektujemy je tak, by małe stopy mogły rosnąć swobodnie – jak boso.",
+    "contact": "Kontakt"
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "heading_html": "Chętnie <em>pomożemy</em>",
+    "text": "Masz pytanie o rozmiar, zamówienie albo zwrot? Napisz do nas – odpowiadamy w dni robocze.",
+    "phone": "Telefon",
+    "hours": "Godziny pracy",
+    "hours_value": "Pn–Pt 8:00–16:00 (CET)",
+    "company": "Dane firmy",
+    "name": "Imię",
+    "email": "E-mail",
+    "order": "Numer zamówienia (opcjonalnie)",
+    "message": "Wiadomość",
+    "send": "Wyślij wiadomość",
+    "success": "Dziękujemy za wiadomość! Odpowiemy najszybciej, jak to możliwe.",
+    "reply_time": "Odpowiadamy zwykle w ciągu 1 dnia roboczego."
+  },
+  "cart": {
+    "title": "Koszyk",
+    "empty": "Twój koszyk jest pusty",
+    "empty_text": "Znajdź parę, w której Twoje dziecko poczuje się jak boso.",
+    "continue": "Przejdź do sklepu",
+    "remove": "Usuń",
+    "subtotal": "Suma",
+    "taxes_included_shipping": "Cena zawiera VAT. Koszt wysyłki obliczymy przy kasie.",
+    "taxes_shipping": "Podatki i koszt wysyłki obliczymy przy kasie.",
+    "checkout": "Przejdź do kasy",
+    "view_cart": "Zobacz koszyk",
+    "note": "Uwagi do zamówienia",
+    "free_shipping_remaining_html": "Brakuje Ci <strong>{{ amount }}</strong> do darmowej dostawy",
+    "free_shipping_reached_html": "<strong>Masz darmową dostawę!</strong>",
+    "free_shipping_progress": "Postęp do darmowej dostawy"
+  },
+  "collection": {
+    "eyebrow": "Kolekcja",
+    "all_collections": "Wszystkie kolekcje",
+    "filters": "Filtry",
+    "sort": "Sortuj",
+    "from": "Od",
+    "to": "Do",
+    "apply": "Zastosuj",
+    "clear": "Wyczyść filtry",
+    "show_results": "Pokaż wyniki",
+    "related": "Powiązane kolekcje",
+    "empty": "Brak produktów spełniających wybrane kryteria.",
+    "product_count": {
+      "one": "{{ count }} produkt",
+      "few": "{{ count }} produkty",
+      "many": "{{ count }} produktów",
+      "other": "{{ count }} produktu"
+    }
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "empty": "Wkrótce pojawią się tu pierwsze artykuły.",
+    "back": "Wróć do bloga"
+  },
+  "password": {
+    "heading": "Wkrótce otwieramy",
+    "notify": "Powiadom mnie",
+    "owner": "Jesteś właścicielem sklepu?",
+    "password": "Hasło",
+    "enter": "Wejdź"
+  },
+  "gift_card": {
+    "title": "Twoja karta podarunkowa",
+    "disabled": "Ta karta podarunkowa jest nieaktywna.",
+    "expires_on": "Ważna do {{ date }}",
+    "shop": "Przejdź do sklepu"
+  },
+  "templates": {
+    "404": {
+      "title": "Nie znaleźliśmy tej strony",
+      "text": "Strona mogła zostać przeniesiona albo adres zawiera literówkę. Zajrzyj do naszych kolekcji."
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Dodaj do koszyka",
+      "added": "Dodano do koszyka",
+      "sold_out": "Wyprzedane",
+      "unavailable": "Niedostępne",
+      "select_size": "Wybierz rozmiar",
+      "choose_size": "Wybierz rozmiar",
+      "on_sale": "Promocja",
+      "new": "Nowość",
+      "sale_price": "Cena promocyjna",
+      "regular_price": "Cena regularna",
+      "price_from_html": "od {{ price }}",
+      "sizes_range": "Rozmiary {{ from }}–{{ to }}",
+      "color": "Kolor",
+      "colors_count": {
+        "one": "{{ count }} kolor",
+        "few": "{{ count }} kolory",
+        "many": "{{ count }} kolorów",
+        "other": "{{ count }} koloru"
+      },
+      "quantity": "Ilość",
+      "quantity_decrease": "Zmniejsz ilość",
+      "quantity_increase": "Zwiększ ilość",
+      "tax_included": "Cena zawiera VAT",
+      "tax_excluded": "Cena nie zawiera podatku",
+      "shipping_policy_html": "<a href=\"{{ link }}\">koszt wysyłki</a> obliczymy przy kasie",
+      "zoom": "Powiększ zdjęcie"
+    },
+    "assurance": {
+      "delivery_html": "<strong>Dostawa {{ days }} dni roboczych</strong> – {{ country }}",
+      "returns_html": "<strong>{{ days }} dni na zwrot</strong> – bez podawania przyczyny",
+      "handmade_html": "<strong>Szyte ręcznie</strong> ze skóry naturalnej",
+      "secure_html": "<strong>Bezpieczne płatności</strong> – szyfrowane połączenie"
+    },
+    "highlights": {
+      "leather": "Skóra naturalna",
+      "zero_drop": "Zero drop",
+      "flex": "Elastyczna podeszwa 3 mm",
+      "handmade": "Szyte ręcznie"
+    },
+    "tabs": {
+      "description": "Opis",
+      "specs": "Szczegóły i materiały",
+      "care": "Pielęgnacja",
+      "shipping": "Dostawa i zwroty",
+      "care_html": "<p>Zabrudzenia przecieraj miękką, lekko wilgotną ściereczką. Nie pierz butów w pralce i nie susz ich na kaloryferze ani w pełnym słońcu – pozwól im wyschnąć w temperaturze pokojowej.</p><p>Aby skóra zachowała miękkość i była odporniejsza na wilgoć, stosuj od czasu do czasu naturalny wosk lub impregnat do skóry licowej.</p>",
+      "shipping_html": "<p>Zamówienia wysyłamy zwykle w ciągu 24 godzin w dni robocze. Koszt i przewidywany czas dostawy do Twojego kraju zobaczysz przy kasie, zanim zapłacisz.</p><p>Masz {{ days }} dni na zwrot nienoszonych butów. Jeśli chcesz wymienić rozmiar, odeślij niepasującą parę i złóż nowe zamówienie – tak będzie najszybciej.</p>"
+    }
+  },
+  "size_guide": {
+    "open": "Tabela rozmiarów",
+    "eyebrow": "Dobór rozmiaru",
+    "title": "Znajdź idealny rozmiar",
+    "section_heading_html": "Kalkulator <em>rozmiaru</em>",
+    "section_text": "Wpisz długość stopy dziecka w milimetrach – podświetlimy rozmiar z odpowiednim zapasem na wzrost.",
+    "tab_find": "Znajdź rozmiar",
+    "tab_measure": "Jak zmierzyć stopę",
+    "find_heading": "Wpisz długość stopy",
+    "find_text": "Tabela pokaże, ile miejsca na wzrost zostanie w każdym rozmiarze. Zmierz obie stopy i wpisz wynik dłuższej.",
+    "input_label": "Długość stopy (mm)",
+    "input_placeholder": "np. 144",
+    "result_empty_html": "Zalecamy <strong>{{ min }}–{{ max }} mm</strong> zapasu między stopą a wkładką.",
+    "recommended_size": "Polecany rozmiar",
+    "perfect": "Zapas na wzrost: __MARGIN__ mm",
+    "too_small": "Za mały",
+    "apply": "Wybierz ten rozmiar",
+    "th_size": "Rozmiar EU",
+    "th_insole": "Wkładka",
+    "th_margin": "Zapas",
+    "step1_title": "Pięta przy ścianie",
+    "step1_text": "Połóż kartkę na płaskiej podłodze, dosuniętą do ściany. Postaw na niej stopę dziecka tak, by pięta lekko dotykała ściany.",
+    "step2_title": "Zaznacz najdłuższy palec",
+    "step2_text": "Zrób kreskę przy najdalej wysuniętym palcu, trzymając ołówek pionowo. Dziecko powinno stać, a nie siedzieć.",
+    "step3_title": "Zmierz obie stopy",
+    "step3_text": "Stopy często minimalnie się różnią – zawsze bierz pod uwagę wynik dłuższej.",
+    "step4_title": "Wpisz wynik w milimetrach",
+    "step4_text": "Zmierz odległość od krawędzi kartki do kreski i wpisz ją w kalkulatorze."
+  },
+  "sections": {
+    "hero": {
+      "eyebrow": "Skórzane buty barefoot dla dzieci",
+      "heading_html": "Pierwsze kroki <em>jak boso</em>",
+      "text": "Miękka skóra naturalna, cienka, elastyczna podeszwa i szeroki nosek. Szyte ręcznie z myślą o zdrowym rozwoju małych stóp.",
+      "button_1": "Zobacz kolekcję",
+      "button_2": "Nasza historia",
+      "badge_1": "Skóra naturalna",
+      "badge_2": "Szyte ręcznie",
+      "badge_3": "Rozmiary 19–33"
+    },
+    "collection_tiles": {
+      "eyebrow": "Kolekcje",
+      "heading_html": "Na każdą <em>okazję</em>",
+      "view_all": "Wszystkie kolekcje",
+      "models": {
+        "one": "{{ count }} model",
+        "few": "{{ count }} modele",
+        "many": "{{ count }} modeli",
+        "other": "{{ count }} modelu"
+      }
+    },
+    "featured_collection": {
+      "eyebrow": "Bestsellery",
+      "heading_html": "Ulubieńcy <em>rodziców</em>",
+      "view_all": "Zobacz wszystkie"
+    },
+    "features": {
+      "eyebrow": "Dlaczego barefoot",
+      "heading_html": "Zaprojektowane <em>dla rosnących stóp</em>",
+      "text": "Każdy detal ma jeden cel: dać stopie dziecka swobodę, której potrzebuje do prawidłowego rozwoju."
+    },
+    "materials": {
+      "eyebrow": "Materiały",
+      "heading_html": "Z natury, <em>z ręki rzemieślnika</em>"
+    },
+    "testimonials": {
+      "eyebrow": "Opinie",
+      "heading_html": "Co mówią <em>rodzice</em>",
+      "rating": "Ocena: {{ rating }} na 5",
+      "verified": "Zweryfikowany zakup",
+      "verified_customer": "Klient OBEX",
+      "translated": "przetłumaczono z polskiego"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "heading_html": "Masz <em>pytania?</em>",
+      "text": "Zebraliśmy odpowiedzi na to, o co rodzice pytają najczęściej.",
+      "contact": "Napisz do nas"
+    },
+    "related": {
+      "eyebrow": "Polecamy",
+      "heading_html": "Może Ci się <em>spodobać</em>"
+    }
+  },
+  "usp": {
+    "health": {
+      "title": "Zdrowy rozwój",
+      "text": "Wspiera naturalną motorykę i prawidłową postawę dziecka."
+    },
+    "flexible": {
+      "title": "Pełna elastyczność",
+      "text": "Miękka podeszwa daje swobodę ruchu i czucie podłoża."
+    },
+    "leather": {
+      "title": "Skóra naturalna",
+      "text": "Oddychające, starannie wyselekcjonowane materiały."
+    },
+    "shipping": {
+      "title": "Szybka wysyłka",
+      "text": "Zamówienia nadajemy zwykle w ciągu 24 h."
+    },
+    "handmade": {
+      "title": "Szyte ręcznie",
+      "text": "Każda para powstaje z dbałością o detal."
+    },
+    "returns": {
+      "title": "14 dni na zwrot",
+      "text": "Przymierz w domu bez pośpiechu."
+    }
+  },
+  "materials": {
+    "leather": {
+      "title": "Skóra naturalna",
+      "text": "Nasze obuwie tworzymy z naturalnej skóry – miękkiej i elastycznej, dzięki czemu dopasowuje się do stopy i pozwala jej oddychać. Skórzane wnętrze w połączeniu z amortyzującą wkładką chroni przed otarciami i daje dziecku pełen komfort oraz naturalne odczucie chodzenia boso."
+    },
+    "rubber": {
+      "title": "Termokauczuk",
+      "text": "Podstawą naszych butów jest ultraelastyczna podeszwa z termokauczuku. Łączy trwałość z miękkością, zapewniając stopom naturalną swobodę ruchu. Wysoka odporność na ścieranie i dobra przyczepność dają bezpieczeństwo podczas zabawy, a materiał pozostaje lekki."
+    },
+    "handmade": {
+      "title": "Ręcznie szyte",
+      "text": "Nasze buty to owoc pasji i rzemieślniczej precyzji. Każda para powstaje ręcznie, z dbałością o najmniejszy detal. Używamy wyłącznie starannie wyselekcjonowanych, naturalnych materiałów, by zapewnić trwałość i wyjątkowy komfort."
+    }
+  },
+  "features": {
+    "toe_box": {
+      "title": "Szeroki nosek",
+      "text": "Kształt stopy, nie buta. Palce mają miejsce, by swobodnie się rozłożyć i łapać równowagę przy każdym kroku."
+    },
+    "zero_drop": {
+      "title": "Zero drop",
+      "text": "Pięta i palce na tym samym poziomie. Płaska podeszwa wspiera naturalną postawę całego ciała."
+    },
+    "sole": {
+      "title": "Podeszwa 3 mm",
+      "text": "Cienka podeszwa z termokauczuku pozwala czuć podłoże, a jednocześnie chroni przed kamieniami i twardym betonem."
+    },
+    "flex": {
+      "title": "Pełna elastyczność",
+      "text": "But zgina się w każdym kierunku razem ze stopą – mięśnie pracują i wzmacniają się przy każdym kroku."
+    },
+    "leather": {
+      "title": "Skóra naturalna",
+      "text": "Miękka, oddychająca skóra licowa i zamszowa dopasowuje się do stopy i nie powoduje otarć."
+    },
+    "fit": {
+      "title": "Łatwe zakładanie",
+      "text": "Szeroki otwór i zapięcie na rzep sprawdzą się także przy pulchnej stopie i wysokim podbiciu. Wybrane modele mają wersję WIDE."
+    },
+    "proprio": {
+      "title": "Czucie podłoża",
+      "text": "Stopy mają ogromną liczbę zakończeń nerwowych. Informacje o podłożu pomagają w nauce równowagi i koordynacji."
+    },
+    "bones": {
+      "title": "Rosnące kości",
+      "text": "Stopa dziecka składa się w dużej mierze z chrząstki, która kostnieje latami. Dlatego tak ważne jest, by but jej nie ściskał."
+    }
+  },
+  "reviews": {
+    "r1": {
+      "title": "Jakość, która znosi wszystko",
+      "text": "Mój przedszkolak to wulkan energii, więc buty nie mają z nim lekko. Te skórzane buciki świetnie znoszą codzienne szaleństwa na placu zabaw.",
+      "author": ""
+    },
+    "r2": {
+      "title": "Jakby chodziła boso!",
+      "text": "Córka wcześniej natychmiast ściągała z nóg każde założone buty. Podeszwa w OBEX jest na tyle elastyczna i lekka, że mała nawet nie zauważa, że ma je na sobie. Pokochała je od razu.",
+      "author": "Patrycja, mama Zosi"
+    },
+    "r3": {
+      "title": "Mięciutka skóra i piękny design",
+      "text": "Rzadko zdarza się, by profilaktyczne buty dla dzieci wyglądały aż tak elegancko. Naturalna skóra jest bardzo delikatna, nie ma mowy o żadnych otarciach, nawet w cieplejsze dni. Polecam z czystym sumieniem.",
+      "author": ""
+    },
+    "r4": {
+      "title": "W końcu buty, które pasują!",
+      "text": "Długo szukaliśmy butów na wysokie podbicie i pulchną stópkę naszego synka. Model WIDE to strzał w dziesiątkę. Zakłada się je w sekundę, nic nie uciska, a mały biega w nich z uśmiechem.",
+      "author": "Anna, mama Ignasia"
+    },
+    "r5": {
+      "title": "Idealne na pierwsze kroki",
+      "text": "Buciki poleciła nam fizjoterapeutka. Są niesamowicie leciutkie, a podeszwa wygina się we wszystkie strony. Widać ogromną różnicę w tym, jak stabilnie córka łapie w nich równowagę.",
+      "author": ""
+    },
+    "r6": {
+      "title": "",
+      "text": "Najlepsze buty barefoot, jakie mieliśmy! Mięciutka skóra, a elastyczna podeszwa pozwala synkowi biegać jak boso. Zdecydowanie warte swojej ceny.",
+      "author": "Katarzyna M."
+    },
+    "r7": {
+      "title": "",
+      "text": "Szukałam butów, które nie będą ściskać palców mojej córki, i w końcu trafiłam na OBEX. Jakość wykonania powala, widać polskie rzemiosło w każdym szwie.",
+      "author": "Agnieszka W."
+    },
+    "r8": {
+      "title": "",
+      "text": "Piękny design i naturalne materiały. Buty są bardzo lekkie i bez problemu zakładają się na wyższe podbicie. Będziemy wracać po kolejne rozmiary!",
+      "author": "Tomasz P."
+    }
+  },
+  "faq": {
+    "size": {
+      "q": "Jaki rozmiar wybrać i ile zostawić zapasu?",
+      "a_html": "<p>Postaw stopę dziecka na kartce dosuniętej do ściany, zaznacz najdłuższy palec i zmierz odległość w milimetrach. Wpisz wynik w kalkulatorze na stronie produktu – podświetli rozmiar z zalecanym zapasem na wzrost.</p>"
+    },
+    "care": {
+      "q": "Jak dbać o buty OBEX?",
+      "a_html": "<p>Nie pierz butów w pralce i nie susz ich na kaloryferze. Zabrudzenia przecieraj wilgotną ściereczką. Aby skóra zachowała miękkość i była odporniejsza na wilgoć, stosuj naturalne woski lub impregnaty do skóry licowej.</p>"
+    },
+    "sole": {
+      "q": "Dlaczego podeszwa jest taka cienka?",
+      "a_html": "<p>To celowy zabieg zalecany przez fizjoterapeutów. Podeszwa z termokauczuku ma 3 mm, dzięki czemu dziecko czuje podłoże (propriocepcja), co wspiera rozwój mięśni stopy i postawy. Jest bardzo elastyczna, a jednocześnie chroni przed szkłem, kamieniami i twardym betonem.</p>"
+    },
+    "wide": {
+      "q": "Czy buty pasują na pulchną stopę z wysokim podbiciem?",
+      "a_html": "<p>Tak. Szeroki otwór i wygodne zapięcie na rzep ułatwiają zakładanie i pozwalają dopasować but zarówno do drobnej, jak i pulchniejszej stopy. Dla dzieci z wyraźnie szerszą stopą przygotowaliśmy model Helis WIDE.</p>"
+    },
+    "returns": {
+      "q": "Jak wyglądają zwroty i wymiany?",
+      "a_html": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
+    },
+    "shipping": {
+      "q": "Czy wysyłacie do Włoch i Danii?",
+      "a_html": "<p>Tak. Zamówienia nadajemy zwykle w ciągu 24 godzin w dni robocze, a dostawa trwa przeważnie 3–5 dni roboczych. Ceny widzisz w walucie swojego kraju, a dokładny koszt dostawy pokażemy przy kasie, zanim zapłacisz.</p>"
+    },
+    "indoor_outdoor": {
+      "q": "Czym różnią się modele Indoor i Outdoor?",
+      "a_html": "<p>Modele Indoor to miękkie kapcie do domu i przedszkola. Modele Outdoor mają tę samą elastyczną konstrukcję barefoot, ale są przeznaczone do chodzenia na zewnątrz. Wszystkie wykonujemy ze skóry naturalnej.</p>"
+    },
+    "first_steps": {
+      "q": "Od kiedy dziecko może nosić buty barefoot?",
+      "a_html": "<p>Nasze najmniejsze buty mają rozmiar 19 (wkładka 125 mm) i zwykle pasują dzieciom stawiającym pierwsze kroki. Miękka, elastyczna podeszwa nie przeszkadza w nauce chodzenia. W razie wątpliwości co do rozwoju stóp warto skonsultować się z fizjoterapeutą.</p>"
+    }
+  },
+  "marquee": {
+    "barefoot": "Barefoot od pierwszych kroków",
+    "leather": "Skóra naturalna",
+    "handmade": "Szyte ręcznie",
+    "wide": "Miejsce dla każdego palca",
+    "zero_drop": "Zero drop"
+  },
+  "content": {
+    "home": {
+      "story": {
+        "eyebrow": "Filozofia OBEX",
+        "heading_html": "Pozwól stopom rosnąć <em>tak, jak zaplanowała natura</em>",
+        "text_html": "<p>Wierzymy, że najlepszym wsparciem dla rozwijającej się stopy jest brak niepotrzebnego krępowania. Buty OBEX projektujemy tak, by naśladowały chodzenie boso – i dawały dzieciom dokładnie to, czego potrzebują do zdrowego wzrostu.</p>",
+        "button": "Poznaj naszą historię",
+        "badge": "Szyte ręcznie"
+      },
+      "point_shape": {
+        "title": "Anatomiczny kształt",
+        "text": "Szeroki nosek daje palcom miejsce na naturalny rozstaw i łapanie równowagi."
+      },
+      "point_zero_drop": {
+        "title": "Płaska podeszwa (zero drop)",
+        "text": "Równy poziom od pięty po palce wspiera prawidłową postawę całego ciała."
+      },
+      "point_flex": {
+        "title": "Pełna elastyczność",
+        "text": "Miękkie materiały zginają się w każdym kierunku i wzmacniają mięśnie przy każdym kroku."
+      },
+      "wide": {
+        "eyebrow": "Helis WIDE",
+        "heading_html": "Więcej przestrzeni, <em>ten sam komfort</em>",
+        "text_html": "<p>Każda stopa rośnie w swoim tempie. Z myślą o dzieciach z szerszą stópką i wyższym podbiciem stworzyliśmy Helis WIDE. Poszerzona podeszwa daje palcom pełną swobodę, a przeprojektowana cholewka nie uciska podbicia.</p>",
+        "button": "Zobacz modele WIDE",
+        "badge": "WIDE"
+      }
+    },
+    "about": {
+      "intro": {
+        "eyebrow": "O nas",
+        "heading_html": "Nasza <em>historia</em>",
+        "text_html": "<p>Za każdą parą bucików OBEX stoi troska o zdrowy rozwój i miłość do prawdziwego rzemiosła. Od pierwszego szkicu po ostatni szew stawiamy na jakość i bezkompromisowe podejście do anatomii małych stóp.</p>"
+      },
+      "passion": {
+        "eyebrow": "Początek",
+        "heading_html": "Z pasji do <em>pierwszych kroków</em>",
+        "text_html": "<p>Marka OBEX zrodziła się z prostego przekonania: stopa dziecka to precyzyjny mechanizm, który zasługuje na najlepszą opiekę. Od początku tworzymy obuwie, które nie ogranicza, lecz wspiera naturalny rytm rozwoju malucha.</p>"
+      },
+      "material": {
+        "eyebrow": "Materiały",
+        "heading_html": "Szlachetność <em>naturalnych materiałów</em>",
+        "text_html": "<p>Wybieramy to, co daje natura. Skóra licowa i zamszowa zapewniają wyjątkową miękkość i dopasowanie, pozwalają stopie oddychać i znoszą nawet najdziksze zabawy – łącząc stonowaną elegancję z praktycznymi rozwiązaniami.</p>"
+      },
+      "craft": {
+        "eyebrow": "Rzemiosło",
+        "heading_html": "Ręczna robota i <em>mistrzowska precyzja</em>",
+        "text_html": "<p>Sercem OBEX jest tradycyjne rzemiosło. Każda para bucików to efekt ręcznej pracy, w której dbałość o detal jest gwarancją jakości. Dzięki temu kontrolujemy każdy szew, a obuwie jest nie tylko piękne, ale przede wszystkim trwałe i bezpieczne.</p>"
+      },
+      "barefoot": {
+        "eyebrow": "Filozofia",
+        "heading_html": "Barefoot: <em>bliżej natury</em>",
+        "text_html": "<p>Projektując podeszwy, kierujemy się ideą barefoot. Dla zdrowego rozwoju mięśni i więzadeł stopa dziecka musi czuć podłoże i pracować bez przeszkód. Nasze elastyczne podeszwy pozwalają na naturalny ruch, a jednocześnie chronią.</p>",
+        "button": "Zobacz kolekcję"
+      }
+    },
+    "size": {
+      "intro": {
+        "eyebrow": "Przewodnik",
+        "heading_html": "Jak dobrać <em>rozmiar</em>",
+        "text_html": "<p>Dobry rozmiar to najważniejszy krok do zdrowego rozwoju stóp. Każda mała stopa jest inna, dlatego przygotowaliśmy prosty przewodnik i kalkulator, który wskaże rozmiar z odpowiednim zapasem.</p>"
+      },
+      "measure": {
+        "eyebrow": "Krok 1",
+        "heading_html": "Jak prawidłowo <em>zmierzyć stopę?</em>",
+        "text_html": "<p>Postaw stopę dziecka na kartce tak, by pięta lekko dotykała ściany. Trzymając ołówek pionowo, zaznacz linię przy najdłuższym palcu i zmierz odległość od brzegu kartki. Zmierz obie stopy – mogą się minimalnie różnić. Zawsze kieruj się wynikiem dłuższej.</p>"
+      },
+      "width": {
+        "eyebrow": "Szerokość",
+        "heading_html": "Pamiętamy o <em>szerokości stopy</em>",
+        "text_html": "<p>Nasze buty mają szeroki, anatomiczny nosek, dzięki czemu pasują na stopy normalne i szersze. Palce mogą się swobodnie rozłożyć podczas chodzenia, co stabilizuje postawę. Dla wyraźnie szerszych stóp polecamy model Helis WIDE.</p>"
+      },
+      "calculator": {
+        "eyebrow": "Kalkulator",
+        "heading_html": "Skorzystaj z <em>kalkulatora</em>",
+        "text_html": "<p>Na każdej karcie produktu znajdziesz kalkulator rozmiarów. Wpisz długość stopy w milimetrach – system doliczy zdrowy zapas na wzrost i wskaże rozmiar idealny dla Twojego malucha.</p>"
+      },
+      "frequency": {
+        "eyebrow": "Kontrola",
+        "heading_html": "Jak często <em>sprawdzać rozmiar?</em>",
+        "text_html": "<p>Stopy dzieci rosną skokowo. Zalecamy pomiar co 2 miesiące u dzieci do 1. roku życia, co 3 miesiące w wieku 1–3 lat i co 4–6 miesięcy u przedszkolaków. Jeśli dziecko częściej się potyka, to znak, że czas na nowy pomiar.</p>",
+        "button": "Zobacz kolekcję"
+      }
+    },
+    "care": {
+      "intro": {
+        "eyebrow": "Pielęgnacja",
+        "heading_html": "Jak dbać o <em>buty OBEX</em>",
+        "text_html": "<p>Nasze buty powstają z naturalnej skóry, która oddycha i dopasowuje się do stopy. Aby zachowały piękny wygląd i swoje właściwości, wystarczą cztery proste zasady.</p>"
+      },
+      "leather": {
+        "eyebrow": "Materiał",
+        "heading_html": "Szlachetność <em>naturalnej skóry</em>",
+        "text_html": "<p>Wszystkie produkty OBEX wykonujemy ze skóry naturalnej, która zapewnia małym stopom dobrą wentylację i komfort. Aby buciki długo zachowały miękkość i elastyczność, pamiętaj o kilku zasadach.</p>"
+      },
+      "cloth": {
+        "eyebrow": "Czyszczenie",
+        "heading_html": "Tylko <em>wilgotna ściereczka</em>",
+        "text_html": "<p>Codzienne zabrudzenia usuwaj miękką, lekko zwilżoną ściereczką. To najbezpieczniejszy sposób na odświeżenie naturalnego materiału bez ryzyka uszkodzenia jego delikatnej, oddychającej struktury.</p>"
+      },
+      "no_wash": {
+        "eyebrow": "Ważne",
+        "heading_html": "Nigdy <em>w pralce</em>",
+        "text_html": "<p>Nie wkładaj butów OBEX do pralki. Duża ilość wody, wirowanie i detergenty niszczą strukturę skóry, powodując jej nieodwracalne stwardnienie i deformację.</p>"
+      },
+      "drying": {
+        "eyebrow": "Suszenie",
+        "heading_html": "Naturalne <em>suszenie</em>",
+        "text_html": "<p>Jeśli buty zamokną, pozwól im wyschnąć w temperaturze pokojowej. Unikaj kaloryfera i pełnego słońca – gwałtowne suszenie wysusza skórę i może prowadzić do pęknięć.</p>"
+      }
+    },
+    "facts": {
+      "intro": {
+        "eyebrow": "Ciekawostki",
+        "heading_html": "Dziecięce stopy <em>i barefoot</em>",
+        "text_html": "<p>Kilka faktów o tym, jak rozwijają się stopy dzieci – i dlaczego tak ważne jest, w czym stawiają pierwsze kroki.</p>"
+      },
+      "cartilage": {
+        "eyebrow": "Fakt 1",
+        "heading_html": "Stopa dziecka to <em>głównie chrząstka</em>",
+        "text_html": "<p>Stopy noworodka nie mają jeszcze w pełni wykształconych kości – składają się w dużej mierze z miękkiej, elastycznej chrząstki, która twardnieje z czasem. Proces kostnienia trwa wiele lat, dlatego w pierwszych latach życia tak łatwo zdeformować stopę sztywnym, źle dobranym obuwiem.</p>"
+      },
+      "proprio": {
+        "eyebrow": "Fakt 2",
+        "heading_html": "Stopy to <em>okno na świat</em>",
+        "text_html": "<p>Stopy mają bardzo dużo zakończeń nerwowych. Gdy dziecko chodzi boso lub w butach barefoot, mózg otrzymuje ciągły strumień informacji o podłożu: czy jest twarde, miękkie, chłodne, pochyłe czy śliskie. To kluczowe dla nauki równowagi i koordynacji.</p>"
+      },
+      "shape": {
+        "eyebrow": "Fakt 3",
+        "heading_html": "Kształt stopy, <em>a nie buta</em>",
+        "text_html": "<p>Klasyczne buty dziecięce często mają zwężane czubki, które ściskają palce. Buty OBEX mają szeroki, anatomiczny nosek, dzięki któremu palce mogą się wachlarzowo rozłożyć przy każdym kroku – to ważne dla stabilności i rozwoju łuku stopy.</p>"
+      },
+      "zero_drop": {
+        "eyebrow": "Fakt 4",
+        "heading_html": "Zero drop – <em>równowaga zaczyna się od pięty</em>",
+        "text_html": "<p>Wiele tradycyjnych butów ma podwyższoną piętę, która zmienia środek ciężkości dziecka i obciąża przodostopie. W butach OBEX pięta i palce są na tym samym poziomie. To wspiera naturalną postawę i ułatwia naukę stabilnego chodzenia.</p>",
+        "button": "Zobacz kolekcję"
+      }
+    }
+  }
+}

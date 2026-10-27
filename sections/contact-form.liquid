@@ -1,0 +1,62 @@
+{%- liquid
+  assign d_eyebrow = 'contact.eyebrow' | t
+  assign d_heading = 'contact.heading_html' | t
+  assign d_text = 'contact.text' | t
+  assign form_id = 'ContactForm-' | append: section.id
+-%}
+<section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="container container--wide contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+      <h2>{{ section.settings.heading | default: d_heading }}</h2>
+      <p class="lead">{{ section.settings.text | default: d_text }}</p>
+      <div style="margin-top:2rem">
+        {%- if settings.contact_phone != blank -%}
+          <div class="contact-card">{% render 'icon', name: 'phone' %}<div><strong>{{ 'contact.phone' | t }}</strong><br><a href="tel:{{ settings.contact_phone | remove: ' ' }}">{{ settings.contact_phone }}</a></div></div>
+        {%- endif -%}
+        <div class="contact-card">{% render 'icon', name: 'mail' %}<div><strong>E-mail</strong><br><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></div></div>
+        {%- assign d_hours = 'contact.hours_value' | t -%}{%- assign hours = settings.contact_hours | default: d_hours -%}{%- if hours != blank -%}
+          <div class="contact-card">{% render 'icon', name: 'clock' %}<div><strong>{{ 'contact.hours' | t }}</strong><br>{{ hours }}</div></div>
+        {%- endif -%}
+        {%- if settings.company_details != blank -%}
+          <div class="contact-card">{% render 'icon', name: 'pin' %}<div><strong>{{ 'contact.company' | t }}</strong><br>{{ settings.company_details }}</div></div>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="reveal" data-delay="1">
+      {%- form 'contact', id: form_id -%}
+        {%- if form.posted_successfully? -%}
+          <p class="form-message form-message--success" role="status">{{ 'contact.success' | t }}</p>
+        {%- elsif form.errors -%}
+          <div class="form-message form-message--error" role="alert">{{ form.errors | default_errors }}</div>
+        {%- endif -%}
+        <div class="form-grid form-grid--2">
+          <label class="field"><span>{{ 'contact.name' | t }}</span><input class="input" type="text" name="contact[name]" autocomplete="name" value="{{ form.name }}"></label>
+          <label class="field"><span>{{ 'contact.email' | t }} *</span><input class="input" type="email" name="contact[email]" autocomplete="email" required value="{{ form.email }}"></label>
+        </div>
+        <div class="form-grid" style="margin-top:1rem">
+          <label class="field"><span>{{ 'contact.order' | t }}</span><input class="input" type="text" name="contact[order]" value=""></label>
+          <label class="field"><span>{{ 'contact.message' | t }} *</span><textarea class="textarea" name="contact[body]" required>{{ form.body }}</textarea></label>
+          <input type="hidden" name="contact[market]" value="{{ localization.country.iso_code }} / {{ request.locale.iso_code }}">
+          <button class="btn btn--lg" type="submit">{{ 'contact.send' | t }}</button>
+          <p class="small muted" style="margin:0">{{ 'contact.reply_time' | t }}</p>
+        </div>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Formularz kontaktowy",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "text", "id": "text", "label": "Opis" },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": false },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "presets": [{ "name": "Formularz kontaktowy" }]
+}
+{% endschema %}

@@ -1,0 +1,15 @@
+<div class="section" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="container container--wide">{{ section.settings.custom_liquid }}</div>
+</div>
+
+{% schema %}
+{
+  "name": "Własny Liquid",
+  "settings": [
+    { "type": "liquid", "id": "custom_liquid", "label": "Kod Liquid / HTML" },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 40 }
+  ],
+  "presets": [{ "name": "Własny Liquid" }]
+}
+{% endschema %}

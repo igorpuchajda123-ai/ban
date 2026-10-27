@@ -1,0 +1,155 @@
+{%- comment -%}
+  Zdjęcie + tekst (z listą korzyści). Uniwersalna sekcja dla strony głównej i podstron.
+
+  „Klucz treści” (content_key) wskazuje gotowy tekst w plikach językowych:
+  content.<klucz>.eyebrow / heading_html / text_html / button. Dzięki temu
+  sekcja od razu wyświetla poprawny tekst po polsku, włosku i duńsku.
+  Wpisane w edytorze pola mają pierwszeństwo (tłumaczysz je w Translate & Adapt).
+{%- endcomment -%}
+{%- liquid
+  assign key = section.settings.content_key | strip
+  assign d_eyebrow = ''
+  assign d_heading = ''
+  assign d_text = ''
+  assign d_button = ''
+  assign d_badge = ''
+  if key != blank
+    assign base = 'content.' | append: key
+    assign d_eyebrow = base | append: '.eyebrow' | t
+    assign d_heading = base | append: '.heading_html' | t
+    assign d_text = base | append: '.text_html' | t
+    if section.settings.link != blank
+      assign d_button = base | append: '.button' | t
+    endif
+    if section.settings.show_badge
+      assign d_badge = base | append: '.badge' | t
+    endif
+  endif
+
+  assign eyebrow = section.settings.eyebrow | default: d_eyebrow
+  assign heading = section.settings.heading | default: d_heading
+  assign text = section.settings.text | default: d_text
+  assign button = section.settings.button | default: d_button
+  assign badge = section.settings.badge | default: d_badge
+
+  assign style_class = ''
+  case section.settings.style
+    when 'surface'
+      assign style_class = 'section--surface'
+    when 'surface-2'
+      assign style_class = 'section--surface-2'
+    when 'dark'
+      assign style_class = 'section--dark'
+  endcase
+-%}
+<section class="section {{ style_class }}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="container container--wide">
+    <div class="split{% if section.settings.media_position == 'right' %} split--reverse{% endif %}{% if section.settings.wide_media %} split--wide-media{% endif %}">
+      <div class="split__media{% if section.settings.shape == 'blob' %} split__media--blob{% endif %} reveal" style="--ratio: {{ section.settings.ratio }};">
+        <div class="media">
+          {%- if section.settings.image != blank -%}
+            {{ section.settings.image | image_url: width: 1600 | image_tag: widths: '500, 750, 1000, 1300, 1600', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy', alt: section.settings.image.alt | default: heading | strip_html }}
+          {%- else -%}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+        {%- if section.settings.show_badge and badge != blank -%}
+          <span class="split__badge">{{ badge }}</span>
+        {%- endif -%}
+      </div>
+
+      <div class="split__content">
+        {%- if section.settings.number != blank -%}<span class="row-num reveal">{{ section.settings.number }}</span>{%- endif -%}
+        {%- if eyebrow != blank -%}<p class="eyebrow reveal">{{ eyebrow }}</p>{%- endif -%}
+        {%- if heading != blank -%}
+          <h2 class="reveal" data-delay="1">{{ heading }}</h2>
+        {%- endif -%}
+        {%- if text != blank -%}
+          <div class="rte lead reveal" data-delay="2">{{ text }}</div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="checklist reveal" data-delay="2" role="list">
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign b_title = block.settings.title
+                assign b_text = block.settings.text
+                if block.settings.content_key != blank
+                  assign b_base = 'content.' | append: block.settings.content_key
+                  assign b_dt = b_base | append: '.title' | t
+                  assign b_dx = b_base | append: '.text' | t
+                  assign b_title = b_title | default: b_dt
+                  assign b_text = b_text | default: b_dx
+                endif
+              -%}
+              <li {{ block.shopify_attributes }}>
+                <span class="checklist__icon">{% render 'icon', name: 'check' %}</span>
+                <div><strong>{{ b_title }}</strong><span>{{ b_text }}</span></div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.link != blank and button != blank -%}
+          <div class="reveal" data-delay="3">
+            {%- if section.settings.button_style == 'link' -%}
+              <a class="link-arrow" href="{{ section.settings.link }}">{{ button }} {% render 'icon', name: 'arrow' %}</a>
+            {%- else -%}
+              <a class="btn{% if section.settings.style == 'dark' %} btn--light{% endif %}" href="{{ section.settings.link }}">{{ button }} {% render 'icon', name: 'arrow' %}</a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zdjęcie z tekstem",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Zdjęcie" },
+    { "type": "select", "id": "media_position", "label": "Zdjęcie", "options": [
+      { "value": "left", "label": "Po lewej" }, { "value": "right", "label": "Po prawej" }
+    ], "default": "left" },
+    { "type": "select", "id": "ratio", "label": "Proporcje zdjęcia", "options": [
+      { "value": "4 / 5", "label": "Pionowe 4:5" }, { "value": "1 / 1", "label": "Kwadrat" }, { "value": "3 / 2", "label": "Poziome 3:2" }
+    ], "default": "4 / 5" },
+    { "type": "select", "id": "shape", "label": "Kształt", "options": [
+      { "value": "rounded", "label": "Zaokrąglony" }, { "value": "blob", "label": "Organiczny" }
+    ], "default": "rounded" },
+    { "type": "checkbox", "id": "wide_media", "label": "Szersze zdjęcie", "default": false },
+    { "type": "header", "content": "Treść" },
+    { "type": "text", "id": "content_key", "label": "Klucz treści (tłumaczenia wbudowane)", "info": "Np. home.story, about.craft. Wypełnia puste pola gotowym tekstem PL/IT/DA. Zostaw, jeśli nie wiesz." },
+    { "type": "text", "id": "number", "label": "Numer / znacznik (np. 01)" },
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł" },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "richtext", "id": "text", "label": "Tekst" },
+    { "type": "text", "id": "button", "label": "Przycisk – tekst" },
+    { "type": "url", "id": "link", "label": "Przycisk – link" },
+    { "type": "select", "id": "button_style", "label": "Styl przycisku", "options": [
+      { "value": "button", "label": "Przycisk" }, { "value": "link", "label": "Link ze strzałką" }
+    ], "default": "button" },
+    { "type": "checkbox", "id": "show_badge", "label": "Okrągła naklejka na zdjęciu", "default": false },
+    { "type": "text", "id": "badge", "label": "Tekst naklejki" },
+    { "type": "header", "content": "Wygląd" },
+    { "type": "select", "id": "style", "label": "Tło", "options": [
+      { "value": "default", "label": "Jasne" }, { "value": "surface", "label": "Beżowe" }, { "value": "surface-2", "label": "Piaskowe" }, { "value": "dark", "label": "Ciemne" }
+    ], "default": "default" },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Punkt listy",
+      "settings": [
+        { "type": "text", "id": "content_key", "label": "Klucz treści" },
+        { "type": "text", "id": "title", "label": "Tytuł" },
+        { "type": "text", "id": "text", "label": "Opis" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Zdjęcie z tekstem" }]
+}
+{% endschema %}

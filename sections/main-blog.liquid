@@ -1,0 +1,28 @@
+<div class="container container--wide">
+  {% render 'breadcrumbs' %}
+  <header class="collection-hero"><p class="eyebrow">{{ 'blog.eyebrow' | t }}</p><h1>{{ blog.title }}</h1></header>
+  {%- paginate blog.articles by 9 -%}
+    {%- if blog.articles.size > 0 -%}
+      <div class="articles">
+        {%- for article in blog.articles -%}
+          <a class="article-card" href="{{ article.url }}">
+            <div class="article-card__media">
+              {%- if article.image -%}{{ article.image | image_url: width: 900 | image_tag: widths: '400, 600, 900', sizes: '(min-width: 990px) 33vw, 100vw', loading: 'lazy', alt: article.image.alt | default: article.title }}{%- endif -%}
+            </div>
+            <span class="article-card__meta">{{ article.published_at | time_tag: format: 'date' }}</span>
+            <h2 class="h3">{{ article.title }}</h2>
+            {%- if article.excerpt != blank -%}<p class="muted" style="margin:0">{{ article.excerpt | strip_html | truncatewords: 24 }}</p>{%- endif -%}
+          </a>
+        {%- endfor -%}
+      </div>
+      {% render 'pagination', paginate: paginate %}
+    {%- else -%}
+      <p class="muted">{{ 'blog.empty' | t }}</p>
+    {%- endif -%}
+  {%- endpaginate -%}
+</div>
+<div style="height:5rem"></div>
+
+{% schema %}
+{ "name": "Blog", "settings": [] }
+{% endschema %}

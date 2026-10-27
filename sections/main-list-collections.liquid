@@ -1,0 +1,36 @@
+<div class="container container--wide">
+  {% render 'breadcrumbs' %}
+  <header class="collection-hero">
+    <p class="eyebrow">{{ 'sections.collection_tiles.eyebrow' | t }}</p>
+    <h1>{{ 'collection.all_collections' | t }}</h1>
+  </header>
+  <div class="tiles" style="--cols: 3; --ratio: 4 / 5; margin-bottom: 5rem;">
+    {%- liquid
+      if section.settings.collections != blank
+        assign list = section.settings.collections
+      else
+        assign list = collections
+      endif
+    -%}
+    {%- for c in list -%}
+      {%- if c.products_count == 0 -%}{%- continue -%}{%- endif -%}
+      <a class="tile" href="{{ c.url }}">
+        {%- assign img = c.featured_image -%}
+        {%- if img -%}{{ img | image_url: width: 900 | image_tag: widths: '400, 600, 900', sizes: '(min-width: 990px) 33vw, 50vw', loading: 'lazy', alt: c.title }}{%- endif -%}
+        <span class="tile__body">
+          <span><span class="tile__title">{{ c.title }}</span><span class="tile__meta">{{ 'sections.collection_tiles.models' | t: count: c.products_count }}</span></span>
+          <span class="tile__arrow">{% render 'icon', name: 'arrow' %}</span>
+        </span>
+      </a>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lista kolekcji",
+  "settings": [
+    { "type": "collection_list", "id": "collections", "label": "Wybrane kolekcje (puste = wszystkie)", "limit": 24 }
+  ]
+}
+{% endschema %}

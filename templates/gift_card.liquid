@@ -1,0 +1,45 @@
+{%- layout none -%}
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>{{ 'gift_card.title' | t }} – {{ shop.name }}</title>
+    <script src="{{ 'vendor/qrcode.js' | shopify_asset_url }}" defer></script>
+    {% style %}
+      {{ settings.type_header_font | font_face: font_display: 'swap' }}
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: {{ settings.color_background }}; color: {{ settings.color_text }}; font-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }}; padding: 1.5rem; }
+      .gc { width: min(30rem, 100%); background: #fff; border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 30px 60px -30px rgba(38,28,20,.3); }
+      h1 { font-family: {{ settings.type_header_font.family }}, serif; font-weight: 400; font-size: 2rem; margin: 0 0 .5rem; }
+      .amount { font-family: {{ settings.type_header_font.family }}, serif; font-size: 3rem; color: {{ settings.color_accent }}; margin: 1rem 0; }
+      .code { font-size: 1.25rem; letter-spacing: .12em; padding: 1rem; border: 1px dashed {{ settings.color_honey }}; border-radius: 10px; margin: 1.5rem 0; }
+      #QrCode { display: flex; justify-content: center; margin: 1.5rem 0; }
+      a.btn { display: inline-block; background: {{ settings.color_accent }}; color: #fff; padding: .9rem 1.8rem; border-radius: 999px; text-decoration: none; }
+      .muted { opacity: .7; font-size: .9rem; }
+    {% endstyle %}
+    {{ content_for_header }}
+  </head>
+  <body>
+    <main class="gc">
+      <p class="muted">{{ shop.name }}</p>
+      <h1>{{ 'gift_card.title' | t }}</h1>
+      <p class="amount">{{ gift_card.balance | money }}</p>
+      {%- if gift_card.enabled == false or gift_card.expired -%}
+        <p class="muted">{{ 'gift_card.disabled' | t }}</p>
+      {%- elsif gift_card.expires_on -%}
+        <p class="muted">{{ 'gift_card.expires_on' | t: date: gift_card.expires_on }}</p>
+      {%- endif -%}
+      <div class="code">{{ gift_card.code | format_code }}</div>
+      <div id="QrCode" data-identifier="{{ gift_card.qr_identifier }}"></div>
+      <a class="btn" href="{{ shop.url }}">{{ 'gift_card.shop' | t }}</a>
+    </main>
+    <script>
+      window.addEventListener('load', () => {
+        const el = document.getElementById('QrCode');
+        if (window.QRCode && el) new QRCode(el, { text: el.dataset.identifier, width: 120, height: 120 });
+      });
+    </script>
+  </body>
+</html>

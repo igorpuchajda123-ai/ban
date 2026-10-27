@@ -1,0 +1,84 @@
+{%- comment -%}
+  Pasek korzyści. Każdy blok ma gotowy, przetłumaczony tekst (preset) – można go nadpisać własnym.
+{%- endcomment -%}
+<section class="usp{% if section.settings.surface %} section--surface{% endif %}" {{ section.shopify_attributes }}>
+  <div class="container container--wide">
+    <ul class="usp__list" role="list" style="--cols: {{ section.blocks.size }};">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign key_title = 'usp.' | append: block.settings.preset | append: '.title'
+          assign key_text = 'usp.' | append: block.settings.preset | append: '.text'
+          assign d_title = key_title | t
+          assign d_text = key_text | t
+          case block.settings.preset
+            when 'health'
+              assign icon = 'foot'
+            when 'flexible'
+              assign icon = 'wave'
+            when 'leather'
+              assign icon = 'leaf'
+            when 'shipping'
+              assign icon = 'truck'
+            when 'handmade'
+              assign icon = 'hand'
+            when 'returns'
+              assign icon = 'return'
+            else
+              assign icon = 'check'
+          endcase
+        -%}
+        <li class="usp__item reveal" data-delay="{{ forloop.index0 | modulo: 4 }}" {{ block.shopify_attributes }}>
+          <span class="usp__icon">
+            {%- if block.settings.icon_image != blank -%}
+              {{ block.settings.icon_image | image_url: width: 96 | image_tag: loading: 'lazy', alt: '' }}
+            {%- else -%}
+              {% render 'icon', name: icon %}
+            {%- endif -%}
+          </span>
+          <div>
+            <h3 class="usp__title">{{ block.settings.title | default: d_title }}</h3>
+            <p class="usp__text">{{ block.settings.text | default: d_text }}</p>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pasek korzyści",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "Korzyść",
+      "settings": [
+        { "type": "select", "id": "preset", "label": "Gotowa treść (PL/IT/DA)", "options": [
+          { "value": "health", "label": "Zdrowy rozwój" },
+          { "value": "flexible", "label": "Pełna elastyczność" },
+          { "value": "leather", "label": "Naturalna skóra" },
+          { "value": "shipping", "label": "Szybka wysyłka" },
+          { "value": "handmade", "label": "Ręcznie szyte" },
+          { "value": "returns", "label": "14 dni na zwrot" }
+        ], "default": "health" },
+        { "type": "image_picker", "id": "icon_image", "label": "Własna ikona (opcjonalnie)" },
+        { "type": "text", "id": "title", "label": "Własny tytuł" },
+        { "type": "text", "id": "text", "label": "Własny opis" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Pasek korzyści",
+    "blocks": [
+      { "type": "usp", "settings": { "preset": "health" } },
+      { "type": "usp", "settings": { "preset": "flexible" } },
+      { "type": "usp", "settings": { "preset": "leather" } },
+      { "type": "usp", "settings": { "preset": "shipping" } }
+    ]
+  }]
+}
+{% endschema %}

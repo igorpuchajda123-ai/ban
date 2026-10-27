@@ -1,0 +1,57 @@
+{%- comment -%} Okruszki + BreadcrumbList (SEO). {%- endcomment -%}
+{%- liquid
+  assign home_label = 'general.breadcrumbs.home' | t
+  assign crumb_collection = collection
+  if request.page_type == 'product' and crumb_collection == blank
+    assign crumb_collection = product.collections | where: 'handle', settings.breadcrumb_collection | first
+    if crumb_collection == blank
+      assign crumb_collection = product.collections.first
+    endif
+  endif
+-%}
+<nav class="breadcrumbs" aria-label="{{ 'general.breadcrumbs.label' | t }}">
+  <ol>
+    <li><a href="{{ routes.root_url }}">{{ home_label }}</a></li>
+    {%- case request.page_type -%}
+      {%- when 'product' -%}
+        {%- if crumb_collection -%}<li><a href="{{ crumb_collection.url }}">{{ crumb_collection.title }}</a></li>{%- endif -%}
+        <li aria-current="page">{{ product.title }}</li>
+      {%- when 'collection' -%}
+        <li aria-current="page">{{ collection.title }}</li>
+      {%- when 'page' -%}
+        <li aria-current="page">{{ page.title }}</li>
+      {%- when 'blog' -%}
+        <li aria-current="page">{{ blog.title }}</li>
+      {%- when 'article' -%}
+        <li><a href="{{ blog.url }}">{{ blog.title }}</a></li>
+        <li aria-current="page">{{ article.title }}</li>
+      {%- when 'search' -%}
+        <li aria-current="page">{{ 'search.title' | t }}</li>
+    {%- endcase -%}
+  </ol>
+</nav>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": {{ home_label | json }}, "item": {{ request.origin | append: routes.root_url | json }} }
+      {%- case request.page_type -%}
+        {%- when 'product' -%}
+          {%- if crumb_collection -%}
+            ,{ "@type": "ListItem", "position": 2, "name": {{ crumb_collection.title | json }}, "item": {{ request.origin | append: crumb_collection.url | json }} }
+            ,{ "@type": "ListItem", "position": 3, "name": {{ product.title | json }}, "item": {{ request.origin | append: product.url | json }} }
+          {%- else -%}
+            ,{ "@type": "ListItem", "position": 2, "name": {{ product.title | json }}, "item": {{ request.origin | append: product.url | json }} }
+          {%- endif -%}
+        {%- when 'collection' -%}
+          ,{ "@type": "ListItem", "position": 2, "name": {{ collection.title | json }}, "item": {{ request.origin | append: collection.url | json }} }
+        {%- when 'page' -%}
+          ,{ "@type": "ListItem", "position": 2, "name": {{ page.title | json }}, "item": {{ request.origin | append: page.url | json }} }
+        {%- when 'article' -%}
+          ,{ "@type": "ListItem", "position": 2, "name": {{ blog.title | json }}, "item": {{ request.origin | append: blog.url | json }} }
+          ,{ "@type": "ListItem", "position": 3, "name": {{ article.title | json }}, "item": {{ request.origin | append: article.url | json }} }
+      {%- endcase -%}
+    ]
+  }
+</script>

@@ -1,0 +1,364 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign country = localization.country.iso_code
+  assign form_id = 'ProductForm-' | append: section.id
+
+  comment
+    Opcja rozmiaru – rozpoznawana po nazwie w dowolnym z języków sklepu.
+  endcomment
+  assign size_option_index = 0
+  assign size_names = 'rozmiar,size,taglia,misura,størrelse,storrelse,str.,eu'
+  for option in product.options_with_values
+    assign opt_name = option.name | downcase
+    if size_names contains opt_name
+      assign size_option_index = forloop.index
+    endif
+  endfor
+  if size_option_index == 0 and product.has_only_default_variant == false
+    assign size_option_index = 1
+  endif
+
+  assign media_count = product.media.size
+-%}
+
+<div class="container container--wide">
+  {% render 'breadcrumbs' %}
+
+  <div class="product" data-product data-section="{{ section.id }}" data-url="{{ product.url }}">
+    {%- comment -%} Galeria {%- endcomment -%}
+    <div class="gallery">
+      <div class="gallery__grid" data-gallery>
+        {%- for media in product.media -%}
+          <button type="button" class="gallery__item" data-lightbox-open="{{ forloop.index0 }}" aria-label="{{ 'products.product.zoom' | t }} {{ forloop.index }}/{{ media_count }}">
+            {%- if media.media_type == 'image' -%}
+              {%- liquid
+                assign loading = 'lazy'
+                assign priority = 'auto'
+                if forloop.first
+                  assign loading = 'eager'
+                  assign priority = 'high'
+                  assign img_sizes = '(min-width: 990px) 55vw, 100vw'
+                else
+                  assign img_sizes = '(min-width: 990px) 28vw, 100vw'
+                endif
+              -%}
+              {{ media.preview_image | image_url: width: 1800 | image_tag:
+                widths: '400, 600, 800, 1000, 1300, 1600, 1800',
+                sizes: img_sizes,
+                loading: loading,
+                fetchpriority: priority,
+                alt: media.alt | default: product.title
+              }}
+            {%- else -%}
+              {{ media | media_tag: image_size: '1200x', autoplay: false, loop: true, controls: true }}
+            {%- endif -%}
+          </button>
+        {%- else -%}
+          <div class="gallery__item">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+        {%- endfor -%}
+      </div>
+      {%- if media_count > 1 -%}
+        <div class="gallery__dots" data-gallery-dots aria-hidden="true">
+          {%- for media in product.media -%}<span{% if forloop.first %} class="is-active"{% endif %}></span>{%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Informacje {%- endcomment -%}
+    <div class="product__info">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+
+          {%- when 'title' -%}
+            <div {{ block.shopify_attributes }}>
+              <div class="product__eyebrow">
+                {%- assign family = product.metafields.custom.rodzina_produktow.value -%}
+                <p class="eyebrow eyebrow--plain" style="margin:0">
+                  {%- if family -%}<a href="{{ family.url }}" style="text-decoration:none">{{ family.title }}</a>{%- else -%}{{ product.vendor }}{%- endif -%}
+                </p>
+                {%- if product.metafields.reviews.rating.value != blank -%}
+                  {%- assign rating = product.metafields.reviews.rating.value -%}
+                  <span class="product__rating">
+                    <span class="stars">{%- for i in (1..5) -%}{%- if i <= rating.rating -%}{% render 'icon', name: 'star' %}{%- endif -%}{%- endfor -%}</span>
+                    {{ rating.rating | round: 1 }} ({{ product.metafields.reviews.rating_count }})
+                  </span>
+                {%- endif -%}
+              </div>
+              <h1 class="product__title" style="margin-top:.6rem">{{ product.title | escape }}</h1>
+            </div>
+
+          {%- when 'price' -%}
+            <div {{ block.shopify_attributes }}>
+              <div class="product__price-row">
+                <div data-price-container>{% render 'price', product: product, variant: current_variant, class: 'price--lg' %}</div>
+                {%- if current_variant.compare_at_price > current_variant.price -%}
+                  <span class="badge badge--sale" data-sale-badge>{{ 'products.product.on_sale' | t }}</span>
+                {%- endif -%}
+              </div>
+              <p class="product__tax">
+                {%- if cart.taxes_included -%}{{ 'products.product.tax_included' | t }}{%- else -%}{{ 'products.product.tax_excluded' | t }}{%- endif -%}
+                {%- if shop.shipping_policy.body != blank %} · {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}{%- endif -%}
+              </p>
+              {%- form 'product', product, id: 'ProductInstallments' -%}
+                {{ form | payment_terms }}
+              {%- endform -%}
+            </div>
+
+          {%- when 'colors' -%}
+            {%- liquid
+              assign family = product.metafields.custom.rodzina_produktow.value
+              assign color_list = product.metafields.custom.kolory_produktu.value
+              assign show_colors = false
+              if color_list != blank
+                assign show_colors = true
+              elsif family != blank and family.products_count > 1
+                assign show_colors = true
+              endif
+            -%}
+            {%- if show_colors -%}
+              <div {{ block.shopify_attributes }}>
+                <div class="option-label">
+                  <span><strong>{{ 'products.product.color' | t }}:</strong> <span class="value">{{ product.title | split: ' - ' | last }}</span></span>
+                  {%- if family != blank -%}<span class="muted small">{{ 'products.product.colors_count' | t: count: family.products_count }}</span>{%- endif -%}
+                </div>
+                <div class="swatches">
+                  {%- if color_list != blank -%}
+                    {%- assign siblings = color_list -%}
+                  {%- else -%}
+                    {%- assign siblings = family.products -%}
+                  {%- endif -%}
+                  {%- for sibling in siblings limit: block.settings.limit -%}
+                    {%- assign sibling_color = sibling.title | split: ' - ' | last -%}
+                    <a class="swatch{% unless sibling.available %} is-soldout{% endunless %}" href="{{ sibling.url }}" title="{{ sibling_color | escape }}" {% if sibling.id == product.id %}aria-current="true"{% endif %}>
+                      {{ sibling.featured_image | image_url: width: 140, height: 140, crop: 'center' | image_tag: loading: 'lazy', alt: sibling_color }}
+                    </a>
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endif -%}
+
+          {%- when 'variant_picker' -%}
+            {%- unless product.has_only_default_variant -%}
+              <div {{ block.shopify_attributes }} data-variant-picker>
+                {%- for option in product.options_with_values -%}
+                  <fieldset class="pills-wrap" style="border:0; padding:0; margin:0 0 1.25rem;">
+                    <legend class="option-label" style="width:100%">
+                      <span><strong>{{ option.name }}{% if forloop.index == size_option_index %} (EU){% endif %}:</strong> <span class="value" data-option-value="{{ forloop.index0 }}">{% if product.selected_variant or product.has_only_default_variant %}{{ option.selected_value }}{% else %}{{ 'products.product.select_size' | t }}{% endif %}</span></span>
+                      {%- if forloop.index == size_option_index and block.settings.show_size_guide -%}
+                        <button type="button" data-modal-open="SizeGuide">{% render 'icon', name: 'ruler' %}{{ 'size_guide.open' | t }}</button>
+                      {%- endif -%}
+                    </legend>
+                    <div class="pills" role="radiogroup">
+                      {%- assign option_index = forloop.index0 -%}
+                      {%- for value in option.values -%}
+                        {%- liquid
+                          assign value_available = false
+                          for v in product.variants
+                            if v.options[option_index] == value and v.available
+                              assign value_available = true
+                              break
+                            endif
+                          endfor
+                          assign is_checked = false
+                          if product.selected_variant and option.selected_value == value
+                            assign is_checked = true
+                          elsif product.selected_variant == blank and product.variants.size == 1
+                            assign is_checked = true
+                          endif
+                        -%}
+                        <div class="pill{% unless value_available %} is-unavailable{% endunless %}" data-pill-value="{{ value | escape }}">
+                          <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" name="{{ option.name | escape }}" value="{{ value | escape }}" form="{{ form_id }}" data-option-index="{{ option_index }}" {% if is_checked %}checked{% endif %}>
+                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                            {{ value }}{% unless value_available %}<span class="visually-hidden"> – {{ 'products.product.sold_out' | t }}</span>{% endunless %}
+                          </label>
+                        </div>
+                      {%- endfor -%}
+                    </div>
+                  </fieldset>
+                {%- endfor -%}
+                <p class="size-hint" data-size-hint hidden>{% render 'icon', name: 'check' %}<span></span></p>
+              </div>
+            {%- endunless -%}
+
+          {%- when 'buy_buttons' -%}
+            <div {{ block.shopify_attributes }}>
+              {%- form 'product', product, id: form_id, class: 'buy-form', data-product-form: '', novalidate: 'novalidate' -%}
+                <input type="hidden" name="id" value="{% if product.selected_variant or product.variants.size == 1 %}{{ current_variant.id }}{% endif %}" data-variant-id>
+                <div class="buy">
+                  <div class="qty">
+                    <button type="button" data-qty-minus aria-label="{{ 'products.product.quantity_decrease' | t }}">{% render 'icon', name: 'minus' %}</button>
+                    <label class="visually-hidden" for="Qty-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+                    <input type="number" id="Qty-{{ section.id }}" name="quantity" value="1" min="1" inputmode="numeric">
+                    <button type="button" data-qty-plus aria-label="{{ 'products.product.quantity_increase' | t }}">{% render 'icon', name: 'plus' %}</button>
+                  </div>
+                  <button type="submit" name="add" class="btn btn--lg" data-add-button {% unless current_variant.available %}disabled{% endunless %}>
+                    <span data-add-label>
+                      {%- if current_variant.available -%}{{ 'products.product.add_to_cart' | t }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}
+                    </span>
+                  </button>
+                  {%- if block.settings.show_dynamic_checkout -%}
+                    {{ form | payment_button }}
+                  {%- endif -%}
+                </div>
+                <p class="form-message form-message--error" data-form-error hidden role="alert"></p>
+              {%- endform -%}
+              {%- if block.settings.show_free_shipping -%}
+                {% render 'free-shipping-bar', context: 'product' %}
+              {%- endif -%}
+            </div>
+
+          {%- when 'assurance' -%}
+            {%- liquid
+              case country
+                when 'PL'
+                  assign delivery = settings.delivery_pl
+                when 'IT'
+                  assign delivery = settings.delivery_it
+                when 'DK'
+                  assign delivery = settings.delivery_dk
+                else
+                  assign delivery = settings.delivery_other
+              endcase
+            -%}
+            <div class="assurance" {{ block.shopify_attributes }}>
+              <div class="assurance__item">{% render 'icon', name: 'truck' %}<span>{{ 'products.assurance.delivery_html' | t: days: delivery, country: localization.country.name }}</span></div>
+              <div class="assurance__item">{% render 'icon', name: 'return' %}<span>{{ 'products.assurance.returns_html' | t: days: settings.return_days }}</span></div>
+              <div class="assurance__item">{% render 'icon', name: 'hand' %}<span>{{ 'products.assurance.handmade_html' | t }}</span></div>
+              <div class="assurance__item">{% render 'icon', name: 'lock' %}<span>{{ 'products.assurance.secure_html' | t }}</span></div>
+            </div>
+
+          {%- when 'highlights' -%}
+            <ul class="product-highlights" role="list" {{ block.shopify_attributes }}>
+              <li>{% render 'icon', name: 'leaf' %}{{ 'products.highlights.leather' | t }}</li>
+              <li>{% render 'icon', name: 'foot' %}{{ 'products.highlights.zero_drop' | t }}</li>
+              <li>{% render 'icon', name: 'wave' %}{{ 'products.highlights.flex' | t }}</li>
+              <li>{% render 'icon', name: 'hand' %}{{ 'products.highlights.handmade' | t }}</li>
+            </ul>
+
+          {%- when 'description' -%}
+            {%- if product.description != blank and block.settings.style == 'inline' -%}
+              <div class="rte muted" {{ block.shopify_attributes }}>{{ product.description }}</div>
+            {%- endif -%}
+
+          {%- when 'accordion' -%}
+            <div class="accordion accordion--compact" {{ block.shopify_attributes }}>
+              {%- if product.description != blank -%}
+                <details{% if block.settings.open_description %} open{% endif %}>
+                  <summary><span class="summary-label">{% render 'icon', name: 'sparkle' %}{{ 'products.tabs.description' | t }}</span><span class="accordion__icon">{% render 'icon', name: 'plus' %}</span></summary>
+                  <div class="accordion__content rte">{{ product.description }}</div>
+                </details>
+              {%- endif -%}
+              {%- if product.metafields.custom.specyfikacja_obuwia != blank -%}
+                <details>
+                  <summary><span class="summary-label">{% render 'icon', name: 'ruler' %}{{ 'products.tabs.specs' | t }}</span><span class="accordion__icon">{% render 'icon', name: 'plus' %}</span></summary>
+                  <div class="accordion__content rte">{{ product.metafields.custom.specyfikacja_obuwia | metafield_tag }}</div>
+                </details>
+              {%- endif -%}
+              <details>
+                <summary><span class="summary-label">{% render 'icon', name: 'leaf' %}{{ 'products.tabs.care' | t }}</span><span class="accordion__icon">{% render 'icon', name: 'plus' %}</span></summary>
+                <div class="accordion__content rte">{{ 'products.tabs.care_html' | t }}</div>
+              </details>
+              <details>
+                <summary><span class="summary-label">{% render 'icon', name: 'box' %}{{ 'products.tabs.shipping' | t }}</span><span class="accordion__icon">{% render 'icon', name: 'plus' %}</span></summary>
+                <div class="accordion__content rte">
+                  {{ 'products.tabs.shipping_html' | t: days: settings.return_days }}
+                  {%- if shop.refund_policy.url -%}<p><a href="{{ shop.refund_policy.url }}">{{ shop.refund_policy.title }}</a></p>{%- endif -%}
+                </div>
+              </details>
+            </div>
+
+          {%- when 'text' -%}
+            <div class="rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+
+          {%- when 'custom_liquid' -%}
+            <div {{ block.shopify_attributes }}>{{ block.settings.custom_liquid }}</div>
+
+          {%- when '@app' -%}
+            {% render block %}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{%- comment -%} Dane wariantów dla JS (cena sformatowana w walucie rynku) {%- endcomment -%}
+<script type="application/json" data-variant-json="{{ section.id }}">
+  [
+    {%- for v in product.variants -%}
+      {%- capture price_html -%}{% render 'price', product: product, variant: v, class: 'price--lg' %}{%- endcapture -%}
+      {%- liquid
+        assign v_sale = false
+        if v.compare_at_price > v.price
+          assign v_sale = true
+        endif
+      -%}
+      {"id": {{ v.id }}, "options": {{ v.options | json }}, "available": {{ v.available | json }}, "onSale": {{ v_sale | json }}, "price": {{ v.price | money | json }}, "priceHtml": {{ price_html | strip_newlines | json }}}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+</script>
+
+{%- comment -%} Sticky „Dodaj do koszyka” {%- endcomment -%}
+{%- if section.settings.sticky_atc -%}
+  <div class="sticky-atc" data-sticky-atc aria-hidden="true">
+    <div class="sticky-atc__img">{{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' }}</div>
+    <div class="sticky-atc__info">
+      <div class="sticky-atc__title">{{ product.title | escape }}</div>
+      <div data-sticky-price>{{ current_variant.price | money }}</div>
+    </div>
+    <button class="btn" type="button" data-sticky-add tabindex="-1">{{ 'products.product.add_to_cart' | t }}</button>
+  </div>
+{%- endif -%}
+
+{%- comment -%} Lightbox {%- endcomment -%}
+<div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-label="{{ product.title | escape }}">
+  <button class="icon-btn lightbox__close" type="button" data-lightbox-close>{% render 'icon', name: 'close' %}<span class="visually-hidden">{{ 'general.close' | t }}</span></button>
+  <div class="lightbox__track" data-lightbox-track>
+    {%- for media in product.media -%}
+      {%- if media.media_type == 'image' -%}
+        {{ media.preview_image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '1200, 1800, 2400', sizes: '100vw', alt: media.alt | default: product.title }}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+<script type="application/ld+json">
+  {{ product | structured_data }}
+</script>
+
+{% schema %}
+{
+  "name": "Produkt",
+  "class": "section-main-product",
+  "settings": [
+    { "type": "checkbox", "id": "sticky_atc", "label": "Przyklejony przycisk „Dodaj do koszyka”", "default": true }
+  ],
+  "blocks": [
+    { "type": "@app" },
+    { "type": "title", "name": "Tytuł", "limit": 1 },
+    { "type": "price", "name": "Cena", "limit": 1 },
+    { "type": "colors", "name": "Kolory (rodzina produktów)", "limit": 1, "settings": [
+      { "type": "paragraph", "content": "Pokazuje inne kolory z metapola custom.rodzina_produktow (kolekcja) lub custom.kolory_produktu (lista produktów)." },
+      { "type": "range", "id": "limit", "label": "Maks. liczba kolorów", "min": 6, "max": 40, "step": 1, "default": 24 }
+    ] },
+    { "type": "variant_picker", "name": "Rozmiary", "limit": 1, "settings": [
+      { "type": "checkbox", "id": "show_size_guide", "label": "Link do tabeli rozmiarów i kalkulatora", "default": true }
+    ] },
+    { "type": "buy_buttons", "name": "Przyciski zakupu", "limit": 1, "settings": [
+      { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Przyciski szybkiej płatności (Apple Pay, BLIK, MobilePay…)", "default": true },
+      { "type": "checkbox", "id": "show_free_shipping", "label": "Pasek darmowej dostawy", "default": true }
+    ] },
+    { "type": "highlights", "name": "Wyróżniki", "limit": 1 },
+    { "type": "assurance", "name": "Gwarancje (dostawa/zwrot)", "limit": 1 },
+    { "type": "description", "name": "Opis (pod ceną)", "limit": 1, "settings": [
+      { "type": "select", "id": "style", "label": "Wyświetlanie", "options": [
+        { "value": "inline", "label": "Pokaż tutaj" }, { "value": "hidden", "label": "Tylko w zakładkach" }
+      ], "default": "hidden" }
+    ] },
+    { "type": "accordion", "name": "Zakładki (opis, specyfikacja…)", "limit": 1, "settings": [
+      { "type": "checkbox", "id": "open_description", "label": "Opis otwarty domyślnie", "default": true }
+    ] },
+    { "type": "text", "name": "Tekst", "settings": [ { "type": "richtext", "id": "text", "label": "Tekst" } ] },
+    { "type": "custom_liquid", "name": "Własny Liquid", "settings": [ { "type": "liquid", "id": "custom_liquid", "label": "Kod" } ] }
+  ]
+}
+{% endschema %}

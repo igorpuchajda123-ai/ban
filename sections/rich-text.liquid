@@ -1,0 +1,75 @@
+{%- comment -%}
+  Nagłówek strony / tekst wprowadzający. Klucz treści = gotowy tekst PL/IT/DA (content.<klucz>.*).
+{%- endcomment -%}
+{%- liquid
+  assign key = section.settings.content_key | strip
+  assign d_eyebrow = ''
+  assign d_heading = ''
+  assign d_text = ''
+  if key != blank
+    assign base = 'content.' | append: key
+    assign d_eyebrow = base | append: '.eyebrow' | t
+    assign d_heading = base | append: '.heading_html' | t
+    assign d_text = base | append: '.text_html' | t
+  endif
+  assign eyebrow = section.settings.eyebrow | default: d_eyebrow
+  assign heading = section.settings.heading | default: d_heading
+  assign text = section.settings.text | default: d_text
+
+  if section.settings.use_page_title and page.title != blank and heading == blank
+    assign heading = page.title
+  endif
+
+  assign style_class = ''
+  case section.settings.style
+    when 'surface'
+      assign style_class = 'section--surface'
+    when 'dark'
+      assign style_class = 'section--dark'
+  endcase
+-%}
+<section class="section {{ style_class }}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="container container--narrow{% if section.settings.center %} center{% endif %}">
+    {%- if eyebrow != blank -%}<p class="eyebrow{% if section.settings.center %} eyebrow--plain{% endif %} reveal">{{ eyebrow }}</p>{%- endif -%}
+    {%- if heading != blank -%}
+      {%- if section.settings.heading_tag == 'h1' -%}
+        <h1 class="reveal" data-delay="1">{{ heading }}</h1>
+      {%- else -%}
+        <h2 class="reveal" data-delay="1">{{ heading }}</h2>
+      {%- endif -%}
+    {%- endif -%}
+    {%- if text != blank -%}<div class="rte lead reveal" data-delay="2">{{ text }}</div>{%- endif -%}
+    {%- if section.settings.show_page_content and page.content != blank -%}
+      <div class="rte reveal" data-delay="2" style="margin-top: 2rem; text-align: left;">{{ page.content }}</div>
+    {%- endif -%}
+    {%- if section.settings.button != blank and section.settings.link != blank -%}
+      <a class="btn reveal" data-delay="3" style="margin-top: 1.5rem;" href="{{ section.settings.link }}">{{ section.settings.button }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tekst",
+  "settings": [
+    { "type": "text", "id": "content_key", "label": "Klucz treści (tłumaczenia wbudowane)", "info": "Np. about.intro. Zostaw, jeśli nie wiesz." },
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł" },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "select", "id": "heading_tag", "label": "Znacznik nagłówka (SEO)", "options": [
+      { "value": "h1", "label": "H1 (główny nagłówek strony)" }, { "value": "h2", "label": "H2" }
+    ], "default": "h2" },
+    { "type": "checkbox", "id": "use_page_title", "label": "Użyj tytułu strony, gdy brak nagłówka", "default": false },
+    { "type": "richtext", "id": "text", "label": "Tekst" },
+    { "type": "checkbox", "id": "show_page_content", "label": "Pokaż treść strony (z panelu Strony)", "default": false },
+    { "type": "text", "id": "button", "label": "Przycisk – tekst" },
+    { "type": "url", "id": "link", "label": "Przycisk – link" },
+    { "type": "checkbox", "id": "center", "label": "Wyśrodkuj", "default": true },
+    { "type": "select", "id": "style", "label": "Tło", "options": [
+      { "value": "default", "label": "Jasne" }, { "value": "surface", "label": "Beżowe" }, { "value": "dark", "label": "Ciemne" }
+    ], "default": "default" },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 48 }
+  ],
+  "presets": [{ "name": "Tekst" }]
+}
+{% endschema %}

@@ -1,0 +1,35 @@
+{%- liquid
+  assign d_eyebrow = 'size_guide.eyebrow' | t
+  assign d_heading = 'size_guide.section_heading_html' | t
+  assign d_text = 'size_guide.section_text' | t
+-%}
+<section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" id="kalkulator" {{ section.shopify_attributes }}>
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <div>
+        <p class="eyebrow">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+        <h2>{{ section.settings.heading | default: d_heading }}</h2>
+        <p class="lead">{{ section.settings.text | default: d_text }}</p>
+      </div>
+    </div>
+    <div class="reveal" data-delay="1" style="background: var(--c-bg); border-radius: calc(var(--radius) * 1.5); padding: clamp(1.25rem, 4vw, 3rem);">
+      {% render 'size-guide-modal', inline: true %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kalkulator rozmiarów",
+  "settings": [
+    { "type": "paragraph", "content": "Tabela rozmiarów: Ustawienia motywu → Rozmiary." },
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "text", "id": "text", "label": "Opis" },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": true },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "presets": [{ "name": "Kalkulator rozmiarów" }]
+}
+{% endschema %}

@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "per_page": 24,
+        "columns": 4,
+        "show_image": false,
+        "enable_filters": true,
+        "filter_layout": "drawer"
+      }
+    },
+    "usp": {
+      "type": "usp-bar",
+      "blocks": {
+        "u1": {
+          "type": "usp",
+          "settings": {
+            "preset": "handmade"
+          }
+        },
+        "u2": {
+          "type": "usp",
+          "settings": {
+            "preset": "leather"
+          }
+        },
+        "u3": {
+          "type": "usp",
+          "settings": {
+            "preset": "shipping"
+          }
+        },
+        "u4": {
+          "type": "usp",
+          "settings": {
+            "preset": "returns"
+          }
+        }
+      },
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4"
+      ],
+      "settings": {
+        "surface": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "usp"
+  ]
+}

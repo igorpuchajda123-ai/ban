@@ -1,0 +1,121 @@
+{%- comment -%}
+  Rotujące komunikaty. Pusty tekst bloku = domyślne tłumaczenie z plików językowych (pl/it/da).
+  Blok może być ograniczony do jednego rynku (np. „Darmowa dostawa od 249 zł” tylko w PL).
+{%- endcomment -%}
+{%- liquid
+  assign country = localization.country.iso_code
+  assign visible = 0
+  for block in section.blocks
+    if block.settings.market == 'all' or block.settings.market == country
+      assign visible = visible | plus: 1
+    endif
+  endfor
+-%}
+{%- if visible > 0 -%}
+  <div class="announcement" {{ section.shopify_attributes }}>
+    <div class="container container--wide announcement__inner">
+      <div class="announcement__side">
+        {%- if settings.contact_phone != blank and section.settings.show_contact -%}
+          <a href="tel:{{ settings.contact_phone | remove: ' ' }}">{{ settings.contact_phone }}</a>
+        {%- endif -%}
+        {%- if section.settings.show_contact and shop.email != blank -%}
+          <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
+        {%- endif -%}
+      </div>
+
+      <div class="announcement__track" data-announcement data-interval="{{ section.settings.interval | times: 1000 }}" aria-live="off">
+        {%- assign i = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- unless block.settings.market == 'all' or block.settings.market == country -%}{%- continue -%}{%- endunless -%}
+          {%- liquid
+            case block.settings.preset
+              when 'free_shipping'
+                assign default_text = 'announcement.free_shipping' | t
+              when 'delivery'
+                assign default_text = 'announcement.delivery' | t
+              when 'returns'
+                assign default_text = 'announcement.returns' | t
+              when 'handmade'
+                assign default_text = 'announcement.handmade' | t
+              else
+                assign default_text = ''
+            endcase
+            assign msg = block.settings.text | default: default_text
+          -%}
+          <p class="announcement__msg{% if i == 0 %} is-active{% endif %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != 'none' -%}{% render 'icon', name: block.settings.icon %}{%- endif -%}
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}">{{ msg }}</a>
+            {%- else -%}
+              <span>{{ msg }}</span>
+            {%- endif -%}
+          </p>
+          {%- assign i = i | plus: 1 -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="announcement__side">
+        {%- if section.settings.show_localization -%}
+          {% render 'localization-form', id: 'AnnouncementLocalization' %}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Pasek ogłoszeń",
+  "class": "section-announcement",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "range", "id": "interval", "label": "Zmiana co (sek.)", "min": 3, "max": 10, "step": 1, "default": 5 },
+    { "type": "checkbox", "id": "show_contact", "label": "Pokaż telefon i e-mail (desktop)", "default": true },
+    { "type": "checkbox", "id": "show_localization", "label": "Pokaż wybór kraju/języka (desktop)", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Komunikat",
+      "settings": [
+        {
+          "type": "select", "id": "preset", "label": "Gotowy tekst (tłumaczony automatycznie)",
+          "options": [
+            { "value": "free_shipping", "label": "Darmowa wysyłka" },
+            { "value": "delivery", "label": "Czas dostawy" },
+            { "value": "returns", "label": "14 dni na zwrot" },
+            { "value": "handmade", "label": "Ręcznie szyte w Polsce" },
+            { "value": "custom", "label": "Własny (pole poniżej)" }
+          ],
+          "default": "free_shipping"
+        },
+        { "type": "text", "id": "text", "label": "Własny tekst", "info": "Nadpisuje gotowy tekst. Przetłumacz w Translate & Adapt." },
+        { "type": "url", "id": "link", "label": "Link" },
+        {
+          "type": "select", "id": "icon", "label": "Ikona",
+          "options": [
+            { "value": "none", "label": "Brak" },
+            { "value": "truck", "label": "Dostawa" },
+            { "value": "return", "label": "Zwrot" },
+            { "value": "hand", "label": "Rękodzieło" },
+            { "value": "leaf", "label": "Natura" },
+            { "value": "sparkle", "label": "Gwiazdka" }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select", "id": "market", "label": "Pokaż na rynku",
+          "options": [
+            { "value": "all", "label": "Wszystkie rynki" },
+            { "value": "PL", "label": "Tylko Polska" },
+            { "value": "IT", "label": "Tylko Włochy" },
+            { "value": "DK", "label": "Tylko Dania" }
+          ],
+          "default": "all"
+        }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Pasek ogłoszeń", "blocks": [{ "type": "message" }] }]
+}
+{% endschema %}

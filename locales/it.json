@@ -1,0 +1,569 @@
+{
+  "general": {
+    "close": "Chiudi",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "meta": {
+      "page": "Pagina {{ page }}"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "label": "Percorso di navigazione"
+    },
+    "pagination": {
+      "label": "Paginazione",
+      "previous": "Pagina precedente",
+      "next": "Pagina successiva",
+      "page": "Pagina {{ number }}"
+    },
+    "errors": {
+      "generic": "Si è verificato un errore. Riprova."
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Vai al contenuto"
+  },
+  "header": {
+    "menu": "Menu",
+    "search": "Cerca",
+    "account": "Account",
+    "cart": "Carrello",
+    "main_navigation": "Navigazione principale",
+    "tagline": "scarpe barefoot in pelle per bambini",
+    "promo_text": "Helis WIDE – più spazio per i piedini paffuti"
+  },
+  "announcement": {
+    "free_shipping": "Spedizione gratuita",
+    "delivery": "Consegna in 3–5 giorni lavorativi",
+    "returns": "14 giorni per il reso",
+    "handmade": "Cucite a mano in vera pelle"
+  },
+  "localization": {
+    "country_label": "Paese / valuta",
+    "language_label": "Lingua",
+    "update": "Aggiorna"
+  },
+  "search": {
+    "title": "Ricerca",
+    "placeholder": "Cosa stai cercando? Es. Helis, pantofole, sandali…",
+    "popular": "Ricerche frequenti",
+    "products": "Prodotti",
+    "view_all": "Vedi tutti i risultati per «{{ terms }}»",
+    "no_results": "Nessun risultato per «{{ terms }}». Controlla l'ortografia o prova un'altra parola.",
+    "results_for": "Risultati per «{{ terms }}»"
+  },
+  "newsletter": {
+    "eyebrow": "Newsletter",
+    "heading_html": "I nuovi colori, <em>in anteprima</em>",
+    "text": "Ogni tanto una mail: nuovi modelli, consigli per lo sviluppo sano del piede e offerte riservate agli iscritti.",
+    "email": "Il tuo indirizzo e-mail",
+    "submit": "Iscriviti",
+    "success": "Grazie! Controlla la tua casella di posta: ci sentiamo presto.",
+    "consent": "Iscrivendoti accetti l'informativa sulla privacy. Puoi annullare l'iscrizione in qualsiasi momento."
+  },
+  "footer": {
+    "about": "OBEX crea scarpe barefoot in pelle per bambini, cucite a mano con materiali naturali. Le progettiamo perché i piedini possano crescere liberi, come a piedi nudi.",
+    "contact": "Contatti"
+  },
+  "contact": {
+    "eyebrow": "Contatti",
+    "heading_html": "Siamo qui <em>per aiutarti</em>",
+    "text": "Hai una domanda sulla taglia, su un ordine o su un reso? Scrivici: rispondiamo nei giorni lavorativi.",
+    "phone": "Telefono",
+    "hours": "Orari",
+    "hours_value": "Lun–Ven 8:00–16:00 (CET)",
+    "company": "Dati aziendali",
+    "name": "Nome",
+    "email": "E-mail",
+    "order": "Numero d'ordine (facoltativo)",
+    "message": "Messaggio",
+    "send": "Invia messaggio",
+    "success": "Grazie per il tuo messaggio! Ti risponderemo il prima possibile.",
+    "reply_time": "Di solito rispondiamo entro 1 giorno lavorativo."
+  },
+  "cart": {
+    "title": "Carrello",
+    "empty": "Il tuo carrello è vuoto",
+    "empty_text": "Trova il paio in cui il tuo bambino si sentirà come a piedi nudi.",
+    "continue": "Vai al negozio",
+    "remove": "Rimuovi",
+    "subtotal": "Totale",
+    "taxes_included_shipping": "IVA inclusa. Le spese di spedizione sono calcolate al checkout.",
+    "taxes_shipping": "Imposte e spese di spedizione calcolate al checkout.",
+    "checkout": "Procedi al checkout",
+    "view_cart": "Vedi il carrello",
+    "note": "Note sull'ordine",
+    "free_shipping_remaining_html": "Ti mancano <strong>{{ amount }}</strong> per la spedizione gratuita",
+    "free_shipping_reached_html": "<strong>La spedizione è gratuita!</strong>",
+    "free_shipping_progress": "Avanzamento verso la spedizione gratuita"
+  },
+  "collection": {
+    "eyebrow": "Collezione",
+    "all_collections": "Tutte le collezioni",
+    "filters": "Filtri",
+    "sort": "Ordina",
+    "from": "Da",
+    "to": "A",
+    "apply": "Applica",
+    "clear": "Cancella filtri",
+    "show_results": "Mostra risultati",
+    "related": "Collezioni correlate",
+    "empty": "Nessun prodotto corrisponde ai filtri selezionati.",
+    "product_count": {
+      "one": "{{ count }} prodotto",
+      "other": "{{ count }} prodotti"
+    }
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "empty": "I primi articoli arriveranno presto.",
+    "back": "Torna al blog"
+  },
+  "password": {
+    "heading": "Apriamo a breve",
+    "notify": "Avvisami",
+    "owner": "Sei il proprietario del negozio?",
+    "password": "Password",
+    "enter": "Entra"
+  },
+  "gift_card": {
+    "title": "La tua carta regalo",
+    "disabled": "Questa carta regalo non è attiva.",
+    "expires_on": "Valida fino al {{ date }}",
+    "shop": "Vai al negozio"
+  },
+  "templates": {
+    "404": {
+      "title": "Pagina non trovata",
+      "text": "La pagina potrebbe essere stata spostata oppure l'indirizzo contiene un errore. Dai un'occhiata alle nostre collezioni."
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Aggiungi al carrello",
+      "added": "Aggiunto al carrello",
+      "sold_out": "Esaurito",
+      "unavailable": "Non disponibile",
+      "select_size": "Scegli la taglia",
+      "choose_size": "Scegli la taglia",
+      "on_sale": "In offerta",
+      "new": "Novità",
+      "sale_price": "Prezzo scontato",
+      "regular_price": "Prezzo di listino",
+      "price_from_html": "da {{ price }}",
+      "sizes_range": "Taglie {{ from }}–{{ to }}",
+      "color": "Colore",
+      "colors_count": {
+        "one": "{{ count }} colore",
+        "other": "{{ count }} colori"
+      },
+      "quantity": "Quantità",
+      "quantity_decrease": "Diminuisci quantità",
+      "quantity_increase": "Aumenta quantità",
+      "tax_included": "IVA inclusa",
+      "tax_excluded": "Imposte escluse",
+      "shipping_policy_html": "<a href=\"{{ link }}\">spese di spedizione</a> calcolate al checkout",
+      "zoom": "Ingrandisci immagine"
+    },
+    "assurance": {
+      "delivery_html": "<strong>Consegna in {{ days }} giorni lavorativi</strong> – {{ country }}",
+      "returns_html": "<strong>{{ days }} giorni per il reso</strong>, senza dover indicare il motivo",
+      "handmade_html": "<strong>Cucite a mano</strong> in vera pelle",
+      "secure_html": "<strong>Pagamenti sicuri</strong> con connessione crittografata"
+    },
+    "highlights": {
+      "leather": "Vera pelle",
+      "zero_drop": "Zero drop",
+      "flex": "Suola flessibile 3 mm",
+      "handmade": "Cucite a mano"
+    },
+    "tabs": {
+      "description": "Descrizione",
+      "specs": "Dettagli e materiali",
+      "care": "Cura e manutenzione",
+      "shipping": "Spedizione e resi",
+      "care_html": "<p>Pulisci lo sporco con un panno morbido leggermente inumidito. Non lavare le scarpe in lavatrice e non asciugarle sul termosifone o al sole: lasciale asciugare a temperatura ambiente.</p><p>Per mantenere la pelle morbida e più resistente all'umidità, applica di tanto in tanto una cera naturale o un impermeabilizzante per pelle liscia.</p>",
+      "shipping_html": "<p>Di solito spediamo gli ordini entro 24 ore nei giorni lavorativi. Costo e tempi di consegna per il tuo Paese sono indicati al checkout, prima del pagamento.</p><p>Hai {{ days }} giorni per restituire le scarpe non indossate. Per cambiare taglia, il modo più rapido è restituire il paio e fare un nuovo ordine.</p>"
+    }
+  },
+  "size_guide": {
+    "open": "Guida alle taglie",
+    "eyebrow": "Scelta della taglia",
+    "title": "Trova la taglia perfetta",
+    "section_heading_html": "Calcolatore <em>della taglia</em>",
+    "section_text": "Inserisci la lunghezza del piede del tuo bambino in millimetri: evidenzieremo la taglia con il giusto margine di crescita.",
+    "tab_find": "Trova la taglia",
+    "tab_measure": "Come misurare il piede",
+    "find_heading": "Inserisci la lunghezza del piede",
+    "find_text": "La tabella mostra quanto spazio per la crescita resta in ogni taglia. Misura entrambi i piedi e inserisci il valore del più lungo.",
+    "input_label": "Lunghezza del piede (mm)",
+    "input_placeholder": "es. 144",
+    "result_empty_html": "Consigliamo <strong>{{ min }}–{{ max }} mm</strong> di margine tra il piede e la soletta.",
+    "recommended_size": "Taglia consigliata",
+    "perfect": "Margine di crescita: __MARGIN__ mm",
+    "too_small": "Troppo piccola",
+    "apply": "Scegli questa taglia",
+    "th_size": "Taglia EU",
+    "th_insole": "Soletta",
+    "th_margin": "Margine",
+    "step1_title": "Tallone contro il muro",
+    "step1_text": "Appoggia un foglio su un pavimento piano, contro il muro. Fai salire il bambino sul foglio con il tallone che tocca leggermente la parete.",
+    "step2_title": "Segna il dito più lungo",
+    "step2_text": "Traccia una linea davanti al dito più sporgente, tenendo la matita in verticale. Il bambino deve stare in piedi, non seduto.",
+    "step3_title": "Misura entrambi i piedi",
+    "step3_text": "Spesso i piedi sono leggermente diversi: considera sempre il valore del più lungo.",
+    "step4_title": "Inserisci il risultato in millimetri",
+    "step4_text": "Misura la distanza dal bordo del foglio alla linea e inseriscila nel calcolatore."
+  },
+  "sections": {
+    "hero": {
+      "eyebrow": "Scarpe barefoot in pelle per bambini",
+      "heading_html": "I primi passi, <em>come a piedi nudi</em>",
+      "text": "Pelle naturale morbida, suola sottile e flessibile, punta ampia. Cucite a mano per lo sviluppo sano dei piedini.",
+      "button_1": "Scopri la collezione",
+      "button_2": "La nostra storia",
+      "badge_1": "Vera pelle",
+      "badge_2": "Cucite a mano",
+      "badge_3": "Taglie 19–33"
+    },
+    "collection_tiles": {
+      "eyebrow": "Collezioni",
+      "heading_html": "Per ogni <em>momento</em>",
+      "view_all": "Tutte le collezioni",
+      "models": {
+        "one": "{{ count }} modello",
+        "other": "{{ count }} modelli"
+      }
+    },
+    "featured_collection": {
+      "eyebrow": "Bestseller",
+      "heading_html": "I preferiti <em>dai genitori</em>",
+      "view_all": "Vedi tutti"
+    },
+    "features": {
+      "eyebrow": "Perché barefoot",
+      "heading_html": "Pensate <em>per piedi che crescono</em>",
+      "text": "Ogni dettaglio ha un solo scopo: lasciare al piede del bambino la libertà di cui ha bisogno per svilupparsi correttamente."
+    },
+    "materials": {
+      "eyebrow": "Materiali",
+      "heading_html": "Dalla natura, <em>dalle mani dell'artigiano</em>"
+    },
+    "testimonials": {
+      "eyebrow": "Recensioni",
+      "heading_html": "Cosa dicono <em>i genitori</em>",
+      "rating": "Valutazione: {{ rating }} su 5",
+      "verified": "Acquisto verificato",
+      "verified_customer": "Cliente OBEX",
+      "translated": "tradotta dal polacco"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "heading_html": "Hai <em>domande?</em>",
+      "text": "Abbiamo raccolto le risposte alle domande che i genitori ci fanno più spesso.",
+      "contact": "Scrivici"
+    },
+    "related": {
+      "eyebrow": "Consigliati",
+      "heading_html": "Potrebbe <em>piacerti anche</em>"
+    }
+  },
+  "usp": {
+    "health": {
+      "title": "Sviluppo sano",
+      "text": "Favorisce la motricità naturale e una postura corretta."
+    },
+    "flexible": {
+      "title": "Massima flessibilità",
+      "text": "La suola morbida lascia libertà di movimento e fa sentire il terreno."
+    },
+    "leather": {
+      "title": "Vera pelle",
+      "text": "Materiali traspiranti, selezionati con cura."
+    },
+    "shipping": {
+      "title": "Spedizione rapida",
+      "text": "Di solito spediamo gli ordini entro 24 ore."
+    },
+    "handmade": {
+      "title": "Cucite a mano",
+      "text": "Ogni paio nasce con la massima cura per i dettagli."
+    },
+    "returns": {
+      "title": "14 giorni per il reso",
+      "text": "Provale a casa con calma."
+    }
+  },
+  "materials": {
+    "leather": {
+      "title": "Vera pelle",
+      "text": "Realizziamo le nostre calzature in vera pelle, morbida ed elastica: si adatta al piede e lo lascia respirare. L'interno in pelle e la soletta ammortizzante proteggono dagli sfregamenti e regalano al bambino pieno comfort e la sensazione naturale di camminare a piedi nudi."
+    },
+    "rubber": {
+      "title": "Gomma termoplastica",
+      "text": "Alla base delle nostre scarpe c'è una suola ultraflessibile in gomma termoplastica. Unisce resistenza e morbidezza, lasciando al piede una naturale libertà di movimento. L'elevata resistenza all'abrasione e la buona aderenza garantiscono sicurezza durante il gioco, con un materiale che resta leggero."
+    },
+    "handmade": {
+      "title": "Cucite a mano",
+      "text": "Le nostre scarpe nascono da passione e precisione artigianale. Ogni paio è realizzato a mano, con cura per ogni dettaglio. Usiamo solo materiali naturali accuratamente selezionati, per garantire resistenza e un comfort unico."
+    }
+  },
+  "features": {
+    "toe_box": {
+      "title": "Punta ampia",
+      "text": "La forma del piede, non della scarpa. Le dita hanno spazio per allargarsi e trovare l'equilibrio a ogni passo."
+    },
+    "zero_drop": {
+      "title": "Zero drop",
+      "text": "Tallone e dita allo stesso livello. La suola piatta favorisce una postura naturale di tutto il corpo."
+    },
+    "sole": {
+      "title": "Suola da 3 mm",
+      "text": "La suola sottile in gomma termoplastica fa sentire il terreno e allo stesso tempo protegge da sassi e cemento."
+    },
+    "flex": {
+      "title": "Massima flessibilità",
+      "text": "La scarpa si piega in ogni direzione insieme al piede: i muscoli lavorano e si rafforzano a ogni passo."
+    },
+    "leather": {
+      "title": "Vera pelle",
+      "text": "Pelle liscia e scamosciata, morbida e traspirante, che si adatta al piede senza sfregare."
+    },
+    "fit": {
+      "title": "Facili da infilare",
+      "text": "L'ampia apertura e la chiusura a strappo sono comode anche con piedi paffuti e collo del piede alto. Alcuni modelli sono disponibili nella versione WIDE."
+    },
+    "proprio": {
+      "title": "Sentire il terreno",
+      "text": "I piedi hanno moltissime terminazioni nervose. Le informazioni sul terreno aiutano a imparare equilibrio e coordinazione."
+    },
+    "bones": {
+      "title": "Ossa in crescita",
+      "text": "Il piede del bambino è in gran parte cartilagine, che si ossifica nel corso degli anni. Per questo è importante che la scarpa non lo stringa."
+    }
+  },
+  "reviews": {
+    "r1": {
+      "title": "Una qualità che resiste a tutto",
+      "text": "Mio figlio all'asilo è un vulcano di energia, e le scarpe non hanno vita facile. Queste scarpine in pelle reggono benissimo le corse quotidiane al parco giochi.",
+      "author": ""
+    },
+    "r2": {
+      "title": "Come se fosse scalza!",
+      "text": "Prima mia figlia si toglieva subito qualsiasi scarpa. La suola di OBEX è così flessibile e leggera che la piccola non si accorge nemmeno di averle ai piedi. Se ne è innamorata subito.",
+      "author": "Patrycja, mamma di Zosia"
+    },
+    "r3": {
+      "title": "Pelle morbidissima e un bel design",
+      "text": "È raro che delle scarpe per bambini pensate per la salute del piede siano così eleganti. La pelle naturale è delicatissima, nessuno sfregamento nemmeno nelle giornate calde. Le consiglio a occhi chiusi.",
+      "author": ""
+    },
+    "r4": {
+      "title": "Finalmente scarpe che calzano!",
+      "text": "Abbiamo cercato a lungo scarpe adatte al collo del piede alto e al piedino paffuto di nostro figlio. Il modello WIDE è stato un centro perfetto: si infila in un secondo, non stringe e il piccolo ci corre con il sorriso.",
+      "author": "Anna, mamma di Ignaś"
+    },
+    "r5": {
+      "title": "Perfette per i primi passi",
+      "text": "Ce le ha consigliate la fisioterapista. Sono leggerissime e la suola si piega in tutte le direzioni. Si vede una grande differenza nella stabilità con cui nostra figlia trova l'equilibrio.",
+      "author": ""
+    },
+    "r6": {
+      "title": "",
+      "text": "Le migliori scarpe barefoot che abbiamo mai avuto! Pelle morbidissima, e la suola flessibile permette a nostro figlio di correre come a piedi nudi. Valgono assolutamente il prezzo.",
+      "author": "Katarzyna M."
+    },
+    "r7": {
+      "title": "",
+      "text": "Cercavo scarpe che non stringessero le dita di mia figlia e finalmente ho trovato OBEX. La qualità della lavorazione è straordinaria: si vede l'artigianato polacco in ogni cucitura.",
+      "author": "Agnieszka W."
+    },
+    "r8": {
+      "title": "",
+      "text": "Design splendido e materiali naturali. Le scarpe sono leggerissime e si infilano senza problemi anche con il collo del piede alto. Torneremo per le prossime taglie!",
+      "author": "Tomasz P."
+    }
+  },
+  "faq": {
+    "size": {
+      "q": "Quale taglia scegliere e quanto margine lasciare?",
+      "a_html": "<p>Fai appoggiare il piede del bambino su un foglio contro il muro, segna il dito più lungo e misura la distanza in millimetri. Inserisci il valore nel calcolatore nella pagina del prodotto: evidenzierà la taglia con il margine di crescita consigliato.</p>"
+    },
+    "care": {
+      "q": "Come prendersi cura delle scarpe OBEX?",
+      "a_html": "<p>Non lavare le scarpe in lavatrice e non asciugarle sul termosifone. Pulisci lo sporco con un panno umido. Per mantenere la pelle morbida e più resistente all'umidità, usa cere naturali o impermeabilizzanti per pelle liscia.</p>"
+    },
+    "sole": {
+      "q": "Perché la suola è così sottile?",
+      "a_html": "<p>È una scelta voluta, consigliata dai fisioterapisti. La suola in gomma termoplastica è spessa 3 mm: così il bambino sente il terreno (propriocezione), e questo favorisce lo sviluppo dei muscoli del piede e della postura. È molto flessibile, ma protegge da vetri, sassi e cemento.</p>"
+    },
+    "wide": {
+      "q": "Vanno bene per un piede paffuto con il collo alto?",
+      "a_html": "<p>Sì. L'ampia apertura e la comoda chiusura a strappo facilitano la calzata e permettono di adattare la scarpa sia a un piede sottile sia a uno più paffuto. Per i bambini con il piede decisamente più largo abbiamo creato il modello Helis WIDE.</p>"
+    },
+    "returns": {
+      "q": "Come funzionano resi e cambi?",
+      "a_html": "<p>Hai 14 giorni per provare le scarpe a casa con calma. Se la taglia non va bene, restituisci le scarpe non indossate. Per un cambio, il modo più rapido è rendere il paio e fare un nuovo ordine con la taglia giusta.</p>"
+    },
+    "shipping": {
+      "q": "Spedite in Italia?",
+      "a_html": "<p>Sì. Di solito spediamo gli ordini entro 24 ore nei giorni lavorativi e la consegna richiede in genere 3–5 giorni lavorativi. I prezzi sono in euro e il costo esatto della spedizione è indicato al checkout, prima del pagamento.</p>"
+    },
+    "indoor_outdoor": {
+      "q": "Che differenza c'è tra i modelli Indoor e Outdoor?",
+      "a_html": "<p>I modelli Indoor sono pantofole morbide per casa e asilo. I modelli Outdoor hanno la stessa struttura barefoot flessibile, ma sono pensati per camminare all'aperto. Tutti sono realizzati in vera pelle.</p>"
+    },
+    "first_steps": {
+      "q": "Da quando un bambino può indossare scarpe barefoot?",
+      "a_html": "<p>La nostra taglia più piccola è la 19 (soletta 125 mm) e di solito va bene ai bambini che muovono i primi passi. La suola morbida e flessibile non ostacola l'apprendimento della camminata. In caso di dubbi sullo sviluppo del piede, è bene chiedere a un fisioterapista.</p>"
+    }
+  },
+  "marquee": {
+    "barefoot": "Barefoot dai primi passi",
+    "leather": "Vera pelle",
+    "handmade": "Cucite a mano",
+    "wide": "Spazio per ogni dito",
+    "zero_drop": "Zero drop"
+  },
+  "content": {
+    "home": {
+      "story": {
+        "eyebrow": "La filosofia OBEX",
+        "heading_html": "Lascia crescere i piedi <em>come ha previsto la natura</em>",
+        "text_html": "<p>Crediamo che il miglior sostegno per un piede in crescita sia non costringerlo inutilmente. Progettiamo le scarpe OBEX perché imitino il camminare a piedi nudi e offrano ai bambini proprio ciò di cui hanno bisogno per crescere in salute.</p>",
+        "button": "Scopri la nostra storia",
+        "badge": "Cucite a mano"
+      },
+      "point_shape": {
+        "title": "Forma anatomica",
+        "text": "La punta ampia lascia alle dita lo spazio per allargarsi e trovare l'equilibrio."
+      },
+      "point_zero_drop": {
+        "title": "Suola piatta (zero drop)",
+        "text": "Lo stesso livello dal tallone alle dita favorisce una postura corretta di tutto il corpo."
+      },
+      "point_flex": {
+        "title": "Massima flessibilità",
+        "text": "I materiali morbidi si piegano in ogni direzione e rafforzano i muscoli a ogni passo."
+      },
+      "wide": {
+        "eyebrow": "Helis WIDE",
+        "heading_html": "Più spazio, <em>lo stesso comfort</em>",
+        "text_html": "<p>Ogni piede cresce con i suoi tempi. Per i bambini con il piede più largo e il collo del piede alto abbiamo creato Helis WIDE. La suola più larga lascia piena libertà alle dita e la tomaia riprogettata non preme sul collo del piede.</p>",
+        "button": "Scopri i modelli WIDE",
+        "badge": "WIDE"
+      }
+    },
+    "about": {
+      "intro": {
+        "eyebrow": "Chi siamo",
+        "heading_html": "La nostra <em>storia</em>",
+        "text_html": "<p>Dietro ogni paio di scarpine OBEX c'è l'attenzione per uno sviluppo sano e l'amore per il vero artigianato. Dal primo schizzo all'ultima cucitura puntiamo sulla qualità e su un approccio senza compromessi all'anatomia dei piedini.</p>"
+      },
+      "passion": {
+        "eyebrow": "Gli inizi",
+        "heading_html": "Per passione <em>dei primi passi</em>",
+        "text_html": "<p>OBEX nasce da una convinzione semplice: il piede di un bambino è un meccanismo preciso che merita la migliore cura possibile. Fin dall'inizio creiamo calzature che non limitano, ma accompagnano il ritmo naturale della crescita.</p>"
+      },
+      "material": {
+        "eyebrow": "Materiali",
+        "heading_html": "La nobiltà <em>dei materiali naturali</em>",
+        "text_html": "<p>Scegliamo ciò che offre la natura. La pelle liscia e quella scamosciata garantiscono morbidezza e vestibilità uniche, lasciano respirare il piede e resistono anche ai giochi più vivaci, unendo un'eleganza discreta a soluzioni pratiche.</p>"
+      },
+      "craft": {
+        "eyebrow": "Artigianato",
+        "heading_html": "Lavorazione a mano e <em>precisione artigiana</em>",
+        "text_html": "<p>Il cuore di OBEX è l'artigianato tradizionale. Ogni paio è frutto di un lavoro manuale in cui la cura per il dettaglio è garanzia di qualità. Così controlliamo ogni cucitura e le nostre scarpe sono non solo belle, ma soprattutto resistenti e sicure.</p>"
+      },
+      "barefoot": {
+        "eyebrow": "Filosofia",
+        "heading_html": "Barefoot: <em>più vicini alla natura</em>",
+        "text_html": "<p>Nel progettare le suole seguiamo l'idea del barefoot. Per lo sviluppo sano di muscoli e legamenti, il piede del bambino deve sentire il terreno e lavorare senza ostacoli. Le nostre suole flessibili consentono un movimento naturale e allo stesso tempo proteggono.</p>",
+        "button": "Scopri la collezione"
+      }
+    },
+    "size": {
+      "intro": {
+        "eyebrow": "Guida",
+        "heading_html": "Come scegliere <em>la taglia</em>",
+        "text_html": "<p>La taglia giusta è il passo più importante per lo sviluppo sano del piede. Ogni piedino è diverso: per questo abbiamo preparato una guida semplice e un calcolatore che indica la taglia con il giusto margine.</p>"
+      },
+      "measure": {
+        "eyebrow": "Passo 1",
+        "heading_html": "Come misurare <em>correttamente il piede?</em>",
+        "text_html": "<p>Fai appoggiare il piede del bambino su un foglio, con il tallone che tocca leggermente il muro. Tenendo la matita in verticale, segna una linea davanti al dito più lungo e misura la distanza dal bordo del foglio. Misura entrambi i piedi, che possono essere leggermente diversi, e considera sempre il più lungo.</p>"
+      },
+      "width": {
+        "eyebrow": "Larghezza",
+        "heading_html": "Pensiamo anche <em>alla larghezza</em>",
+        "text_html": "<p>Le nostre scarpe hanno una punta ampia e anatomica, adatta a piedi normali e larghi. Camminando, le dita possono aprirsi liberamente e questo stabilizza la postura. Per piedi decisamente larghi consigliamo il modello Helis WIDE.</p>"
+      },
+      "calculator": {
+        "eyebrow": "Calcolatore",
+        "heading_html": "Usa il nostro <em>calcolatore</em>",
+        "text_html": "<p>In ogni pagina prodotto trovi il calcolatore delle taglie. Inserisci la lunghezza del piede in millimetri: il sistema aggiungerà il margine di crescita consigliato e indicherà la taglia ideale per il tuo bambino.</p>"
+      },
+      "frequency": {
+        "eyebrow": "Controllo",
+        "heading_html": "Ogni quanto <em>controllare la taglia?</em>",
+        "text_html": "<p>I piedi dei bambini crescono a scatti. Consigliamo di misurarli ogni 2 mesi fino al primo anno, ogni 3 mesi tra 1 e 3 anni e ogni 4–6 mesi in età prescolare. Se il bambino inciampa più spesso, è il momento di una nuova misurazione.</p>",
+        "button": "Scopri la collezione"
+      }
+    },
+    "care": {
+      "intro": {
+        "eyebrow": "Cura",
+        "heading_html": "Come prendersi cura <em>delle scarpe OBEX</em>",
+        "text_html": "<p>Le nostre scarpe sono in vera pelle, che respira e si adatta al piede. Per conservarne la bellezza e le proprietà bastano quattro semplici regole.</p>"
+      },
+      "leather": {
+        "eyebrow": "Materiale",
+        "heading_html": "La nobiltà <em>della vera pelle</em>",
+        "text_html": "<p>Tutti i prodotti OBEX sono realizzati in vera pelle, che garantisce ai piedini una buona traspirazione e comfort. Per mantenere a lungo morbidezza ed elasticità, ricorda alcune semplici regole.</p>"
+      },
+      "cloth": {
+        "eyebrow": "Pulizia",
+        "heading_html": "Solo un <em>panno umido</em>",
+        "text_html": "<p>Rimuovi lo sporco quotidiano con un panno morbido leggermente inumidito. È il modo più sicuro per rinfrescare il materiale naturale senza danneggiarne la struttura delicata e traspirante.</p>"
+      },
+      "no_wash": {
+        "eyebrow": "Importante",
+        "heading_html": "Mai <em>in lavatrice</em>",
+        "text_html": "<p>Non mettere le scarpe OBEX in lavatrice. Acqua in abbondanza, centrifuga e detersivi danneggiano la struttura della pelle, che si indurisce e si deforma in modo irreversibile.</p>"
+      },
+      "drying": {
+        "eyebrow": "Asciugatura",
+        "heading_html": "Asciugatura <em>naturale</em>",
+        "text_html": "<p>Se le scarpe si bagnano, lasciale asciugare a temperatura ambiente. Evita termosifoni e sole diretto: un'asciugatura troppo rapida secca la pelle e può provocare crepe.</p>"
+      }
+    },
+    "facts": {
+      "intro": {
+        "eyebrow": "Curiosità",
+        "heading_html": "I piedi dei bambini <em>e il barefoot</em>",
+        "text_html": "<p>Alcuni fatti su come si sviluppano i piedi dei bambini e sul perché conta così tanto cosa indossano ai primi passi.</p>"
+      },
+      "cartilage": {
+        "eyebrow": "Curiosità 1",
+        "heading_html": "Il piede del bambino è <em>soprattutto cartilagine</em>",
+        "text_html": "<p>I piedi di un neonato non hanno ancora ossa completamente formate: sono in gran parte cartilagine morbida ed elastica, che si indurisce con il tempo. L'ossificazione dura molti anni, per questo nei primi anni di vita è così facile deformare il piede con scarpe rigide o della taglia sbagliata.</p>"
+      },
+      "proprio": {
+        "eyebrow": "Curiosità 2",
+        "heading_html": "I piedi sono <em>una finestra sul mondo</em>",
+        "text_html": "<p>I piedi hanno moltissime terminazioni nervose. Quando il bambino cammina scalzo o con scarpe barefoot, il cervello riceve un flusso continuo di informazioni sul terreno: se è duro, morbido, freddo, in pendenza o scivoloso. È fondamentale per imparare equilibrio e coordinazione.</p>"
+      },
+      "shape": {
+        "eyebrow": "Curiosità 3",
+        "heading_html": "La forma del piede, <em>non della scarpa</em>",
+        "text_html": "<p>Le scarpe tradizionali per bambini hanno spesso la punta stretta, che comprime le dita. Le scarpe OBEX hanno una punta ampia e anatomica: a ogni passo le dita possono aprirsi a ventaglio, cosa importante per la stabilità e per lo sviluppo dell'arco plantare.</p>"
+      },
+      "zero_drop": {
+        "eyebrow": "Curiosità 4",
+        "heading_html": "Zero drop: <em>l'equilibrio parte dal tallone</em>",
+        "text_html": "<p>Molte scarpe tradizionali hanno il tallone rialzato, che sposta il baricentro del bambino e carica l'avampiede. Nelle scarpe OBEX tallone e dita sono allo stesso livello: questo favorisce una postura naturale e aiuta a imparare a camminare in modo stabile.</p>",
+        "button": "Scopri la collezione"
+      }
+    }
+  }
+}

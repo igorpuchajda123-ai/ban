@@ -1,0 +1,45 @@
+{%- comment -%}
+  Filtry Shopify Search & Discovery. Parametry: results (collection/search), id
+{%- endcomment -%}
+<div data-facets-form-wrap>
+  <form class="filters" data-facets-form id="{{ id }}">
+    {%- if results.terms -%}<input type="hidden" name="q" value="{{ results.terms | escape }}"><input type="hidden" name="type" value="product">{%- endif -%}
+    {%- if results.sort_by -%}<input type="hidden" name="sort_by" value="{{ results.sort_by }}">{%- endif -%}
+    {%- for filter in results.filters -%}
+      {%- liquid
+        assign label_down = filter.label | downcase
+        assign is_size = false
+        if label_down contains 'rozmiar' or label_down contains 'size' or label_down contains 'taglia' or label_down contains 'størrelse'
+          assign is_size = true
+        endif
+      -%}
+      <details {% if forloop.index <= 3 or filter.active_values.size > 0 %}open{% endif %}>
+        <summary>{{ filter.label }}{% if filter.active_values.size > 0 %} ({{ filter.active_values.size }}){% endif %} {% render 'icon', name: 'chevron' %}</summary>
+        {%- case filter.type -%}
+          {%- when 'list', 'boolean' -%}
+            <ul class="filters__list{% if is_size %} filters__list--sizes{% endif %}" role="list">
+              {%- for value in filter.values -%}
+                <li>
+                  <label class="check{% if is_size %} check--box{% endif %}">
+                    <input type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %}checked{% endif %} {% if value.count == 0 and value.active == false %}disabled{% endif %}>
+                    <span>{{ value.label }}</span>
+                    {%- unless is_size -%}<span class="check__count">{{ value.count }}</span>{%- endunless -%}
+                  </label>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- when 'price_range' -%}
+            <div class="price-range">
+              <label class="field"><span class="small">{{ 'collection.from' | t }} ({{ cart.currency.symbol }})</span>
+                <input class="input" type="number" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value | money_without_currency | replace: ',', '.' }}" placeholder="0" min="0" inputmode="decimal">
+              </label>
+              <label class="field"><span class="small">{{ 'collection.to' | t }} ({{ cart.currency.symbol }})</span>
+                <input class="input" type="number" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value | money_without_currency | replace: ',', '.' }}" placeholder="{{ filter.range_max | money_without_currency | replace: ',', '.' }}" min="0" inputmode="decimal">
+              </label>
+            </div>
+        {%- endcase -%}
+      </details>
+    {%- endfor -%}
+    <noscript><button class="btn btn--block" type="submit">{{ 'collection.apply' | t }}</button></noscript>
+  </form>
+</div>

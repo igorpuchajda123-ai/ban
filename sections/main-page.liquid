@@ -1,0 +1,22 @@
+{%- comment -%}
+  Nagłówek strony + treść z panelu Strony (tłumaczona w Translate & Adapt → Strony).
+{%- endcomment -%}
+<div class="container container--wide">{% render 'breadcrumbs' %}</div>
+<header class="page-hero container container--narrow">
+  {%- if section.settings.eyebrow != blank -%}<p class="eyebrow eyebrow--plain">{{ section.settings.eyebrow }}</p>{%- endif -%}
+  <h1>{{ page.title }}</h1>
+  {%- if section.settings.show_content and page.content != blank -%}
+    <div class="rte lead" style="text-align: {% if section.settings.center_content %}center{% else %}left{% endif %};">{{ page.content }}</div>
+  {%- endif -%}
+</header>
+
+{% schema %}
+{
+  "name": "Strona – nagłówek",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł" },
+    { "type": "checkbox", "id": "show_content", "label": "Pokaż treść strony", "default": true },
+    { "type": "checkbox", "id": "center_content", "label": "Wyśrodkuj treść", "default": true }
+  ]
+}
+{% endschema %}

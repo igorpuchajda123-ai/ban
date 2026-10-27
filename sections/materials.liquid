@@ -1,0 +1,76 @@
+{%- liquid
+  assign d_eyebrow = 'sections.materials.eyebrow' | t
+  assign d_heading = 'sections.materials.heading_html' | t
+-%}
+<section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="container container--wide">
+    <div class="materials" data-tabs>
+      <div class="reveal">
+        <p class="eyebrow">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+        <h2>{{ section.settings.heading | default: d_heading }}</h2>
+        <div class="materials__tabs" role="tablist">
+          {%- for block in section.blocks -%}
+            {%- assign t_key = 'materials.' | append: block.settings.preset | append: '.title' -%}
+            {%- assign d_title = t_key | t -%}
+            <button class="materials__tab" type="button" role="tab" id="MatTab-{{ block.id }}" aria-controls="MatPanel-{{ block.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" data-tab="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+              {{ block.settings.title | default: d_title }}
+            </button>
+          {%- endfor -%}
+        </div>
+        {%- for block in section.blocks -%}
+          {%- assign x_key = 'materials.' | append: block.settings.preset | append: '.text' -%}
+          {%- assign d_text = x_key | t -%}
+          <div class="materials__panel" role="tabpanel" id="MatPanel-{{ block.id }}" aria-labelledby="MatTab-{{ block.id }}" data-panel="{{ forloop.index0 }}" {% unless forloop.first %}hidden{% endunless %}>
+            <p>{{ block.settings.text | default: d_text }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="materials__images reveal" data-delay="1">
+        {%- for block in section.blocks -%}
+          <div class="materials__img{% if forloop.first %} is-active{% endif %}" data-panel-img="{{ forloop.index0 }}">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 1200 | image_tag: widths: '500, 800, 1200', sizes: '(min-width: 990px) 45vw, 100vw', loading: 'lazy', alt: block.settings.image.alt | default: '' }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Materiały (zakładki)",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": true },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "blocks": [
+    {
+      "type": "material",
+      "name": "Materiał",
+      "settings": [
+        { "type": "select", "id": "preset", "label": "Gotowa treść", "options": [
+          { "value": "leather", "label": "Skóra naturalna" },
+          { "value": "rubber", "label": "Termokauczuk" },
+          { "value": "handmade", "label": "Ręcznie szyte" }
+        ], "default": "leather" },
+        { "type": "image_picker", "id": "image", "label": "Zdjęcie" },
+        { "type": "text", "id": "title", "label": "Własny tytuł" },
+        { "type": "textarea", "id": "text", "label": "Własny opis" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Materiały (zakładki)", "blocks": [
+    { "type": "material", "settings": { "preset": "leather" } },
+    { "type": "material", "settings": { "preset": "rubber" } },
+    { "type": "material", "settings": { "preset": "handmade" } }
+  ] }]
+}
+{% endschema %}

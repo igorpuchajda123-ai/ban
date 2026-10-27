@@ -1,0 +1,135 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "settings": {
+        "content_key": "about.intro",
+        "heading_tag": "h1",
+        "center": true,
+        "style": "default",
+        "padding_top": 80,
+        "padding_bottom": 48,
+        "show_page_content": false,
+        "use_page_title": true
+      }
+    },
+    "passion": {
+      "type": "image-text",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_didsijdidsijdids_2.jpg",
+        "media_position": "left",
+        "ratio": "4 / 5",
+        "shape": "rounded",
+        "content_key": "about.passion",
+        "number": "01",
+        "style": "default",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "button_style": "link",
+        "show_badge": false
+      }
+    },
+    "material": {
+      "type": "image-text",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_-5.jpg",
+        "media_position": "right",
+        "ratio": "4 / 5",
+        "shape": "blob",
+        "content_key": "about.material",
+        "number": "02",
+        "style": "default",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "button_style": "link",
+        "show_badge": false
+      }
+    },
+    "craft": {
+      "type": "image-text",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_kp4itvkp4itvkp4i_2.jpg",
+        "media_position": "left",
+        "ratio": "4 / 5",
+        "shape": "rounded",
+        "content_key": "about.craft",
+        "number": "03",
+        "style": "default",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "button_style": "link",
+        "show_badge": false
+      }
+    },
+    "barefoot": {
+      "type": "image-text",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_nhwvg8nhwvg8nhwv_2.jpg",
+        "media_position": "right",
+        "ratio": "4 / 5",
+        "shape": "rounded",
+        "content_key": "about.barefoot",
+        "number": "04",
+        "style": "default",
+        "padding_top": 48,
+        "padding_bottom": 112,
+        "button_style": "button",
+        "show_badge": false,
+        "link": "shopify://collections/all"
+      }
+    },
+    "materials": {
+      "type": "materials",
+      "blocks": {
+        "leather": {
+          "type": "material",
+          "settings": {
+            "preset": "leather",
+            "image": "shopify://shop_images/IMG_5085.jpg"
+          }
+        },
+        "rubber": {
+          "type": "material",
+          "settings": {
+            "preset": "rubber",
+            "image": "shopify://shop_images/IMG_5084.png"
+          }
+        },
+        "handmade": {
+          "type": "material",
+          "settings": {
+            "preset": "handmade",
+            "image": "shopify://shop_images/naklejki-handmade-stamp_jpg.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "leather",
+        "rubber",
+        "handmade"
+      ],
+      "settings": {
+        "surface": true,
+        "padding_top": 112,
+        "padding_bottom": 112
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "surface": false,
+        "padding_top": 112,
+        "padding_bottom": 112
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "passion",
+    "material",
+    "craft",
+    "barefoot",
+    "materials",
+    "form"
+  ]
+}

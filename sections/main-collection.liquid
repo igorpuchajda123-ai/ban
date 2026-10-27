@@ -1,0 +1,163 @@
+{%- liquid
+  assign per_page = section.settings.per_page
+  assign sort_by = collection.sort_by | default: collection.default_sort_by
+  assign has_filters = false
+  if collection.filters.size > 0 and section.settings.enable_filters
+    assign has_filters = true
+  endif
+-%}
+<div class="container container--wide">
+  {% render 'breadcrumbs' %}
+
+  <header class="collection-hero">
+    <div class="collection-hero__grid{% if section.settings.show_image and collection.image %} collection-hero__grid--media{% endif %}">
+      <div>
+        <p class="eyebrow">{{ 'collection.eyebrow' | t }}</p>
+        <h1>{{ collection.title }}</h1>
+        {%- if collection.description != blank -%}
+          <div class="rte lead">{{ collection.description }}</div>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.show_image and collection.image -%}
+        <div class="collection-hero__media">
+          {{ collection.image | image_url: width: 1400 | image_tag: widths: '600, 900, 1200, 1400', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'eager', fetchpriority: 'high', alt: collection.title }}
+        </div>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.chips_menu != blank -%}
+      <nav class="chips" aria-label="{{ 'collection.related' | t }}">
+        {%- for link in section.settings.chips_menu.links -%}
+          <a class="chip" href="{{ link.url }}"{% if link.active or link.url == collection.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+        {%- endfor -%}
+      </nav>
+    {%- endif -%}
+  </header>
+
+  {%- paginate collection.products by per_page -%}
+    <div class="collection-layout{% if has_filters and section.settings.filter_layout == 'sidebar' %} collection-layout--sidebar{% endif %}" data-facets data-section="{{ section.id }}">
+      {%- if has_filters and section.settings.filter_layout == 'sidebar' -%}
+        <aside class="desktop-only" aria-label="{{ 'collection.filters' | t }}" style="display: var(--sidebar-display, block);">
+          {% render 'facets', results: collection, id: 'FacetsSidebar' %}
+        </aside>
+      {%- endif -%}
+
+      <div>
+        <div class="toolbar">
+          <span class="toolbar__count" data-product-count>{{ 'collection.product_count' | t: count: collection.products_count }}</span>
+          <div class="toolbar__right">
+            {%- if has_filters -%}
+              <button class="btn btn--outline filters-toggle" type="button" data-drawer-open="FiltersDrawer">{% render 'icon', name: 'filter' %} {{ 'collection.filters' | t }}</button>
+            {%- endif -%}
+            <div data-sort-wrap>
+            <form data-facets-form>
+              {%- for filter in collection.filters -%}
+                {%- for value in filter.active_values -%}<input type="hidden" name="{{ value.param_name }}" value="{{ value.value }}">{%- endfor -%}
+                {%- if filter.type == 'price_range' -%}
+                  {%- if filter.min_value.value -%}<input type="hidden" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value | money_without_currency | replace: ',', '.' }}">{%- endif -%}
+                  {%- if filter.max_value.value -%}<input type="hidden" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value | money_without_currency | replace: ',', '.' }}">{%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+              <label class="visually-hidden" for="SortBy">{{ 'collection.sort' | t }}</label>
+              <select class="select" id="SortBy" name="sort_by">
+                {%- for option in collection.sort_options -%}
+                  <option value="{{ option.value }}" {% if option.value == sort_by %}selected{% endif %}>{{ option.name }}</option>
+                {%- endfor -%}
+              </select>
+            </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="active-filters" data-active-filters>
+          {%- for filter in collection.filters -%}
+            {%- for value in filter.active_values -%}
+              <a href="{{ value.url_to_remove }}" data-facet-link>{{ value.label }} {% render 'icon', name: 'close' %}</a>
+            {%- endfor -%}
+            {%- if filter.type == 'price_range' -%}
+              {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                <a href="{{ filter.url_to_remove }}" data-facet-link>{{ filter.min_value.value | default: 0 | money }} – {{ filter.max_value.value | default: filter.range_max | money }} {% render 'icon', name: 'close' %}</a>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        <div data-collection-grid>
+          {%- if collection.products.size > 0 -%}
+            <div class="product-grid" style="--cols: {{ section.settings.columns }};">
+              {%- for product in collection.products -%}
+                {%- liquid
+                  assign lazy = true
+                  if forloop.index <= 4
+                    assign lazy = false
+                  endif
+                -%}
+                {% render 'product-card', product: product, lazy: lazy, heading_level: 'h2' %}
+              {%- endfor -%}
+            </div>
+            {% render 'pagination', paginate: paginate %}
+          {%- else -%}
+            <div class="cart-empty">
+              <p class="h3">{{ 'collection.empty' | t }}</p>
+              <a class="btn btn--outline" href="{{ collection.url }}" data-facet-link>{{ 'collection.clear' | t }}</a>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    {%- if section.settings.seo_text != blank and current_page == 1 -%}
+      <div class="rte muted container--narrow" style="margin: 5rem auto 0; padding-inline: 0;">{{ section.settings.seo_text }}</div>
+    {%- endif -%}
+  {%- endpaginate -%}
+</div>
+
+{%- if has_filters -%}
+  <div class="drawer drawer--left" id="FiltersDrawer" data-drawer aria-hidden="true">
+    <button class="drawer__overlay" type="button" data-drawer-close tabindex="-1" aria-label="{{ 'general.close' | t }}"></button>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="{{ 'collection.filters' | t }}">
+      <div class="drawer__head">
+        <span class="drawer__title">{{ 'collection.filters' | t }}</span>
+        <button class="icon-btn" type="button" data-drawer-close>{% render 'icon', name: 'close' %}<span class="visually-hidden">{{ 'general.close' | t }}</span></button>
+      </div>
+      <div class="drawer__body" style="padding: 0 1.25rem;">
+        {% render 'facets', results: collection, id: 'FacetsDrawer' %}
+      </div>
+      <div class="drawer__foot" style="display:flex; gap:.5rem;">
+        <a class="btn btn--outline" style="flex:1" href="{{ collection.url }}" data-facet-link>{{ 'collection.clear' | t }}</a>
+        <button class="btn" style="flex:1" type="button" data-drawer-close>{{ 'collection.show_results' | t }}</button>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+<style>
+  @media (max-width: 989px) { .collection-layout--sidebar > aside { --sidebar-display: none; } }
+</style>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": {{ collection.title | json }},
+    "url": {{ request.origin | append: collection.url | json }},
+    "inLanguage": {{ request.locale.iso_code | json }}
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Kolekcja",
+  "class": "section-main-collection",
+  "settings": [
+    { "type": "range", "id": "per_page", "label": "Produktów na stronę", "min": 8, "max": 48, "step": 4, "default": 24 },
+    { "type": "range", "id": "columns", "label": "Kolumny (desktop)", "min": 2, "max": 5, "step": 1, "default": 4 },
+    { "type": "checkbox", "id": "show_image", "label": "Zdjęcie kolekcji w nagłówku", "default": false },
+    { "type": "link_list", "id": "chips_menu", "label": "Szybkie linki (menu)", "info": "Np. menu z modelami: Helis, Helis WIDE, Balerina, Toby…" },
+    { "type": "checkbox", "id": "enable_filters", "label": "Filtry", "default": true },
+    { "type": "select", "id": "filter_layout", "label": "Filtry – układ", "options": [
+      { "value": "sidebar", "label": "Panel boczny" }, { "value": "drawer", "label": "Szuflada" }
+    ], "default": "drawer" },
+    { "type": "richtext", "id": "seo_text", "label": "Tekst SEO pod produktami", "info": "Wyświetlany tylko na 1. stronie. Przetłumacz w Translate & Adapt." }
+  ]
+}
+{% endschema %}

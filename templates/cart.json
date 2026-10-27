@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "show_note": true,
+        "show_express": true
+      }
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "bestsellery",
+        "layout": "slider",
+        "columns": 4,
+        "limit": 8,
+        "surface": true,
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured"
+  ]
+}

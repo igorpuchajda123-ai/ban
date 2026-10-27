@@ -1,0 +1,29 @@
+<div class="container container--wide">{% render 'breadcrumbs' %}</div>
+<article class="container article section" style="--pad-top: 24px;">
+  <p class="eyebrow">{{ article.published_at | time_tag: format: 'date' }}</p>
+  <h1>{{ article.title }}</h1>
+  {%- if article.image -%}
+    <div class="article__hero">{{ article.image | image_url: width: 1600 | image_tag: widths: '600, 900, 1200, 1600', sizes: '(min-width: 990px) 46rem, 100vw', loading: 'eager', fetchpriority: 'high', alt: article.image.alt | default: article.title }}</div>
+  {%- endif -%}
+  <div class="rte">{{ article.content }}</div>
+  <p style="margin-top:3rem"><a class="link-arrow" href="{{ blog.url }}">{{ 'blog.back' | t }} {% render 'icon', name: 'arrow' %}</a></p>
+</article>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ article.title | json }},
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+    "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%S%z' | json }},
+    "inLanguage": {{ request.locale.iso_code | json }},
+    {%- if article.image %}"image": {{ article.image | image_url: width: 1200 | prepend: 'https:' | json }},{% endif %}
+    "author": { "@type": "Organization", "name": {{ shop.name | json }} },
+    "publisher": { "@type": "Organization", "name": {{ shop.name | json }} },
+    "mainEntityOfPage": {{ request.origin | append: article.url | json }}
+  }
+</script>
+
+{% schema %}
+{ "name": "Artykuł", "settings": [] }
+{% endschema %}

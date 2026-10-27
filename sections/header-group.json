@@ -1,0 +1,28 @@
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "blocks": {
+        "msg_shipping": { "type": "message", "settings": { "preset": "free_shipping", "text": "", "link": "", "icon": "truck", "market": "all" } },
+        "msg_handmade": { "type": "message", "settings": { "preset": "handmade", "text": "", "link": "", "icon": "hand", "market": "all" } },
+        "msg_returns": { "type": "message", "settings": { "preset": "returns", "text": "", "link": "", "icon": "return", "market": "all" } }
+      },
+      "block_order": ["msg_shipping", "msg_handmade", "msg_returns"],
+      "settings": { "interval": 5, "show_contact": true, "show_localization": false }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "promo_image": "shopify://shop_images/IMG_5169.jpg",
+        "promo_text": "",
+        "promo_link": "shopify://collections/helis-wide-indoor-collection",
+        "promo_menu_index": 1,
+        "search_suggestions": ""
+      }
+    }
+  },
+  "order": ["announcement", "header"]
+}

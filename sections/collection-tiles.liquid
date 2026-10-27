@@ -1,0 +1,66 @@
+{%- liquid
+  assign d_eyebrow = 'sections.collection_tiles.eyebrow' | t
+  assign d_heading = 'sections.collection_tiles.heading_html' | t
+-%}
+<section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="container container--wide">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+        <h2>{{ section.settings.heading | default: d_heading }}</h2>
+      </div>
+      <a class="link-arrow" href="{{ routes.collections_url }}">{{ 'sections.collection_tiles.view_all' | t }} {% render 'icon', name: 'arrow' %}</a>
+    </div>
+    <div class="tiles" style="--cols: {{ section.blocks.size | at_most: 4 }}; --ratio: {{ section.settings.ratio }};">
+      {%- for block in section.blocks -%}
+        {%- assign c = block.settings.collection -%}
+        {%- assign img = block.settings.image | default: c.featured_image -%}
+        <a class="tile reveal" data-delay="{{ forloop.index0 | modulo: 4 }}" href="{{ c.url | default: '#' }}" {{ block.shopify_attributes }}>
+          {%- if img -%}
+            {{ img | image_url: width: 1000 | image_tag: widths: '400, 600, 800, 1000', sizes: '(min-width: 990px) 25vw, 50vw', loading: 'lazy', alt: c.title }}
+          {%- else -%}
+            {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+          <span class="tile__body">
+            <span>
+              <span class="tile__title">{{ block.settings.title | default: c.title | default: 'Kolekcja' }}</span>
+              {%- if c.products_count > 0 -%}
+                <span class="tile__meta">{{ 'sections.collection_tiles.models' | t: count: c.products_count }}</span>
+              {%- endif -%}
+            </span>
+            <span class="tile__arrow">{% render 'icon', name: 'arrow' %}</span>
+          </span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kafle kolekcji",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "select", "id": "ratio", "label": "Proporcje kafli", "options": [
+      { "value": "3 / 4", "label": "Pionowe" }, { "value": "1 / 1", "label": "Kwadrat" }, { "value": "4 / 3", "label": "Poziome" }
+    ], "default": "3 / 4" },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": false },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 48 }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Kolekcja",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Kolekcja" },
+        { "type": "image_picker", "id": "image", "label": "Zdjęcie" },
+        { "type": "text", "id": "title", "label": "Tytuł (puste = nazwa kolekcji)", "info": "Nazwy kolekcji tłumaczysz w Translate & Adapt → Kolekcje." }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Kafle kolekcji", "blocks": [{ "type": "collection" }, { "type": "collection" }, { "type": "collection" }, { "type": "collection" }] }]
+}
+{% endschema %}

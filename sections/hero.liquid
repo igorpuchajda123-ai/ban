@@ -1,0 +1,102 @@
+{%- liquid
+  assign d_eyebrow = 'sections.hero.eyebrow' | t
+  assign d_heading = 'sections.hero.heading_html' | t
+  assign d_text = 'sections.hero.text' | t
+  assign d_button_1 = 'sections.hero.button_1' | t
+  assign d_button_2 = 'sections.hero.button_2' | t
+  assign layout = section.settings.layout
+-%}
+
+{%- if layout == 'split' -%}
+  <section class="hero-split" {{ section.shopify_attributes }}>
+    <div class="hero-split__content">
+      <p class="eyebrow reveal">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+      <h2 class="display reveal" data-delay="1">{{ section.settings.heading | default: d_heading }}</h2>
+      <p class="lead reveal" data-delay="2">{{ section.settings.text | default: d_text }}</p>
+      <div class="hero__actions reveal" data-delay="3" style="margin-top: 1.5rem;">
+        <a class="btn btn--lg" href="{{ section.settings.link_1 | default: routes.all_products_collection_url }}">{{ section.settings.button_1 | default: d_button_1 }} {% render 'icon', name: 'arrow' %}</a>
+        {%- if section.settings.link_2 != blank -%}
+          <a class="btn btn--outline btn--lg" href="{{ section.settings.link_2 }}">{{ section.settings.button_2 | default: d_button_2 }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="hero-split__media">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 2000 | image_tag: widths: '600, 900, 1200, 1600, 2000', sizes: '(min-width: 990px) 55vw, 100vw', loading: 'eager', fetchpriority: 'high' }}
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+  </section>
+{%- else -%}
+  <section class="hero{% if layout == 'center' %} hero--center{% endif %}" {{ section.shopify_attributes }}
+    style="--hero-h: {{ section.settings.height }}vh; --hero-h-mobile: {{ section.settings.height_mobile }}vh; --overlay: {{ section.settings.overlay | divided_by: 100.0 }}; --v-align: {{ section.settings.v_align }};">
+    <div class="hero__media" style="--focal: {{ section.settings.image.presentation.focal_point | default: 'center' }};">
+      {%- if section.settings.image != blank -%}
+        {%- if section.settings.image_mobile != blank -%}
+          <picture>
+            <source media="(max-width: 749px)" srcset="{{ section.settings.image_mobile | image_url: width: 750 }} 750w, {{ section.settings.image_mobile | image_url: width: 1100 }} 1100w" sizes="100vw">
+            {{ section.settings.image | image_url: width: 2400 | image_tag: widths: '900, 1200, 1600, 2000, 2400', sizes: '100vw', loading: 'eager', fetchpriority: 'high' }}
+          </picture>
+        {%- else -%}
+          {{ section.settings.image | image_url: width: 2400 | image_tag: widths: '600, 900, 1200, 1600, 2000, 2400', sizes: '100vw', loading: 'eager', fetchpriority: 'high' }}
+        {%- endif -%}
+      {%- else -%}
+        {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+    <div class="container container--wide hero__inner">
+      <div class="hero__content">
+        <p class="eyebrow reveal">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+        <h2 class="display reveal" data-delay="1">{{ section.settings.heading | default: d_heading }}</h2>
+        <p class="hero__text reveal" data-delay="2">{{ section.settings.text | default: d_text }}</p>
+        <div class="hero__actions reveal" data-delay="3">
+          <a class="btn btn--light btn--lg" href="{{ section.settings.link_1 | default: routes.all_products_collection_url }}">{{ section.settings.button_1 | default: d_button_1 }} {% render 'icon', name: 'arrow' %}</a>
+          {%- if section.settings.link_2 != blank -%}
+            <a class="btn btn--ghost-light btn--lg" href="{{ section.settings.link_2 }}">{{ section.settings.button_2 | default: d_button_2 }}</a>
+          {%- endif -%}
+        </div>
+        {%- if section.settings.show_badges -%}
+          <div class="hero__badges reveal" data-delay="3">
+            <span>{% render 'icon', name: 'leaf' %}{{ 'sections.hero.badge_1' | t }}</span>
+            <span>{% render 'icon', name: 'hand' %}{{ 'sections.hero.badge_2' | t }}</span>
+            <span>{% render 'icon', name: 'foot' %}{{ 'sections.hero.badge_3' | t }}</span>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Hero",
+  "class": "section-hero",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Układ", "options": [
+      { "value": "overlay", "label": "Zdjęcie na całą szerokość, tekst z lewej" },
+      { "value": "center", "label": "Zdjęcie na całą szerokość, tekst na środku" },
+      { "value": "split", "label": "Dzielony: tekst + zdjęcie" }
+    ], "default": "overlay" },
+    { "type": "image_picker", "id": "image", "label": "Zdjęcie" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Zdjęcie na telefon (opcjonalnie, pionowe)" },
+    { "type": "header", "content": "Treść", "info": "Puste pola = gotowe teksty w języku odwiedzającego (PL/IT/DA). Własny tekst przetłumacz w Translate & Adapt." },
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł" },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek", "info": "Kursywa wyróżni słowo kolorem." },
+    { "type": "text", "id": "text", "label": "Opis" },
+    { "type": "text", "id": "button_1", "label": "Przycisk 1 – tekst" },
+    { "type": "url", "id": "link_1", "label": "Przycisk 1 – link" },
+    { "type": "text", "id": "button_2", "label": "Przycisk 2 – tekst" },
+    { "type": "url", "id": "link_2", "label": "Przycisk 2 – link" },
+    { "type": "checkbox", "id": "show_badges", "label": "Pokaż wyróżniki pod przyciskami", "default": true },
+    { "type": "header", "content": "Wygląd" },
+    { "type": "range", "id": "height", "label": "Wysokość (desktop)", "min": 50, "max": 100, "step": 2, "unit": "vh", "default": 88 },
+    { "type": "range", "id": "height_mobile", "label": "Wysokość (telefon)", "min": 50, "max": 100, "step": 2, "unit": "vh", "default": 82 },
+    { "type": "range", "id": "overlay", "label": "Przyciemnienie", "min": 0, "max": 80, "step": 5, "unit": "%", "default": 45 },
+    { "type": "select", "id": "v_align", "label": "Pozycja tekstu (pion)", "options": [
+      { "value": "flex-start", "label": "Góra" }, { "value": "center", "label": "Środek" }, { "value": "flex-end", "label": "Dół" }
+    ], "default": "flex-end" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

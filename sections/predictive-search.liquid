@@ -1,0 +1,23 @@
+{%- if predictive_search.performed -%}
+  {%- if predictive_search.resources.collections.size > 0 or predictive_search.resources.pages.size > 0 -%}
+    <div class="predictive__links">
+      {%- for c in predictive_search.resources.collections -%}<a class="chip" href="{{ c.url }}">{{ c.title }}</a>{%- endfor -%}
+      {%- for p in predictive_search.resources.pages -%}<a class="chip" href="{{ p.url }}">{{ p.title }}</a>{%- endfor -%}
+    </div>
+  {%- endif -%}
+  {%- if predictive_search.resources.products.size > 0 -%}
+    <p class="mega__title">{{ 'search.products' | t }}</p>
+    <div class="predictive__grid">
+      {%- for product in predictive_search.resources.products -%}
+        {% render 'product-card', product: product, sizes: '(min-width: 990px) 18vw, 45vw' %}
+      {%- endfor -%}
+    </div>
+    <p style="margin-top:1.5rem"><a class="link-arrow" href="{{ routes.search_url }}?q={{ predictive_search.terms | url_encode }}&type=product">{{ 'search.view_all' | t: terms: predictive_search.terms }} {% render 'icon', name: 'arrow' %}</a></p>
+  {%- else -%}
+    <p class="muted">{{ 'search.no_results' | t: terms: predictive_search.terms }}</p>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{ "name": "Podpowiedzi wyszukiwania", "settings": [] }
+{% endschema %}

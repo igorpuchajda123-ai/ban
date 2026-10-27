@@ -1,0 +1,20 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "newsletter": {
+      "type": "newsletter",
+      "settings": { "heading": "", "text": "", "style": "surface", "padding_top": 72, "padding_bottom": 72 }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "menu_help": { "type": "menu", "settings": { "heading": "", "menu": "footer" } },
+        "contact": { "type": "contact", "settings": { "heading": "", "show_localization": true } }
+      },
+      "block_order": ["menu_help", "contact"],
+      "settings": { "about": "", "show_payment_icons": true, "show_wordmark": true }
+    }
+  },
+  "order": ["newsletter", "footer"]
+}

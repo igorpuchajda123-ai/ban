@@ -1,0 +1,110 @@
+{%- comment -%}
+  Opinie klientów. Gotowe opinie (preset) to prawdziwe recenzje ze sklepu – w wersjach IT/DA
+  wyświetlamy tłumaczenie z dopiskiem „przetłumaczono z polskiego”, bez zmiany autora.
+{%- endcomment -%}
+{%- liquid
+  assign d_eyebrow = 'sections.testimonials.eyebrow' | t
+  assign d_heading = 'sections.testimonials.heading_html' | t
+  assign is_translated = false
+  if request.locale.iso_code != 'pl'
+    assign is_translated = true
+  endif
+-%}
+<section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+  <div class="container container--wide">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+        <h2>{{ section.settings.heading | default: d_heading }}</h2>
+      </div>
+      <div class="slider-nav">
+        <button type="button" data-slider-prev="Slider-{{ section.id }}" aria-label="{{ 'general.previous' | t }}">{% render 'icon', name: 'arrow' %}</button>
+        <button type="button" data-slider-next="Slider-{{ section.id }}" aria-label="{{ 'general.next' | t }}">{% render 'icon', name: 'arrow' %}</button>
+      </div>
+    </div>
+    <div class="slider slider--bleed" id="Slider-{{ section.id }}" style="--cols: 3;">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign base = 'reviews.' | append: block.settings.preset
+          assign has_preset = false
+          if block.settings.preset != 'custom'
+            assign has_preset = true
+            assign d_title = base | append: '.title' | t
+            assign d_text = base | append: '.text' | t
+            assign d_author = base | append: '.author' | t
+          else
+            assign d_title = ''
+            assign d_text = ''
+            assign d_author = ''
+          endif
+          assign r_title = block.settings.title | default: d_title
+          assign r_text = block.settings.text | default: d_text
+          assign r_author = block.settings.author | default: d_author
+        -%}
+        <figure class="review-card reveal" data-delay="{{ forloop.index0 | modulo: 3 }}" {{ block.shopify_attributes }} style="margin:0">
+          <div class="stars" aria-label="{{ 'sections.testimonials.rating' | t: rating: block.settings.rating }}">
+            {%- for i in (1..block.settings.rating) -%}{% render 'icon', name: 'star' %}{%- endfor -%}
+          </div>
+          {%- if r_title != blank -%}<h3 class="review-card__title">{{ r_title }}</h3>{%- endif -%}
+          <blockquote class="review-card__text" style="margin:0">{{ r_text }}</blockquote>
+          <figcaption class="review-card__author">
+            {%- if block.settings.image != blank -%}
+              <span class="review-card__avatar">{{ block.settings.image | image_url: width: 120, height: 120, crop: 'center' | image_tag: loading: 'lazy', alt: '' }}</span>
+            {%- endif -%}
+            <span>
+              {%- assign d_customer = 'sections.testimonials.verified_customer' | t -%}
+              <span class="review-card__name">{{ r_author | default: d_customer }}</span>
+              <span class="review-card__meta">
+                {% render 'icon', name: 'check' %}{{ 'sections.testimonials.verified' | t }}
+                {%- if has_preset and is_translated -%} · {{ 'sections.testimonials.translated' | t }}{%- endif -%}
+              </span>
+            </span>
+          </figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Opinie rodziców",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": true },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Opinia",
+      "settings": [
+        { "type": "select", "id": "preset", "label": "Gotowa opinia (przetłumaczona)", "options": [
+          { "value": "r1", "label": "„Jakość, która znosi wszystko”" },
+          { "value": "r2", "label": "„Jakby chodziła boso!” – Patrycja" },
+          { "value": "r3", "label": "„Mięciutka skóra i piękny design”" },
+          { "value": "r4", "label": "„W końcu buty, które pasują!” – Anna" },
+          { "value": "r5", "label": "„Idealne na pierwsze kroki”" },
+          { "value": "r6", "label": "Katarzyna M." },
+          { "value": "r7", "label": "Agnieszka W." },
+          { "value": "r8", "label": "Tomasz P." },
+          { "value": "custom", "label": "Własna (pola poniżej)" }
+        ], "default": "r1" },
+        { "type": "image_picker", "id": "image", "label": "Zdjęcie (np. od klienta)" },
+        { "type": "range", "id": "rating", "label": "Ocena", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "text", "id": "title", "label": "Własny tytuł" },
+        { "type": "textarea", "id": "text", "label": "Własna treść" },
+        { "type": "text", "id": "author", "label": "Autor" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Opinie rodziców", "blocks": [
+    { "type": "review", "settings": { "preset": "r2" } },
+    { "type": "review", "settings": { "preset": "r4" } },
+    { "type": "review", "settings": { "preset": "r5" } }
+  ] }]
+}
+{% endschema %}
