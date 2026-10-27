@@ -11,7 +11,7 @@
       </div>
       <a class="link-arrow" href="{{ routes.collections_url }}">{{ 'sections.collection_tiles.view_all' | t }} {% render 'icon', name: 'arrow' %}</a>
     </div>
-    <div class="tiles" style="--cols: {{ section.blocks.size | at_most: 4 }}; --ratio: {{ section.settings.ratio }};">
+    <div class="tiles" style="--cols: {{ section.settings.columns }}; --ratio: {{ section.settings.ratio }};">
       {%- for block in section.blocks -%}
         {%- assign c = block.settings.collection -%}
         {%- assign img = block.settings.image | default: c.featured_image -%}
@@ -43,6 +43,7 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
     { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "range", "id": "columns", "label": "Kolumny (desktop)", "min": 2, "max": 4, "step": 1, "default": 4 },
     { "type": "select", "id": "ratio", "label": "Proporcje kafli", "options": [
       { "value": "3 / 4", "label": "Pionowe" }, { "value": "1 / 1", "label": "Kwadrat" }, { "value": "4 / 3", "label": "Poziome" }
     ], "default": "3 / 4" },

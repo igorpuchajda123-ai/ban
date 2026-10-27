@@ -79,7 +79,7 @@ p { margin: 0 0 1em; }
 }
 .eyebrow::before { content: ""; width: 1.75rem; height: 1px; background: currentColor; opacity: .6; }
 .eyebrow--plain::before { display: none; }
-.lead { font-size: clamp(1.1rem, 1.6vw, 1.25rem); line-height: 1.6; color: var(--c-muted); max-width: 38em; }
+.lead { font-size: clamp(1.1rem, 1.6vw, 1.25rem); line-height: 1.65; color: var(--c-muted); max-width: 38em; }
 .muted { color: var(--c-muted); }
 .small { font-size: .875rem; }
 .center { text-align: center; }
@@ -854,3 +854,45 @@ p { margin: 0 0 1em; }
 
 /* Shopify design-mode helpers */
 .shopify-design-mode .js .reveal, .shopify-design-mode .reveal { opacity: 1 !important; transform: none !important; }
+
+/* ---------- Quick links ---------- */
+.quick-links { padding-block: var(--pad-top, 32px) var(--pad-bottom, 32px); }
+.quick-links__title { font-size: .75rem; font-family: var(--font-body); letter-spacing: .18em; text-transform: uppercase; color: var(--c-muted); font-weight: 500; margin: 0 0 1rem; }
+.quick-links__list { display: flex; gap: .75rem; overflow-x: auto; scrollbar-width: none; padding-bottom: .25rem; }
+.quick-links__list::-webkit-scrollbar { display: none; }
+@media (min-width: 990px) { .quick-links__list { flex-wrap: wrap; overflow: visible; } }
+.quick-link { flex: none; display: flex; align-items: center; gap: .75rem; padding: .45rem 1.1rem .45rem .45rem; border-radius: 999px; border: 1px solid var(--c-line); background: var(--c-bg); text-decoration: none; transition: border-color .2s ease, transform .2s ease; }
+.quick-link:hover { border-color: var(--c-text); transform: translateY(-2px); }
+.quick-link__img { width: 3rem; height: 3rem; border-radius: 50%; overflow: hidden; background: var(--c-surface); flex: none; }
+.quick-link__img img { width: 100%; height: 100%; object-fit: cover; }
+.quick-link__name { display: block; font-weight: 600; font-size: .95rem; line-height: 1.2; }
+.quick-link__count { display: block; font-size: .78rem; color: var(--c-muted); }
+.quick-link--highlight { background: var(--c-dark); border-color: var(--c-dark); color: #F7F3EE; }
+.quick-link--highlight .quick-link__count { color: rgba(247,243,238,.7); }
+.quick-link--highlight:hover { border-color: var(--c-dark); }
+
+/* ---------- Media strip ---------- */
+.media-strip__item { margin: 0; }
+.media-strip__media { position: relative; aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden; background: var(--c-surface); }
+.media-strip__media video, .media-strip__media img, .media-strip__media iframe { width: 100%; height: 100%; object-fit: cover; border: 0; }
+.media-strip__caption { margin-top: .75rem; font-weight: 500; font-size: .95rem; }
+
+/* ---------- Trust / maker ---------- */
+.trust { display: grid; gap: clamp(2rem, 5vw, 5rem); }
+@media (min-width: 990px) { .trust { grid-template-columns: .9fr 1.1fr; align-items: start; } }
+.trust__image { aspect-ratio: 4 / 3; margin-top: 2rem; }
+.trust__facts { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--c-line); }
+.trust__fact { display: grid; gap: .35rem; padding: 1.25rem 0; border-bottom: 1px solid var(--c-line); }
+@media (min-width: 750px) { .trust__fact { grid-template-columns: 14rem 1fr; gap: 2rem; } }
+.trust__fact dt { display: flex; align-items: center; gap: .6rem; font-weight: 600; }
+.trust__fact dt .icon { width: 1.2rem; height: 1.2rem; color: var(--c-accent); }
+.trust__fact dd { margin: 0; color: var(--c-text); white-space: pre-line; }
+.trust__people { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); }
+.trust__person { display: flex; gap: 1rem; align-items: flex-start; }
+.trust__avatar { width: 4.5rem; height: 4.5rem; border-radius: 50%; overflow: hidden; background: var(--c-surface-2); flex: none; }
+.trust__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.trust__quote { display: block; margin-top: .4rem; font-family: var(--font-heading); font-style: italic; }
+
+/* ---------- Footer help ---------- */
+.footer__steps { margin: 0; padding-left: 1.1rem; display: grid; gap: .45rem; font-size: .9rem; color: var(--c-muted); }
+.footer__steps a { color: #F7F3EE; text-decoration: underline; }

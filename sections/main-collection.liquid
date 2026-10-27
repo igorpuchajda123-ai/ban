@@ -24,7 +24,13 @@
         </div>
       {%- endif -%}
     </div>
-    {%- if section.settings.chips_menu != blank -%}
+    {%- if section.settings.chips_collections.size > 0 -%}
+      <nav class="chips" aria-label="{{ 'collection.related' | t }}">
+        {%- for c in section.settings.chips_collections -%}
+          <a class="chip" href="{{ c.url }}"{% if c.handle == collection.handle %} aria-current="page"{% endif %}>{{ c.title }}</a>
+        {%- endfor -%}
+      </nav>
+    {%- elsif section.settings.chips_menu != blank -%}
       <nav class="chips" aria-label="{{ 'collection.related' | t }}">
         {%- for link in section.settings.chips_menu.links -%}
           <a class="chip" href="{{ link.url }}"{% if link.active or link.url == collection.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
@@ -152,6 +158,7 @@
     { "type": "range", "id": "per_page", "label": "Produktów na stronę", "min": 8, "max": 48, "step": 4, "default": 24 },
     { "type": "range", "id": "columns", "label": "Kolumny (desktop)", "min": 2, "max": 5, "step": 1, "default": 4 },
     { "type": "checkbox", "id": "show_image", "label": "Zdjęcie kolekcji w nagłówku", "default": false },
+    { "type": "collection_list", "id": "chips_collections", "label": "Szybkie linki do kolekcji", "limit": 12, "info": "Np. Bestsellery, Szerokie kapcie, Kapcie, Sandałki…" },
     { "type": "link_list", "id": "chips_menu", "label": "Szybkie linki (menu)", "info": "Np. menu z modelami: Helis, Helis WIDE, Balerina, Toby…" },
     { "type": "checkbox", "id": "enable_filters", "label": "Filtry", "default": true },
     { "type": "select", "id": "filter_layout", "label": "Filtry – układ", "options": [

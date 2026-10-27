@@ -106,6 +106,7 @@
     "settings": [
       { "type": "text", "id": "contact_phone", "label": "Telefon", "default": "+48 604 522 566" },
       { "type": "text", "id": "contact_hours", "label": "Godziny pracy", "info": "Puste = „Pn–Pt 8:00–16:00 (CET)” w języku odwiedzającego." },
+      { "type": "text", "id": "made_in", "label": "Miejsce produkcji (na karcie produktu)", "info": "Np. „Polsce” → „Szyte ręcznie w Polsce”. Wpisz tylko, jeśli to prawda. Puste = „Szyte ręcznie”. Tłumaczenie w Translate & Adapt → Ustawienia motywu." },
       { "type": "textarea", "id": "company_details", "label": "Dane firmy (nazwa, adres, NIP)", "info": "Zwiększa wiarygodność na rynkach zagranicznych. Przetłumacz w Translate & Adapt, jeśli trzeba." }
     ]
   },

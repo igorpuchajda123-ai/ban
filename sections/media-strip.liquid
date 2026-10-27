@@ -1,0 +1,91 @@
+{%- comment -%}
+  Pasek „Z bliska”: krótkie filmy i zdjęcia detali (szycie, podeszwa, wnętrze).
+  Na stronie produktu najpierw pokazuje filmy dodane do mediów produktu, potem bloki sekcji.
+{%- endcomment -%}
+{%- liquid
+  assign d_eyebrow = 'sections.media_strip.eyebrow' | t
+  assign d_heading = 'sections.media_strip.heading_html' | t
+  assign product_videos = ''
+  if section.settings.product_videos and product
+    assign product_videos = product.media | where: 'media_type', 'video'
+    assign external_videos = product.media | where: 'media_type', 'external_video'
+  endif
+  assign count = section.blocks.size
+  if product_videos != ''
+    assign count = count | plus: product_videos.size | plus: external_videos.size
+  endif
+-%}
+{%- if count > 0 -%}
+  <section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+    <div class="container container--wide">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+          <h2>{{ section.settings.heading | default: d_heading }}</h2>
+        </div>
+        <div class="slider-nav">
+          <button type="button" data-slider-prev="Slider-{{ section.id }}" aria-label="{{ 'general.previous' | t }}">{% render 'icon', name: 'arrow' %}</button>
+          <button type="button" data-slider-next="Slider-{{ section.id }}" aria-label="{{ 'general.next' | t }}">{% render 'icon', name: 'arrow' %}</button>
+        </div>
+      </div>
+      <div class="slider slider--bleed media-strip" id="Slider-{{ section.id }}" style="--cols: {{ section.settings.columns }};">
+        {%- if product_videos != '' -%}
+          {%- for media in product_videos -%}
+            <figure class="media-strip__item">
+              <div class="media-strip__media">{{ media | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, image_size: '800x' }}</div>
+            </figure>
+          {%- endfor -%}
+          {%- for media in external_videos -%}
+            <figure class="media-strip__item">
+              <div class="media-strip__media">{{ media | external_video_tag: loading: 'lazy' }}</div>
+            </figure>
+          {%- endfor -%}
+        {%- endif -%}
+        {%- for block in section.blocks -%}
+          <figure class="media-strip__item" {{ block.shopify_attributes }}>
+            <div class="media-strip__media">
+              {%- if block.settings.video != blank -%}
+                {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, image_size: '800x' }}
+              {%- elsif block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '400, 600, 900', sizes: '(min-width: 990px) 25vw, 78vw', alt: block.settings.caption }}
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+            </div>
+            {%- if block.settings.caption != blank -%}
+              <figcaption class="media-strip__caption">{{ block.settings.caption }}</figcaption>
+            {%- endif -%}
+          </figure>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Z bliska (filmy/zdjęcia)",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł" },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "checkbox", "id": "product_videos", "label": "Pokaż filmy z mediów produktu", "default": true, "info": "Dodaj film w Produkty → Media, a pojawi się tu automatycznie." },
+    { "type": "range", "id": "columns", "label": "Kolumny (desktop)", "min": 2, "max": 5, "step": 1, "default": 4 },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": false },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "media",
+      "name": "Film / zdjęcie",
+      "settings": [
+        { "type": "video", "id": "video", "label": "Film (MP4 z plików Shopify)" },
+        { "type": "image_picker", "id": "image", "label": "Zdjęcie (gdy brak filmu)" },
+        { "type": "text", "id": "caption", "label": "Podpis", "info": "Np. „Ręcznie szyte ze skóry naturalnej”." }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Z bliska (filmy/zdjęcia)" }]
+}
+{% endschema %}

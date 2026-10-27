@@ -63,7 +63,22 @@
   },
   "footer": {
     "about": "OBEX to skórzane buty barefoot dla dzieci, szyte ręcznie z naturalnych materiałów. Projektujemy je tak, by małe stopy mogły rosnąć swobodnie – jak boso.",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "help": "Pomoc",
+    "links": {
+      "contact": "Kontakt",
+      "size_guide": "Jak dobrać rozmiar",
+      "shipping": "Dostawa",
+      "returns": "Zwroty i wymiany",
+      "care": "Pielęgnacja butów",
+      "faq": "Najczęstsze pytania"
+    },
+    "returns": {
+      "title": "Zwrot w {{ days }} dni – w 3 krokach",
+      "step1_html": "Napisz do nas na <a href=\"mailto:{{ email }}\">{{ email }}</a> i podaj numer zamówienia.",
+      "step2": "Odeślij nienoszone buty w oryginalnym pudełku.",
+      "step3": "Zwrócimy pieniądze tą samą metodą płatności."
+    }
   },
   "contact": {
     "eyebrow": "Kontakt",
@@ -173,7 +188,8 @@
       "delivery_html": "<strong>Dostawa {{ days }} dni roboczych</strong> – {{ country }}",
       "returns_html": "<strong>{{ days }} dni na zwrot</strong> – bez podawania przyczyny",
       "handmade_html": "<strong>Szyte ręcznie</strong> ze skóry naturalnej",
-      "secure_html": "<strong>Bezpieczne płatności</strong> – szyfrowane połączenie"
+      "secure_html": "<strong>Bezpieczne płatności</strong> – szyfrowane połączenie",
+      "handmade_in_html": "<strong>Szyte ręcznie w {{ place }}</strong> ze skóry naturalnej"
     },
     "highlights": {
       "leather": "Skóra naturalna",
@@ -272,6 +288,13 @@
     "related": {
       "eyebrow": "Polecamy",
       "heading_html": "Może Ci się <em>spodobać</em>"
+    },
+    "quick_links": {
+      "heading": "Szybki wybór"
+    },
+    "media_strip": {
+      "eyebrow": "Z bliska",
+      "heading_html": "Zobacz <em>jak są zrobione</em>"
     }
   },
   "usp": {

@@ -28,9 +28,21 @@
             "heading": "",
             "show_localization": true
           }
+        },
+        "help": {
+          "type": "help",
+          "settings": {
+            "heading": "",
+            "contact_page": "shopify://pages/contact",
+            "size_page": "shopify://pages/jak-dobrac-rozmiar",
+            "care_page": "shopify://pages/jak-dbac-o-buty",
+            "faq_page": "",
+            "show_returns_steps": true
+          }
         }
       },
       "block_order": [
+        "help",
         "menu_help",
         "contact"
       ],

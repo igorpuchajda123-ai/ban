@@ -63,7 +63,22 @@
   },
   "footer": {
     "about": "OBEX laver barfodssko i læder til børn, håndsyet af naturlige materialer. Vi designer dem, så små fødder kan vokse frit – som på bare fødder.",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "help": "Hjælp",
+    "links": {
+      "contact": "Kontakt",
+      "size_guide": "Sådan vælger du størrelse",
+      "shipping": "Levering",
+      "returns": "Returnering og ombytning",
+      "care": "Pleje af sko",
+      "faq": "Ofte stillede spørgsmål"
+    },
+    "returns": {
+      "title": "Returnering inden for {{ days }} dage – i 3 trin",
+      "step1_html": "Skriv til os på <a href=\"mailto:{{ email }}\">{{ email }}</a> med dit ordrenummer.",
+      "step2": "Send de ubrugte sko retur i den originale æske.",
+      "step3": "Vi refunderer beløbet til samme betalingsmetode."
+    }
   },
   "contact": {
     "eyebrow": "Kontakt",
@@ -169,7 +184,8 @@
       "delivery_html": "<strong>Levering på {{ days }} hverdage</strong> – {{ country }}",
       "returns_html": "<strong>{{ days }} dages returret</strong> – uden begrundelse",
       "handmade_html": "<strong>Håndsyet</strong> i naturlæder",
-      "secure_html": "<strong>Sikker betaling</strong> via krypteret forbindelse"
+      "secure_html": "<strong>Sikker betaling</strong> via krypteret forbindelse",
+      "handmade_in_html": "<strong>Håndsyet i {{ place }}</strong> af naturlæder"
     },
     "highlights": {
       "leather": "Naturlæder",
@@ -266,6 +282,13 @@
     "related": {
       "eyebrow": "Anbefalet",
       "heading_html": "Du vil måske <em>også kunne lide</em>"
+    },
+    "quick_links": {
+      "heading": "Hurtigt valg"
+    },
+    "media_strip": {
+      "eyebrow": "Tæt på",
+      "heading_html": "Se, <em>hvordan de er lavet</em>"
     }
   },
   "usp": {

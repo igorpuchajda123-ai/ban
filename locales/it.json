@@ -63,7 +63,22 @@
   },
   "footer": {
     "about": "OBEX crea scarpe barefoot in pelle per bambini, cucite a mano con materiali naturali. Le progettiamo perché i piedini possano crescere liberi, come a piedi nudi.",
-    "contact": "Contatti"
+    "contact": "Contatti",
+    "help": "Assistenza",
+    "links": {
+      "contact": "Contatti",
+      "size_guide": "Come scegliere la taglia",
+      "shipping": "Spedizione",
+      "returns": "Resi e cambi",
+      "care": "Cura delle scarpe",
+      "faq": "Domande frequenti"
+    },
+    "returns": {
+      "title": "Reso entro {{ days }} giorni – in 3 passi",
+      "step1_html": "Scrivici a <a href=\"mailto:{{ email }}\">{{ email }}</a> indicando il numero d'ordine.",
+      "step2": "Rispedisci le scarpe non indossate nella confezione originale.",
+      "step3": "Ti rimborsiamo con lo stesso metodo di pagamento."
+    }
   },
   "contact": {
     "eyebrow": "Contatti",
@@ -169,7 +184,8 @@
       "delivery_html": "<strong>Consegna in {{ days }} giorni lavorativi</strong> – {{ country }}",
       "returns_html": "<strong>{{ days }} giorni per il reso</strong>, senza dover indicare il motivo",
       "handmade_html": "<strong>Cucite a mano</strong> in vera pelle",
-      "secure_html": "<strong>Pagamenti sicuri</strong> con connessione crittografata"
+      "secure_html": "<strong>Pagamenti sicuri</strong> con connessione crittografata",
+      "handmade_in_html": "<strong>Cucite a mano in {{ place }}</strong> in vera pelle"
     },
     "highlights": {
       "leather": "Vera pelle",
@@ -266,6 +282,13 @@
     "related": {
       "eyebrow": "Consigliati",
       "heading_html": "Potrebbe <em>piacerti anche</em>"
+    },
+    "quick_links": {
+      "heading": "Scelta rapida"
+    },
+    "media_strip": {
+      "eyebrow": "Da vicino",
+      "heading_html": "Guarda <em>come sono fatte</em>"
     }
   },
   "usp": {

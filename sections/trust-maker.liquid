@@ -1,0 +1,116 @@
+{%- comment -%}
+  Przejrzystość marki: kto szyje, gdzie, z jakich materiałów, jakie certyfikaty.
+  Wypełnij tylko prawdziwe informacje – puste bloki nie są wyświetlane.
+{%- endcomment -%}
+{%- liquid
+  assign facts = section.blocks | where: 'type', 'fact'
+  assign people = section.blocks | where: 'type', 'person'
+  assign filled_facts = 0
+  for b in facts
+    if b.settings.value != blank
+      assign filled_facts = filled_facts | plus: 1
+    endif
+  endfor
+  assign filled_people = 0
+  for b in people
+    if b.settings.name != blank
+      assign filled_people = filled_people | plus: 1
+    endif
+  endfor
+-%}
+{%- if filled_facts > 0 or filled_people > 0 or section.settings.text != blank -%}
+  <section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+    <div class="container container--wide">
+      <div class="trust">
+        <div class="trust__intro reveal">
+          {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+          {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
+          {%- if section.settings.text != blank -%}<div class="rte lead">{{ section.settings.text }}</div>{%- endif -%}
+          {%- if section.settings.image != blank -%}
+            <div class="media trust__image">
+              {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500, 800, 1200', sizes: '(min-width: 990px) 40vw, 100vw', alt: section.settings.image.alt }}
+            </div>
+          {%- endif -%}
+        </div>
+        <div>
+          {%- if filled_facts > 0 -%}
+            <dl class="trust__facts reveal" data-delay="1">
+              {%- for b in facts -%}
+                {%- if b.settings.value == blank -%}{%- continue -%}{%- endif -%}
+                <div class="trust__fact" {{ b.shopify_attributes }}>
+                  <dt>{% render 'icon', name: b.settings.icon %}{{ b.settings.label }}</dt>
+                  <dd>{{ b.settings.value }}</dd>
+                </div>
+              {%- endfor -%}
+            </dl>
+          {%- endif -%}
+          {%- if filled_people > 0 -%}
+            <ul class="trust__people reveal" data-delay="2" role="list">
+              {%- for b in people -%}
+                {%- if b.settings.name == blank -%}{%- continue -%}{%- endif -%}
+                <li class="trust__person" {{ b.shopify_attributes }}>
+                  <span class="trust__avatar">
+                    {%- if b.settings.photo != blank -%}{{ b.settings.photo | image_url: width: 300, height: 300, crop: 'center' | image_tag: loading: 'lazy', alt: b.settings.name }}{%- endif -%}
+                  </span>
+                  <span>
+                    <strong>{{ b.settings.name }}</strong>
+                    {%- if b.settings.role != blank -%}<span class="muted small" style="display:block">{{ b.settings.role }}</span>{%- endif -%}
+                    {%- if b.settings.quote != blank -%}<span class="trust__quote">„{{ b.settings.quote }}”</span>{%- endif -%}
+                  </span>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Kto szyje OBEX",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "paragraph", "content": "Sekcja pojawi się na stronie dopiero, gdy uzupełnisz przynajmniej jeden fakt lub osobę. Wpisuj wyłącznie prawdziwe informacje." },
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł" },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "richtext", "id": "text", "label": "Tekst" },
+    { "type": "image_picker", "id": "image", "label": "Zdjęcie pracowni / zespołu" },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": true },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "blocks": [
+    {
+      "type": "fact",
+      "name": "Fakt",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Ikona", "options": [
+          { "value": "pin", "label": "Miejsce" }, { "value": "leaf", "label": "Materiał" }, { "value": "shield", "label": "Certyfikat" },
+          { "value": "hand", "label": "Rękodzieło" }, { "value": "check", "label": "Kontrola jakości" }, { "value": "clock", "label": "Od kiedy" }
+        ], "default": "pin" },
+        { "type": "text", "id": "label", "label": "Etykieta", "info": "Np. Miejsce produkcji, Skóra, Certyfikaty, Kontrola jakości" },
+        { "type": "textarea", "id": "value", "label": "Treść", "info": "Np. „Pracownia w [miasto], Polska”, „Skóra licowa bydlęca z garbarni [nazwa], [kraj]”" }
+      ]
+    },
+    {
+      "type": "person",
+      "name": "Osoba",
+      "settings": [
+        { "type": "image_picker", "id": "photo", "label": "Zdjęcie" },
+        { "type": "text", "id": "name", "label": "Imię" },
+        { "type": "text", "id": "role", "label": "Rola", "info": "Np. Założycielka, Szewc, Kontrola jakości" },
+        { "type": "text", "id": "quote", "label": "Krótki cytat (opcjonalnie)" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Kto szyje OBEX", "blocks": [
+    { "type": "fact", "settings": { "icon": "pin", "label": "Miejsce produkcji" } },
+    { "type": "fact", "settings": { "icon": "leaf", "label": "Skóra" } },
+    { "type": "fact", "settings": { "icon": "leaf", "label": "Podeszwa" } },
+    { "type": "fact", "settings": { "icon": "shield", "label": "Certyfikaty i badania" } },
+    { "type": "fact", "settings": { "icon": "check", "label": "Kontrola jakości" } }
+  ] }]
+}
+{% endschema %}

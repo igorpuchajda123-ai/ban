@@ -228,7 +228,7 @@
             <div class="assurance" {{ block.shopify_attributes }}>
               <div class="assurance__item">{% render 'icon', name: 'truck' %}<span>{{ 'products.assurance.delivery_html' | t: days: delivery, country: localization.country.name }}</span></div>
               <div class="assurance__item">{% render 'icon', name: 'return' %}<span>{{ 'products.assurance.returns_html' | t: days: settings.return_days }}</span></div>
-              <div class="assurance__item">{% render 'icon', name: 'hand' %}<span>{{ 'products.assurance.handmade_html' | t }}</span></div>
+              <div class="assurance__item">{% render 'icon', name: 'hand' %}<span>{%- if settings.made_in != blank -%}{{ 'products.assurance.handmade_in_html' | t: place: settings.made_in }}{%- else -%}{{ 'products.assurance.handmade_html' | t }}{%- endif -%}</span></div>
               <div class="assurance__item">{% render 'icon', name: 'lock' %}<span>{{ 'products.assurance.secure_html' | t }}</span></div>
             </div>
 

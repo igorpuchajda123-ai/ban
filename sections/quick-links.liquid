@@ -1,0 +1,43 @@
+{%- comment -%}
+  Szybki wybór kategorii (np. Bestsellery, Szerokie kapcie WIDE, Kapcie, Sandałki).
+  Nazwy kolekcji pochodzą z Shopify i tłumaczysz je w Translate & Adapt → Kolekcje.
+{%- endcomment -%}
+{%- liquid
+  assign d_heading = 'sections.quick_links.heading' | t
+-%}
+{%- if section.settings.collections.size > 0 -%}
+  <section class="quick-links{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+    <div class="container container--wide">
+      <h2 class="quick-links__title">{{ section.settings.heading | default: d_heading }}</h2>
+      <nav class="quick-links__list" aria-label="{{ section.settings.heading | default: d_heading | strip_html }}">
+        {%- for c in section.settings.collections -%}
+          <a class="quick-link{% if forloop.index <= section.settings.highlight_count %} quick-link--highlight{% endif %}" href="{{ c.url }}">
+            <span class="quick-link__img">
+              {%- assign img = c.featured_image -%}
+              {%- if img -%}{{ img | image_url: width: 160, height: 160, crop: 'center' | image_tag: loading: 'lazy', alt: '' }}{%- endif -%}
+            </span>
+            <span class="quick-link__text">
+              <span class="quick-link__name">{{ c.title }}</span>
+              <span class="quick-link__count">{{ 'sections.collection_tiles.models' | t: count: c.products_count }}</span>
+            </span>
+          </a>
+        {%- endfor -%}
+      </nav>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Szybki wybór kategorii",
+  "settings": [
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "collection_list", "id": "collections", "label": "Kolekcje", "limit": 12 },
+    { "type": "range", "id": "highlight_count", "label": "Wyróżnione (pierwsze N)", "min": 0, "max": 4, "step": 1, "default": 2, "info": "Np. Bestsellery i Szerokie kapcie na ciemnym tle." },
+    { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": false },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 120, "step": 8, "unit": "px", "default": 32 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 120, "step": 8, "unit": "px", "default": 32 }
+  ],
+  "presets": [{ "name": "Szybki wybór kategorii" }]
+}
+{% endschema %}

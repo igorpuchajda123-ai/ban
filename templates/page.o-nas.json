@@ -143,10 +143,80 @@
         "heading": "Chętnie <em>pomożemy</em>",
         "text": "Masz pytanie o rozmiar, zamówienie albo zwrot? Napisz do nas – odpowiadamy w dni robocze."
       }
+    },
+    "trust": {
+      "type": "trust-maker",
+      "blocks": {
+        "f1": {
+          "type": "fact",
+          "settings": {
+            "icon": "pin",
+            "label": "Miejsce produkcji",
+            "value": ""
+          }
+        },
+        "f2": {
+          "type": "fact",
+          "settings": {
+            "icon": "leaf",
+            "label": "Skóra",
+            "value": ""
+          }
+        },
+        "f3": {
+          "type": "fact",
+          "settings": {
+            "icon": "leaf",
+            "label": "Podeszwa",
+            "value": ""
+          }
+        },
+        "f4": {
+          "type": "fact",
+          "settings": {
+            "icon": "shield",
+            "label": "Certyfikaty i badania",
+            "value": ""
+          }
+        },
+        "f5": {
+          "type": "fact",
+          "settings": {
+            "icon": "check",
+            "label": "Kontrola jakości",
+            "value": ""
+          }
+        },
+        "p1": {
+          "type": "person",
+          "settings": {
+            "name": "",
+            "role": "",
+            "quote": ""
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "p1"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "text": "",
+        "surface": true,
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
     }
   },
   "order": [
     "intro",
+    "trust",
     "passion",
     "material",
     "craft",

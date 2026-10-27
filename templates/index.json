@@ -68,6 +68,22 @@
     "tiles": {
       "type": "collection-tiles",
       "blocks": {
+        "t0": {
+          "type": "collection",
+          "settings": {
+            "collection": "bestsellery",
+            "image": "shopify://shop_images/IMG_5139.jpg",
+            "title": ""
+          }
+        },
+        "t5": {
+          "type": "collection",
+          "settings": {
+            "collection": "helis-wide-indoor-collection",
+            "image": "shopify://shop_images/IMG_5169.jpg",
+            "title": ""
+          }
+        },
         "t1": {
           "type": "collection",
           "settings": {
@@ -102,6 +118,8 @@
         }
       },
       "block_order": [
+        "t0",
+        "t5",
         "t1",
         "t2",
         "t3",
@@ -113,7 +131,8 @@
         "padding_top": 96,
         "padding_bottom": 48,
         "eyebrow": "Kolekcje",
-        "heading": "Na każdą <em>okazję</em>"
+        "heading": "Na każdą <em>okazję</em>",
+        "columns": 3
       }
     },
     "bestsellers": {
@@ -487,14 +506,104 @@
         "heading": "Masz <em>pytania?</em>",
         "text": "Zebraliśmy odpowiedzi na to, o co rodzice pytają najczęściej."
       }
+    },
+    "quick": {
+      "type": "quick-links",
+      "settings": {
+        "heading": "",
+        "collections": [
+          "bestsellery",
+          "helis-wide-indoor-collection",
+          "kapcie",
+          "sandalki",
+          "baleriny",
+          "polbuty",
+          "trzewiki"
+        ],
+        "highlight_count": 2,
+        "surface": false,
+        "padding_top": 32,
+        "padding_bottom": 8
+      }
+    },
+    "trust": {
+      "type": "trust-maker",
+      "blocks": {
+        "f1": {
+          "type": "fact",
+          "settings": {
+            "icon": "pin",
+            "label": "Miejsce produkcji",
+            "value": ""
+          }
+        },
+        "f2": {
+          "type": "fact",
+          "settings": {
+            "icon": "leaf",
+            "label": "Skóra",
+            "value": ""
+          }
+        },
+        "f3": {
+          "type": "fact",
+          "settings": {
+            "icon": "leaf",
+            "label": "Podeszwa",
+            "value": ""
+          }
+        },
+        "f4": {
+          "type": "fact",
+          "settings": {
+            "icon": "shield",
+            "label": "Certyfikaty i badania",
+            "value": ""
+          }
+        },
+        "f5": {
+          "type": "fact",
+          "settings": {
+            "icon": "check",
+            "label": "Kontrola jakości",
+            "value": ""
+          }
+        },
+        "p1": {
+          "type": "person",
+          "settings": {
+            "name": "",
+            "role": "",
+            "quote": ""
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "p1"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "text": "",
+        "surface": true,
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
     }
   },
   "order": [
     "hero",
+    "quick",
     "usp",
     "tiles",
     "bestsellers",
     "story",
+    "trust",
     "features",
     "wide",
     "marquee",

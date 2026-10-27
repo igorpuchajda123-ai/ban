@@ -38,6 +38,29 @@
                   {%- endfor -%}
                 </ul>
               </details>
+            {%- when 'help' -%}
+              {%- assign help_heading = 'footer.help' | t -%}
+              <details open data-footer-details>
+                <summary><h2 class="footer__heading">{{ block.settings.heading | default: help_heading }}</h2>{% render 'icon', name: 'plus' %}</summary>
+                <ul class="footer__list" role="list">
+                  {%- if block.settings.contact_page != blank -%}<li><a href="{{ block.settings.contact_page }}">{{ 'footer.links.contact' | t }}</a></li>{%- endif -%}
+                  {%- if block.settings.size_page != blank -%}<li><a href="{{ block.settings.size_page }}">{{ 'footer.links.size_guide' | t }}</a></li>{%- endif -%}
+                  {%- if shop.shipping_policy.url != blank -%}<li><a href="{{ shop.shipping_policy.url }}">{{ 'footer.links.shipping' | t }}</a></li>{%- endif -%}
+                  {%- if shop.refund_policy.url != blank -%}<li><a href="{{ shop.refund_policy.url }}">{{ 'footer.links.returns' | t }}</a></li>{%- endif -%}
+                  {%- if block.settings.care_page != blank -%}<li><a href="{{ block.settings.care_page }}">{{ 'footer.links.care' | t }}</a></li>{%- endif -%}
+                  {%- if block.settings.faq_page != blank -%}<li><a href="{{ block.settings.faq_page }}">{{ 'footer.links.faq' | t }}</a></li>{%- endif -%}
+                </ul>
+                {%- if block.settings.show_returns_steps -%}
+                  <div class="footer__returns">
+                    <p class="footer__heading" style="margin-top:1.5rem">{{ 'footer.returns.title' | t: days: settings.return_days }}</p>
+                    <ol class="footer__steps">
+                      <li>{{ 'footer.returns.step1_html' | t: email: shop.email }}</li>
+                      <li>{{ 'footer.returns.step2' | t }}</li>
+                      <li>{{ 'footer.returns.step3' | t }}</li>
+                    </ol>
+                  </div>
+                {%- endif -%}
+              </details>
             {%- when 'contact' -%}
               {%- assign contact_heading = 'footer.contact' | t -%}
               <details open data-footer-details>
@@ -46,7 +69,8 @@
                   {%- assign d_hours = 'contact.hours_value' | t -%}{%- assign hours = settings.contact_hours | default: d_hours -%}{%- if hours != blank -%}<span>{{ hours }}</span>{%- endif -%}
                   {%- if settings.contact_phone != blank -%}<a href="tel:{{ settings.contact_phone | remove: ' ' }}">{{ settings.contact_phone }}</a>{%- endif -%}
                   {%- if shop.email != blank -%}<a href="mailto:{{ shop.email }}">{{ shop.email }}</a>{%- endif -%}
-                  {%- if settings.company_details != blank -%}<span class="small">{{ settings.company_details }}</span>{%- endif -%}
+                  <span class="small">{{ 'contact.reply_time' | t }}</span>
+                  {%- if settings.company_details != blank -%}<span class="small" style="white-space:pre-line">{{ settings.company_details }}</span>{%- endif -%}
                   {%- if block.settings.show_localization -%}
                     <div style="margin-top: 1rem;">{% render 'localization-form', id: 'FooterLocalization', stacked: true %}</div>
                   {%- endif -%}
@@ -82,7 +106,7 @@
 {
   "name": "Stopka",
   "class": "section-footer",
-  "max_blocks": 4,
+  "max_blocks": 5,
   "settings": [
     { "type": "image_picker", "id": "logo", "label": "Logo w stopce (jasne)" },
     { "type": "richtext", "id": "about", "label": "Opis marki", "info": "Puste = domyślny opis w języku odwiedzającego." },
@@ -96,6 +120,20 @@
       "settings": [
         { "type": "text", "id": "heading", "label": "Nagłówek" },
         { "type": "link_list", "id": "menu", "label": "Menu", "default": "footer" }
+      ]
+    },
+    {
+      "type": "help",
+      "name": "Pomoc i zwroty",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Nagłówek" },
+        { "type": "url", "id": "contact_page", "label": "Strona kontaktu" },
+        { "type": "url", "id": "size_page", "label": "Strona rozmiarówki" },
+        { "type": "url", "id": "care_page", "label": "Strona pielęgnacji" },
+        { "type": "url", "id": "faq_page", "label": "Strona FAQ" },
+        { "type": "checkbox", "id": "show_returns_steps", "label": "Pokaż „Jak zwrócić w 3 krokach”", "default": true },
+        { "type": "paragraph", "content": "Linki do regulaminu dostawy i zwrotów pobierane są z Ustawienia → Zasady." }
       ]
     },
     {
