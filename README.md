@@ -3,17 +3,18 @@
 Motyw Online Store 2.0 dla sklepu OBEX (skórzane buty barefoot dla dzieci), przygotowany pod trzy rynki
 Shopify Markets: **Polska (PLN, pl)**, **Włochy (EUR, it)**, **Dania (DKK, da)** i aplikację **Translate & Adapt**.
 
-## Jak działa tłumaczenie
+## Jak działa tłumaczenie (Translate & Adapt)
 
-1. **Teksty wbudowane (pl / it / da)** – wszystkie przyciski, komunikaty, FAQ, opisy materiałów, opinie,
-   treści podstron (O nas, Rozmiary, Pielęgnacja, Ciekawostki) są w `locales/*.json`. Po instalacji motywu
-   wszystko jest od razu po polsku, włosku i duńsku – bez ręcznego tłumaczenia sekcji.
-2. **Pola w edytorze motywu** – jeśli pole sekcji jest puste, motyw pokazuje tekst wbudowany. Gdy wpiszesz
-   własny tekst, przetłumacz go w *Translate & Adapt → Motyw*.
-3. **Produkty, kolekcje, strony, menu, metapola** – tłumaczysz jak dotąd w Translate & Adapt (nie zależą od motywu).
-4. **Adapt (rynek)** – w Translate & Adapt możesz nadpisać tekst dla konkretnego rynku. Dodatkowo motyw ma
-   ustawienia per rynek: próg darmowej dostawy (PLN / EUR / DKK) i czas dostawy (*Ustawienia motywu → Rynki*),
-   a komunikaty w pasku ogłoszeń mogą być pokazywane tylko w wybranym kraju.
+1. **Treści sekcji** (nagłówki, opisy, FAQ, opinie, materiały, teksty podstron) są zapisane w ustawieniach
+   sekcji po polsku. Wersje włoska i duńska są wpisane w **Translate & Adapt → Motyw OBEX Atelier** –
+   tam je poprawiasz, zmieniasz albo tłumaczysz automatycznie nowe pola.
+2. **Wspólne sekcje strony produktu** (filozofia barefoot, materiały, opinie, FAQ, polecane) są w jednej
+   grupie sekcji `sections/product-extras.json` – edytujesz i tłumaczysz je raz dla wszystkich produktów.
+3. **Teksty interfejsu** (przyciski, koszyk, filtry, tabela rozmiarów) są w `locales/pl.default.json`,
+   `it.json`, `da.json`; w Translate & Adapt widać je jako „Domyślna zawartość motywu” i też można je nadpisać.
+4. **Produkty, kolekcje, strony, menu, metapola** – tłumaczysz jak dotąd w Translate & Adapt.
+5. **Adapt (rynek)** – w Translate & Adapt możesz nadpisać tekst dla konkretnego rynku. Motyw ma też
+   ustawienia per rynek: próg darmowej dostawy (PLN / EUR / DKK) i czas dostawy (*Ustawienia motywu → Rynki*).
 
 Opinie klientów w wersjach IT/DA są tłumaczeniami prawdziwych recenzji – zachowują oryginalnych autorów
 i mają dopisek „przetłumaczono z polskiego”.
