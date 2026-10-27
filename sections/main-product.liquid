@@ -78,10 +78,14 @@
                   {%- if family -%}<a href="{{ family.url }}" style="text-decoration:none">{{ family.title }}</a>{%- else -%}{{ product.vendor }}{%- endif -%}
                 </p>
                 {%- if product.metafields.reviews.rating.value != blank -%}
-                  {%- assign rating = product.metafields.reviews.rating.value -%}
+                  {%- liquid
+                    assign rating = product.metafields.reviews.rating.value
+                    assign rating_value = rating.rating | times: 1.0
+                    assign rating_stars = rating_value | round
+                  -%}
                   <span class="product__rating">
-                    <span class="stars">{%- for i in (1..5) -%}{%- if i <= rating.rating -%}{% render 'icon', name: 'star' %}{%- endif -%}{%- endfor -%}</span>
-                    {{ rating.rating | round: 1 }} ({{ product.metafields.reviews.rating_count }})
+                    <span class="stars">{%- for i in (1..5) -%}{%- if i <= rating_stars -%}{% render 'icon', name: 'star' %}{%- endif -%}{%- endfor -%}</span>
+                    {{ rating_value | round: 1 }} ({{ product.metafields.reviews.rating_count }})
                   </span>
                 {%- endif -%}
               </div>
@@ -119,7 +123,7 @@
             {%- if show_colors -%}
               <div {{ block.shopify_attributes }}>
                 <div class="option-label">
-                  <span><strong>{{ 'products.product.color' | t }}:</strong> <span class="value">{{ product.title | split: ' - ' | last }}</span></span>
+                  <span><strong>{{ 'products.product.color' | t }}:</strong> <span class="value">{{ product.title | replace: ' – ', ' - ' | replace: ' — ', ' - ' | split: ' - ' | last }}</span></span>
                   {%- if family != blank -%}<span class="muted small">{{ 'products.product.colors_count' | t: count: family.products_count }}</span>{%- endif -%}
                 </div>
                 <div class="swatches">
@@ -129,7 +133,7 @@
                     {%- assign siblings = family.products -%}
                   {%- endif -%}
                   {%- for sibling in siblings limit: block.settings.limit -%}
-                    {%- assign sibling_color = sibling.title | split: ' - ' | last -%}
+                    {%- assign sibling_color = sibling.title | replace: ' – ', ' - ' | replace: ' — ', ' - ' | split: ' - ' | last -%}
                     <a class="swatch{% unless sibling.available %} is-soldout{% endunless %}" href="{{ sibling.url }}" title="{{ sibling_color | escape }}" {% if sibling.id == product.id %}aria-current="true"{% endif %}>
                       {{ sibling.featured_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: sibling_color }}
                     </a>

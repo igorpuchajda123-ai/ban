@@ -3,14 +3,16 @@
     "intro": {
       "type": "rich-text",
       "settings": {
-        "content_key": "facts.intro",
         "heading_tag": "h1",
         "center": true,
         "style": "default",
         "padding_top": 80,
         "padding_bottom": 48,
         "show_page_content": false,
-        "use_page_title": true
+        "use_page_title": true,
+        "eyebrow": "Ciekawostki",
+        "heading": "Dziecięce stopy <em>i barefoot</em>",
+        "text": "<p>Kilka faktów o tym, jak rozwijają się stopy dzieci – i dlaczego tak ważne jest, w czym stawiają pierwsze kroki.</p>"
       }
     },
     "cartilage": {
@@ -20,13 +22,15 @@
         "media_position": "left",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "facts.cartilage",
         "number": "01",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Fakt 1",
+        "heading": "Stopa dziecka to <em>głównie chrząstka</em>",
+        "text": "<p>Stopy noworodka nie mają jeszcze w pełni wykształconych kości – składają się w dużej mierze z miękkiej, elastycznej chrząstki, która twardnieje z czasem. Proces kostnienia trwa wiele lat, dlatego w pierwszych latach życia tak łatwo zdeformować stopę sztywnym, źle dobranym obuwiem.</p>"
       }
     },
     "proprio": {
@@ -36,13 +40,15 @@
         "media_position": "right",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "facts.proprio",
         "number": "02",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Fakt 2",
+        "heading": "Stopy to <em>okno na świat</em>",
+        "text": "<p>Stopy mają bardzo dużo zakończeń nerwowych. Gdy dziecko chodzi boso lub w butach barefoot, mózg otrzymuje ciągły strumień informacji o podłożu: czy jest twarde, miękkie, chłodne, pochyłe czy śliskie. To kluczowe dla nauki równowagi i koordynacji.</p>"
       }
     },
     "shape": {
@@ -52,13 +58,15 @@
         "media_position": "left",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "facts.shape",
         "number": "03",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Fakt 3",
+        "heading": "Kształt stopy, <em>a nie buta</em>",
+        "text": "<p>Klasyczne buty dziecięce często mają zwężane czubki, które ściskają palce. Buty OBEX mają szeroki, anatomiczny nosek, dzięki któremu palce mogą się wachlarzowo rozłożyć przy każdym kroku – to ważne dla stabilności i rozwoju łuku stopy.</p>"
       }
     },
     "zerodrop": {
@@ -68,14 +76,17 @@
         "media_position": "right",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "facts.zero_drop",
         "number": "04",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 112,
         "button_style": "button",
         "show_badge": false,
-        "link": "shopify://collections/all"
+        "link": "shopify://collections/all",
+        "eyebrow": "Fakt 4",
+        "heading": "Zero drop – <em>równowaga zaczyna się od pięty</em>",
+        "text": "<p>Wiele tradycyjnych butów ma podwyższoną piętę, która zmienia środek ciężkości dziecka i obciąża przodostopie. W butach OBEX pięta i palce są na tym samym poziomie. To wspiera naturalną postawę i ułatwia naukę stabilnego chodzenia.</p>",
+        "button": "Zobacz kolekcję"
       }
     },
     "features": {
@@ -84,25 +95,33 @@
         "f1": {
           "type": "feature",
           "settings": {
-            "preset": "bones"
+            "preset": "bones",
+            "title": "Rosnące kości",
+            "text": "Stopa dziecka składa się w dużej mierze z chrząstki, która kostnieje latami. Dlatego tak ważne jest, by but jej nie ściskał."
           }
         },
         "f2": {
           "type": "feature",
           "settings": {
-            "preset": "proprio"
+            "preset": "proprio",
+            "title": "Czucie podłoża",
+            "text": "Stopy mają ogromną liczbę zakończeń nerwowych. Informacje o podłożu pomagają w nauce równowagi i koordynacji."
           }
         },
         "f3": {
           "type": "feature",
           "settings": {
-            "preset": "toe_box"
+            "preset": "toe_box",
+            "title": "Szeroki nosek",
+            "text": "Kształt stopy, nie buta. Palce mają miejsce, by swobodnie się rozłożyć i łapać równowagę przy każdym kroku."
           }
         },
         "f4": {
           "type": "feature",
           "settings": {
-            "preset": "zero_drop"
+            "preset": "zero_drop",
+            "title": "Zero drop",
+            "text": "Pięta i palce na tym samym poziomie. Płaska podeszwa wspiera naturalną postawę całego ciała."
           }
         }
       },
@@ -116,7 +135,10 @@
         "columns": 4,
         "style": "dark",
         "padding_top": 96,
-        "padding_bottom": 96
+        "padding_bottom": 96,
+        "eyebrow": "Dlaczego barefoot",
+        "heading": "Zaprojektowane <em>dla rosnących stóp</em>",
+        "text": "Każdy detal ma jeden cel: dać stopie dziecka swobodę, której potrzebuje do prawidłowego rozwoju."
       }
     }
   },

@@ -127,6 +127,9 @@
 
     <main id="MainContent" class="main" role="main" tabindex="-1">
       {{ content_for_layout }}
+      {%- if request.page_type == 'product' -%}
+        {% sections 'product-extras' %}
+      {%- endif -%}
     </main>
 
     {% sections 'footer-group' %}

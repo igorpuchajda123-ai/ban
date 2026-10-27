@@ -5,24 +5,62 @@
     "announcement": {
       "type": "announcement-bar",
       "blocks": {
-        "msg_shipping": { "type": "message", "settings": { "preset": "free_shipping", "text": "", "link": "", "icon": "truck", "market": "all" } },
-        "msg_handmade": { "type": "message", "settings": { "preset": "handmade", "text": "", "link": "", "icon": "hand", "market": "all" } },
-        "msg_returns": { "type": "message", "settings": { "preset": "returns", "text": "", "link": "", "icon": "return", "market": "all" } }
+        "msg_shipping": {
+          "type": "message",
+          "settings": {
+            "preset": "free_shipping",
+            "text": "Darmowa wysyłka",
+            "link": "",
+            "icon": "truck",
+            "market": "all"
+          }
+        },
+        "msg_handmade": {
+          "type": "message",
+          "settings": {
+            "preset": "handmade",
+            "text": "Ręcznie szyte z naturalnej skóry",
+            "link": "",
+            "icon": "hand",
+            "market": "all"
+          }
+        },
+        "msg_returns": {
+          "type": "message",
+          "settings": {
+            "preset": "returns",
+            "text": "14 dni na zwrot",
+            "link": "",
+            "icon": "return",
+            "market": "all"
+          }
+        }
       },
-      "block_order": ["msg_shipping", "msg_handmade", "msg_returns"],
-      "settings": { "interval": 5, "show_contact": true, "show_localization": false }
+      "block_order": [
+        "msg_shipping",
+        "msg_handmade",
+        "msg_returns"
+      ],
+      "settings": {
+        "interval": 5,
+        "show_contact": true,
+        "show_localization": false
+      }
     },
     "header": {
       "type": "header",
       "settings": {
         "menu": "main-menu",
         "promo_image": "shopify://shop_images/IMG_5169.jpg",
-        "promo_text": "",
+        "promo_text": "Helis WIDE – więcej miejsca dla pulchnych stópek",
         "promo_link": "shopify://collections/helis-wide-indoor-collection",
         "promo_menu_index": 1,
         "search_suggestions": ""
       }
     }
   },
-  "order": ["announcement", "header"]
+  "order": [
+    "announcement",
+    "header"
+  ]
 }

@@ -11,67 +11,224 @@
         "height": 88,
         "height_mobile": 82,
         "overlay": 45,
-        "v_align": "flex-end"
+        "v_align": "flex-end",
+        "eyebrow": "Skórzane buty barefoot dla dzieci",
+        "heading": "Pierwsze kroki <em>jak boso</em>",
+        "text": "Miękka skóra naturalna, cienka, elastyczna podeszwa i szeroki nosek. Szyte ręcznie z myślą o zdrowym rozwoju małych stóp.",
+        "button_1": "Zobacz kolekcję",
+        "button_2": "Nasza historia"
       }
     },
     "usp": {
       "type": "usp-bar",
       "blocks": {
-        "u1": { "type": "usp", "settings": { "preset": "health" } },
-        "u2": { "type": "usp", "settings": { "preset": "flexible" } },
-        "u3": { "type": "usp", "settings": { "preset": "leather" } },
-        "u4": { "type": "usp", "settings": { "preset": "shipping" } }
+        "u1": {
+          "type": "usp",
+          "settings": {
+            "preset": "health",
+            "title": "Zdrowy rozwój",
+            "text": "Wspiera naturalną motorykę i prawidłową postawę dziecka."
+          }
+        },
+        "u2": {
+          "type": "usp",
+          "settings": {
+            "preset": "flexible",
+            "title": "Pełna elastyczność",
+            "text": "Miękka podeszwa daje swobodę ruchu i czucie podłoża."
+          }
+        },
+        "u3": {
+          "type": "usp",
+          "settings": {
+            "preset": "leather",
+            "title": "Skóra naturalna",
+            "text": "Oddychające, starannie wyselekcjonowane materiały."
+          }
+        },
+        "u4": {
+          "type": "usp",
+          "settings": {
+            "preset": "shipping",
+            "title": "Szybka wysyłka",
+            "text": "Zamówienia nadajemy zwykle w ciągu 24 h."
+          }
+        }
       },
-      "block_order": ["u1", "u2", "u3", "u4"],
-      "settings": { "surface": false }
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4"
+      ],
+      "settings": {
+        "surface": false
+      }
     },
     "tiles": {
       "type": "collection-tiles",
       "blocks": {
-        "t1": { "type": "collection", "settings": { "collection": "indoor", "image": "shopify://shop_images/IMG_5160.jpg", "title": "" } },
-        "t2": { "type": "collection", "settings": { "collection": "buty-outdoor", "image": "shopify://shop_images/IMG_5158.jpg", "title": "" } },
-        "t3": { "type": "collection", "settings": { "collection": "rodzina-balerina", "image": "shopify://shop_images/IMG_5157.jpg", "title": "" } },
-        "t4": { "type": "collection", "settings": { "collection": "rodzina-helis", "image": "shopify://shop_images/IMG_5156.jpg", "title": "" } }
+        "t1": {
+          "type": "collection",
+          "settings": {
+            "collection": "indoor",
+            "image": "shopify://shop_images/IMG_5160.jpg",
+            "title": ""
+          }
+        },
+        "t2": {
+          "type": "collection",
+          "settings": {
+            "collection": "buty-outdoor",
+            "image": "shopify://shop_images/IMG_5158.jpg",
+            "title": ""
+          }
+        },
+        "t3": {
+          "type": "collection",
+          "settings": {
+            "collection": "rodzina-balerina",
+            "image": "shopify://shop_images/IMG_5157.jpg",
+            "title": ""
+          }
+        },
+        "t4": {
+          "type": "collection",
+          "settings": {
+            "collection": "rodzina-helis",
+            "image": "shopify://shop_images/IMG_5156.jpg",
+            "title": ""
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4"],
-      "settings": { "ratio": "3 / 4", "surface": false, "padding_top": 96, "padding_bottom": 48 }
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "ratio": "3 / 4",
+        "surface": false,
+        "padding_top": 96,
+        "padding_bottom": 48,
+        "eyebrow": "Kolekcje",
+        "heading": "Na każdą <em>okazję</em>"
+      }
     },
     "bestsellers": {
       "type": "featured-collection",
-      "settings": { "collection": "bestsellery", "layout": "slider", "columns": 4, "limit": 10, "surface": false, "padding_top": 48, "padding_bottom": 96 }
+      "settings": {
+        "collection": "bestsellery",
+        "layout": "slider",
+        "columns": 4,
+        "limit": 10,
+        "surface": false,
+        "padding_top": 48,
+        "padding_bottom": 96,
+        "eyebrow": "Bestsellery",
+        "heading": "Ulubieńcy <em>rodziców</em>"
+      }
     },
     "story": {
       "type": "image-text",
       "blocks": {
-        "p1": { "type": "point", "settings": { "content_key": "home.point_shape" } },
-        "p2": { "type": "point", "settings": { "content_key": "home.point_zero_drop" } },
-        "p3": { "type": "point", "settings": { "content_key": "home.point_flex" } }
+        "p1": {
+          "type": "point",
+          "settings": {
+            "title": "Anatomiczny kształt",
+            "text": "Szeroki nosek daje palcom miejsce na naturalny rozstaw i łapanie równowagi."
+          }
+        },
+        "p2": {
+          "type": "point",
+          "settings": {
+            "title": "Płaska podeszwa (zero drop)",
+            "text": "Równy poziom od pięty po palce wspiera prawidłową postawę całego ciała."
+          }
+        },
+        "p3": {
+          "type": "point",
+          "settings": {
+            "title": "Pełna elastyczność",
+            "text": "Miękkie materiały zginają się w każdym kierunku i wzmacniają mięśnie przy każdym kroku."
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3"],
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_unt8s8unt8s8unt8.jpg",
         "media_position": "left",
         "ratio": "4 / 5",
         "shape": "rounded",
-        "content_key": "home.story",
         "link": "shopify://pages/historia-marki",
         "button_style": "link",
         "show_badge": true,
         "style": "surface",
         "padding_top": 112,
-        "padding_bottom": 112
+        "padding_bottom": 112,
+        "eyebrow": "Filozofia OBEX",
+        "heading": "Pozwól stopom rosnąć <em>tak, jak zaplanowała natura</em>",
+        "text": "<p>Wierzymy, że najlepszym wsparciem dla rozwijającej się stopy jest brak niepotrzebnego krępowania. Buty OBEX projektujemy tak, by naśladowały chodzenie boso – i dawały dzieciom dokładnie to, czego potrzebują do zdrowego wzrostu.</p>",
+        "button": "Poznaj naszą historię",
+        "badge": "Szyte ręcznie"
       }
     },
     "features": {
       "type": "features",
       "blocks": {
-        "f1": { "type": "feature", "settings": { "preset": "toe_box" } },
-        "f2": { "type": "feature", "settings": { "preset": "zero_drop" } },
-        "f3": { "type": "feature", "settings": { "preset": "sole" } },
-        "f4": { "type": "feature", "settings": { "preset": "flex" } }
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "preset": "toe_box",
+            "title": "Szeroki nosek",
+            "text": "Kształt stopy, nie buta. Palce mają miejsce, by swobodnie się rozłożyć i łapać równowagę przy każdym kroku."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "preset": "zero_drop",
+            "title": "Zero drop",
+            "text": "Pięta i palce na tym samym poziomie. Płaska podeszwa wspiera naturalną postawę całego ciała."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "preset": "sole",
+            "title": "Podeszwa 3 mm",
+            "text": "Cienka podeszwa z termokauczuku pozwala czuć podłoże, a jednocześnie chroni przed kamieniami i twardym betonem."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "preset": "flex",
+            "title": "Pełna elastyczność",
+            "text": "But zgina się w każdym kierunku razem ze stopą – mięśnie pracują i wzmacniają się przy każdym kroku."
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3", "f4"],
-      "settings": { "columns": 4, "style": "default", "padding_top": 112, "padding_bottom": 96 }
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "columns": 4,
+        "style": "default",
+        "padding_top": 112,
+        "padding_bottom": 96,
+        "eyebrow": "Dlaczego barefoot",
+        "heading": "Zaprojektowane <em>dla rosnących stóp</em>",
+        "text": "Każdy detal ma jeden cel: dać stopie dziecka swobodę, której potrzebuje do prawidłowego rozwoju."
+      }
     },
     "wide": {
       "type": "image-text",
@@ -80,62 +237,269 @@
         "media_position": "right",
         "ratio": "4 / 5",
         "shape": "blob",
-        "content_key": "home.wide",
         "link": "shopify://collections/helis-wide-indoor-collection",
         "button_style": "button",
         "show_badge": false,
         "style": "default",
         "padding_top": 48,
-        "padding_bottom": 112
+        "padding_bottom": 112,
+        "eyebrow": "Helis WIDE",
+        "heading": "Więcej przestrzeni, <em>ten sam komfort</em>",
+        "text": "<p>Każda stopa rośnie w swoim tempie. Z myślą o dzieciach z szerszą stópką i wyższym podbiciem stworzyliśmy Helis WIDE. Poszerzona podeszwa daje palcom pełną swobodę, a przeprojektowana cholewka nie uciska podbicia.</p>",
+        "button": "Zobacz modele WIDE"
       }
     },
     "marquee": {
       "type": "marquee",
       "blocks": {
-        "m1": { "type": "item", "settings": { "preset": "barefoot" } },
-        "m2": { "type": "item", "settings": { "preset": "leather" } },
-        "m3": { "type": "item", "settings": { "preset": "handmade" } },
-        "m4": { "type": "item", "settings": { "preset": "wide" } },
-        "m5": { "type": "item", "settings": { "preset": "zero_drop" } }
+        "m1": {
+          "type": "item",
+          "settings": {
+            "preset": "barefoot",
+            "text": "Barefoot od pierwszych kroków"
+          }
+        },
+        "m2": {
+          "type": "item",
+          "settings": {
+            "preset": "leather",
+            "text": "Skóra naturalna"
+          }
+        },
+        "m3": {
+          "type": "item",
+          "settings": {
+            "preset": "handmade",
+            "text": "Szyte ręcznie"
+          }
+        },
+        "m4": {
+          "type": "item",
+          "settings": {
+            "preset": "wide",
+            "text": "Miejsce dla każdego palca"
+          }
+        },
+        "m5": {
+          "type": "item",
+          "settings": {
+            "preset": "zero_drop",
+            "text": "Zero drop"
+          }
+        }
       },
-      "block_order": ["m1", "m2", "m3", "m4", "m5"],
-      "settings": { "speed": 50, "surface": false }
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5"
+      ],
+      "settings": {
+        "speed": 50,
+        "surface": false
+      }
     },
     "materials": {
       "type": "materials",
       "blocks": {
-        "leather": { "type": "material", "settings": { "preset": "leather", "image": "shopify://shop_images/IMG_5085.jpg" } },
-        "rubber": { "type": "material", "settings": { "preset": "rubber", "image": "shopify://shop_images/IMG_5084.png" } },
-        "handmade": { "type": "material", "settings": { "preset": "handmade", "image": "shopify://shop_images/naklejki-handmade-stamp_jpg.jpg" } }
+        "leather": {
+          "type": "material",
+          "settings": {
+            "preset": "leather",
+            "image": "shopify://shop_images/IMG_5085.jpg",
+            "title": "Skóra naturalna",
+            "text": "Nasze obuwie tworzymy z naturalnej skóry – miękkiej i elastycznej, dzięki czemu dopasowuje się do stopy i pozwala jej oddychać. Skórzane wnętrze w połączeniu z amortyzującą wkładką chroni przed otarciami i daje dziecku pełen komfort oraz naturalne odczucie chodzenia boso."
+          }
+        },
+        "rubber": {
+          "type": "material",
+          "settings": {
+            "preset": "rubber",
+            "image": "shopify://shop_images/IMG_5084.png",
+            "title": "Termokauczuk",
+            "text": "Podstawą naszych butów jest ultraelastyczna podeszwa z termokauczuku. Łączy trwałość z miękkością, zapewniając stopom naturalną swobodę ruchu. Wysoka odporność na ścieranie i dobra przyczepność dają bezpieczeństwo podczas zabawy, a materiał pozostaje lekki."
+          }
+        },
+        "handmade": {
+          "type": "material",
+          "settings": {
+            "preset": "handmade",
+            "image": "shopify://shop_images/naklejki-handmade-stamp_jpg.jpg",
+            "title": "Ręcznie szyte",
+            "text": "Nasze buty to owoc pasji i rzemieślniczej precyzji. Każda para powstaje ręcznie, z dbałością o najmniejszy detal. Używamy wyłącznie starannie wyselekcjonowanych, naturalnych materiałów, by zapewnić trwałość i wyjątkowy komfort."
+          }
+        }
       },
-      "block_order": ["leather", "rubber", "handmade"],
-      "settings": { "surface": true, "padding_top": 112, "padding_bottom": 112 }
+      "block_order": [
+        "leather",
+        "rubber",
+        "handmade"
+      ],
+      "settings": {
+        "surface": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "eyebrow": "Materiały",
+        "heading": "Z natury, <em>z ręki rzemieślnika</em>"
+      }
     },
     "reviews": {
       "type": "testimonials",
       "blocks": {
-        "r2": { "type": "review", "settings": { "preset": "r2", "image": "shopify://shop_images/IMG_4371.jpg", "rating": 5 } },
-        "r4": { "type": "review", "settings": { "preset": "r4", "image": "shopify://shop_images/13755.jpg", "rating": 5 } },
-        "r5": { "type": "review", "settings": { "preset": "r5", "image": "shopify://shop_images/11676.jpg", "rating": 5 } },
-        "r3": { "type": "review", "settings": { "preset": "r3", "image": "shopify://shop_images/IMG_4369.jpg", "rating": 5 } },
-        "r1": { "type": "review", "settings": { "preset": "r1", "image": "shopify://shop_images/f1f3a2054494b88ea7ddffa93fd2.jpg", "rating": 5 } }
+        "r2": {
+          "type": "review",
+          "settings": {
+            "preset": "r2",
+            "image": "shopify://shop_images/IMG_4371.jpg",
+            "rating": 5,
+            "title": "Jakby chodziła boso!",
+            "text": "Córka wcześniej natychmiast ściągała z nóg każde założone buty. Podeszwa w OBEX jest na tyle elastyczna i lekka, że mała nawet nie zauważa, że ma je na sobie. Pokochała je od razu.",
+            "author": "Patrycja, mama Zosi"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "preset": "r4",
+            "image": "shopify://shop_images/13755.jpg",
+            "rating": 5,
+            "title": "W końcu buty, które pasują!",
+            "text": "Długo szukaliśmy butów na wysokie podbicie i pulchną stópkę naszego synka. Model WIDE to strzał w dziesiątkę. Zakłada się je w sekundę, nic nie uciska, a mały biega w nich z uśmiechem.",
+            "author": "Anna, mama Ignasia"
+          }
+        },
+        "r5": {
+          "type": "review",
+          "settings": {
+            "preset": "r5",
+            "image": "shopify://shop_images/11676.jpg",
+            "rating": 5,
+            "title": "Idealne na pierwsze kroki",
+            "text": "Buciki poleciła nam fizjoterapeutka. Są niesamowicie leciutkie, a podeszwa wygina się we wszystkie strony. Widać ogromną różnicę w tym, jak stabilnie córka łapie w nich równowagę."
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "preset": "r3",
+            "image": "shopify://shop_images/IMG_4369.jpg",
+            "rating": 5,
+            "title": "Mięciutka skóra i piękny design",
+            "text": "Rzadko zdarza się, by profilaktyczne buty dla dzieci wyglądały aż tak elegancko. Naturalna skóra jest bardzo delikatna, nie ma mowy o żadnych otarciach, nawet w cieplejsze dni. Polecam z czystym sumieniem."
+          }
+        },
+        "r1": {
+          "type": "review",
+          "settings": {
+            "preset": "r1",
+            "image": "shopify://shop_images/f1f3a2054494b88ea7ddffa93fd2.jpg",
+            "rating": 5,
+            "title": "Jakość, która znosi wszystko",
+            "text": "Mój przedszkolak to wulkan energii, więc buty nie mają z nim lekko. Te skórzane buciki świetnie znoszą codzienne szaleństwa na placu zabaw."
+          }
+        }
       },
-      "block_order": ["r2", "r4", "r5", "r3", "r1"],
-      "settings": { "surface": false, "padding_top": 112, "padding_bottom": 96 }
+      "block_order": [
+        "r2",
+        "r4",
+        "r5",
+        "r3",
+        "r1"
+      ],
+      "settings": {
+        "surface": false,
+        "padding_top": 112,
+        "padding_bottom": 96,
+        "eyebrow": "Opinie",
+        "heading": "Co mówią <em>rodzice</em>"
+      }
     },
     "faq": {
       "type": "faq",
       "blocks": {
-        "q1": { "type": "question", "settings": { "preset": "size" } },
-        "q2": { "type": "question", "settings": { "preset": "sole" } },
-        "q3": { "type": "question", "settings": { "preset": "wide" } },
-        "q4": { "type": "question", "settings": { "preset": "indoor_outdoor" } },
-        "q5": { "type": "question", "settings": { "preset": "shipping" } },
-        "q6": { "type": "question", "settings": { "preset": "returns" } }
+        "q1": {
+          "type": "question",
+          "settings": {
+            "preset": "size",
+            "question": "Jaki rozmiar wybrać i ile zostawić zapasu?",
+            "answer": "<p>Postaw stopę dziecka na kartce dosuniętej do ściany, zaznacz najdłuższy palec i zmierz odległość w milimetrach. Wpisz wynik w kalkulatorze na stronie produktu – podświetli rozmiar z zalecanym zapasem na wzrost.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "preset": "sole",
+            "question": "Dlaczego podeszwa jest taka cienka?",
+            "answer": "<p>To celowy zabieg zalecany przez fizjoterapeutów. Podeszwa z termokauczuku ma 3 mm, dzięki czemu dziecko czuje podłoże (propriocepcja), co wspiera rozwój mięśni stopy i postawy. Jest bardzo elastyczna, a jednocześnie chroni przed szkłem, kamieniami i twardym betonem.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "preset": "wide",
+            "question": "Czy buty pasują na pulchną stopę z wysokim podbiciem?",
+            "answer": "<p>Tak. Szeroki otwór i wygodne zapięcie na rzep ułatwiają zakładanie i pozwalają dopasować but zarówno do drobnej, jak i pulchniejszej stopy. Dla dzieci z wyraźnie szerszą stopą przygotowaliśmy model Helis WIDE.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "preset": "indoor_outdoor",
+            "question": "Czym różnią się modele Indoor i Outdoor?",
+            "answer": "<p>Modele Indoor to miękkie kapcie do domu i przedszkola. Modele Outdoor mają tę samą elastyczną konstrukcję barefoot, ale są przeznaczone do chodzenia na zewnątrz. Wszystkie wykonujemy ze skóry naturalnej.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "preset": "shipping",
+            "question": "Czy wysyłacie do Włoch i Danii?",
+            "answer": "<p>Tak. Zamówienia nadajemy zwykle w ciągu 24 godzin w dni robocze, a dostawa trwa przeważnie 3–5 dni roboczych. Ceny widzisz w walucie swojego kraju, a dokładny koszt dostawy pokażemy przy kasie, zanim zapłacisz.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "preset": "returns",
+            "question": "Jak wyglądają zwroty i wymiany?",
+            "answer": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
+          }
+        }
       },
-      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"],
-      "settings": { "show_contact": true, "contact_link": "shopify://pages/contact", "open_first": true, "schema": true, "surface": true, "padding_top": 112, "padding_bottom": 112 }
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "show_contact": true,
+        "contact_link": "shopify://pages/contact",
+        "open_first": true,
+        "schema": true,
+        "surface": true,
+        "padding_top": 112,
+        "padding_bottom": 112,
+        "eyebrow": "FAQ",
+        "heading": "Masz <em>pytania?</em>",
+        "text": "Zebraliśmy odpowiedzi na to, o co rodzice pytają najczęściej."
+      }
     }
   },
-  "order": ["hero", "usp", "tiles", "bestsellers", "story", "features", "wide", "marquee", "materials", "reviews", "faq"]
+  "order": [
+    "hero",
+    "usp",
+    "tiles",
+    "bestsellers",
+    "story",
+    "features",
+    "wide",
+    "marquee",
+    "materials",
+    "reviews",
+    "faq"
+  ]
 }

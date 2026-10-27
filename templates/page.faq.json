@@ -13,49 +13,65 @@
         "q1": {
           "type": "question",
           "settings": {
-            "preset": "size"
+            "preset": "size",
+            "question": "Jaki rozmiar wybrać i ile zostawić zapasu?",
+            "answer": "<p>Postaw stopę dziecka na kartce dosuniętej do ściany, zaznacz najdłuższy palec i zmierz odległość w milimetrach. Wpisz wynik w kalkulatorze na stronie produktu – podświetli rozmiar z zalecanym zapasem na wzrost.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "preset": "first_steps"
+            "preset": "first_steps",
+            "question": "Od kiedy dziecko może nosić buty barefoot?",
+            "answer": "<p>Nasze najmniejsze buty mają rozmiar 19 (wkładka 125 mm) i zwykle pasują dzieciom stawiającym pierwsze kroki. Miękka, elastyczna podeszwa nie przeszkadza w nauce chodzenia. W razie wątpliwości co do rozwoju stóp warto skonsultować się z fizjoterapeutą.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "preset": "sole"
+            "preset": "sole",
+            "question": "Dlaczego podeszwa jest taka cienka?",
+            "answer": "<p>To celowy zabieg zalecany przez fizjoterapeutów. Podeszwa z termokauczuku ma 3 mm, dzięki czemu dziecko czuje podłoże (propriocepcja), co wspiera rozwój mięśni stopy i postawy. Jest bardzo elastyczna, a jednocześnie chroni przed szkłem, kamieniami i twardym betonem.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "preset": "wide"
+            "preset": "wide",
+            "question": "Czy buty pasują na pulchną stopę z wysokim podbiciem?",
+            "answer": "<p>Tak. Szeroki otwór i wygodne zapięcie na rzep ułatwiają zakładanie i pozwalają dopasować but zarówno do drobnej, jak i pulchniejszej stopy. Dla dzieci z wyraźnie szerszą stopą przygotowaliśmy model Helis WIDE.</p>"
           }
         },
         "q5": {
           "type": "question",
           "settings": {
-            "preset": "indoor_outdoor"
+            "preset": "indoor_outdoor",
+            "question": "Czym różnią się modele Indoor i Outdoor?",
+            "answer": "<p>Modele Indoor to miękkie kapcie do domu i przedszkola. Modele Outdoor mają tę samą elastyczną konstrukcję barefoot, ale są przeznaczone do chodzenia na zewnątrz. Wszystkie wykonujemy ze skóry naturalnej.</p>"
           }
         },
         "q6": {
           "type": "question",
           "settings": {
-            "preset": "care"
+            "preset": "care",
+            "question": "Jak dbać o buty OBEX?",
+            "answer": "<p>Nie pierz butów w pralce i nie susz ich na kaloryferze. Zabrudzenia przecieraj wilgotną ściereczką. Aby skóra zachowała miękkość i była odporniejsza na wilgoć, stosuj naturalne woski lub impregnaty do skóry licowej.</p>"
           }
         },
         "q7": {
           "type": "question",
           "settings": {
-            "preset": "shipping"
+            "preset": "shipping",
+            "question": "Czy wysyłacie do Włoch i Danii?",
+            "answer": "<p>Tak. Zamówienia nadajemy zwykle w ciągu 24 godzin w dni robocze, a dostawa trwa przeważnie 3–5 dni roboczych. Ceny widzisz w walucie swojego kraju, a dokładny koszt dostawy pokażemy przy kasie, zanim zapłacisz.</p>"
           }
         },
         "q8": {
           "type": "question",
           "settings": {
-            "preset": "returns"
+            "preset": "returns",
+            "question": "Jak wyglądają zwroty i wymiany?",
+            "answer": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
           }
         }
       },
@@ -76,7 +92,10 @@
         "schema": true,
         "surface": false,
         "padding_top": 32,
-        "padding_bottom": 112
+        "padding_bottom": 112,
+        "eyebrow": "FAQ",
+        "heading": "Masz <em>pytania?</em>",
+        "text": "Zebraliśmy odpowiedzi na to, o co rodzice pytają najczęściej."
       }
     }
   },

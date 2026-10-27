@@ -3,66 +3,60 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "title": { "type": "title" },
-        "price": { "type": "price" },
-        "colors": { "type": "colors", "settings": { "limit": 24 } },
-        "sizes": { "type": "variant_picker", "settings": { "show_size_guide": true } },
-        "buy": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_free_shipping": true } },
-        "highlights": { "type": "highlights" },
-        "assurance": { "type": "assurance" },
-        "tabs": { "type": "accordion", "settings": { "open_description": true } }
+        "title": {
+          "type": "title"
+        },
+        "price": {
+          "type": "price"
+        },
+        "colors": {
+          "type": "colors",
+          "settings": {
+            "limit": 24
+          }
+        },
+        "sizes": {
+          "type": "variant_picker",
+          "settings": {
+            "show_size_guide": true
+          }
+        },
+        "buy": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_free_shipping": true
+          }
+        },
+        "highlights": {
+          "type": "highlights"
+        },
+        "assurance": {
+          "type": "assurance"
+        },
+        "tabs": {
+          "type": "accordion",
+          "settings": {
+            "open_description": true
+          }
+        }
       },
-      "block_order": ["title", "price", "colors", "sizes", "buy", "highlights", "assurance", "tabs"],
-      "settings": { "sticky_atc": true }
-    },
-    "features": {
-      "type": "features",
-      "blocks": {
-        "f1": { "type": "feature", "settings": { "preset": "toe_box" } },
-        "f2": { "type": "feature", "settings": { "preset": "zero_drop" } },
-        "f3": { "type": "feature", "settings": { "preset": "sole" } },
-        "f4": { "type": "feature", "settings": { "preset": "leather" } }
-      },
-      "block_order": ["f1", "f2", "f3", "f4"],
-      "settings": { "columns": 4, "style": "surface", "padding_top": 96, "padding_bottom": 96 }
-    },
-    "materials": {
-      "type": "materials",
-      "blocks": {
-        "leather": { "type": "material", "settings": { "preset": "leather", "image": "shopify://shop_images/IMG_5085.jpg" } },
-        "rubber": { "type": "material", "settings": { "preset": "rubber", "image": "shopify://shop_images/IMG_5084.png" } },
-        "handmade": { "type": "material", "settings": { "preset": "handmade", "image": "shopify://shop_images/naklejki-handmade-stamp_jpg.jpg" } }
-      },
-      "block_order": ["leather", "rubber", "handmade"],
-      "settings": { "surface": false, "padding_top": 96, "padding_bottom": 96 }
-    },
-    "reviews": {
-      "type": "testimonials",
-      "blocks": {
-        "r6": { "type": "review", "settings": { "preset": "r6", "rating": 5 } },
-        "r7": { "type": "review", "settings": { "preset": "r7", "rating": 5 } },
-        "r8": { "type": "review", "settings": { "preset": "r8", "rating": 5 } },
-        "r2": { "type": "review", "settings": { "preset": "r2", "rating": 5 } }
-      },
-      "block_order": ["r6", "r7", "r8", "r2"],
-      "settings": { "surface": true, "padding_top": 96, "padding_bottom": 96 }
-    },
-    "faq": {
-      "type": "faq",
-      "blocks": {
-        "q1": { "type": "question", "settings": { "preset": "size" } },
-        "q2": { "type": "question", "settings": { "preset": "care" } },
-        "q3": { "type": "question", "settings": { "preset": "sole" } },
-        "q4": { "type": "question", "settings": { "preset": "wide" } },
-        "q5": { "type": "question", "settings": { "preset": "returns" } }
-      },
-      "block_order": ["q1", "q2", "q3", "q4", "q5"],
-      "settings": { "show_contact": true, "contact_link": "shopify://pages/contact", "open_first": false, "schema": false, "surface": false, "padding_top": 96, "padding_bottom": 96 }
-    },
-    "related": {
-      "type": "related-products",
-      "settings": { "limit": 8, "surface": false, "padding_top": 48, "padding_bottom": 112 }
+      "block_order": [
+        "title",
+        "price",
+        "colors",
+        "sizes",
+        "buy",
+        "highlights",
+        "assurance",
+        "tabs"
+      ],
+      "settings": {
+        "sticky_atc": true
+      }
     }
   },
-  "order": ["main", "features", "materials", "reviews", "faq", "related"]
+  "order": [
+    "main"
+  ]
 }

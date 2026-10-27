@@ -3,14 +3,16 @@
     "intro": {
       "type": "rich-text",
       "settings": {
-        "content_key": "size.intro",
         "heading_tag": "h1",
         "center": true,
         "style": "default",
         "padding_top": 80,
         "padding_bottom": 32,
         "show_page_content": false,
-        "use_page_title": true
+        "use_page_title": true,
+        "eyebrow": "Przewodnik",
+        "heading": "Jak dobrać <em>rozmiar</em>",
+        "text": "<p>Dobry rozmiar to najważniejszy krok do zdrowego rozwoju stóp. Każda mała stopa jest inna, dlatego przygotowaliśmy prosty przewodnik i kalkulator, który wskaże rozmiar z odpowiednim zapasem.</p>"
       }
     },
     "calculator": {
@@ -18,7 +20,10 @@
       "settings": {
         "surface": true,
         "padding_top": 80,
-        "padding_bottom": 96
+        "padding_bottom": 96,
+        "eyebrow": "Dobór rozmiaru",
+        "heading": "Kalkulator <em>rozmiaru</em>",
+        "text": "Wpisz długość stopy dziecka w milimetrach – podświetlimy rozmiar z odpowiednim zapasem na wzrost."
       }
     },
     "measure": {
@@ -28,13 +33,15 @@
         "media_position": "left",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "size.measure",
         "number": "01",
         "style": "default",
         "padding_top": 112,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Krok 1",
+        "heading": "Jak prawidłowo <em>zmierzyć stopę?</em>",
+        "text": "<p>Postaw stopę dziecka na kartce tak, by pięta lekko dotykała ściany. Trzymając ołówek pionowo, zaznacz linię przy najdłuższym palcu i zmierz odległość od brzegu kartki. Zmierz obie stopy – mogą się minimalnie różnić. Zawsze kieruj się wynikiem dłuższej.</p>"
       }
     },
     "width": {
@@ -44,13 +51,15 @@
         "media_position": "right",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "size.width",
         "number": "02",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Szerokość",
+        "heading": "Pamiętamy o <em>szerokości stopy</em>",
+        "text": "<p>Nasze buty mają szeroki, anatomiczny nosek, dzięki czemu pasują na stopy normalne i szersze. Palce mogą się swobodnie rozłożyć podczas chodzenia, co stabilizuje postawę. Dla wyraźnie szerszych stóp polecamy model Helis WIDE.</p>"
       }
     },
     "calc": {
@@ -60,13 +69,15 @@
         "media_position": "left",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "size.calculator",
         "number": "03",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Kalkulator",
+        "heading": "Skorzystaj z <em>kalkulatora</em>",
+        "text": "<p>Na każdej karcie produktu znajdziesz kalkulator rozmiarów. Wpisz długość stopy w milimetrach – system doliczy zdrowy zapas na wzrost i wskaże rozmiar idealny dla Twojego malucha.</p>"
       }
     },
     "frequency": {
@@ -76,14 +87,17 @@
         "media_position": "right",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "size.frequency",
         "number": "04",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 112,
         "button_style": "button",
         "show_badge": false,
-        "link": "shopify://collections/all"
+        "link": "shopify://collections/all",
+        "eyebrow": "Kontrola",
+        "heading": "Jak często <em>sprawdzać rozmiar?</em>",
+        "text": "<p>Stopy dzieci rosną skokowo. Zalecamy pomiar co 2 miesiące u dzieci do 1. roku życia, co 3 miesiące w wieku 1–3 lat i co 4–6 miesięcy u przedszkolaków. Jeśli dziecko częściej się potyka, to znak, że czas na nowy pomiar.</p>",
+        "button": "Zobacz kolekcję"
       }
     },
     "faq": {
@@ -92,25 +106,33 @@
         "q1": {
           "type": "question",
           "settings": {
-            "preset": "size"
+            "preset": "size",
+            "question": "Jaki rozmiar wybrać i ile zostawić zapasu?",
+            "answer": "<p>Postaw stopę dziecka na kartce dosuniętej do ściany, zaznacz najdłuższy palec i zmierz odległość w milimetrach. Wpisz wynik w kalkulatorze na stronie produktu – podświetli rozmiar z zalecanym zapasem na wzrost.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "preset": "wide"
+            "preset": "wide",
+            "question": "Czy buty pasują na pulchną stopę z wysokim podbiciem?",
+            "answer": "<p>Tak. Szeroki otwór i wygodne zapięcie na rzep ułatwiają zakładanie i pozwalają dopasować but zarówno do drobnej, jak i pulchniejszej stopy. Dla dzieci z wyraźnie szerszą stopą przygotowaliśmy model Helis WIDE.</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "preset": "first_steps"
+            "preset": "first_steps",
+            "question": "Od kiedy dziecko może nosić buty barefoot?",
+            "answer": "<p>Nasze najmniejsze buty mają rozmiar 19 (wkładka 125 mm) i zwykle pasują dzieciom stawiającym pierwsze kroki. Miękka, elastyczna podeszwa nie przeszkadza w nauce chodzenia. W razie wątpliwości co do rozwoju stóp warto skonsultować się z fizjoterapeutą.</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "preset": "returns"
+            "preset": "returns",
+            "question": "Jak wyglądają zwroty i wymiany?",
+            "answer": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
           }
         }
       },
@@ -127,7 +149,10 @@
         "schema": true,
         "surface": true,
         "padding_top": 96,
-        "padding_bottom": 96
+        "padding_bottom": 96,
+        "eyebrow": "FAQ",
+        "heading": "Masz <em>pytania?</em>",
+        "text": "Zebraliśmy odpowiedzi na to, o co rodzice pytają najczęściej."
       }
     }
   },

@@ -1,0 +1,238 @@
+{
+  "type": "custom.product_extras",
+  "name": "Produkt – sekcje wspólne",
+  "sections": {
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "preset": "toe_box",
+            "title": "Szeroki nosek",
+            "text": "Kształt stopy, nie buta. Palce mają miejsce, by swobodnie się rozłożyć i łapać równowagę przy każdym kroku."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "preset": "zero_drop",
+            "title": "Zero drop",
+            "text": "Pięta i palce na tym samym poziomie. Płaska podeszwa wspiera naturalną postawę całego ciała."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "preset": "sole",
+            "title": "Podeszwa 3 mm",
+            "text": "Cienka podeszwa z termokauczuku pozwala czuć podłoże, a jednocześnie chroni przed kamieniami i twardym betonem."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "preset": "leather",
+            "title": "Skóra naturalna",
+            "text": "Miękka, oddychająca skóra licowa i zamszowa dopasowuje się do stopy i nie powoduje otarć."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "columns": 4,
+        "style": "surface",
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "eyebrow": "Dlaczego barefoot",
+        "heading": "Zaprojektowane <em>dla rosnących stóp</em>",
+        "text": "Każdy detal ma jeden cel: dać stopie dziecka swobodę, której potrzebuje do prawidłowego rozwoju."
+      }
+    },
+    "materials": {
+      "type": "materials",
+      "blocks": {
+        "leather": {
+          "type": "material",
+          "settings": {
+            "preset": "leather",
+            "image": "shopify://shop_images/IMG_5085.jpg",
+            "title": "Skóra naturalna",
+            "text": "Nasze obuwie tworzymy z naturalnej skóry – miękkiej i elastycznej, dzięki czemu dopasowuje się do stopy i pozwala jej oddychać. Skórzane wnętrze w połączeniu z amortyzującą wkładką chroni przed otarciami i daje dziecku pełen komfort oraz naturalne odczucie chodzenia boso."
+          }
+        },
+        "rubber": {
+          "type": "material",
+          "settings": {
+            "preset": "rubber",
+            "image": "shopify://shop_images/IMG_5084.png",
+            "title": "Termokauczuk",
+            "text": "Podstawą naszych butów jest ultraelastyczna podeszwa z termokauczuku. Łączy trwałość z miękkością, zapewniając stopom naturalną swobodę ruchu. Wysoka odporność na ścieranie i dobra przyczepność dają bezpieczeństwo podczas zabawy, a materiał pozostaje lekki."
+          }
+        },
+        "handmade": {
+          "type": "material",
+          "settings": {
+            "preset": "handmade",
+            "image": "shopify://shop_images/naklejki-handmade-stamp_jpg.jpg",
+            "title": "Ręcznie szyte",
+            "text": "Nasze buty to owoc pasji i rzemieślniczej precyzji. Każda para powstaje ręcznie, z dbałością o najmniejszy detal. Używamy wyłącznie starannie wyselekcjonowanych, naturalnych materiałów, by zapewnić trwałość i wyjątkowy komfort."
+          }
+        }
+      },
+      "block_order": [
+        "leather",
+        "rubber",
+        "handmade"
+      ],
+      "settings": {
+        "surface": false,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "eyebrow": "Materiały",
+        "heading": "Z natury, <em>z ręki rzemieślnika</em>"
+      }
+    },
+    "reviews": {
+      "type": "testimonials",
+      "blocks": {
+        "r6": {
+          "type": "review",
+          "settings": {
+            "preset": "r6",
+            "rating": 5,
+            "text": "Najlepsze buty barefoot, jakie mieliśmy! Mięciutka skóra, a elastyczna podeszwa pozwala synkowi biegać jak boso. Zdecydowanie warte swojej ceny.",
+            "author": "Katarzyna M."
+          }
+        },
+        "r7": {
+          "type": "review",
+          "settings": {
+            "preset": "r7",
+            "rating": 5,
+            "text": "Szukałam butów, które nie będą ściskać palców mojej córki, i w końcu trafiłam na OBEX. Jakość wykonania powala, widać polskie rzemiosło w każdym szwie.",
+            "author": "Agnieszka W."
+          }
+        },
+        "r8": {
+          "type": "review",
+          "settings": {
+            "preset": "r8",
+            "rating": 5,
+            "text": "Piękny design i naturalne materiały. Buty są bardzo lekkie i bez problemu zakładają się na wyższe podbicie. Będziemy wracać po kolejne rozmiary!",
+            "author": "Tomasz P."
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "preset": "r2",
+            "rating": 5,
+            "title": "Jakby chodziła boso!",
+            "text": "Córka wcześniej natychmiast ściągała z nóg każde założone buty. Podeszwa w OBEX jest na tyle elastyczna i lekka, że mała nawet nie zauważa, że ma je na sobie. Pokochała je od razu.",
+            "author": "Patrycja, mama Zosi"
+          }
+        }
+      },
+      "block_order": [
+        "r6",
+        "r7",
+        "r8",
+        "r2"
+      ],
+      "settings": {
+        "surface": true,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "eyebrow": "Opinie",
+        "heading": "Co mówią <em>rodzice</em>"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "preset": "size",
+            "question": "Jaki rozmiar wybrać i ile zostawić zapasu?",
+            "answer": "<p>Postaw stopę dziecka na kartce dosuniętej do ściany, zaznacz najdłuższy palec i zmierz odległość w milimetrach. Wpisz wynik w kalkulatorze na stronie produktu – podświetli rozmiar z zalecanym zapasem na wzrost.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "preset": "care",
+            "question": "Jak dbać o buty OBEX?",
+            "answer": "<p>Nie pierz butów w pralce i nie susz ich na kaloryferze. Zabrudzenia przecieraj wilgotną ściereczką. Aby skóra zachowała miękkość i była odporniejsza na wilgoć, stosuj naturalne woski lub impregnaty do skóry licowej.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "preset": "sole",
+            "question": "Dlaczego podeszwa jest taka cienka?",
+            "answer": "<p>To celowy zabieg zalecany przez fizjoterapeutów. Podeszwa z termokauczuku ma 3 mm, dzięki czemu dziecko czuje podłoże (propriocepcja), co wspiera rozwój mięśni stopy i postawy. Jest bardzo elastyczna, a jednocześnie chroni przed szkłem, kamieniami i twardym betonem.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "preset": "wide",
+            "question": "Czy buty pasują na pulchną stopę z wysokim podbiciem?",
+            "answer": "<p>Tak. Szeroki otwór i wygodne zapięcie na rzep ułatwiają zakładanie i pozwalają dopasować but zarówno do drobnej, jak i pulchniejszej stopy. Dla dzieci z wyraźnie szerszą stopą przygotowaliśmy model Helis WIDE.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "preset": "returns",
+            "question": "Jak wyglądają zwroty i wymiany?",
+            "answer": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "show_contact": true,
+        "contact_link": "shopify://pages/contact",
+        "open_first": false,
+        "schema": false,
+        "surface": false,
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "eyebrow": "FAQ",
+        "heading": "Masz <em>pytania?</em>",
+        "text": "Zebraliśmy odpowiedzi na to, o co rodzice pytają najczęściej."
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "settings": {
+        "limit": 8,
+        "surface": false,
+        "padding_top": 48,
+        "padding_bottom": 112,
+        "heading": "Może Ci się <em>spodobać</em>"
+      }
+    }
+  },
+  "order": [
+    "features",
+    "materials",
+    "reviews",
+    "faq",
+    "related"
+  ]
+}

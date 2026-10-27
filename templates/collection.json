@@ -16,25 +16,33 @@
         "u1": {
           "type": "usp",
           "settings": {
-            "preset": "handmade"
+            "preset": "handmade",
+            "title": "Szyte ręcznie",
+            "text": "Każda para powstaje z dbałością o detal."
           }
         },
         "u2": {
           "type": "usp",
           "settings": {
-            "preset": "leather"
+            "preset": "leather",
+            "title": "Skóra naturalna",
+            "text": "Oddychające, starannie wyselekcjonowane materiały."
           }
         },
         "u3": {
           "type": "usp",
           "settings": {
-            "preset": "shipping"
+            "preset": "shipping",
+            "title": "Szybka wysyłka",
+            "text": "Zamówienia nadajemy zwykle w ciągu 24 h."
           }
         },
         "u4": {
           "type": "usp",
           "settings": {
-            "preset": "returns"
+            "preset": "returns",
+            "title": "14 dni na zwrot",
+            "text": "Przymierz w domu bez pośpiechu."
           }
         }
       },

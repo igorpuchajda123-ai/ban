@@ -3,14 +3,16 @@
     "intro": {
       "type": "rich-text",
       "settings": {
-        "content_key": "about.intro",
         "heading_tag": "h1",
         "center": true,
         "style": "default",
         "padding_top": 80,
         "padding_bottom": 48,
         "show_page_content": false,
-        "use_page_title": true
+        "use_page_title": true,
+        "eyebrow": "O nas",
+        "heading": "Nasza <em>historia</em>",
+        "text": "<p>Za każdą parą bucików OBEX stoi troska o zdrowy rozwój i miłość do prawdziwego rzemiosła. Od pierwszego szkicu po ostatni szew stawiamy na jakość i bezkompromisowe podejście do anatomii małych stóp.</p>"
       }
     },
     "passion": {
@@ -20,13 +22,15 @@
         "media_position": "left",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "about.passion",
         "number": "01",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Początek",
+        "heading": "Z pasji do <em>pierwszych kroków</em>",
+        "text": "<p>Marka OBEX zrodziła się z prostego przekonania: stopa dziecka to precyzyjny mechanizm, który zasługuje na najlepszą opiekę. Od początku tworzymy obuwie, które nie ogranicza, lecz wspiera naturalny rytm rozwoju malucha.</p>"
       }
     },
     "material": {
@@ -36,13 +40,15 @@
         "media_position": "right",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "about.material",
         "number": "02",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Materiały",
+        "heading": "Szlachetność <em>naturalnych materiałów</em>",
+        "text": "<p>Wybieramy to, co daje natura. Skóra licowa i zamszowa zapewniają wyjątkową miękkość i dopasowanie, pozwalają stopie oddychać i znoszą nawet najdziksze zabawy – łącząc stonowaną elegancję z praktycznymi rozwiązaniami.</p>"
       }
     },
     "craft": {
@@ -52,13 +58,15 @@
         "media_position": "left",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "about.craft",
         "number": "03",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Rzemiosło",
+        "heading": "Ręczna robota i <em>mistrzowska precyzja</em>",
+        "text": "<p>Sercem OBEX jest tradycyjne rzemiosło. Każda para bucików to efekt ręcznej pracy, w której dbałość o detal jest gwarancją jakości. Dzięki temu kontrolujemy każdy szew, a obuwie jest nie tylko piękne, ale przede wszystkim trwałe i bezpieczne.</p>"
       }
     },
     "barefoot": {
@@ -68,14 +76,17 @@
         "media_position": "right",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "about.barefoot",
         "number": "04",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 112,
         "button_style": "button",
         "show_badge": false,
-        "link": "shopify://collections/all"
+        "link": "shopify://collections/all",
+        "eyebrow": "Filozofia",
+        "heading": "Barefoot: <em>bliżej natury</em>",
+        "text": "<p>Projektując podeszwy, kierujemy się ideą barefoot. Dla zdrowego rozwoju mięśni i więzadeł stopa dziecka musi czuć podłoże i pracować bez przeszkód. Nasze elastyczne podeszwy pozwalają na naturalny ruch, a jednocześnie chronią.</p>",
+        "button": "Zobacz kolekcję"
       }
     },
     "materials": {
@@ -85,21 +96,27 @@
           "type": "material",
           "settings": {
             "preset": "leather",
-            "image": "shopify://shop_images/IMG_5085.jpg"
+            "image": "shopify://shop_images/IMG_5085.jpg",
+            "title": "Skóra naturalna",
+            "text": "Nasze obuwie tworzymy z naturalnej skóry – miękkiej i elastycznej, dzięki czemu dopasowuje się do stopy i pozwala jej oddychać. Skórzane wnętrze w połączeniu z amortyzującą wkładką chroni przed otarciami i daje dziecku pełen komfort oraz naturalne odczucie chodzenia boso."
           }
         },
         "rubber": {
           "type": "material",
           "settings": {
             "preset": "rubber",
-            "image": "shopify://shop_images/IMG_5084.png"
+            "image": "shopify://shop_images/IMG_5084.png",
+            "title": "Termokauczuk",
+            "text": "Podstawą naszych butów jest ultraelastyczna podeszwa z termokauczuku. Łączy trwałość z miękkością, zapewniając stopom naturalną swobodę ruchu. Wysoka odporność na ścieranie i dobra przyczepność dają bezpieczeństwo podczas zabawy, a materiał pozostaje lekki."
           }
         },
         "handmade": {
           "type": "material",
           "settings": {
             "preset": "handmade",
-            "image": "shopify://shop_images/naklejki-handmade-stamp_jpg.jpg"
+            "image": "shopify://shop_images/naklejki-handmade-stamp_jpg.jpg",
+            "title": "Ręcznie szyte",
+            "text": "Nasze buty to owoc pasji i rzemieślniczej precyzji. Każda para powstaje ręcznie, z dbałością o najmniejszy detal. Używamy wyłącznie starannie wyselekcjonowanych, naturalnych materiałów, by zapewnić trwałość i wyjątkowy komfort."
           }
         }
       },
@@ -111,7 +128,9 @@
       "settings": {
         "surface": true,
         "padding_top": 112,
-        "padding_bottom": 112
+        "padding_bottom": 112,
+        "eyebrow": "Materiały",
+        "heading": "Z natury, <em>z ręki rzemieślnika</em>"
       }
     },
     "form": {
@@ -119,7 +138,10 @@
       "settings": {
         "surface": false,
         "padding_top": 112,
-        "padding_bottom": 112
+        "padding_bottom": 112,
+        "eyebrow": "Kontakt",
+        "heading": "Chętnie <em>pomożemy</em>",
+        "text": "Masz pytanie o rozmiar, zamówienie albo zwrot? Napisz do nas – odpowiadamy w dni robocze."
       }
     }
   },

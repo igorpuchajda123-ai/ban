@@ -20,7 +20,7 @@
 -%}
 <article class="card">
   <div class="card__visual">
-  <a href="{{ product.url }}" class="card__media{% if settings.card_image_fit == 'contain' %} card__media--contain{% endif %}" tabindex="-1" aria-hidden="true">
+  <a href="{{ product.url }}" class="card__media{% if settings.card_image_fit == 'contain' %} card__media--contain{% endif %}{% if img_2 %} card__media--hover{% endif %}" tabindex="-1" aria-hidden="true">
     {%- if img_1 -%}
       {{ img_1 | image_url: width: 900 | image_tag:
         widths: '300, 450, 600, 750, 900',

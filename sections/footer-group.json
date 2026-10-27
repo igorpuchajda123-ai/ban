@@ -4,17 +4,45 @@
   "sections": {
     "newsletter": {
       "type": "newsletter",
-      "settings": { "heading": "", "text": "", "style": "surface", "padding_top": 72, "padding_bottom": 72 }
+      "settings": {
+        "heading": "Nowe kolory <em>jako pierwsi</em>",
+        "text": "Raz na jakiś czas: premiery modeli, porady o zdrowym rozwoju stóp i oferty tylko dla subskrybentów.",
+        "style": "surface",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     },
     "footer": {
       "type": "footer",
       "blocks": {
-        "menu_help": { "type": "menu", "settings": { "heading": "", "menu": "footer" } },
-        "contact": { "type": "contact", "settings": { "heading": "", "show_localization": true } }
+        "menu_help": {
+          "type": "menu",
+          "settings": {
+            "heading": "",
+            "menu": "footer"
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "heading": "",
+            "show_localization": true
+          }
+        }
       },
-      "block_order": ["menu_help", "contact"],
-      "settings": { "about": "", "show_payment_icons": true, "show_wordmark": true }
+      "block_order": [
+        "menu_help",
+        "contact"
+      ],
+      "settings": {
+        "about": "<p>OBEX to skórzane buty barefoot dla dzieci, szyte ręcznie z naturalnych materiałów. Projektujemy je tak, by małe stopy mogły rosnąć swobodnie – jak boso.</p>",
+        "show_payment_icons": true,
+        "show_wordmark": true
+      }
     }
   },
-  "order": ["newsletter", "footer"]
+  "order": [
+    "newsletter",
+    "footer"
+  ]
 }

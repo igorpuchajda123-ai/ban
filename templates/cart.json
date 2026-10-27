@@ -16,7 +16,9 @@
         "limit": 8,
         "surface": true,
         "padding_top": 96,
-        "padding_bottom": 96
+        "padding_bottom": 96,
+        "eyebrow": "Bestsellery",
+        "heading": "Ulubieńcy <em>rodziców</em>"
       }
     }
   },

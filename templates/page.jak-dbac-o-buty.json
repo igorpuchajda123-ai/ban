@@ -3,14 +3,16 @@
     "intro": {
       "type": "rich-text",
       "settings": {
-        "content_key": "care.intro",
         "heading_tag": "h1",
         "center": true,
         "style": "default",
         "padding_top": 80,
         "padding_bottom": 48,
         "show_page_content": false,
-        "use_page_title": true
+        "use_page_title": true,
+        "eyebrow": "Pielęgnacja",
+        "heading": "Jak dbać o <em>buty OBEX</em>",
+        "text": "<p>Nasze buty powstają z naturalnej skóry, która oddycha i dopasowuje się do stopy. Aby zachowały piękny wygląd i swoje właściwości, wystarczą cztery proste zasady.</p>"
       }
     },
     "leather": {
@@ -20,13 +22,15 @@
         "media_position": "left",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "care.leather",
         "number": "01",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Materiał",
+        "heading": "Szlachetność <em>naturalnej skóry</em>",
+        "text": "<p>Wszystkie produkty OBEX wykonujemy ze skóry naturalnej, która zapewnia małym stopom dobrą wentylację i komfort. Aby buciki długo zachowały miękkość i elastyczność, pamiętaj o kilku zasadach.</p>"
       }
     },
     "cloth": {
@@ -36,13 +40,15 @@
         "media_position": "right",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "care.cloth",
         "number": "02",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Czyszczenie",
+        "heading": "Tylko <em>wilgotna ściereczka</em>",
+        "text": "<p>Codzienne zabrudzenia usuwaj miękką, lekko zwilżoną ściereczką. To najbezpieczniejszy sposób na odświeżenie naturalnego materiału bez ryzyka uszkodzenia jego delikatnej, oddychającej struktury.</p>"
       }
     },
     "nowash": {
@@ -52,13 +58,15 @@
         "media_position": "left",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "care.no_wash",
         "number": "03",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 48,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Ważne",
+        "heading": "Nigdy <em>w pralce</em>",
+        "text": "<p>Nie wkładaj butów OBEX do pralki. Duża ilość wody, wirowanie i detergenty niszczą strukturę skóry, powodując jej nieodwracalne stwardnienie i deformację.</p>"
       }
     },
     "drying": {
@@ -68,13 +76,15 @@
         "media_position": "right",
         "ratio": "natural",
         "shape": "rounded",
-        "content_key": "care.drying",
         "number": "04",
         "style": "default",
         "padding_top": 48,
         "padding_bottom": 112,
         "button_style": "link",
-        "show_badge": false
+        "show_badge": false,
+        "eyebrow": "Suszenie",
+        "heading": "Naturalne <em>suszenie</em>",
+        "text": "<p>Jeśli buty zamokną, pozwól im wyschnąć w temperaturze pokojowej. Unikaj kaloryfera i pełnego słońca – gwałtowne suszenie wysusza skórę i może prowadzić do pęknięć.</p>"
       }
     },
     "faq": {
@@ -83,13 +93,17 @@
         "q1": {
           "type": "question",
           "settings": {
-            "preset": "care"
+            "preset": "care",
+            "question": "Jak dbać o buty OBEX?",
+            "answer": "<p>Nie pierz butów w pralce i nie susz ich na kaloryferze. Zabrudzenia przecieraj wilgotną ściereczką. Aby skóra zachowała miękkość i była odporniejsza na wilgoć, stosuj naturalne woski lub impregnaty do skóry licowej.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "preset": "indoor_outdoor"
+            "preset": "indoor_outdoor",
+            "question": "Czym różnią się modele Indoor i Outdoor?",
+            "answer": "<p>Modele Indoor to miękkie kapcie do domu i przedszkola. Modele Outdoor mają tę samą elastyczną konstrukcję barefoot, ale są przeznaczone do chodzenia na zewnątrz. Wszystkie wykonujemy ze skóry naturalnej.</p>"
           }
         }
       },
@@ -104,7 +118,10 @@
         "schema": false,
         "surface": true,
         "padding_top": 96,
-        "padding_bottom": 96
+        "padding_bottom": 96,
+        "eyebrow": "FAQ",
+        "heading": "Masz <em>pytania?</em>",
+        "text": "Zebraliśmy odpowiedzi na to, o co rodzice pytają najczęściej."
       }
     }
   },
