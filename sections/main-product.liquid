@@ -336,7 +336,7 @@
     { "type": "@app" },
     { "type": "title", "name": "Tytuł", "limit": 1 },
     { "type": "price", "name": "Cena", "limit": 1 },
-    { "type": "colors", "name": "Kolory (rodzina produktów)", "limit": 1, "settings": [
+    { "type": "colors", "name": "Kolory (rodzina)", "limit": 1, "settings": [
       { "type": "paragraph", "content": "Pokazuje inne kolory z metapola custom.rodzina_produktow (kolekcja) lub custom.kolory_produktu (lista produktów)." },
       { "type": "range", "id": "limit", "label": "Maks. liczba kolorów", "min": 6, "max": 40, "step": 1, "default": 24 }
     ] },
@@ -354,7 +354,7 @@
         { "value": "inline", "label": "Pokaż tutaj" }, { "value": "hidden", "label": "Tylko w zakładkach" }
       ], "default": "hidden" }
     ] },
-    { "type": "accordion", "name": "Zakładki (opis, specyfikacja…)", "limit": 1, "settings": [
+    { "type": "accordion", "name": "Zakładki produktu", "limit": 1, "settings": [
       { "type": "checkbox", "id": "open_description", "label": "Opis otwarty domyślnie", "default": true }
     ] },
     { "type": "text", "name": "Tekst", "settings": [ { "type": "richtext", "id": "text", "label": "Tekst" } ] },
