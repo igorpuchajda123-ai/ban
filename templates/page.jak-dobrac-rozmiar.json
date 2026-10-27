@@ -26,7 +26,7 @@
       "settings": {
         "image": "shopify://shop_images/unnamed-3_3.jpg",
         "media_position": "left",
-        "ratio": "4 / 5",
+        "ratio": "natural",
         "shape": "rounded",
         "content_key": "size.measure",
         "number": "01",
@@ -42,8 +42,8 @@
       "settings": {
         "image": "shopify://shop_images/unnamed-4_3.jpg",
         "media_position": "right",
-        "ratio": "4 / 5",
-        "shape": "blob",
+        "ratio": "natural",
+        "shape": "rounded",
         "content_key": "size.width",
         "number": "02",
         "style": "default",
@@ -58,7 +58,7 @@
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_vcyfxcvcyfxcvcyf_2.jpg",
         "media_position": "left",
-        "ratio": "4 / 5",
+        "ratio": "natural",
         "shape": "rounded",
         "content_key": "size.calculator",
         "number": "03",
@@ -74,7 +74,7 @@
       "settings": {
         "image": "shopify://shop_images/unnamed-2_3.jpg",
         "media_position": "right",
-        "ratio": "4 / 5",
+        "ratio": "natural",
         "shape": "rounded",
         "content_key": "size.frequency",
         "number": "04",

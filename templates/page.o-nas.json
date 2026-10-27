@@ -18,7 +18,7 @@
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_didsijdidsijdids_2.jpg",
         "media_position": "left",
-        "ratio": "4 / 5",
+        "ratio": "natural",
         "shape": "rounded",
         "content_key": "about.passion",
         "number": "01",
@@ -34,8 +34,8 @@
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_-5.jpg",
         "media_position": "right",
-        "ratio": "4 / 5",
-        "shape": "blob",
+        "ratio": "natural",
+        "shape": "rounded",
         "content_key": "about.material",
         "number": "02",
         "style": "default",
@@ -50,7 +50,7 @@
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_kp4itvkp4itvkp4i_2.jpg",
         "media_position": "left",
-        "ratio": "4 / 5",
+        "ratio": "natural",
         "shape": "rounded",
         "content_key": "about.craft",
         "number": "03",
@@ -66,7 +66,7 @@
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_nhwvg8nhwvg8nhwv_2.jpg",
         "media_position": "right",
-        "ratio": "4 / 5",
+        "ratio": "natural",
         "shape": "rounded",
         "content_key": "about.barefoot",
         "number": "04",

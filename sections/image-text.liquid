@@ -45,7 +45,7 @@
 <section class="section {{ style_class }}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
   <div class="container container--wide">
     <div class="split{% if section.settings.media_position == 'right' %} split--reverse{% endif %}{% if section.settings.wide_media %} split--wide-media{% endif %}">
-      <div class="split__media{% if section.settings.shape == 'blob' %} split__media--blob{% endif %} reveal" style="--ratio: {{ section.settings.ratio }};">
+      <div class="split__media{% if section.settings.shape == 'blob' %} split__media--blob{% endif %}{% if section.settings.ratio == 'natural' %} split__media--natural{% endif %} reveal" style="--ratio: {{ section.settings.ratio }};">
         <div class="media">
           {%- if section.settings.image != blank -%}
             {%- assign img_alt = section.settings.image.alt | default: heading | strip_html -%}
@@ -114,7 +114,7 @@
       { "value": "left", "label": "Po lewej" }, { "value": "right", "label": "Po prawej" }
     ], "default": "left" },
     { "type": "select", "id": "ratio", "label": "Proporcje zdjęcia", "options": [
-      { "value": "4 / 5", "label": "Pionowe 4:5" }, { "value": "1 / 1", "label": "Kwadrat" }, { "value": "3 / 2", "label": "Poziome 3:2" }
+      { "value": "natural", "label": "Oryginalne (bez przycinania)" }, { "value": "4 / 5", "label": "Pionowe 4:5" }, { "value": "1 / 1", "label": "Kwadrat" }, { "value": "3 / 2", "label": "Poziome 3:2" }
     ], "default": "4 / 5" },
     { "type": "select", "id": "shape", "label": "Kształt", "options": [
       { "value": "rounded", "label": "Zaokrąglony" }, { "value": "blob", "label": "Organiczny" }

@@ -18,7 +18,7 @@
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_s345ns345ns345ns.jpg",
         "media_position": "left",
-        "ratio": "4 / 5",
+        "ratio": "natural",
         "shape": "rounded",
         "content_key": "facts.cartilage",
         "number": "01",
@@ -34,8 +34,8 @@
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_27yeh427yeh427ye.jpg",
         "media_position": "right",
-        "ratio": "4 / 5",
-        "shape": "blob",
+        "ratio": "natural",
+        "shape": "rounded",
         "content_key": "facts.proprio",
         "number": "02",
         "style": "default",
@@ -50,7 +50,7 @@
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_8dh1fk8dh1fk8dh1.jpg",
         "media_position": "left",
-        "ratio": "4 / 5",
+        "ratio": "natural",
         "shape": "rounded",
         "content_key": "facts.shape",
         "number": "03",
@@ -66,7 +66,7 @@
       "settings": {
         "image": "shopify://shop_images/Gemini_Generated_Image_6duww96duww96duw.jpg",
         "media_position": "right",
-        "ratio": "4 / 5",
+        "ratio": "natural",
         "shape": "rounded",
         "content_key": "facts.zero_drop",
         "number": "04",

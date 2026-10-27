@@ -19,6 +19,7 @@
   assign last_size = product.variants.last.option1
 -%}
 <article class="card">
+  <div class="card__visual">
   <a href="{{ product.url }}" class="card__media{% if settings.card_image_fit == 'contain' %} card__media--contain{% endif %}" tabindex="-1" aria-hidden="true">
     {%- if img_1 -%}
       {{ img_1 | image_url: width: 900 | image_tag:
@@ -60,6 +61,7 @@
       <a class="btn" href="{{ product.url }}">{{ 'products.product.choose_size' | t }}</a>
     </div>
   {%- endif -%}
+  </div>
 
   <div class="card__info">
     {%- if settings.card_show_vendor -%}
