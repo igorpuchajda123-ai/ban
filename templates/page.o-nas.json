@@ -12,7 +12,7 @@
         "use_page_title": true,
         "eyebrow": "O nas",
         "heading": "Nasza <em>historia</em>",
-        "text": "<p>Za każdą parą bucików OBEX stoi troska o zdrowy rozwój i miłość do prawdziwego rzemiosła. Od pierwszego szkicu po ostatni szew stawiamy na jakość i bezkompromisowe podejście do anatomii małych stóp.</p>"
+        "text": "<p>Tradycja i pasja od pokoleń. Rodzinna pracownia z Kalwarii Zebrzydowskiej szyje buty od czasów przedwojennych, a od 2001 roku tworzy obuwie dziecięce OBEX – ze skór naturalnych i z myślą o prawidłowym rozwoju małych stóp.</p>"
       }
     },
     "passion": {
@@ -28,9 +28,9 @@
         "padding_bottom": 48,
         "button_style": "link",
         "show_badge": false,
-        "eyebrow": "Początek",
-        "heading": "Z pasji do <em>pierwszych kroków</em>",
-        "text": "<p>Marka OBEX zrodziła się z prostego przekonania: stopa dziecka to precyzyjny mechanizm, który zasługuje na najlepszą opiekę. Od początku tworzymy obuwie, które nie ogranicza, lecz wspiera naturalny rytm rozwoju malucha.</p>"
+        "eyebrow": "Od pokoleń",
+        "heading": "Trzy pokolenia <em>szewców</em>",
+        "text": "<p>Początki rodzinnej firmy sięgają czasów przedwojennych. Władysław Oczkowski w małym pokoju w domu rodzinnym zaczął ręcznie szyć buty damskie i męskie. W latach 70. jego syn Kazimierz rozwinął zakład, zdobył dyplom mistrzowski, przyjął uczniów i rozszerzył produkcję o buty dla dzieci.</p><p>Wiedza i doświadczenie zdobywane pod okiem ojca doprowadziły w 2001 roku do powstania marki OBEX. Dziś firmę prowadzi Hubert Oczkowski, który tworzy obuwie dziecięce najwyższej jakości – elastyczne, miękkie i modne, by dzieci czuły się w nim wygodnie i bezpiecznie.</p>"
       }
     },
     "material": {
@@ -48,7 +48,7 @@
         "show_badge": false,
         "eyebrow": "Materiały",
         "heading": "Szlachetność <em>naturalnych materiałów</em>",
-        "text": "<p>Wybieramy to, co daje natura. Skóra licowa i zamszowa zapewniają wyjątkową miękkość i dopasowanie, pozwalają stopie oddychać i znoszą nawet najdziksze zabawy – łącząc stonowaną elegancję z praktycznymi rozwiązaniami.</p>"
+        "text": "<p>Wybieramy to, co daje natura. Skóry licowe, zamszowe i nubukowe z włoskich i polskich garbarni zapewniają wyjątkową miękkość i dopasowanie, pozwalają stopie oddychać i znoszą nawet najdziksze zabawy.</p>"
       }
     },
     "craft": {
@@ -107,7 +107,7 @@
             "preset": "rubber",
             "image": "shopify://shop_images/IMG_5085.jpg",
             "title": "Termokauczuk",
-            "text": "Podstawą naszych butów jest ultraelastyczna podeszwa z termokauczuku. Łączy trwałość z miękkością, zapewniając stopom naturalną swobodę ruchu. Wysoka odporność na ścieranie i dobra przyczepność dają bezpieczeństwo podczas zabawy, a materiał pozostaje lekki."
+            "text": "Modele Outdoor mają ultraelastyczną podeszwę z termokauczuku o grubości 3 mm. Łączy trwałość z miękkością, zapewniając stopom naturalną swobodę ruchu. Wysoka odporność na ścieranie i dobra przyczepność dają bezpieczeństwo podczas zabawy, a materiał pozostaje lekki."
           }
         },
         "handmade": {
@@ -152,7 +152,7 @@
           "settings": {
             "icon": "pin",
             "label": "Miejsce produkcji",
-            "value": ""
+            "value": "Kalwaria Zebrzydowska, Małopolska – rodzinna pracownia, marka OBEX od 2001 roku."
           }
         },
         "f2": {
@@ -160,7 +160,7 @@
           "settings": {
             "icon": "leaf",
             "label": "Skóra",
-            "value": ""
+            "value": "Licowa, zamszowa i nubukowa – z włoskich i polskich garbarni."
           }
         },
         "f3": {
@@ -168,7 +168,7 @@
           "settings": {
             "icon": "leaf",
             "label": "Podeszwa",
-            "value": ""
+            "value": "Elastyczna, z miękką wyprofilowaną wkładką. W modelach Outdoor – 3 mm termokauczuku."
           }
         },
         "f4": {
@@ -184,7 +184,7 @@
           "settings": {
             "icon": "check",
             "label": "Kontrola jakości",
-            "value": ""
+            "value": "Każdą parę przed wysyłką sprawdzamy pod kątem szycia i jakości materiału."
           }
         },
         "p1": {
@@ -205,9 +205,9 @@
         "p1"
       ],
       "settings": {
-        "eyebrow": "",
-        "heading": "",
-        "text": "",
+        "eyebrow": "Kto szyje OBEX",
+        "heading": "Rodzinna pracownia <em>od trzech pokoleń</em>",
+        "text": "<p>Każdą parę szyjemy ręcznie w naszej pracowni w Kalwarii Zebrzydowskiej (Małopolska) – tak, jak robił to nasz dziadek i ojciec.</p>",
         "surface": true,
         "padding_top": 96,
         "padding_bottom": 96

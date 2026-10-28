@@ -44,16 +44,16 @@
           "type": "usp",
           "settings": {
             "preset": "shipping",
-            "title": "Szybka wysyłka",
-            "text": "Zamówienia nadajemy zwykle w ciągu 24 h."
+            "title": "Darmowa dostawa",
+            "text": "Wysyłamy w 24 h – do Polski, Włoch i Danii za darmo."
           }
         },
         "u4": {
           "type": "usp",
           "settings": {
             "preset": "returns",
-            "title": "14 dni na zwrot",
-            "text": "Przymierz w domu bez pośpiechu."
+            "title": "14 dni na darmowy zwrot",
+            "text": "Przymierz w domu – odesłanie pokrywamy my."
           }
         }
       },

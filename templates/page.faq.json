@@ -31,7 +31,7 @@
           "settings": {
             "preset": "sole",
             "question": "Dlaczego podeszwa jest taka cienka?",
-            "answer": "<p>To celowy zabieg zalecany przez fizjoterapeutów. Podeszwa z termokauczuku ma 3 mm, dzięki czemu dziecko czuje podłoże (propriocepcja), co wspiera rozwój mięśni stopy i postawy. Jest bardzo elastyczna, a jednocześnie chroni przed szkłem, kamieniami i twardym betonem.</p>"
+            "answer": "<p>To celowy zabieg zalecany przez fizjoterapeutów. Cienka podeszwa pozwala dziecku czuć podłoże (propriocepcja), co wspiera rozwój mięśni stopy i postawy. W kapciach Indoor jest ultralekka – na podłogi w domu i przedszkolu. W modelach Outdoor ma 3 mm termokauczuku: jest bardzo elastyczna, a jednocześnie chroni przed szkłem, kamieniami i twardym betonem.</p>"
           }
         },
         "q4": {
@@ -63,7 +63,7 @@
           "settings": {
             "preset": "shipping",
             "question": "Czy wysyłacie do Włoch i Danii?",
-            "answer": "<p>Tak. Zamówienia nadajemy zwykle w ciągu 24 godzin w dni robocze, a dostawa trwa przeważnie 3–5 dni roboczych. Ceny widzisz w walucie swojego kraju, a dokładny koszt dostawy pokażemy przy kasie, zanim zapłacisz.</p>"
+            "answer": "<p>Tak, i to za darmo. Zamówienia nadajemy w ciągu 24 godzin w dni robocze. Dostawa w Polsce trwa 1–2 dni robocze, a do Włoch i Danii 3–5 dni roboczych. Ceny widzisz w walucie swojego kraju.</p>"
           }
         },
         "q8": {
@@ -71,7 +71,7 @@
           "settings": {
             "preset": "returns",
             "question": "Jak wyglądają zwroty i wymiany?",
-            "answer": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
+            "answer": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty – koszt odesłania pokrywamy my, także z Włoch i Danii. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
           }
         }
       },

@@ -33,9 +33,9 @@
     "promo_text": "Helis WIDE – mere plads til buttede små fødder"
   },
   "announcement": {
-    "free_shipping": "Gratis fragt",
+    "free_shipping": "Gratis levering og retur",
     "delivery": "Levering på 3–5 hverdage",
-    "returns": "14 dages returret",
+    "returns": "14 dages gratis retur",
     "handmade": "Håndsyet i naturlæder"
   },
   "localization": {
@@ -103,8 +103,8 @@
     "continue": "Gå til butikken",
     "remove": "Fjern",
     "subtotal": "I alt",
-    "taxes_included_shipping": "Inkl. moms. Fragt beregnes ved betaling.",
-    "taxes_shipping": "Moms og fragt beregnes ved betaling.",
+    "taxes_included_shipping": "Inkl. moms. Gratis levering og retur.",
+    "taxes_shipping": "Moms beregnes ved betaling. Gratis levering og retur.",
     "checkout": "Gå til betaling",
     "view_cart": "Se kurven",
     "note": "Bemærkninger til ordren",
@@ -182,21 +182,21 @@
       "quantity_increase": "Flere",
       "tax_included": "Inkl. moms",
       "tax_excluded": "Ekskl. moms",
-      "shipping_policy_html": "<a href=\"{{ link }}\">fragt</a> beregnes ved betaling",
+      "shipping_policy_html": "<a href=\"{{ link }}\">gratis levering</a> og retur",
       "zoom": "Forstør billede",
       "size": "Størrelse"
     },
     "assurance": {
-      "delivery_html": "<strong>Levering på {{ days }} hverdage</strong> – {{ country }}",
-      "returns_html": "<strong>{{ days }} dages returret</strong> – uden begrundelse",
-      "handmade_html": "<strong>Håndsyet</strong> i naturlæder",
+      "delivery_html": "<strong>Gratis levering</strong> på {{ days }} hverdage – {{ country }}",
+      "returns_html": "<strong>{{ days }} dages gratis retur</strong> – vi betaler returfragten",
+      "handmade_html": "<strong>Håndsyet i Polen</strong> – i familieværkstedet i Kalwaria Zebrzydowska",
       "secure_html": "<strong>Sikker betaling</strong> via krypteret forbindelse",
       "handmade_in_html": "<strong>Håndsyet i {{ place }}</strong> af naturlæder"
     },
     "highlights": {
       "leather": "Naturlæder",
       "zero_drop": "Zero drop",
-      "flex": "Fleksibel sål på 3 mm",
+      "flex": "Tynd, fleksibel sål",
       "handmade": "Håndsyet"
     },
     "tabs": {
@@ -205,7 +205,7 @@
       "care": "Pleje",
       "shipping": "Levering og returnering",
       "care_html": "<p>Tør snavs af med en blød, let fugtig klud. Vask ikke skoene i vaskemaskine, og tør dem ikke på en radiator eller i direkte sollys – lad dem tørre ved stuetemperatur.</p><p>Behandl af og til læderet med naturlig voks eller imprægnering til glat læder, så det forbliver blødt og bedre kan modstå fugt.</p>",
-      "shipping_html": "<p>Vi sender normalt ordrer inden for 24 timer på hverdage. Pris og forventet leveringstid til dit land kan du se ved betaling, før du betaler.</p><p>Du har {{ days }} dages returret på ubrugte sko. Vil du bytte størrelse, går det hurtigst, hvis du returnerer parret og afgiver en ny ordre.</p>"
+      "shipping_html": "<p><strong>Levering er gratis.</strong> Vi sender ordrer inden for 24 timer på hverdage. Til Polen tager det 1–2 hverdage, til Italien og Danmark 3–5 hverdage.</p><p>Du har {{ days }} dages returret på ubrugte sko, og <strong>vi betaler returfragten</strong>. Vil du bytte størrelse, går det hurtigst, hvis du returnerer parret og afgiver en ny ordre.</p>"
     }
   },
   "size_guide": {
@@ -313,16 +313,16 @@
       "text": "Åndbare materialer, nøje udvalgt."
     },
     "shipping": {
-      "title": "Hurtig afsendelse",
-      "text": "Vi sender normalt ordrer inden for 24 timer."
+      "title": "Gratis levering",
+      "text": "Vi sender inden for 24 timer – gratis til Polen, Italien og Danmark."
     },
     "handmade": {
       "title": "Håndsyet",
       "text": "Hvert par laves med omhu for detaljen."
     },
     "returns": {
-      "title": "14 dages returret",
-      "text": "Prøv skoene derhjemme i ro og mag."
+      "title": "14 dages gratis retur",
+      "text": "Prøv dem derhjemme – vi betaler returfragten."
     }
   },
   "materials": {
@@ -332,7 +332,7 @@
     },
     "rubber": {
       "title": "Termogummi",
-      "text": "Grundlaget for vores sko er en ultrafleksibel sål af termogummi. Den kombinerer holdbarhed med blødhed og giver foden naturlig bevægelsesfrihed. Høj slidstyrke og godt greb giver sikkerhed under leg, og materialet er stadig let."
+      "text": "Outdoor-modellerne har en ultrafleksibel sål af termogummi på 3 mm. Den forener holdbarhed og blødhed og giver foden naturlig bevægelsesfrihed. Høj slidstyrke og godt greb giver sikkerhed under leg, og materialet forbliver let."
     },
     "handmade": {
       "title": "Håndsyet",
@@ -349,8 +349,8 @@
       "text": "Hæl og tæer i samme højde. Den flade sål understøtter en naturlig holdning i hele kroppen."
     },
     "sole": {
-      "title": "Sål på 3 mm",
-      "text": "Den tynde sål af termogummi lader barnet mærke underlaget og beskytter samtidig mod sten og hård beton."
+      "title": "Tynd, skridsikker sål",
+      "text": "Barnet kan mærke underlaget. I hjemmeskoene er det en ultralet sål til gulve derhjemme og i børnehaven, i Outdoor-modellerne 3 mm termogummi, der beskytter mod sten og beton."
     },
     "flex": {
       "title": "Fuld fleksibilitet",
@@ -426,7 +426,7 @@
     },
     "sole": {
       "q": "Hvorfor er sålen så tynd?",
-      "a_html": "<p>Det er et bevidst valg, som fysioterapeuter anbefaler. Sålen af termogummi er 3 mm tyk, så barnet kan mærke underlaget (propriocepsis). Det understøtter udviklingen af fodens muskler og kropsholdningen. Sålen er meget fleksibel, men beskytter mod glasskår, sten og hård beton.</p>"
+      "a_html": "<p>Det er et bevidst valg, som fysioterapeuter anbefaler. Den tynde sål lader barnet mærke underlaget (proprioception), hvilket støtter udviklingen af fodens muskler og kropsholdningen. I Indoor-hjemmeskoene er sålen ultralet – til gulve derhjemme og i børnehaven. I Outdoor-modellerne er den 3 mm termogummi: meget fleksibel og samtidig beskyttende mod glas, sten og hård beton.</p>"
     },
     "wide": {
       "q": "Passer skoene til en buttet fod med høj vrist?",
@@ -434,11 +434,11 @@
     },
     "returns": {
       "q": "Hvordan foregår returnering og ombytning?",
-      "a_html": "<p>Du har 14 dage til at prøve skoene derhjemme i ro og mag. Passer størrelsen ikke, kan du returnere ubrugte sko. Vil du bytte, går det hurtigst, hvis du returnerer parret og afgiver en ny ordre på den rigtige størrelse.</p>"
+      "a_html": "<p>Du har 14 dage til at prøve skoene i ro og mag derhjemme. Passer størrelsen ikke, så send de ubrugte sko retur – vi betaler returfragten, også fra Danmark. Ved ombytning er det hurtigst at returnere parret og afgive en ny ordre i den rigtige størrelse.</p>"
     },
     "shipping": {
       "q": "Sender I til Danmark?",
-      "a_html": "<p>Ja. Vi sender normalt ordrer inden for 24 timer på hverdage, og leveringen tager typisk 3–5 hverdage. Priserne vises i danske kroner, og den præcise fragtpris ser du ved betaling, før du betaler.</p>"
+      "a_html": "<p>Ja, og helt gratis. Vi sender ordrer inden for 24 timer på hverdage. Levering i Polen tager 1–2 hverdage, til Italien og Danmark 3–5 hverdage. Priserne vises i dit lands valuta.</p>"
     },
     "indoor_outdoor": {
       "q": "Hvad er forskellen på Indoor- og Outdoor-modellerne?",
@@ -489,17 +489,17 @@
       "intro": {
         "eyebrow": "Om os",
         "heading_html": "Vores <em>historie</em>",
-        "text_html": "<p>Bag hvert par OBEX-sko står omsorg for sund udvikling og kærlighed til ægte håndværk. Fra den første skitse til den sidste søm går vi efter kvalitet og en kompromisløs tilgang til små fødders anatomi.</p>"
+        "text_html": "<p>Tradition og passion gennem generationer. Familieværkstedet i Kalwaria Zebrzydowska (Polen) har lavet sko siden før krigen og skaber siden 2001 OBEX-børnesko – i naturlæder og med fokus på små fødders sunde udvikling.</p>"
       },
       "passion": {
-        "eyebrow": "Begyndelsen",
-        "heading_html": "Af passion for <em>de første skridt</em>",
-        "text_html": "<p>OBEX blev skabt ud fra en enkel overbevisning: et barns fod er en præcis mekanisme, der fortjener den bedst mulige omsorg. Fra starten har vi lavet sko, der ikke begrænser, men støtter barnets naturlige udvikling.</p>"
+        "eyebrow": "Gennem generationer",
+        "heading_html": "Tre generationer <em>af skomagere</em>",
+        "text_html": "<p>Familievirksomhedens rødder går tilbage til tiden før krigen. Władysław Oczkowski begyndte at sy dame- og herresko i hånden i et lille værelse i familiens hjem. I 1970'erne udviklede sønnen Kazimierz værkstedet, tog mesterbrev, tog lærlinge ind og udvidede produktionen med børnesko.</p><p>Viden og erfaring fra årene ved faderens side førte i 2001 til grundlæggelsen af OBEX. I dag ledes firmaet af Hubert Oczkowski, som skaber børnesko af højeste kvalitet – fleksible, bløde og moderne, så børn føler sig godt tilpas og trygge.</p>"
       },
       "material": {
         "eyebrow": "Materialer",
         "heading_html": "<em>Naturlige materialer</em> af høj kvalitet",
-        "text_html": "<p>Vi vælger det, naturen giver os. Glat læder og ruskind giver en enestående blødhed og pasform, lader foden ånde og kan klare selv de vildeste lege – med diskret elegance og praktiske løsninger.</p>"
+        "text_html": "<p>Vi vælger det, naturen giver. Glat læder, ruskind og nubuck fra italienske og polske garverier giver enestående blødhed og pasform, lader foden ånde og kan holde til selv den vildeste leg.</p>"
       },
       "craft": {
         "eyebrow": "Håndværk",

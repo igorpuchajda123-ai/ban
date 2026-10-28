@@ -33,9 +33,9 @@
     "promo_text": "Helis WIDE – więcej miejsca dla pulchnych stópek"
   },
   "announcement": {
-    "free_shipping": "Darmowa wysyłka",
+    "free_shipping": "Darmowa dostawa i zwrot",
     "delivery": "Dostawa w 3–5 dni roboczych",
-    "returns": "14 dni na zwrot",
+    "returns": "14 dni na darmowy zwrot",
     "handmade": "Ręcznie szyte z naturalnej skóry"
   },
   "localization": {
@@ -103,8 +103,8 @@
     "continue": "Przejdź do sklepu",
     "remove": "Usuń",
     "subtotal": "Suma",
-    "taxes_included_shipping": "Cena zawiera VAT. Koszt wysyłki obliczymy przy kasie.",
-    "taxes_shipping": "Podatki i koszt wysyłki obliczymy przy kasie.",
+    "taxes_included_shipping": "Cena zawiera VAT. Dostawa i zwrot są darmowe.",
+    "taxes_shipping": "Podatki obliczymy przy kasie. Dostawa i zwrot są darmowe.",
     "checkout": "Przejdź do kasy",
     "view_cart": "Zobacz koszyk",
     "note": "Uwagi do zamówienia",
@@ -186,21 +186,21 @@
       "quantity_increase": "Zwiększ ilość",
       "tax_included": "Cena zawiera VAT",
       "tax_excluded": "Cena nie zawiera podatku",
-      "shipping_policy_html": "<a href=\"{{ link }}\">koszt wysyłki</a> obliczymy przy kasie",
+      "shipping_policy_html": "<a href=\"{{ link }}\">darmowa dostawa</a> i zwrot",
       "zoom": "Powiększ zdjęcie",
       "size": "Rozmiar"
     },
     "assurance": {
-      "delivery_html": "<strong>Dostawa {{ days }} dni roboczych</strong> – {{ country }}",
-      "returns_html": "<strong>{{ days }} dni na zwrot</strong> – bez podawania przyczyny",
-      "handmade_html": "<strong>Szyte ręcznie</strong> ze skóry naturalnej",
+      "delivery_html": "<strong>Darmowa dostawa</strong> w {{ days }} dni roboczych – {{ country }}",
+      "returns_html": "<strong>{{ days }} dni na darmowy zwrot</strong> – odesłanie na nasz koszt",
+      "handmade_html": "<strong>Szyte ręcznie w Polsce</strong> – w rodzinnej pracowni w Kalwarii Zebrzydowskiej",
       "secure_html": "<strong>Bezpieczne płatności</strong> – szyfrowane połączenie",
       "handmade_in_html": "<strong>Szyte ręcznie w {{ place }}</strong> ze skóry naturalnej"
     },
     "highlights": {
       "leather": "Skóra naturalna",
       "zero_drop": "Zero drop",
-      "flex": "Elastyczna podeszwa 3 mm",
+      "flex": "Cienka, elastyczna podeszwa",
       "handmade": "Szyte ręcznie"
     },
     "tabs": {
@@ -209,7 +209,7 @@
       "care": "Pielęgnacja",
       "shipping": "Dostawa i zwroty",
       "care_html": "<p>Zabrudzenia przecieraj miękką, lekko wilgotną ściereczką. Nie pierz butów w pralce i nie susz ich na kaloryferze ani w pełnym słońcu – pozwól im wyschnąć w temperaturze pokojowej.</p><p>Aby skóra zachowała miękkość i była odporniejsza na wilgoć, stosuj od czasu do czasu naturalny wosk lub impregnat do skóry licowej.</p>",
-      "shipping_html": "<p>Zamówienia wysyłamy zwykle w ciągu 24 godzin w dni robocze. Koszt i przewidywany czas dostawy do Twojego kraju zobaczysz przy kasie, zanim zapłacisz.</p><p>Masz {{ days }} dni na zwrot nienoszonych butów. Jeśli chcesz wymienić rozmiar, odeślij niepasującą parę i złóż nowe zamówienie – tak będzie najszybciej.</p>"
+      "shipping_html": "<p><strong>Dostawa jest darmowa.</strong> Zamówienia wysyłamy w ciągu 24 godzin w dni robocze. Do Polski dotrą w 1–2 dni robocze, do Włoch i Danii w 3–5 dni roboczych.</p><p>Masz {{ days }} dni na zwrot nienoszonych butów, a <strong>koszt odesłania pokrywamy my</strong>. Jeśli chcesz wymienić rozmiar, odeślij niepasującą parę i złóż nowe zamówienie – tak będzie najszybciej.</p>"
     }
   },
   "size_guide": {
@@ -319,16 +319,16 @@
       "text": "Oddychające, starannie wyselekcjonowane materiały."
     },
     "shipping": {
-      "title": "Szybka wysyłka",
-      "text": "Zamówienia nadajemy zwykle w ciągu 24 h."
+      "title": "Darmowa dostawa",
+      "text": "Wysyłamy w 24 h – do Polski, Włoch i Danii za darmo."
     },
     "handmade": {
       "title": "Szyte ręcznie",
       "text": "Każda para powstaje z dbałością o detal."
     },
     "returns": {
-      "title": "14 dni na zwrot",
-      "text": "Przymierz w domu bez pośpiechu."
+      "title": "14 dni na darmowy zwrot",
+      "text": "Przymierz w domu – odesłanie pokrywamy my."
     }
   },
   "materials": {
@@ -338,7 +338,7 @@
     },
     "rubber": {
       "title": "Termokauczuk",
-      "text": "Podstawą naszych butów jest ultraelastyczna podeszwa z termokauczuku. Łączy trwałość z miękkością, zapewniając stopom naturalną swobodę ruchu. Wysoka odporność na ścieranie i dobra przyczepność dają bezpieczeństwo podczas zabawy, a materiał pozostaje lekki."
+      "text": "Modele Outdoor mają ultraelastyczną podeszwę z termokauczuku o grubości 3 mm. Łączy trwałość z miękkością, zapewniając stopom naturalną swobodę ruchu. Wysoka odporność na ścieranie i dobra przyczepność dają bezpieczeństwo podczas zabawy, a materiał pozostaje lekki."
     },
     "handmade": {
       "title": "Ręcznie szyte",
@@ -355,8 +355,8 @@
       "text": "Pięta i palce na tym samym poziomie. Płaska podeszwa wspiera naturalną postawę całego ciała."
     },
     "sole": {
-      "title": "Podeszwa 3 mm",
-      "text": "Cienka podeszwa z termokauczuku pozwala czuć podłoże, a jednocześnie chroni przed kamieniami i twardym betonem."
+      "title": "Cienka, antypoślizgowa podeszwa",
+      "text": "Dziecko czuje podłoże. W kapciach to ultralekka podeszwa na podłogi w domu i przedszkolu, w modelach Outdoor – 3 mm termokauczuku, który chroni przed kamieniami i betonem."
     },
     "flex": {
       "title": "Pełna elastyczność",
@@ -432,7 +432,7 @@
     },
     "sole": {
       "q": "Dlaczego podeszwa jest taka cienka?",
-      "a_html": "<p>To celowy zabieg zalecany przez fizjoterapeutów. Podeszwa z termokauczuku ma 3 mm, dzięki czemu dziecko czuje podłoże (propriocepcja), co wspiera rozwój mięśni stopy i postawy. Jest bardzo elastyczna, a jednocześnie chroni przed szkłem, kamieniami i twardym betonem.</p>"
+      "a_html": "<p>To celowy zabieg zalecany przez fizjoterapeutów. Cienka podeszwa pozwala dziecku czuć podłoże (propriocepcja), co wspiera rozwój mięśni stopy i postawy. W kapciach Indoor jest ultralekka – na podłogi w domu i przedszkolu. W modelach Outdoor ma 3 mm termokauczuku: jest bardzo elastyczna, a jednocześnie chroni przed szkłem, kamieniami i twardym betonem.</p>"
     },
     "wide": {
       "q": "Czy buty pasują na pulchną stopę z wysokim podbiciem?",
@@ -440,11 +440,11 @@
     },
     "returns": {
       "q": "Jak wyglądają zwroty i wymiany?",
-      "a_html": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
+      "a_html": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty – koszt odesłania pokrywamy my, także z Włoch i Danii. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
     },
     "shipping": {
       "q": "Czy wysyłacie do Włoch i Danii?",
-      "a_html": "<p>Tak. Zamówienia nadajemy zwykle w ciągu 24 godzin w dni robocze, a dostawa trwa przeważnie 3–5 dni roboczych. Ceny widzisz w walucie swojego kraju, a dokładny koszt dostawy pokażemy przy kasie, zanim zapłacisz.</p>"
+      "a_html": "<p>Tak, i to za darmo. Zamówienia nadajemy w ciągu 24 godzin w dni robocze. Dostawa w Polsce trwa 1–2 dni robocze, a do Włoch i Danii 3–5 dni roboczych. Ceny widzisz w walucie swojego kraju.</p>"
     },
     "indoor_outdoor": {
       "q": "Czym różnią się modele Indoor i Outdoor?",
@@ -495,17 +495,17 @@
       "intro": {
         "eyebrow": "O nas",
         "heading_html": "Nasza <em>historia</em>",
-        "text_html": "<p>Za każdą parą bucików OBEX stoi troska o zdrowy rozwój i miłość do prawdziwego rzemiosła. Od pierwszego szkicu po ostatni szew stawiamy na jakość i bezkompromisowe podejście do anatomii małych stóp.</p>"
+        "text_html": "<p>Tradycja i pasja od pokoleń. Rodzinna pracownia z Kalwarii Zebrzydowskiej szyje buty od czasów przedwojennych, a od 2001 roku tworzy obuwie dziecięce OBEX – ze skór naturalnych i z myślą o prawidłowym rozwoju małych stóp.</p>"
       },
       "passion": {
-        "eyebrow": "Początek",
-        "heading_html": "Z pasji do <em>pierwszych kroków</em>",
-        "text_html": "<p>Marka OBEX zrodziła się z prostego przekonania: stopa dziecka to precyzyjny mechanizm, który zasługuje na najlepszą opiekę. Od początku tworzymy obuwie, które nie ogranicza, lecz wspiera naturalny rytm rozwoju malucha.</p>"
+        "eyebrow": "Od pokoleń",
+        "heading_html": "Trzy pokolenia <em>szewców</em>",
+        "text_html": "<p>Początki rodzinnej firmy sięgają czasów przedwojennych. Władysław Oczkowski w małym pokoju w domu rodzinnym zaczął ręcznie szyć buty damskie i męskie. W latach 70. jego syn Kazimierz rozwinął zakład, zdobył dyplom mistrzowski, przyjął uczniów i rozszerzył produkcję o buty dla dzieci.</p><p>Wiedza i doświadczenie zdobywane pod okiem ojca doprowadziły w 2001 roku do powstania marki OBEX. Dziś firmę prowadzi Hubert Oczkowski, który tworzy obuwie dziecięce najwyższej jakości – elastyczne, miękkie i modne, by dzieci czuły się w nim wygodnie i bezpiecznie.</p>"
       },
       "material": {
         "eyebrow": "Materiały",
         "heading_html": "Szlachetność <em>naturalnych materiałów</em>",
-        "text_html": "<p>Wybieramy to, co daje natura. Skóra licowa i zamszowa zapewniają wyjątkową miękkość i dopasowanie, pozwalają stopie oddychać i znoszą nawet najdziksze zabawy – łącząc stonowaną elegancję z praktycznymi rozwiązaniami.</p>"
+        "text_html": "<p>Wybieramy to, co daje natura. Skóry licowe, zamszowe i nubukowe z włoskich i polskich garbarni zapewniają wyjątkową miękkość i dopasowanie, pozwalają stopie oddychać i znoszą nawet najdziksze zabawy.</p>"
       },
       "craft": {
         "eyebrow": "Rzemiosło",

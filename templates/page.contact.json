@@ -26,7 +26,7 @@
           "settings": {
             "preset": "shipping",
             "question": "Czy wysyłacie do Włoch i Danii?",
-            "answer": "<p>Tak. Zamówienia nadajemy zwykle w ciągu 24 godzin w dni robocze, a dostawa trwa przeważnie 3–5 dni roboczych. Ceny widzisz w walucie swojego kraju, a dokładny koszt dostawy pokażemy przy kasie, zanim zapłacisz.</p>"
+            "answer": "<p>Tak, i to za darmo. Zamówienia nadajemy w ciągu 24 godzin w dni robocze. Dostawa w Polsce trwa 1–2 dni robocze, a do Włoch i Danii 3–5 dni roboczych. Ceny widzisz w walucie swojego kraju.</p>"
           }
         },
         "q2": {
@@ -34,7 +34,7 @@
           "settings": {
             "preset": "returns",
             "question": "Jak wyglądają zwroty i wymiany?",
-            "answer": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
+            "answer": "<p>Masz 14 dni na spokojne przymierzenie butów w domu. Jeśli rozmiar nie pasuje, odeślij nienoszone buty – koszt odesłania pokrywamy my, także z Włoch i Danii. Przy wymianie najszybciej będzie zwrócić niepasującą parę i złożyć nowe zamówienie na właściwy rozmiar.</p>"
           }
         },
         "q3": {

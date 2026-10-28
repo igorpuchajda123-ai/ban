@@ -33,9 +33,9 @@
     "promo_text": "Helis WIDE – più spazio per i piedini paffuti"
   },
   "announcement": {
-    "free_shipping": "Spedizione gratuita",
+    "free_shipping": "Spedizione e reso gratuiti",
     "delivery": "Consegna in 3–5 giorni lavorativi",
-    "returns": "14 giorni per il reso",
+    "returns": "14 giorni per il reso gratuito",
     "handmade": "Cucite a mano in vera pelle"
   },
   "localization": {
@@ -103,8 +103,8 @@
     "continue": "Vai al negozio",
     "remove": "Rimuovi",
     "subtotal": "Totale",
-    "taxes_included_shipping": "IVA inclusa. Le spese di spedizione sono calcolate al checkout.",
-    "taxes_shipping": "Imposte e spese di spedizione calcolate al checkout.",
+    "taxes_included_shipping": "IVA inclusa. Spedizione e reso gratuiti.",
+    "taxes_shipping": "Imposte calcolate al checkout. Spedizione e reso gratuiti.",
     "checkout": "Procedi al checkout",
     "view_cart": "Vedi il carrello",
     "note": "Note sull'ordine",
@@ -182,21 +182,21 @@
       "quantity_increase": "Aumenta quantità",
       "tax_included": "IVA inclusa",
       "tax_excluded": "Imposte escluse",
-      "shipping_policy_html": "<a href=\"{{ link }}\">spese di spedizione</a> calcolate al checkout",
+      "shipping_policy_html": "<a href=\"{{ link }}\">spedizione</a> e reso gratuiti",
       "zoom": "Ingrandisci immagine",
       "size": "Taglia"
     },
     "assurance": {
-      "delivery_html": "<strong>Consegna in {{ days }} giorni lavorativi</strong> – {{ country }}",
-      "returns_html": "<strong>{{ days }} giorni per il reso</strong>, senza dover indicare il motivo",
-      "handmade_html": "<strong>Cucite a mano</strong> in vera pelle",
+      "delivery_html": "<strong>Spedizione gratuita</strong> in {{ days }} giorni lavorativi – {{ country }}",
+      "returns_html": "<strong>{{ days }} giorni per il reso gratuito</strong> – spedizione a carico nostro",
+      "handmade_html": "<strong>Cucite a mano in Polonia</strong> – nel laboratorio di famiglia a Kalwaria Zebrzydowska",
       "secure_html": "<strong>Pagamenti sicuri</strong> con connessione crittografata",
       "handmade_in_html": "<strong>Cucite a mano in {{ place }}</strong> in vera pelle"
     },
     "highlights": {
       "leather": "Vera pelle",
       "zero_drop": "Zero drop",
-      "flex": "Suola flessibile 3 mm",
+      "flex": "Suola sottile e flessibile",
       "handmade": "Cucite a mano"
     },
     "tabs": {
@@ -205,7 +205,7 @@
       "care": "Cura e manutenzione",
       "shipping": "Spedizione e resi",
       "care_html": "<p>Pulisci lo sporco con un panno morbido leggermente inumidito. Non lavare le scarpe in lavatrice e non asciugarle sul termosifone o al sole: lasciale asciugare a temperatura ambiente.</p><p>Per mantenere la pelle morbida e più resistente all'umidità, applica di tanto in tanto una cera naturale o un impermeabilizzante per pelle liscia.</p>",
-      "shipping_html": "<p>Di solito spediamo gli ordini entro 24 ore nei giorni lavorativi. Costo e tempi di consegna per il tuo Paese sono indicati al checkout, prima del pagamento.</p><p>Hai {{ days }} giorni per restituire le scarpe non indossate. Per cambiare taglia, il modo più rapido è restituire il paio e fare un nuovo ordine.</p>"
+      "shipping_html": "<p><strong>La spedizione è gratuita.</strong> Spediamo gli ordini entro 24 ore nei giorni lavorativi. In Polonia arrivano in 1–2 giorni lavorativi, in Italia e in Danimarca in 3–5 giorni lavorativi.</p><p>Hai {{ days }} giorni per restituire le scarpe non indossate e <strong>le spese di reso sono a carico nostro</strong>. Per cambiare taglia, il modo più rapido è restituire il paio e fare un nuovo ordine.</p>"
     }
   },
   "size_guide": {
@@ -313,16 +313,16 @@
       "text": "Materiali traspiranti, selezionati con cura."
     },
     "shipping": {
-      "title": "Spedizione rapida",
-      "text": "Di solito spediamo gli ordini entro 24 ore."
+      "title": "Spedizione gratuita",
+      "text": "Spediamo entro 24 ore – gratis in Polonia, Italia e Danimarca."
     },
     "handmade": {
       "title": "Cucite a mano",
       "text": "Ogni paio nasce con la massima cura per i dettagli."
     },
     "returns": {
-      "title": "14 giorni per il reso",
-      "text": "Provale a casa con calma."
+      "title": "14 giorni per il reso gratuito",
+      "text": "Provale a casa – la spedizione di reso è a carico nostro."
     }
   },
   "materials": {
@@ -332,7 +332,7 @@
     },
     "rubber": {
       "title": "Gomma termoplastica",
-      "text": "Alla base delle nostre scarpe c'è una suola ultraflessibile in gomma termoplastica. Unisce resistenza e morbidezza, lasciando al piede una naturale libertà di movimento. L'elevata resistenza all'abrasione e la buona aderenza garantiscono sicurezza durante il gioco, con un materiale che resta leggero."
+      "text": "I modelli Outdoor hanno una suola ultraflessibile in gomma termoplastica di 3 mm. Unisce resistenza e morbidezza e lascia al piede la sua naturale libertà di movimento. L'elevata resistenza all'abrasione e il buon grip danno sicurezza durante il gioco, mantenendo la scarpa leggera."
     },
     "handmade": {
       "title": "Cucite a mano",
@@ -349,8 +349,8 @@
       "text": "Tallone e dita allo stesso livello. La suola piatta favorisce una postura naturale di tutto il corpo."
     },
     "sole": {
-      "title": "Suola da 3 mm",
-      "text": "La suola sottile in gomma termoplastica fa sentire il terreno e allo stesso tempo protegge da sassi e cemento."
+      "title": "Suola sottile e antiscivolo",
+      "text": "Il bambino sente il terreno. Nelle pantofole è una suola ultraleggera per i pavimenti di casa e dell'asilo, nei modelli Outdoor 3 mm di gomma termoplastica che protegge da sassi e cemento."
     },
     "flex": {
       "title": "Massima flessibilità",
@@ -426,7 +426,7 @@
     },
     "sole": {
       "q": "Perché la suola è così sottile?",
-      "a_html": "<p>È una scelta voluta, consigliata dai fisioterapisti. La suola in gomma termoplastica è spessa 3 mm: così il bambino sente il terreno (propriocezione), e questo favorisce lo sviluppo dei muscoli del piede e della postura. È molto flessibile, ma protegge da vetri, sassi e cemento.</p>"
+      "a_html": "<p>È una scelta voluta, consigliata dai fisioterapisti. La suola sottile permette al bambino di sentire il terreno (propriocezione), favorendo lo sviluppo dei muscoli del piede e della postura. Nelle pantofole Indoor è ultraleggera, per i pavimenti di casa e dell'asilo. Nei modelli Outdoor è di 3 mm in gomma termoplastica: molto flessibile e allo stesso tempo protegge da vetri, sassi e cemento.</p>"
     },
     "wide": {
       "q": "Vanno bene per un piede paffuto con il collo alto?",
@@ -434,11 +434,11 @@
     },
     "returns": {
       "q": "Come funzionano resi e cambi?",
-      "a_html": "<p>Hai 14 giorni per provare le scarpe a casa con calma. Se la taglia non va bene, restituisci le scarpe non indossate. Per un cambio, il modo più rapido è rendere il paio e fare un nuovo ordine con la taglia giusta.</p>"
+      "a_html": "<p>Hai 14 giorni per provare le scarpe con calma a casa. Se la taglia non va bene, rispediscile non indossate – le spese di reso sono a carico nostro, anche dall'Italia. Per un cambio, la via più rapida è rendere il paio e fare un nuovo ordine nella taglia giusta.</p>"
     },
     "shipping": {
       "q": "Spedite in Italia?",
-      "a_html": "<p>Sì. Di solito spediamo gli ordini entro 24 ore nei giorni lavorativi e la consegna richiede in genere 3–5 giorni lavorativi. I prezzi sono in euro e il costo esatto della spedizione è indicato al checkout, prima del pagamento.</p>"
+      "a_html": "<p>Sì, e gratuitamente. Spediamo gli ordini entro 24 ore nei giorni lavorativi. La consegna in Polonia richiede 1–2 giorni lavorativi, in Italia e in Danimarca 3–5 giorni lavorativi. I prezzi sono nella valuta del tuo paese.</p>"
     },
     "indoor_outdoor": {
       "q": "Che differenza c'è tra i modelli Indoor e Outdoor?",
@@ -489,17 +489,17 @@
       "intro": {
         "eyebrow": "Chi siamo",
         "heading_html": "La nostra <em>storia</em>",
-        "text_html": "<p>Dietro ogni paio di scarpine OBEX c'è l'attenzione per uno sviluppo sano e l'amore per il vero artigianato. Dal primo schizzo all'ultima cucitura puntiamo sulla qualità e su un approccio senza compromessi all'anatomia dei piedini.</p>"
+        "text_html": "<p>Tradizione e passione da generazioni. Il laboratorio di famiglia di Kalwaria Zebrzydowska (Polonia) produce scarpe dal periodo prebellico e dal 2001 crea le calzature per bambini OBEX – in pelle naturale e pensate per lo sviluppo corretto dei piccoli piedi.</p>"
       },
       "passion": {
-        "eyebrow": "Gli inizi",
-        "heading_html": "Per passione <em>dei primi passi</em>",
-        "text_html": "<p>OBEX nasce da una convinzione semplice: il piede di un bambino è un meccanismo preciso che merita la migliore cura possibile. Fin dall'inizio creiamo calzature che non limitano, ma accompagnano il ritmo naturale della crescita.</p>"
+        "eyebrow": "Da generazioni",
+        "heading_html": "Tre generazioni <em>di calzolai</em>",
+        "text_html": "<p>Le origini dell'azienda di famiglia risalgono al periodo prebellico. Władysław Oczkowski iniziò a cucire a mano scarpe da donna e da uomo in una piccola stanza della casa di famiglia. Negli anni '70 il figlio Kazimierz sviluppò il laboratorio, ottenne il diploma di maestro calzolaio, accolse apprendisti e ampliò la produzione con le scarpe per bambini.</p><p>Il sapere e l'esperienza maturati accanto al padre portarono nel 2001 alla nascita del marchio OBEX. Oggi l'azienda è guidata da Hubert Oczkowski, che crea calzature per bambini di altissima qualità – flessibili, morbide e alla moda, perché i bambini si sentano comodi e sicuri.</p>"
       },
       "material": {
         "eyebrow": "Materiali",
         "heading_html": "La nobiltà <em>dei materiali naturali</em>",
-        "text_html": "<p>Scegliamo ciò che offre la natura. La pelle liscia e quella scamosciata garantiscono morbidezza e vestibilità uniche, lasciano respirare il piede e resistono anche ai giochi più vivaci, unendo un'eleganza discreta a soluzioni pratiche.</p>"
+        "text_html": "<p>Scegliamo ciò che offre la natura. Pelli lisce, scamosciate e nabuk di concerie italiane e polacche garantiscono morbidezza e vestibilità eccezionali, lasciano respirare il piede e resistono anche ai giochi più scatenati.</p>"
       },
       "craft": {
         "eyebrow": "Artigianato",

@@ -9,7 +9,7 @@
           "type": "message",
           "settings": {
             "preset": "free_shipping",
-            "text": "Darmowa wysyłka",
+            "text": "Darmowa dostawa i zwrot",
             "link": "",
             "icon": "truck",
             "market": "all"
@@ -29,7 +29,7 @@
           "type": "message",
           "settings": {
             "preset": "returns",
-            "text": "14 dni na zwrot",
+            "text": "14 dni na darmowy zwrot",
             "link": "",
             "icon": "return",
             "market": "all"
