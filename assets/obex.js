@@ -233,13 +233,39 @@
     return ids;
   };
 
+  // Podmieniamy tylko części szuflady (bez skoku przewijania i migania zdjęć);
+  // pasek darmowej dostawy animuje się płynnie zamiast przeskakiwać.
+  function morphDrawer(fresh, current) {
+    const sameShape = ['.drawer__body', '.drawer__foot'].every((sel) => !!$(sel, fresh) === !!$(sel, current));
+    if (!sameShape) { current.innerHTML = fresh.innerHTML; return; }
+    const title = $('.drawer__title', fresh);
+    if (title) $('.drawer__title', current).innerHTML = title.innerHTML;
+    const newBar = $('[data-ship-bar]', fresh);
+    const oldBar = $('[data-ship-bar]', current);
+    if (newBar && oldBar) {
+      oldBar.firstElementChild.innerHTML = newBar.firstElementChild.innerHTML;
+      const nf = $('.ship-bar__fill', newBar); const of = $('.ship-bar__fill', oldBar);
+      if (nf && of) of.style.width = nf.style.width;
+      const nt = $('[role="progressbar"]', newBar); const ot = $('[role="progressbar"]', oldBar);
+      if (nt && ot) ot.setAttribute('aria-valuenow', nt.getAttribute('aria-valuenow'));
+    } else if (newBar !== oldBar) {
+      if (oldBar) oldBar.remove();
+      if (newBar) $('.drawer__head', current).after(newBar);
+    }
+    const body = $('.drawer__body', current);
+    const scroll = body.scrollTop;
+    body.innerHTML = $('.drawer__body', fresh).innerHTML;
+    body.scrollTop = scroll;
+    $('.drawer__foot', current).innerHTML = $('.drawer__foot', fresh).innerHTML;
+  }
+
   function renderCartSections(sections) {
     if (!sections) return;
     if (sections['cart-drawer']) {
       const html = new DOMParser().parseFromString(sections['cart-drawer'], 'text/html');
       const fresh = $('.drawer__panel', html);
       const current = $('#CartDrawer .drawer__panel');
-      if (fresh && current) current.innerHTML = fresh.innerHTML;
+      if (fresh && current) morphDrawer(fresh, current);
     }
     const page = $('[data-cart-page]');
     if (page && sections[page.dataset.section]) {
@@ -253,37 +279,68 @@
     $$('[data-cart-count]').forEach((el) => { el.textContent = count; el.hidden = count === 0; });
   }
 
-  async function changeLine(line, quantity) {
-    const drawer = $('#CartDrawer .drawer__panel');
-    if (drawer) drawer.classList.add('is-loading-grid');
-    try {
-      const res = await fetch(`${S.routes.cartChange}.js`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ line, quantity, sections: cartSections(), sections_url: window.location.pathname })
-      });
-      const data = await res.json();
-      if (data.status) { toast(data.description || data.message || S.strings.error); }
-      renderCartSections(data.sections);
-      if (typeof data.item_count === 'number') updateCount(data.item_count);
-    } catch (err) {
-      toast(S.strings.error);
-    } finally {
-      const d = $('#CartDrawer .drawer__panel');
-      if (d) d.classList.remove('is-loading-grid');
-    }
+  // Natychmiastowa reakcja: usuwana pozycja zwija się od razu, zmieniana jest przyciemniona
+  function markItems(key, quantity) {
+    $$(`.cart-item[data-key="${CSS.escape(key)}"]`).forEach((item) => {
+      if (quantity === 0) {
+        item.style.height = `${item.offsetHeight}px`;
+        requestAnimationFrame(() => item.classList.add('is-removing'));
+      } else {
+        item.classList.add('is-updating');
+        const input = $('[data-cart-input]', item);
+        if (input) input.value = quantity;
+      }
+    });
+  }
+
+  // Zmiany wykonujemy po kolei, żeby szybkie kliknięcia nie nadpisywały się nawzajem
+  let cartQueue = Promise.resolve();
+  function changeLine(key, quantity) {
+    markItems(key, quantity);
+    cartQueue = cartQueue.then(async () => {
+      try {
+        const res = await fetch(`${S.routes.cartChange}.js`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ id: key, quantity, sections: cartSections(), sections_url: window.location.pathname })
+        });
+        const data = await res.json();
+        if (data.status) { toast(data.description || data.message || S.strings.error); }
+        if (data.sections) {
+          // Po zwinięciu pozycji czekamy na koniec animacji, zanim odświeżymy listę
+          if (quantity === 0) await new Promise((r) => setTimeout(r, 220));
+          renderCartSections(data.sections);
+        } else {
+          $$('.cart-item.is-removing, .cart-item.is-updating').forEach((i) => { i.classList.remove('is-removing', 'is-updating'); i.style.height = ''; });
+        }
+        if (typeof data.item_count === 'number') updateCount(data.item_count);
+      } catch (err) {
+        toast(S.strings.error);
+        $$('.cart-item.is-removing, .cart-item.is-updating').forEach((i) => { i.classList.remove('is-removing', 'is-updating'); i.style.height = ''; });
+      }
+    });
+    return cartQueue;
   }
 
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-cart-qty]');
     if (!btn) return;
     e.preventDefault();
-    changeLine(parseInt(btn.dataset.cartQty, 10), parseInt(btn.dataset.qty, 10));
+    const item = btn.closest('.cart-item');
+    if (item && item.classList.contains('is-removing')) return;
+    let qty = parseInt(btn.dataset.qty, 10);
+    const input = item && $('[data-cart-input]', item);
+    if (qty > 0 && input) {
+      // +/− liczone od aktualnej wartości, żeby kilka szybkich kliknięć się sumowało
+      const delta = qty - parseInt(input.defaultValue, 10);
+      qty = Math.max(0, (parseInt(input.value, 10) || 0) + delta);
+    }
+    changeLine(btn.dataset.cartQty, qty);
   });
   document.addEventListener('change', (e) => {
     const input = e.target.closest('[data-cart-input]');
     if (!input) return;
-    changeLine(parseInt(input.dataset.cartInput, 10), Math.max(0, parseInt(input.value, 10) || 0));
+    changeLine(input.dataset.cartInput, Math.max(0, parseInt(input.value, 10) || 0));
   });
 
   /* ---------- Cart discount codes (/cart/update.js, parametr discount) ---------- */

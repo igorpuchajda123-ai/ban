@@ -5,8 +5,8 @@
       <div class="cart-page">
         <div>
           {%- for item in cart.items -%}
-            <div class="cart-item">
-              <a class="cart-item__img" href="{{ item.url }}" tabindex="-1">{%- if item.image -%}{{ item.image | image_url: width: 300 | image_tag: loading: 'lazy', alt: item.product.title }}{%- endif -%}</a>
+            <div class="cart-item" data-key="{{ item.key }}">
+              <a class="cart-item__img" href="{{ item.url }}" tabindex="-1">{%- if item.image -%}{{ item.image | image_url: width: 300 | image_tag: loading: 'eager', alt: item.product.title }}{%- endif -%}</a>
               <div>
                 <div class="cart-item__row" style="align-items:flex-start">
                   <a class="cart-item__title" href="{{ item.url }}">{{ item.product.title }}</a>
@@ -18,11 +18,11 @@
                 </p>
                 <div class="cart-item__row">
                   <div class="qty">
-                    <button type="button" data-cart-qty="{{ forloop.index }}" data-qty="{{ item.quantity | minus: 1 }}" aria-label="{{ 'products.product.quantity_decrease' | t }}">{% render 'icon', name: 'minus' %}</button>
-                    <input type="number" value="{{ item.quantity }}" min="0" data-cart-input="{{ forloop.index }}" aria-label="{{ 'products.product.quantity' | t }}">
-                    <button type="button" data-cart-qty="{{ forloop.index }}" data-qty="{{ item.quantity | plus: 1 }}" aria-label="{{ 'products.product.quantity_increase' | t }}">{% render 'icon', name: 'plus' %}</button>
+                    <button type="button" data-cart-qty="{{ item.key }}" data-qty="{{ item.quantity | minus: 1 }}" aria-label="{{ 'products.product.quantity_decrease' | t }}">{% render 'icon', name: 'minus' %}</button>
+                    <input type="number" value="{{ item.quantity }}" min="0" data-cart-input="{{ item.key }}" aria-label="{{ 'products.product.quantity' | t }}">
+                    <button type="button" data-cart-qty="{{ item.key }}" data-qty="{{ item.quantity | plus: 1 }}" aria-label="{{ 'products.product.quantity_increase' | t }}">{% render 'icon', name: 'plus' %}</button>
                   </div>
-                  <button type="button" class="cart-item__remove" data-cart-qty="{{ forloop.index }}" data-qty="0">{{ 'cart.remove' | t }}</button>
+                  <button type="button" class="cart-item__remove" data-cart-qty="{{ item.key }}" data-qty="0">{{ 'cart.remove' | t }}</button>
                 </div>
               </div>
             </div>

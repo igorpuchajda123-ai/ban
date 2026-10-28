@@ -921,3 +921,7 @@ p { margin: 0 0 1em; }
 .cart-discount__code button { border: 0; background: none; padding: .15rem; display: grid; place-items: center; color: var(--c-muted); border-radius: 50%; }
 .cart-discount__code button .icon { width: .8rem; height: .8rem; color: inherit; }
 .cart-discount__code button:hover { color: var(--c-text); background: rgba(var(--c-text-rgb), .08); }
+/* Płynne usuwanie i zmiana ilości w koszyku */
+.cart-item { transition: height .25s ease, padding .25s ease, opacity .2s ease, transform .2s ease; }
+.cart-item.is-removing { height: 0 !important; padding-block: 0; border-bottom-width: 0; opacity: 0; transform: translateX(12px); overflow: hidden; pointer-events: none; }
+.cart-item.is-updating .cart-item__img, .cart-item.is-updating .cart-item__row > span { opacity: .55; transition: opacity .15s ease; }
