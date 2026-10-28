@@ -584,15 +584,31 @@
       if (g) g.classList.add('is-loading-grid');
       const u = new URL(url, window.location.origin);
       u.searchParams.set('section_id', sectionId);
-      const res = await fetch(u.toString());
-      const html = new DOMParser().parseFromString(await res.text(), 'text/html');
-      ['[data-collection-grid]', '[data-facets-form-wrap]', '[data-active-filters]', '[data-product-count]', '[data-sort-wrap]'].forEach((sel) => {
-        const fresh = $$(sel, html);
-        $$(sel).forEach((cur, i) => { const f = fresh[i] || fresh[0]; if (f) cur.innerHTML = f.innerHTML; });
-      });
+      try {
+        const res = await fetch(u.toString());
+        if (!res.ok) throw new Error(res.status);
+        const html = new DOMParser().parseFromString(await res.text(), 'text/html');
+        ['[data-collection-grid]', '[data-facets-form-wrap]', '[data-active-filters]', '[data-product-count]', '[data-sort-wrap]'].forEach((sel) => {
+          const fresh = $$(sel, html);
+          $$(sel).forEach((cur, i) => { const f = fresh[i] || fresh[0]; if (f) cur.innerHTML = f.innerHTML; });
+        });
+      } catch (err) {
+        // Coś poszło nie tak – zwykłe przejście na stronę zamiast zawieszonej siatki
+        u.searchParams.delete('section_id');
+        window.location.href = u.toString();
+        return;
+      } finally {
+        const gNow = grid();
+        if (gNow) gNow.classList.remove('is-loading-grid');
+      }
       u.searchParams.delete('section_id');
       if (push) window.history.pushState({ facets: true }, '', u.toString());
       bindFacetForms();
+      wishSync();
+      if (u.searchParams.has('page')) {
+        const top = grid();
+        if (top) window.scrollTo({ top: top.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+      }
     }
     function formUrl(form) {
       const params = new URLSearchParams(new FormData(form));

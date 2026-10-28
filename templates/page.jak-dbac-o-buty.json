@@ -105,11 +105,47 @@
             "question": "Czym różnią się modele Indoor i Outdoor?",
             "answer": "<p>Modele Indoor to miękkie kapcie do domu i przedszkola. Modele Outdoor mają tę samą elastyczną konstrukcję barefoot, ale są przeznaczone do chodzenia na zewnątrz. Wszystkie wykonujemy ze skóry naturalnej.</p>"
           }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "preset": "custom",
+            "question": "Jak czyścić buty z zamszu i nubuku?",
+            "answer": "<p>Zamsz i nubuk czyść na sucho miękką szczoteczką do zamszu, zawsze w jednym kierunku. Mocniejsze zabrudzenia delikatnie usuń gumką do zamszu. Nie trzyj tych skór mokrą ściereczką – woda może zostawić na nich plamy.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "preset": "custom",
+            "question": "Czym zabezpieczyć buty Outdoor przed wilgocią?",
+            "answer": "<p>Przed pierwszym wyjściem, a potem co kilka tygodni, spryskaj buty impregnatem do skór naturalnych (do zamszu i nubuku – w sprayu). Impregnat chroni przed wilgocią i brudem, a skóra dalej oddycha.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "preset": "custom",
+            "question": "Co zrobić, gdy buty mocno zamokną?",
+            "answer": "<p>Wypchaj je papierem (np. ręcznikiem papierowym), który wchłonie wilgoć, i wymieniaj go co kilka godzin. Susz buty w temperaturze pokojowej – z dala od kaloryfera, suszarki i pełnego słońca. Po wyschnięciu skórę licową możesz natłuścić kremem lub woskiem do skóry.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "preset": "custom",
+            "question": "Jak przechowywać buty poza sezonem?",
+            "answer": "<p>Wyczyść je i dokładnie wysusz, a potem schowaj w suchym, przewiewnym miejscu – najlepiej w pudełku lub bawełnianym woreczku, nie w foliowej torbie. Skóra nie zaparzy się i nie straci kształtu, a buty mogą jeszcze posłużyć młodszemu rodzeństwu.</p>"
+          }
         }
       },
       "block_order": [
         "q1",
-        "q2"
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
       ],
       "settings": {
         "show_contact": true,
