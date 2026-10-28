@@ -865,8 +865,9 @@ p { margin: 0 0 1em; }
 @media (min-width: 990px) { .quick-links__list { flex-wrap: wrap; overflow: visible; } }
 .quick-link { flex: none; display: flex; align-items: center; gap: .75rem; padding: .45rem 1.1rem .45rem .45rem; border-radius: 999px; border: 1px solid var(--c-line); background: var(--c-bg); text-decoration: none; transition: border-color .2s ease, transform .2s ease; }
 .quick-link:hover { border-color: var(--c-text); transform: translateY(-2px); }
-.quick-link__img { width: 3rem; height: 3rem; border-radius: 50%; overflow: hidden; background: var(--c-surface); flex: none; }
-.quick-link__img img { width: 100%; height: 100%; object-fit: cover; }
+.quick-link__img { width: 3rem; height: 3rem; border-radius: 50%; overflow: hidden; background: #fff; flex: none; display: grid; place-items: center; }
+/* Cały but widoczny w kółku – bez przycinania */
+.quick-link__img img { width: 86%; height: 86%; object-fit: contain; }
 .quick-link__name { display: block; font-weight: 600; font-size: .95rem; line-height: 1.2; }
 .quick-link__count { display: block; font-size: .78rem; color: var(--c-muted); }
 .quick-link--highlight { background: var(--c-dark); border-color: var(--c-dark); color: #F7F3EE; }
@@ -900,3 +901,5 @@ p { margin: 0 0 1em; }
 .footer__steps a { color: #F7F3EE; text-decoration: underline; }
 .tabs--models { flex-wrap: wrap; width: auto; max-width: 100%; border-radius: calc(var(--radius) * 1.2); justify-content: center; margin-inline: auto; }
 .tabs--models button { font-weight: 600; }
+/* Odstęp między siatką produktów a paskiem korzyści na stronach kolekcji */
+.section-main-collection + .shopify-section .usp { margin-top: clamp(3rem, 6vw, 5rem); }

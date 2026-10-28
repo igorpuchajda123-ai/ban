@@ -178,7 +178,8 @@
       "tax_included": "IVA inclusa",
       "tax_excluded": "Imposte escluse",
       "shipping_policy_html": "<a href=\"{{ link }}\">spese di spedizione</a> calcolate al checkout",
-      "zoom": "Ingrandisci immagine"
+      "zoom": "Ingrandisci immagine",
+      "size": "Taglia"
     },
     "assurance": {
       "delivery_html": "<strong>Consegna in {{ days }} giorni lavorativi</strong> – {{ country }}",

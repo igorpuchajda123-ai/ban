@@ -14,7 +14,7 @@
           <a class="quick-link{% if forloop.index <= section.settings.highlight_count %} quick-link--highlight{% endif %}" href="{{ c.url }}">
             <span class="quick-link__img">
               {%- assign img = c.featured_image -%}
-              {%- if img -%}{{ img | image_url: width: 160, height: 160, crop: 'center' | image_tag: loading: 'lazy', alt: '' }}{%- endif -%}
+              {%- if img -%}{{ img | image_url: width: 160 | image_tag: loading: 'lazy', alt: '' }}{%- endif -%}
             </span>
             <span class="quick-link__text">
               <span class="quick-link__name">{{ c.title }}</span>

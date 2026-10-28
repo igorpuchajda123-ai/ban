@@ -178,7 +178,8 @@
       "tax_included": "Inkl. moms",
       "tax_excluded": "Ekskl. moms",
       "shipping_policy_html": "<a href=\"{{ link }}\">fragt</a> beregnes ved betaling",
-      "zoom": "Forstør billede"
+      "zoom": "Forstør billede",
+      "size": "Størrelse"
     },
     "assurance": {
       "delivery_html": "<strong>Levering på {{ days }} hverdage</strong> – {{ country }}",

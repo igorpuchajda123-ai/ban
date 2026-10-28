@@ -182,7 +182,8 @@
       "tax_included": "Cena zawiera VAT",
       "tax_excluded": "Cena nie zawiera podatku",
       "shipping_policy_html": "<a href=\"{{ link }}\">koszt wysyłki</a> obliczymy przy kasie",
-      "zoom": "Powiększ zdjęcie"
+      "zoom": "Powiększ zdjęcie",
+      "size": "Rozmiar"
     },
     "assurance": {
       "delivery_html": "<strong>Dostawa {{ days }} dni roboczych</strong> – {{ country }}",

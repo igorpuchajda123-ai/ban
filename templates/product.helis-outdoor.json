@@ -24,7 +24,7 @@
         "buy": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_free_shipping": true
           }
         },

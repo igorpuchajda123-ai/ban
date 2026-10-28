@@ -7,7 +7,7 @@
     Opcja rozmiaru – rozpoznawana po nazwie w dowolnym z języków sklepu.
   endcomment
   assign size_option_index = 0
-  assign size_names = 'rozmiar,size,taglia,misura,størrelse,storrelse,str.,eu'
+  assign size_names = 'rozmiar,size,shoe size,rozmiar buta,taglia,misura,størrelse,storrelse,str.,eu'
   for option in product.options_with_values
     assign opt_name = option.name | downcase
     if size_names contains opt_name
@@ -148,7 +148,7 @@
                 {%- for option in product.options_with_values -%}
                   <div class="option-group">
                     <div class="option-label" id="OptionLabel-{{ section.id }}-{{ forloop.index }}">
-                      <span><strong>{{ option.name }}{% if forloop.index == size_option_index %} (EU){% endif %}:</strong> <span class="value" data-option-value="{{ forloop.index0 }}">{% if product.selected_variant or product.has_only_default_variant %}{{ option.selected_value }}{% else %}{{ 'products.product.select_size' | t }}{% endif %}</span></span>
+                      <span><strong>{% if forloop.index == size_option_index %}{{ 'products.product.size' | t }} (EU){% else %}{{ option.name }}{% endif %}:</strong> <span class="value" data-option-value="{{ forloop.index0 }}">{% if product.selected_variant or product.has_only_default_variant %}{{ option.selected_value }}{% else %}{{ 'products.product.select_size' | t }}{% endif %}</span></span>
                       {%- if forloop.index == size_option_index and block.settings.show_size_guide -%}
                         <button type="button" data-modal-open="SizeGuide">{% render 'icon', name: 'ruler' %}{{ 'size_guide.open' | t }}</button>
                       {%- endif -%}
@@ -363,7 +363,7 @@
       { "type": "checkbox", "id": "show_size_guide", "label": "Link do tabeli rozmiarów i kalkulatora", "default": true }
     ] },
     { "type": "buy_buttons", "name": "Przyciski zakupu", "limit": 1, "settings": [
-      { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Przyciski szybkiej płatności (Apple Pay, BLIK, MobilePay…)", "default": true },
+      { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Przyciski szybkiej płatności (Shop Pay, Apple Pay…)", "default": false },
       { "type": "checkbox", "id": "show_free_shipping", "label": "Pasek darmowej dostawy", "default": true }
     ] },
     { "type": "highlights", "name": "Wyróżniki", "limit": 1 },
