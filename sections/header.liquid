@@ -5,6 +5,7 @@
 <header class="header-wrapper" data-header {{ section.shopify_attributes }}>
   <div class="container container--wide header" style="--logo-width: {{ settings.logo_width }}px;">
     <div class="header__left">
+      <div class="header__tools">
       <button class="icon-btn header__menu-toggle" type="button" aria-controls="MenuDrawer" aria-expanded="false" data-drawer-open="MenuDrawer">
         {% render 'icon', name: 'menu' %}
         <span class="visually-hidden">{{ 'header.menu' | t }}</span>
@@ -13,6 +14,7 @@
         {% render 'icon', name: 'search' %}
         <span class="visually-hidden">{{ 'header.search' | t }}</span>
       </button>
+      </div>
 
       {%- if request.page_type == 'index' -%}<h1 class="visually-hidden">{{ shop.name }} – {{ 'header.tagline' | t }}</h1>{%- endif -%}
       <a href="{{ routes.root_url }}" class="header__logo" aria-label="{{ shop.name }}">
