@@ -1,6 +1,5 @@
 {%- liquid
-  assign menu_blocks = section.blocks | where: 'type', 'menu'
-  assign cols = menu_blocks.size | plus: 1
+  assign cols = section.blocks.size
   assign about_default = 'footer.about' | t
 -%}
 <footer class="footer" {{ section.shopify_attributes }}>

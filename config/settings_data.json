@@ -10,6 +10,7 @@
     "contact_phone": "+48 604 522 566",
     "company_details": "Firma Handlowa FLASHTRADE Oliwier Oczkowski\nul. Jagiellońska 60g, 34-130 Kalwaria Zebrzydowska, Polska\nNIP (VAT UE): PL5512670953 · REGON: 541122840",
     "wishlist_enabled": true,
+    "show_language_selector": false,
     "wishlist_page": "ulubione"
   },
   "presets": {
