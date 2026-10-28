@@ -609,5 +609,11 @@
     "loading": "Stiamo caricando i tuoi preferiti…",
     "empty": "Non hai ancora preferiti. Tocca il cuore sulle scarpe che ti piacciono: le troverai qui.",
     "empty_cta": "Vedi tutte le scarpe"
+  },
+  "seo": {
+    "home_title": "Scarpe barefoot bambini in pelle – pantofole per l'asilo | OBEX",
+    "home_description": "Scarpe barefoot per bambini in vera pelle, cucite a mano in Polonia: pantofole per l'asilo, sandali e ballerine. Punta larga, suola flessibile. Spedizione e reso gratuiti.",
+    "collection_title": "{{ title }} – scarpe barefoot per bambini",
+    "collection_description": "{{ title }}: scarpe barefoot per bambini OBEX in vera pelle, cucite a mano. Punta larga, suola flessibile e antiscivolo. Spedizione e reso gratuiti."
   }
 }

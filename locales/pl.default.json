@@ -615,5 +615,11 @@
     "loading": "Wczytujemy Twoje ulubione…",
     "empty": "Nie masz jeszcze ulubionych. Kliknij serduszko przy butach, które Ci się podobają – zapiszą się tutaj.",
     "empty_cta": "Zobacz wszystkie buty"
+  },
+  "seo": {
+    "home_title": "Buty barefoot dla dzieci ze skóry – kapcie do przedszkola | OBEX",
+    "home_description": "Skórzane buty barefoot dla dzieci szyte ręcznie w Polsce: kapcie do przedszkola, sandałki i baleriny. Szeroki nosek, elastyczna podeszwa. Darmowa dostawa i zwrot.",
+    "collection_title": "{{ title }} – buty barefoot dla dzieci",
+    "collection_description": "{{ title }}: skórzane buty barefoot dla dzieci OBEX, szyte ręcznie w Polsce. Szeroki nosek, elastyczna antypoślizgowa podeszwa. Darmowa dostawa i zwrot."
   }
 }

@@ -609,5 +609,11 @@
     "loading": "Vi henter dine favoritter…",
     "empty": "Du har ingen favoritter endnu. Tryk på hjertet ved de sko, du kan lide – så gemmes de her.",
     "empty_cta": "Se alle sko"
+  },
+  "seo": {
+    "home_title": "Barfodssko til børn i læder – hjemmesko til børnehave | OBEX",
+    "home_description": "Barfodssko til børn i ægte læder, håndsyet i Polen: hjemmesko og indesko til børnehave, sandaler og ballerinasko. Bred tåboks, fleksibel sål. Gratis levering og retur.",
+    "collection_title": "{{ title }} – barfodssko til børn",
+    "collection_description": "{{ title }}: OBEX barfodssko til børn i ægte læder, håndsyet. Bred tåboks, fleksibel og skridsikker sål. Gratis levering og retur."
   }
 }
