@@ -23,7 +23,8 @@
         "padding_bottom": 96,
         "eyebrow": "Dobór rozmiaru",
         "heading": "Kalkulator <em>rozmiaru</em>",
-        "text": "Wpisz długość stopy dziecka w milimetrach – podświetlimy rozmiar z odpowiednim zapasem na wzrost."
+        "text": "Wpisz długość stopy dziecka w milimetrach – podświetlimy rozmiar z odpowiednim zapasem na wzrost.",
+        "show_measure": false
       },
       "blocks": {
         "m_helis": {

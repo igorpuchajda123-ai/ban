@@ -2,6 +2,10 @@
   assign d_eyebrow = 'size_guide.eyebrow' | t
   assign d_heading = 'size_guide.section_heading_html' | t
   assign d_text = 'size_guide.section_text' | t
+  assign hide_measure = false
+  unless section.settings.show_measure
+    assign hide_measure = true
+  endunless
 -%}
 <section class="section{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" id="kalkulator" {{ section.shopify_attributes }}>
   <div class="container">
@@ -23,11 +27,11 @@
         {%- for block in section.blocks -%}
           <div id="SizeModel-{{ block.id }}" role="tabpanel" aria-labelledby="SizeModelTab-{{ block.id }}"{% unless forloop.first %} hidden{% endunless %}>
             {%- assign model_uid = 'Sizer-' | append: block.id -%}
-            {% render 'size-guide-modal', inline: true, table: block.settings.table, model: block.settings.model, uid: model_uid %}
+            {% render 'size-guide-modal', inline: true, table: block.settings.table, model: block.settings.model, uid: model_uid, hide_measure: hide_measure %}
           </div>
         {%- endfor -%}
       {%- else -%}
-        {% render 'size-guide-modal', inline: true %}
+        {% render 'size-guide-modal', inline: true, hide_measure: hide_measure %}
       {%- endif -%}
     </div>
   </div>
@@ -37,6 +41,7 @@
 {
   "name": "Kalkulator rozmiarów",
   "settings": [
+    { "type": "checkbox", "id": "show_measure", "label": "Zakładka „Jak zmierzyć stopę”", "default": true, "info": "Wyłącz, jeśli instrukcja mierzenia jest niżej na tej stronie." },
     { "type": "paragraph", "content": "Dodaj blok „Model” dla każdego modelu z własną rozmiarówką. Bez bloków użyta zostanie tabela z Ustawień motywu → Rozmiary." },
     { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
     { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },

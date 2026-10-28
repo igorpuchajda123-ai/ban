@@ -1,7 +1,8 @@
 {%- comment -%}
   Tabela rozmiarów + kalkulator.
   Parametry: table (np. „19:125, 20:130”; puste = Ustawienia motywu → Rozmiary),
-  model (nazwa modelu pokazywana nad tabelą), inline (true w sekcji „Kalkulator rozmiarów”), uid (unikalne id).
+  model (nazwa modelu pokazywana nad tabelą), inline (true w sekcji „Kalkulator rozmiarów”), uid (unikalne id),
+  hide_measure (true = bez zakładki „Jak zmierzyć stopę”, gdy instrukcja jest niżej na stronie).
 {%- endcomment -%}
 {%- liquid
   assign source = table | default: settings.size_table
@@ -14,10 +15,12 @@
   endunless
 -%}
 {%- capture sizer -%}
+  {%- unless hide_measure -%}
   <div class="tabs" role="tablist" data-tabs-simple>
     <button type="button" role="tab" aria-selected="true" aria-controls="{{ uid }}-find" id="{{ uid }}-tab-find">{{ 'size_guide.tab_find' | t }}</button>
     <button type="button" role="tab" aria-selected="false" aria-controls="{{ uid }}-measure" id="{{ uid }}-tab-measure">{{ 'size_guide.tab_measure' | t }}</button>
   </div>
+  {%- endunless -%}
 
   <div class="sizer" id="{{ uid }}-find" role="tabpanel" aria-labelledby="{{ uid }}-tab-find" data-sizer data-min="{{ settings.size_margin_min }}" data-max="{{ settings.size_margin_max }}">
     <div>
@@ -61,6 +64,7 @@
     </div>
   </div>
 
+  {%- unless hide_measure -%}
   <div class="sizer" id="{{ uid }}-measure" role="tabpanel" aria-labelledby="{{ uid }}-tab-measure" hidden>
     <div>
       {%- if settings.size_guide_image != blank -%}
@@ -76,6 +80,7 @@
       <li><div><strong>{{ 'size_guide.step4_title' | t }}</strong><p>{{ 'size_guide.step4_text' | t }}</p></div></li>
     </ol>
   </div>
+  {%- endunless -%}
 {%- endcapture -%}
 
 {%- if inline -%}
