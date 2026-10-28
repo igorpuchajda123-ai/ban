@@ -883,9 +883,9 @@ p { margin: 0 0 1em; }
 .quick-link__img img { width: 86%; height: 86%; object-fit: contain; }
 .quick-link__name { display: block; font-weight: 600; font-size: .95rem; line-height: 1.2; }
 .quick-link__count { display: block; font-size: .78rem; color: var(--c-muted); }
-.quick-link--highlight { background: var(--c-dark); border-color: var(--c-dark); color: #F7F3EE; }
-.quick-link--highlight .quick-link__count { color: rgba(247,243,238,.7); }
-.quick-link--highlight:hover { border-color: var(--c-dark); }
+.quick-link--highlight { background: var(--c-surface); border-color: rgba(197,154,120,.55); }
+.quick-link--highlight .quick-link__name::after { content: "★"; margin-left: .4rem; font-size: .75em; color: var(--c-honey); vertical-align: .1em; }
+.quick-link--highlight:hover { border-color: var(--c-accent); }
 
 /* ---------- Media strip ---------- */
 .media-strip__item { margin: 0; }
