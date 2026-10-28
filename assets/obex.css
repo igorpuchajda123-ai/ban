@@ -372,7 +372,10 @@ p { margin: 0 0 1em; }
 /* ---------- Marquee ---------- */
 .marquee { overflow: hidden; white-space: nowrap; border-block: 1px solid var(--c-line); padding-block: 1.1rem; }
 .marquee__track { display: inline-flex; width: max-content; will-change: transform; animation: marquee var(--speed, 40s) linear infinite; }
-@media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation-duration: calc(var(--speed, 40s) * 1.5) !important; }
+  .announcement__msg { transition-duration: .5s !important; }
+}
 .marquee__item { display: inline-flex; align-items: center; gap: 2.5rem; padding-right: 2.5rem; font-family: var(--font-heading); font-size: clamp(1.4rem, 2.6vw, 2.2rem); font-style: italic; }
 .marquee__item::after { content: "✦"; font-style: normal; font-size: .6em; color: var(--c-honey); }
 @keyframes marquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
