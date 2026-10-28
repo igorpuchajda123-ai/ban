@@ -293,10 +293,16 @@
     });
   }
 
-  // Zmiany wykonujemy po kolei, żeby szybkie kliknięcia nie nadpisywały się nawzajem
+  // Zmiany wysyłamy po kolei. Kliknięcia +/− zbieramy (debounce) w jedno zapytanie
+  // z końcową ilością, a koszyk przerysowujemy tylko po ostatniej odpowiedzi –
+  // dzięki temu liczba nie „skacze” (4 → 3 → 4).
   let cartQueue = Promise.resolve();
-  function changeLine(key, quantity) {
-    markItems(key, quantity);
+  let cartPending = 0;
+  const qtyTimers = new Map();
+  const resetMarks = () => $$('.cart-item.is-removing, .cart-item.is-updating').forEach((i) => { i.classList.remove('is-removing', 'is-updating'); i.style.height = ''; });
+
+  function sendChange(key, quantity) {
+    cartPending += 1;
     cartQueue = cartQueue.then(async () => {
       try {
         const res = await fetch(`${S.routes.cartChange}.js`, {
@@ -305,20 +311,33 @@
           body: JSON.stringify({ id: key, quantity, sections: cartSections(), sections_url: window.location.pathname })
         });
         const data = await res.json();
+        cartPending -= 1;
         if (data.status) { toast(data.description || data.message || S.strings.error); }
+        if (typeof data.item_count === 'number') updateCount(data.item_count);
+        // Jeśli czekają kolejne zmiany, nie przerysowujemy – zrobi to ostatnia odpowiedź
+        if (cartPending > 0 || qtyTimers.size > 0) return;
         if (data.sections) {
-          // Po zwinięciu pozycji czekamy na koniec animacji, zanim odświeżymy listę
           if (quantity === 0) await new Promise((r) => setTimeout(r, 220));
+          if (cartPending > 0 || qtyTimers.size > 0) return;
           renderCartSections(data.sections);
         } else {
-          $$('.cart-item.is-removing, .cart-item.is-updating').forEach((i) => { i.classList.remove('is-removing', 'is-updating'); i.style.height = ''; });
+          resetMarks();
         }
-        if (typeof data.item_count === 'number') updateCount(data.item_count);
       } catch (err) {
+        cartPending = Math.max(0, cartPending - 1);
         toast(S.strings.error);
-        $$('.cart-item.is-removing, .cart-item.is-updating').forEach((i) => { i.classList.remove('is-removing', 'is-updating'); i.style.height = ''; });
+        resetMarks();
       }
     });
+    return cartQueue;
+  }
+
+  function changeLine(key, quantity, debounce) {
+    markItems(key, quantity);
+    clearTimeout(qtyTimers.get(key));
+    qtyTimers.delete(key);
+    if (!debounce || quantity === 0) return sendChange(key, quantity);
+    qtyTimers.set(key, setTimeout(() => { qtyTimers.delete(key); sendChange(key, quantity); }, 400));
     return cartQueue;
   }
 
@@ -335,7 +354,7 @@
       const delta = qty - parseInt(input.defaultValue, 10);
       qty = Math.max(0, (parseInt(input.value, 10) || 0) + delta);
     }
-    changeLine(btn.dataset.cartQty, qty);
+    changeLine(btn.dataset.cartQty, qty, true);
   });
   document.addEventListener('change', (e) => {
     const input = e.target.closest('[data-cart-input]');
