@@ -110,7 +110,12 @@
     "note": "Uwagi do zamówienia",
     "free_shipping_remaining_html": "Brakuje Ci <strong>{{ amount }}</strong> do darmowej dostawy",
     "free_shipping_reached_html": "<strong>Masz darmową dostawę!</strong>",
-    "free_shipping_progress": "Postęp do darmowej dostawy"
+    "free_shipping_progress": "Postęp do darmowej dostawy",
+    "discount_label": "Masz kod rabatowy?",
+    "discount_placeholder": "Wpisz kod",
+    "discount_apply": "Zastosuj",
+    "discount_invalid": "Ten kod jest nieaktywny albo nie obejmuje produktów w koszyku.",
+    "discount_remove": "Usuń kod {{ code }}"
   },
   "collection": {
     "eyebrow": "Kolekcja",

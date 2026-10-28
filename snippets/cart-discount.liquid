@@ -1,0 +1,35 @@
+{%- comment -%}
+  Pole kodu rabatowego w koszyku (szuflada i strona koszyka).
+  Kody stosowane przez /cart/update.js (parametr discount) – obsługa w obex.js.
+{%- endcomment -%}
+{%- liquid
+  assign applied = ''
+  for d in cart.discount_codes
+    if d.applicable
+      assign applied = applied | append: d.code | append: ','
+    endif
+  endfor
+-%}
+<div class="cart-discount" data-cart-discount data-codes="{{ applied | escape }}" data-invalid="{{ 'cart.discount_invalid' | t | escape }}">
+  <details class="cart-discount__toggle"{% if applied != blank %} open{% endif %}>
+    <summary>{% render 'icon', name: 'sparkle' %}<span>{{ 'cart.discount_label' | t }}</span><span class="accordion__icon">{% render 'icon', name: 'plus' %}</span></summary>
+    <form class="cart-discount__form" data-cart-discount-form novalidate>
+      <label class="visually-hidden" for="CartDiscount-{{ id }}">{{ 'cart.discount_label' | t }}</label>
+      <input class="input" type="text" id="CartDiscount-{{ id }}" name="discount" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="{{ 'cart.discount_placeholder' | t }}" required>
+      <button type="submit" class="btn btn--outline">{{ 'cart.discount_apply' | t }}</button>
+    </form>
+    <p class="form-message form-message--error cart-discount__error" data-cart-discount-error role="alert" hidden></p>
+  </details>
+  {%- if applied != blank -%}
+    <ul class="cart-discount__codes" role="list">
+      {%- for d in cart.discount_codes -%}
+        {%- if d.applicable -%}
+          <li class="cart-discount__code">
+            {% render 'icon', name: 'check' %}<span>{{ d.code }}</span>
+            <button type="button" data-cart-discount-remove="{{ d.code | escape }}" aria-label="{{ 'cart.discount_remove' | t: code: d.code }}">{% render 'icon', name: 'close' %}</button>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>

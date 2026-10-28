@@ -286,6 +286,54 @@
     changeLine(parseInt(input.dataset.cartInput, 10), Math.max(0, parseInt(input.value, 10) || 0));
   });
 
+  /* ---------- Cart discount codes (/cart/update.js, parametr discount) ---------- */
+  async function updateDiscounts(codes, box, newCode) {
+    const form = box && $('[data-cart-discount-form]', box);
+    if (form) form.classList.add('is-loading');
+    try {
+      const res = await fetch(`${S.routes.cartUpdate}.js`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ discount: codes.join(','), sections: cartSections(), sections_url: window.location.pathname })
+      });
+      const data = await res.json();
+      if (data.status) throw new Error(data.description || data.message);
+      const rejected = newCode && (data.discount_codes || []).find((d) => d.code.toLowerCase() === newCode.toLowerCase() && !d.applicable);
+      if (rejected) {
+        // Kod nie pasuje do koszyka – usuwamy go, żeby nie wisiał w koszyku
+        const invalidMsg = box.dataset.invalid;
+        await updateDiscounts(codes.filter((c) => c.toLowerCase() !== newCode.toLowerCase()));
+        const fresh = $('[data-cart-discount]');
+        const err = fresh && $('[data-cart-discount-error]', fresh);
+        if (err) { err.textContent = invalidMsg; err.hidden = false; $('details', fresh).open = true; }
+        return;
+      }
+      renderCartSections(data.sections);
+    } catch (err) {
+      toast(S.strings.error);
+    } finally {
+      if (form) form.classList.remove('is-loading');
+    }
+  }
+  const currentCodes = (box) => (box.dataset.codes || '').split(',').map((c) => c.trim()).filter(Boolean);
+  document.addEventListener('submit', (e) => {
+    const form = e.target.closest('[data-cart-discount-form]');
+    if (!form) return;
+    e.preventDefault();
+    const box = form.closest('[data-cart-discount]');
+    const code = form.discount.value.trim();
+    if (!code) return;
+    const codes = currentCodes(box);
+    if (!codes.some((c) => c.toLowerCase() === code.toLowerCase())) codes.push(code);
+    updateDiscounts(codes, box, code);
+  });
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-cart-discount-remove]');
+    if (!btn) return;
+    const box = btn.closest('[data-cart-discount]');
+    updateDiscounts(currentCodes(box).filter((c) => c !== btn.dataset.cartDiscountRemove), box);
+  });
+
   /* ---------- Product ---------- */
   $$('[data-product]').forEach((root) => {
     const sectionId = root.dataset.section;

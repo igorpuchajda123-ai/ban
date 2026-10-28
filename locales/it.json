@@ -110,7 +110,12 @@
     "note": "Note sull'ordine",
     "free_shipping_remaining_html": "Ti mancano <strong>{{ amount }}</strong> per la spedizione gratuita",
     "free_shipping_reached_html": "<strong>La spedizione è gratuita!</strong>",
-    "free_shipping_progress": "Avanzamento verso la spedizione gratuita"
+    "free_shipping_progress": "Avanzamento verso la spedizione gratuita",
+    "discount_label": "Hai un codice sconto?",
+    "discount_placeholder": "Inserisci il codice",
+    "discount_apply": "Applica",
+    "discount_invalid": "Il codice non è attivo o non si applica ai prodotti nel carrello.",
+    "discount_remove": "Rimuovi il codice {{ code }}"
   },
   "collection": {
     "eyebrow": "Collezione",

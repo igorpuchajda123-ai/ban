@@ -110,7 +110,12 @@
     "note": "Bemærkninger til ordren",
     "free_shipping_remaining_html": "Du mangler <strong>{{ amount }}</strong> for at få gratis fragt",
     "free_shipping_reached_html": "<strong>Du har gratis fragt!</strong>",
-    "free_shipping_progress": "Fremskridt mod gratis fragt"
+    "free_shipping_progress": "Fremskridt mod gratis fragt",
+    "discount_label": "Har du en rabatkode?",
+    "discount_placeholder": "Indtast kode",
+    "discount_apply": "Anvend",
+    "discount_invalid": "Koden er ikke aktiv eller gælder ikke for varerne i kurven.",
+    "discount_remove": "Fjern koden {{ code }}"
   },
   "collection": {
     "eyebrow": "Kollektion",

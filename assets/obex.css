@@ -903,3 +903,21 @@ p { margin: 0 0 1em; }
 .tabs--models button { font-weight: 600; }
 /* Odstęp między siatką produktów a paskiem korzyści na stronach kolekcji */
 .section-main-collection + .shopify-section .usp { margin-top: clamp(3rem, 6vw, 5rem); }
+/* Kod rabatowy w koszyku */
+.cart-discount { margin-bottom: 1rem; }
+.cart-discount__toggle summary { list-style: none; display: flex; align-items: center; gap: .5rem; cursor: pointer; font-size: .9rem; font-weight: 500; padding: .35rem 0; }
+.cart-discount__toggle summary::-webkit-details-marker { display: none; }
+.cart-discount__toggle summary .icon { width: 1.1rem; height: 1.1rem; color: var(--c-accent); }
+.cart-discount__toggle summary .accordion__icon { margin-left: auto; transition: transform .2s ease; }
+.cart-discount__toggle[open] summary .accordion__icon { transform: rotate(45deg); }
+.cart-discount__form { display: flex; gap: .5rem; margin-top: .6rem; }
+.cart-discount__form .input { flex: 1; min-width: 0; min-height: 2.9rem; text-transform: uppercase; letter-spacing: .04em; }
+.cart-discount__form .btn { min-height: 2.9rem; padding-inline: 1.1rem; }
+.cart-discount__form.is-loading { opacity: .6; pointer-events: none; }
+.cart-discount__error { margin: .5rem 0 0; font-size: .82rem; }
+.cart-discount__codes { list-style: none; padding: 0; margin: .6rem 0 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.cart-discount__code { display: inline-flex; align-items: center; gap: .35rem; padding: .3rem .4rem .3rem .65rem; border-radius: 999px; background: var(--c-surface); font-size: .8rem; font-weight: 600; letter-spacing: .04em; }
+.cart-discount__code .icon { width: .9rem; height: .9rem; color: var(--c-sage, var(--c-accent)); }
+.cart-discount__code button { border: 0; background: none; padding: .15rem; display: grid; place-items: center; color: var(--c-muted); border-radius: 50%; }
+.cart-discount__code button .icon { width: .8rem; height: .8rem; color: inherit; }
+.cart-discount__code button:hover { color: var(--c-text); background: rgba(var(--c-text-rgb), .08); }
