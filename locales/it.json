@@ -54,12 +54,14 @@
   },
   "newsletter": {
     "eyebrow": "Newsletter",
-    "heading_html": "I nuovi colori, <em>in anteprima</em>",
-    "text": "Ogni tanto una mail: nuovi modelli, consigli per lo sviluppo sano del piede e offerte riservate agli iscritti.",
+    "heading_html": "Iscriviti e ricevi <em>il 5% di sconto</em>",
+    "text": "Ti mostriamo subito il codice sconto per il primo ordine. In più: nuovi colori in anteprima e consigli per lo sviluppo sano del piede.",
     "email": "Il tuo indirizzo e-mail",
     "submit": "Iscriviti",
     "success": "Grazie! Controlla la tua casella di posta: ci sentiamo presto.",
-    "consent": "Iscrivendoti accetti l'informativa sulla privacy. Puoi annullare l'iscrizione in qualsiasi momento."
+    "consent": "Iscrivendoti accetti l'informativa sulla privacy. Puoi annullare l'iscrizione in qualsiasi momento.",
+    "success_code_html": "Grazie per l'iscrizione! Il tuo codice del 5% sul primo ordine: <strong>{{ code }}</strong>. Inseriscilo nel carrello.",
+    "badge": "−5% sul primo ordine"
   },
   "footer": {
     "about": "OBEX crea scarpe barefoot in pelle per bambini, cucite a mano con materiali naturali. Le progettiamo perché i piedini possano crescere liberi, come a piedi nudi.",
@@ -596,5 +598,16 @@
         "button": "Scopri la collezione"
       }
     }
+  },
+  "wishlist": {
+    "title": "Preferiti",
+    "add": "Aggiungi ai preferiti",
+    "remove": "Rimuovi dai preferiti",
+    "added": "Aggiunto ai preferiti ♥",
+    "removed": "Rimosso dai preferiti",
+    "note": "Salviamo le tue scarpe preferite su questo dispositivo, senza bisogno di accedere. Scegli la taglia e aggiungi il paio direttamente al carrello.",
+    "loading": "Stiamo caricando i tuoi preferiti…",
+    "empty": "Non hai ancora preferiti. Tocca il cuore sulle scarpe che ti piacciono: le troverai qui.",
+    "empty_cta": "Vedi tutte le scarpe"
   }
 }

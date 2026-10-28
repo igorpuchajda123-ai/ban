@@ -13,6 +13,7 @@
   <div class="container newsletter reveal">
     <div>
       <p class="eyebrow">{{ 'newsletter.eyebrow' | t }}</p>
+      {%- if section.settings.discount_code != blank -%}<p class="newsletter__badge">{{ 'newsletter.badge' | t }}</p>{%- endif -%}
       <h2>{{ section.settings.heading | default: d_heading }}</h2>
       <p class="lead" style="margin:0">{{ section.settings.text | default: d_text }}</p>
     </div>
@@ -21,7 +22,13 @@
       {%- form 'customer', id: form_id -%}
         <input type="hidden" name="contact[tags]" value="newsletter,{{ localization.country.iso_code }},{{ request.locale.iso_code }}">
         {%- if form.posted_successfully? -%}
-          <p class="form-message form-message--success" role="status">{{ 'newsletter.success' | t }}</p>
+          <p class="form-message form-message--success" role="status">
+            {%- if section.settings.discount_code != blank -%}
+              {{ 'newsletter.success_code_html' | t: code: section.settings.discount_code }}
+            {%- else -%}
+              {{ 'newsletter.success' | t }}
+            {%- endif -%}
+          </p>
         {%- elsif form.errors -%}
           <p class="form-message form-message--error" role="alert">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>
         {%- endif -%}
@@ -42,6 +49,7 @@
   "settings": [
     { "type": "inline_richtext", "id": "heading", "label": "Nagłówek", "info": "Puste = tekst domyślny tłumaczony automatycznie (PL/IT/DA)." },
     { "type": "text", "id": "text", "label": "Opis" },
+    { "type": "text", "id": "discount_code", "label": "Kod rabatowy po zapisie", "info": "Pokazuje się po zapisaniu do newslettera (np. OBEX5). Kod musi istnieć w Rabatach. Puste = bez kodu." },
     { "type": "select", "id": "style", "label": "Tło", "options": [
       { "value": "default", "label": "Jasne" }, { "value": "surface", "label": "Beżowe" }, { "value": "dark", "label": "Ciemne" }
     ], "default": "surface" },

@@ -201,6 +201,7 @@
                       {%- if current_variant.available -%}{{ 'products.product.add_to_cart' | t }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}
                     </span>
                   </button>
+                  {% render 'wishlist-button', product: product, class: 'wish-btn--buy' %}
                   {%- if block.settings.show_dynamic_checkout -%}
                     {{ form | payment_button }}
                   {%- endif -%}

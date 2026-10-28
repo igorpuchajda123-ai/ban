@@ -1,0 +1,11 @@
+{%- comment -%}
+  Serduszko „Ulubione”. Parametry: product, class (dodatkowa klasa)
+  Lista zapisuje się w przeglądarce klienta (localStorage) – bez logowania.
+{%- endcomment -%}
+{%- if settings.wishlist_enabled -%}
+  {%- assign label_add = 'wishlist.add' | t -%}
+  {%- assign label_remove = 'wishlist.remove' | t -%}
+  <button type="button" class="wish-btn{% if class %} {{ class }}{% endif %}" data-wishlist-toggle="{{ product.handle }}" aria-pressed="false" aria-label="{{ label_add | escape }}" title="{{ label_add | escape }}" data-label-add="{{ label_add | escape }}" data-label-remove="{{ label_remove | escape }}">
+    {% render 'icon', name: 'heart' %}
+  </button>
+{%- endif -%}

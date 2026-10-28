@@ -111,6 +111,13 @@
     ]
   },
   {
+    "name": "Ulubione (wishlist)",
+    "settings": [
+      { "type": "checkbox", "id": "wishlist_enabled", "label": "Pokaż serduszka i listę ulubionych", "default": true, "info": "Lista zapisuje się na urządzeniu klienta – bez logowania." },
+      { "type": "page", "id": "wishlist_page", "label": "Strona „Ulubione”", "info": "Strona z szablonem „wishlist”." }
+    ]
+  },
+  {
     "name": "Media społecznościowe",
     "settings": [
       { "type": "text", "id": "social_instagram_link", "label": "Instagram" },

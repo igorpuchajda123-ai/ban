@@ -1,0 +1,22 @@
+{%- layout none -%}
+{%- comment -%} Karta na stronie „Ulubione” – pobierana przez obex.js (?view=wishlist-card) {%- endcomment -%}
+<div class="wishlist-item" data-wishlist-item="{{ product.handle }}">
+  {% render 'product-card', product: product %}
+  {%- if product.available -%}
+    <form class="wishlist-item__buy" data-wishlist-add novalidate>
+      {%- if product.has_only_default_variant -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      {%- else -%}
+        <label class="visually-hidden" for="WishSize-{{ product.id }}">{{ 'products.product.size' | t }}</label>
+        <select class="select select--sm" id="WishSize-{{ product.id }}" name="id" required>
+          <option value="" selected disabled>{{ 'products.product.size' | t }}</option>
+          {%- for variant in product.variants -%}
+            <option value="{{ variant.id }}"{% unless variant.available %} disabled{% endunless %}>{{ variant.title | escape }}{% unless variant.available %} – {{ 'products.product.sold_out' | t }}{% endunless %}</option>
+          {%- endfor -%}
+        </select>
+      {%- endif -%}
+      <button type="submit" class="btn btn--sm">{{ 'products.product.add_to_cart' | t }}</button>
+      <p class="form-message form-message--error" data-wishlist-error hidden role="alert"></p>
+    </form>
+  {%- endif -%}
+</div>

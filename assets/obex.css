@@ -133,6 +133,7 @@ p { margin: 0 0 1em; }
 .btn--ghost-light:hover { --btn-bg: #fff; --btn-fg: #261C14; --btn-bd: #fff; }
 .btn--block { width: 100%; }
 .btn--lg { min-height: 3.6rem; font-size: 1rem; }
+.btn--sm { min-height: 2.75rem; padding-inline: 1.25rem; font-size: .9rem; }
 .btn .icon { width: 1.1em; height: 1.1em; }
 .btn.is-loading { color: transparent; position: relative; pointer-events: none; }
 .btn.is-loading::after {
@@ -933,3 +934,25 @@ p { margin: 0 0 1em; }
 .cart-item { transition: height .25s ease, padding .25s ease, opacity .2s ease, transform .2s ease; }
 .cart-item.is-removing { height: 0 !important; padding-block: 0; border-bottom-width: 0; opacity: 0; transform: translateX(12px); overflow: hidden; pointer-events: none; }
 .cart-item.is-updating .cart-item__img, .cart-item.is-updating .cart-item__row > span { opacity: .55; transition: opacity .15s ease; }
+
+/* ---------- Ulubione ---------- */
+.wish-btn { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 0; background: rgba(255,255,255,.88); color: var(--c-text); cursor: pointer; transition: transform .2s ease, background-color .2s ease, color .2s ease; }
+.wish-btn .icon { width: 1.2rem; height: 1.2rem; transition: fill .2s ease; }
+.wish-btn:hover { transform: scale(1.06); }
+.wish-btn[aria-pressed="true"] { color: #B4532A; }
+.wish-btn[aria-pressed="true"] .icon { fill: currentColor; }
+.wish-btn--card { position: absolute; top: .6rem; right: .6rem; z-index: 3; box-shadow: 0 2px 10px -4px rgba(38,28,20,.35); }
+.buy:has(.wish-btn--buy) { grid-template-columns: auto 1fr auto; }
+.wish-btn--buy { width: 3.25rem; height: 3.25rem; background: transparent; border: 1px solid rgba(var(--c-text-rgb), .2); }
+@media (max-width: 989px) { .header__account { display: none; } }
+.wishlist__head { margin: 1.5rem 0 2.5rem; }
+.wishlist__head h1 { margin: 0 0 .5rem; }
+.wishlist__loading { margin: 1rem 0; }
+.wishlist__empty { text-align: center; padding: 3rem 1rem; display: grid; justify-items: center; gap: 1rem; }
+.wishlist__empty .icon { width: 2.5rem; height: 2.5rem; color: var(--c-accent); }
+.wishlist__empty p { margin: 0; max-width: 28rem; color: var(--c-muted); }
+.wishlist-item { display: flex; flex-direction: column; gap: .75rem; }
+.wishlist-item__buy { display: grid; gap: .5rem; }
+.wishlist-item__buy .btn { width: 100%; }
+.select--sm { padding-block: .6rem; font-size: .9rem; }
+.newsletter__badge { display: inline-block; margin: 0 0 .9rem; padding: .35rem .85rem; border-radius: 999px; background: var(--c-accent); color: var(--c-accent-contrast); font-size: .8rem; font-weight: 600; letter-spacing: .04em; }

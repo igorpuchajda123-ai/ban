@@ -54,12 +54,14 @@
   },
   "newsletter": {
     "eyebrow": "Nyhedsbrev",
-    "heading_html": "Se de nye farver <em>først</em>",
-    "text": "En gang imellem: nye modeller, gode råd om sund fodudvikling og tilbud kun for abonnenter.",
+    "heading_html": "Tilmeld dig og få <em>5 % rabat</em>",
+    "text": "Du får rabatkoden til din første ordre med det samme. Derudover: nye farver først og råd om sund fodudvikling.",
     "email": "Din e-mailadresse",
     "submit": "Tilmeld",
     "success": "Tak! Tjek din indbakke – du hører snart fra os.",
-    "consent": "Ved tilmelding accepterer du vores privatlivspolitik. Du kan altid afmelde dig igen."
+    "consent": "Ved tilmelding accepterer du vores privatlivspolitik. Du kan altid afmelde dig igen.",
+    "success_code_html": "Tak for din tilmelding! Din kode med 5 % rabat på første ordre: <strong>{{ code }}</strong>. Indtast den i kurven.",
+    "badge": "−5 % på første ordre"
   },
   "footer": {
     "about": "OBEX laver barfodssko i læder til børn, håndsyet af naturlige materialer. Vi designer dem, så små fødder kan vokse frit – som på bare fødder.",
@@ -596,5 +598,16 @@
         "button": "Se kollektionen"
       }
     }
+  },
+  "wishlist": {
+    "title": "Favoritter",
+    "add": "Tilføj til favoritter",
+    "remove": "Fjern fra favoritter",
+    "added": "Tilføjet til favoritter ♥",
+    "removed": "Fjernet fra favoritter",
+    "note": "Vi gemmer dine favoritsko på denne enhed – uden login. Vælg størrelse, og læg parret direkte i kurven.",
+    "loading": "Vi henter dine favoritter…",
+    "empty": "Du har ingen favoritter endnu. Tryk på hjertet ved de sko, du kan lide – så gemmes de her.",
+    "empty_cta": "Se alle sko"
   }
 }

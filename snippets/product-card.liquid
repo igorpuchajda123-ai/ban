@@ -56,6 +56,8 @@
     {%- endif -%}
   </div>
 
+  {% render 'wishlist-button', product: product, class: 'wish-btn--card' %}
+
   {%- if settings.card_quick_link and product.available -%}
     <div class="card__quick">
       <a class="btn" href="{{ product.url }}">{{ 'products.product.choose_size' | t }}</a>

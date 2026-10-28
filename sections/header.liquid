@@ -116,8 +116,16 @@
         {% render 'icon', name: 'search' %}
         <span class="visually-hidden">{{ 'header.search' | t }}</span>
       </button>
+      {%- if settings.wishlist_enabled -%}
+        {%- assign wish_url = settings.wishlist_page.url | default: '/pages/ulubione' -%}
+        <a class="icon-btn" href="{{ wish_url }}" data-wishlist-link>
+          {% render 'icon', name: 'heart' %}
+          <span class="visually-hidden">{{ 'wishlist.title' | t }}</span>
+          <span class="cart-count" data-wishlist-count hidden>0</span>
+        </a>
+      {%- endif -%}
       {%- if shop.customer_accounts_enabled -%}
-        <a class="icon-btn" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
+        <a class="icon-btn header__account" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
           {% render 'icon', name: 'account' %}
           <span class="visually-hidden">{{ 'header.account' | t }}</span>
         </a>

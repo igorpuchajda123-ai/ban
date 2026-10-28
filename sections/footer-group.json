@@ -5,8 +5,9 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Nowe kolory <em>jako pierwsi</em>",
-        "text": "Raz na jakiś czas: premiery modeli, porady o zdrowym rozwoju stóp i oferty tylko dla subskrybentów.",
+        "heading": "",
+        "text": "",
+        "discount_code": "OBEX5",
         "style": "surface",
         "padding_top": 72,
         "padding_bottom": 72

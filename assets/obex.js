@@ -620,6 +620,101 @@
     window.addEventListener('popstate', (e) => { if (e.state && e.state.facets) load(window.location.href, false); });
   }
 
+  /* ---------- Ulubione (wishlist bez logowania) ---------- */
+  // Lista uchwytów produktów w localStorage – zostaje po zamknięciu karty i przeglądarki.
+  const WISH_KEY = 'obex:wishlist';
+  const wishRead = () => {
+    try { const v = JSON.parse(localStorage.getItem(WISH_KEY) || '[]'); return Array.isArray(v) ? v.filter((h) => typeof h === 'string') : []; } catch (e) { return []; }
+  };
+  const wishWrite = (list) => { try { localStorage.setItem(WISH_KEY, JSON.stringify(list)); } catch (e) { /* tryb prywatny */ } };
+
+  function wishSync() {
+    const list = wishRead();
+    $$('[data-wishlist-toggle]').forEach((b) => {
+      const on = list.includes(b.dataset.wishlistToggle);
+      b.setAttribute('aria-pressed', String(on));
+      const label = on ? b.dataset.labelRemove : b.dataset.labelAdd;
+      b.setAttribute('aria-label', label);
+      b.title = label;
+    });
+    $$('[data-wishlist-count]').forEach((el) => { el.textContent = list.length; el.hidden = list.length === 0; });
+  }
+
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-wishlist-toggle]');
+    if (!b) return;
+    e.preventDefault();
+    const handle = b.dataset.wishlistToggle;
+    let list = wishRead();
+    const on = list.includes(handle);
+    list = on ? list.filter((h) => h !== handle) : [handle, ...list];
+    wishWrite(list);
+    wishSync();
+    toast(on ? S.strings.wishRemoved : S.strings.wishAdded);
+    if (on) {
+      const item = $(`[data-wishlist-grid] [data-wishlist-item="${CSS.escape(handle)}"]`);
+      if (item) { item.remove(); wishEmptyState(); }
+    }
+  });
+  window.addEventListener('storage', (e) => { if (e.key === WISH_KEY) wishSync(); });
+  wishSync();
+
+  const wishGrid = $('[data-wishlist-grid]');
+  function wishEmptyState() {
+    const empty = $('[data-wishlist-empty]');
+    if (empty && wishGrid) empty.hidden = wishGrid.children.length > 0;
+  }
+  if (wishGrid) {
+    const base = (S.routes.root || '/').replace(/\/$/, '');
+    const loading = $('[data-wishlist-loading]');
+    (async () => {
+      const list = wishRead();
+      const found = await Promise.all(list.map(async (handle) => {
+        try {
+          const res = await fetch(`${base}/products/${encodeURIComponent(handle)}?view=wishlist-card`);
+          if (!res.ok) return res.status === 404 ? null : { handle, html: '' };
+          return { handle, html: await res.text() };
+        } catch (err) { return { handle, html: '' }; }
+      }));
+      // Usunięte z oferty produkty (404) znikają z listy; błędy sieci nie kasują niczego.
+      const kept = found.filter(Boolean);
+      if (kept.length !== list.length) wishWrite(kept.map((f) => f.handle));
+      wishGrid.innerHTML = kept.map((f) => f.html).join('');
+      if (loading) loading.hidden = true;
+      wishSync();
+      wishEmptyState();
+    })();
+
+    wishGrid.addEventListener('submit', async (e) => {
+      const form = e.target.closest('[data-wishlist-add]');
+      if (!form) return;
+      e.preventDefault();
+      const err = $('[data-wishlist-error]', form);
+      const btn = $('button[type="submit"]', form);
+      const select = $('select[name="id"]', form);
+      if (select && !select.value) { if (err) { err.textContent = S.strings.selectSize; err.hidden = false; } select.focus(); return; }
+      if (err) err.hidden = true;
+      btn.classList.add('is-loading');
+      const body = new FormData(form);
+      body.append('quantity', '1');
+      body.append('sections', cartSections().join(','));
+      body.append('sections_url', window.location.pathname);
+      try {
+        const res = await fetch(`${S.routes.cartAdd}.js`, { method: 'POST', headers: { Accept: 'application/json', 'X-Requested-With': 'XMLHttpRequest' }, body });
+        const data = await res.json();
+        if (data.status) { if (err) { err.textContent = data.description || data.message; err.hidden = false; } return; }
+        renderCartSections(data.sections);
+        const cart = await (await fetch(`${S.routes.cart}.js`)).json();
+        updateCount(cart.item_count);
+        openLayer(document.getElementById('CartDrawer'));
+      } catch (ex) {
+        if (err) { err.textContent = S.strings.error; err.hidden = false; }
+      } finally {
+        btn.classList.remove('is-loading');
+      }
+    });
+  }
+
   /* ---------- Footer accordions on mobile ---------- */
   const mq = window.matchMedia('(max-width: 989px)');
   const syncFooter = () => $$('[data-footer-details]').forEach((d) => { d.open = !mq.matches; });

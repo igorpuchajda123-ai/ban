@@ -43,15 +43,19 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 | Nadanie | w ciągu 24 h |
 | Zwrot | 14 dni; **koszt odesłania pokrywa sklep** (także z IT i DK) |
 | Telefon / godziny | +48 604 522 566, Pn–Pt 8:00–16:00 |
-| Dane firmy | NIP PL5512670953, REGON 541122840, ul. Jagiellońska 60g, Kalwaria Zebrzydowska |
+| Sprzedawca (nota prawna) | Firma Handlowa FLASHTRADE Oliwier Oczkowski, ul. Jagiellońska 60g, 34-130 Kalwaria Zebrzydowska, Polska |
+| Dane rejestrowe | NIP (VAT UE) PL5512670953, REGON 541122840 |
+| E-mail | obexshoes.contact@gmail.com |
 | Facebook | https://www.facebook.com/p/OBEX-obuwie-dla-dzieci-100054488499085/ |
 | Instagram | https://www.instagram.com/obex_shoes/ |
+| TikTok | brak (na razie) |
 
 ## Google Ads / SEO
 
 | Temat | Ustalenie |
 |---|---|
 | Śledzenie konwersji | podpięte |
+| Strony docelowe reklam | strony główne **obexshoes.it** i **obexshoes.dk** (osobne domeny rynków IT i DK) |
 | Kanały w Shopify | Google & YouTube, Facebook & Instagram, Shop; aplikacja Multifeeds |
 | Polskie nazwy kolekcji | **zmieniamy na polskie** |
 | Słowa kluczowe w polskich nazwach produktów | **tak** (linki bez zmian) |
@@ -60,11 +64,15 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 
 | Temat | Ustalenie |
 |---|---|
-| Kod rabatowy na start | **5% na pierwsze zamówienie**, wpisywany w koszyku |
+| Kod rabatowy na start | **OBEX5** – 5%, raz na klienta; pokazuje się po zapisie do newslettera; utworzony 28.10 |
 | Shop Pay na karcie produktu | wyłączony (prośba z 28.10) |
 | Plan Shopify | Basic – wygląd checkoutu tylko przez Ustawienia → Checkout → Dostosuj |
 | Aplikacje | Loox Reviews (opinie), Forms (newsletter), Messaging (czat), Geolocation GLC, Multifeeds, Mollie MobilePay, GLS Polska, Search & Discovery, Flow |
-| Wishlist Swym | strona `/pages/swym-wishlist` istnieje, ale aplikacja Swym **nie jest zainstalowana** – strona nie działa |
+| Wishlist | Swym do odinstalowania; w motywie własne „Ulubione” bez logowania (strona `/pages/ulubione`) |
+| Modele w kropki | wycofane, może wrócą – zostają zarchiwizowane |
+| Duplikat `/pages/contact-1` | usunięty, przekierowanie na `/pages/contact` |
+| Stare duńskie linki | nieudostępniane – bez przekierowań |
+| Publikacja | jutro (29.10); obaj sprawdzają na żywo – lista w `docs/checkout-instrukcja.md` |
 
 ## Co trzeba poprawić na stronie w związku z odpowiedziami
 
@@ -80,16 +88,6 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 
 ## ❓ Wciąż bez odpowiedzi
 
-- Pełna nazwa firmy do stopki (np. „OBEX Hubert Oczkowski”) i kod pocztowy (34-130?).
-- Link do TikToka (jeśli jest).
-- Na jakie strony prowadzą teraz reklamy Google Ads?
-- Czy Google Shopping działa też w IT i DK (feedy po włosku i duńsku – przez Google & YouTube czy Multifeeds)?
+- Czy Google Shopping działa w IT i DK (feed przez Google & YouTube czy Multifeeds)?
 - Akceptacja polskich meta tytułów i opisów (`seo/propozycja-PL.md`).
-- Czy modele w kropki wrócą do sprzedaży?
-- Czy usuwamy duplikat strony kontakt (`/pages/contact-1`)?
-- Czy stare duńskie linki („Isla”, „Czarne kropki”) były gdzieś udostępniane?
-- Wishlist: usuwamy stronę Swym czy instalujemy aplikację?
-- Checkout w barwach OBEX – kto ustawia (wartości gotowe)?
-- Kiedy publikujemy nowy motyw i kto go przeklika na telefonie (PL/IT/DK)?
-- Filmy butów – podesłać pliki.
-- Rabat 5%: kod do wpisania (np. „OBEX5”) czy automatyczny przy pierwszym zamówieniu? Co z klientami bez konta?
+- Filmy butów – mają być podesłane 29.10.

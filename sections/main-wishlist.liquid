@@ -1,0 +1,29 @@
+{%- liquid
+  assign all_url = routes.all_products_collection_url
+  assign d_title = 'wishlist.title' | t
+-%}
+<section class="section" style="--pad-top: 48px; --pad-bottom: 96px;">
+  <div class="container">
+    {% render 'breadcrumbs' %}
+    <header class="wishlist__head">
+      <h1>{{ page.title | default: d_title }}</h1>
+      <p class="muted">{{ 'wishlist.note' | t }}</p>
+    </header>
+
+    <div class="product-grid wishlist__grid" style="--cols: 4;" data-wishlist-grid aria-live="polite"></div>
+    <p class="wishlist__loading muted" data-wishlist-loading>{{ 'wishlist.loading' | t }}</p>
+
+    <div class="wishlist__empty" data-wishlist-empty hidden>
+      {% render 'icon', name: 'heart' %}
+      <p>{{ 'wishlist.empty' | t }}</p>
+      <a class="btn" href="{{ all_url }}">{{ 'wishlist.empty_cta' | t }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ulubione",
+  "settings": []
+}
+{% endschema %}
