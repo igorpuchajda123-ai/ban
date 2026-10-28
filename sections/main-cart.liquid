@@ -9,7 +9,7 @@
               <a class="cart-item__img" href="{{ item.url }}" tabindex="-1">{%- if item.image -%}{{ item.image | image_url: width: 300 | image_tag: loading: 'eager', alt: item.product.title }}{%- endif -%}</a>
               <div>
                 <div class="cart-item__row" style="align-items:flex-start">
-                  <a class="cart-item__title" href="{{ item.url }}">{{ item.product.title }}</a>
+                  <a class="cart-item__title" href="{{ item.url }}">{% render 'short-title', title: item.product.title %}</a>
                   <span style="font-weight:500; text-align:right">{%- if item.original_line_price > item.final_line_price -%}<s class="muted" style="display:block; font-weight:400; font-size:.85rem">{{ item.original_line_price | money }}</s>{%- endif -%}{{ item.final_line_price | money }}</span>
                 </div>
                 <p class="cart-item__meta">

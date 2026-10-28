@@ -70,7 +70,7 @@
       <span class="card__vendor">{{ product.vendor }}</span>
     {%- endif -%}
     <{{ tag }} class="card__title">
-      <a href="{{ product.url }}">{{ product.title | escape }}</a>
+      <a href="{{ product.url }}" title="{{ product.title | escape }}">{% render 'short-title', title: product.title %}</a>
     </{{ tag }}>
     {% render 'price', product: product %}
     {%- if settings.card_show_sizes and product.variants.size > 1 -%}

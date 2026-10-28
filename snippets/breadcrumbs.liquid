@@ -15,7 +15,7 @@
     {%- case request.page_type -%}
       {%- when 'product' -%}
         {%- if crumb_collection -%}<li><a href="{{ crumb_collection.url }}">{{ crumb_collection.title }}</a></li>{%- endif -%}
-        <li aria-current="page">{{ product.title }}</li>
+        <li aria-current="page">{% render 'short-title', title: product.title %}</li>
       {%- when 'collection' -%}
         <li aria-current="page">{{ collection.title }}</li>
       {%- when 'page' -%}

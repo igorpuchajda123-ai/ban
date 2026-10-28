@@ -1,0 +1,37 @@
+{%- comment -%}
+  Krótka nazwa produktu do kart, koszyka i wyszukiwarki.
+  Długie nazwy pod Google („OBEX Helis Indoor kapcie barefoot dla dzieci … – Granatowe”)
+  skracamy do „OBEX Helis Indoor – Granatowe”: zostają słowa z wielkiej litery przed opisem i kolor po myślniku.
+  Parametr: title
+{%- endcomment -%}
+{%- liquid
+  assign t = title | replace: ' — ', ' – '
+  assign parts = t | split: ' – '
+  if parts.size < 2
+    assign parts = t | split: ' - '
+  endif
+  if parts.size < 2
+    echo t | escape
+  else
+    assign color = parts | last
+    assign main = parts | first
+    assign words = main | split: ' '
+    assign kept = ''
+    for w in words
+      assign c = w | slice: 0
+      assign cu = c | upcase
+      assign cd = c | downcase
+      if c == cu and c != cd
+        assign kept = kept | append: ' ' | append: w
+      else
+        break
+      endif
+    endfor
+    assign kept = kept | strip | remove: ','
+    if kept == blank or kept == main
+      echo t | escape
+    else
+      echo kept | append: ' – ' | append: color | escape
+    endif
+  endif
+-%}

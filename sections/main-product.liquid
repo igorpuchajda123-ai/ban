@@ -318,7 +318,7 @@
   <div class="sticky-atc" data-sticky-atc aria-hidden="true">
     <div class="sticky-atc__img">{{ product.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' }}</div>
     <div class="sticky-atc__info">
-      <div class="sticky-atc__title">{{ product.title | escape }}</div>
+      <div class="sticky-atc__title">{% render 'short-title', title: product.title %}</div>
       <div data-sticky-price>{{ current_variant.price | money }}</div>
     </div>
     <button class="btn" type="button" data-sticky-add tabindex="-1">{{ 'products.product.add_to_cart' | t }}</button>

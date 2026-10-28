@@ -1,7 +1,7 @@
 # Propozycja SEO – wersja polska (do akceptacji)
 
-Nic z tego pliku **nie jest jeszcze wgrane**. Polskie dane w sklepie są takie jak przed zmianami.
-Po akceptacji (albo z Twoimi poprawkami) wgram to jednym ruchem.
+**Wgrane 28.10.2026 po akceptacji.** Kopia danych sprzed zmiany: `seo/kopia-przed-zmiana-PL-2026-10-28.json`.
+Dodatkowo: polskie nazwy produktów ze słowami kluczowymi (jak IT/DK), polskie nazwy kolekcji oraz włoskie i duńskie meta tytuły i opisy wszystkich kolekcji.
 
 **Co to zmienia, a czego nie:**
 

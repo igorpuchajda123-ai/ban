@@ -57,14 +57,16 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 | Śledzenie konwersji | podpięte |
 | Strony docelowe reklam | strony główne **obexshoes.it** i **obexshoes.dk** (osobne domeny rynków IT i DK) |
 | Kanały w Shopify | Google & YouTube, Facebook & Instagram, Shop; aplikacja Multifeeds |
-| Polskie nazwy kolekcji | **zmieniamy na polskie** |
+| Polskie nazwy kolekcji | zmienione 28.10 (np. „Helis WIDE – szerokie kapcie”) |
+| Polskie SEO | wgrane 28.10: nazwy produktów ze słowami kluczowymi, meta tytuły i opisy produktów i kolekcji; IT/DK meta kolekcji |
+| FAQ „Jak dbać o buty” | zaakceptowane |
 | Słowa kluczowe w polskich nazwach produktów | **tak** (linki bez zmian) |
 
 ## Sklep
 
 | Temat | Ustalenie |
 |---|---|
-| Kod rabatowy na start | **OBEX5** – 5%, raz na klienta; pokazuje się po zapisie do newslettera; utworzony 28.10 |
+| Kod rabatowy na start | **OBEX5** – 5%, raz na klienta (potwierdzone); pokazuje się po zapisie do newslettera; utworzony 28.10 |
 | Shop Pay na karcie produktu | wyłączony (prośba z 28.10) |
 | Plan Shopify | Basic – wygląd checkoutu tylko przez Ustawienia → Checkout → Dostosuj |
 | Aplikacje | Loox Reviews (opinie), Forms (newsletter), Messaging (czat), Geolocation GLC, Multifeeds, Mollie MobilePay, GLS Polska, Search & Discovery, Flow |
@@ -89,5 +91,4 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 ## ❓ Wciąż bez odpowiedzi
 
 - Czy Google Shopping działa w IT i DK (feed przez Google & YouTube czy Multifeeds)?
-- Akceptacja polskich meta tytułów i opisów (`seo/propozycja-PL.md`).
 - Filmy butów – mają być podesłane 29.10.
