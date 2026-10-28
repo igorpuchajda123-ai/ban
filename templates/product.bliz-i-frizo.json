@@ -52,7 +52,9 @@
         "tabs"
       ],
       "settings": {
-        "sticky_atc": true
+        "sticky_atc": true,
+        "size_model": "Bliz / Frizo",
+        "size_table": "19:122, 20:130, 21:135, 22:142, 23:150, 24:159, 25:166, 26:172"
       }
     }
   },

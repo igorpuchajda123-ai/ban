@@ -229,7 +229,9 @@
     "step3_title": "Misura entrambi i piedi",
     "step3_text": "Spesso i piedi sono leggermente diversi: considera sempre il valore del più lungo.",
     "step4_title": "Inserisci il risultato in millimetri",
-    "step4_text": "Misura la distanza dal bordo del foglio alla linea e inseriscila nel calcolatore."
+    "step4_text": "Misura la distanza dal bordo del foglio alla linea e inseriscila nel calcolatore.",
+    "for_model": "Tabella taglie del modello: {{ model }}",
+    "choose_model": "Scegli il modello"
   },
   "sections": {
     "hero": {

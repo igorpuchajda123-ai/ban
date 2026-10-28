@@ -1,13 +1,17 @@
 {%- comment -%}
-  Tabela rozmiarów + kalkulator (dane w Ustawienia motywu → Rozmiary).
-  Używane jako modal (karta produktu) i inline (sekcja „Przewodnik rozmiarów”, inline: true).
+  Tabela rozmiarów + kalkulator.
+  Parametry: table (np. „19:125, 20:130”; puste = Ustawienia motywu → Rozmiary),
+  model (nazwa modelu pokazywana nad tabelą), inline (true w sekcji „Kalkulator rozmiarów”), uid (unikalne id).
 {%- endcomment -%}
 {%- liquid
-  assign rows = settings.size_table | strip | newline_to_br | replace: '<br />', ',' | split: ','
-  assign uid = 'Sizer'
-  if inline
-    assign uid = 'SizerInline'
-  endif
+  assign source = table | default: settings.size_table
+  assign rows = source | strip | newline_to_br | replace: '<br />', ',' | split: ','
+  unless uid
+    assign uid = 'Sizer'
+    if inline
+      assign uid = 'SizerInline'
+    endif
+  endunless
 -%}
 {%- capture sizer -%}
   <div class="tabs" role="tablist" data-tabs-simple>
@@ -18,6 +22,7 @@
   <div class="sizer" id="{{ uid }}-find" role="tabpanel" aria-labelledby="{{ uid }}-tab-find" data-sizer data-min="{{ settings.size_margin_min }}" data-max="{{ settings.size_margin_max }}">
     <div>
       <h3 class="h4">{{ 'size_guide.find_heading' | t }}</h3>
+      {%- if model != blank -%}<p class="small" style="margin:.2rem 0 .6rem"><strong>{{ 'size_guide.for_model' | t: model: model }}</strong></p>{%- endif -%}
       <p class="muted">{{ 'size_guide.find_text' | t }}</p>
       <label class="small" for="{{ uid }}-input" style="font-weight:500; display:block; margin-bottom:.4rem;">{{ 'size_guide.input_label' | t }}</label>
       <div class="sizer__input">

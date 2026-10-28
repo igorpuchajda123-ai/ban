@@ -302,6 +302,16 @@
   ]
 </script>
 
+{%- comment -%} Tabela rozmiarów i kalkulator tego modelu {%- endcomment -%}
+{%- liquid
+  comment
+    Kolejność: metapole produktu custom.size_table → tabela z tego szablonu → Ustawienia motywu.
+  endcomment
+  assign size_table = product.metafields.custom.size_table.value | default: section.settings.size_table
+  assign size_model = section.settings.size_model
+-%}
+{% render 'size-guide-modal', table: size_table, model: size_model %}
+
 {%- comment -%} Sticky „Dodaj do koszyka” {%- endcomment -%}
 {%- if section.settings.sticky_atc -%}
   <div class="sticky-atc" data-sticky-atc aria-hidden="true">
@@ -336,7 +346,10 @@
   "name": "Produkt",
   "class": "section-main-product",
   "settings": [
-    { "type": "checkbox", "id": "sticky_atc", "label": "Przyklejony przycisk „Dodaj do koszyka”", "default": true }
+    { "type": "checkbox", "id": "sticky_atc", "label": "Przyklejony przycisk „Dodaj do koszyka”", "default": true },
+    { "type": "header", "content": "Tabela rozmiarów tego modelu" },
+    { "type": "text", "id": "size_model", "label": "Nazwa modelu w kalkulatorze", "info": "Np. Helis Outdoor. Puste = bez nazwy." },
+    { "type": "textarea", "id": "size_table", "label": "Rozmiar EU : długość wkładki (mm)", "info": "Każdy szablon produktu (Helis, Helis Outdoor, WIDE, Balerina…) ma własną tabelę. Np. 19:125, 20:130. Puste = tabela z Ustawień motywu. Pojedynczy produkt może ją nadpisać metapolem custom.size_table." }
   ],
   "blocks": [
     { "type": "@app" },

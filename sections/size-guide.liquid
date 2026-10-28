@@ -13,7 +13,22 @@
       </div>
     </div>
     <div class="reveal" data-delay="1" style="background: var(--c-bg); border-radius: calc(var(--radius) * 1.5); padding: clamp(1.25rem, 4vw, 3rem);">
-      {% render 'size-guide-modal', inline: true %}
+      {%- if section.blocks.size > 0 -%}
+        {%- comment -%} Osobna tabela dla każdego modelu – przełącznik nad kalkulatorem {%- endcomment -%}
+        <div class="tabs tabs--models" role="tablist" data-tabs-simple aria-label="{{ 'size_guide.choose_model' | t }}">
+          {%- for block in section.blocks -%}
+            <button type="button" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="SizeModel-{{ block.id }}" id="SizeModelTab-{{ block.id }}" {{ block.shopify_attributes }}>{{ block.settings.model }}</button>
+          {%- endfor -%}
+        </div>
+        {%- for block in section.blocks -%}
+          <div id="SizeModel-{{ block.id }}" role="tabpanel" aria-labelledby="SizeModelTab-{{ block.id }}"{% unless forloop.first %} hidden{% endunless %}>
+            {%- assign model_uid = 'Sizer-' | append: block.id -%}
+            {% render 'size-guide-modal', inline: true, table: block.settings.table, model: block.settings.model, uid: model_uid %}
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        {% render 'size-guide-modal', inline: true %}
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -22,13 +37,23 @@
 {
   "name": "Kalkulator rozmiarów",
   "settings": [
-    { "type": "paragraph", "content": "Tabela rozmiarów: Ustawienia motywu → Rozmiary." },
+    { "type": "paragraph", "content": "Dodaj blok „Model” dla każdego modelu z własną rozmiarówką. Bez bloków użyta zostanie tabela z Ustawień motywu → Rozmiary." },
     { "type": "text", "id": "eyebrow", "label": "Nadtytuł", "info": "Puste = tekst domyślny (PL/IT/DA)." },
     { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
     { "type": "text", "id": "text", "label": "Opis" },
     { "type": "checkbox", "id": "surface", "label": "Beżowe tło", "default": true },
     { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 },
     { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 96 }
+  ],
+  "blocks": [
+    {
+      "type": "model",
+      "name": "Model",
+      "settings": [
+        { "type": "text", "id": "model", "label": "Nazwa modelu", "default": "Helis" },
+        { "type": "textarea", "id": "table", "label": "Rozmiar EU : długość wkładki (mm)", "info": "Np. 19:125, 20:130 – najlepiej tak samo jak w szablonie produktu tego modelu." }
+      ]
+    }
   ],
   "presets": [{ "name": "Kalkulator rozmiarów" }]
 }

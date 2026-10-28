@@ -52,7 +52,9 @@
         "tabs"
       ],
       "settings": {
-        "sticky_atc": true
+        "sticky_atc": true,
+        "size_model": "Loko / Toby",
+        "size_table": "20:138, 21:144, 22:150, 23:156, 24:162, 25:168, 26:174"
       }
     }
   },

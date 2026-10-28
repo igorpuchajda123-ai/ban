@@ -229,7 +229,9 @@
     "step3_title": "Mål begge fødder",
     "step3_text": "Fødderne er ofte en smule forskellige – brug altid målet for den længste.",
     "step4_title": "Indtast målet i millimeter",
-    "step4_text": "Mål afstanden fra papirets kant til stregen, og indtast den i beregneren."
+    "step4_text": "Mål afstanden fra papirets kant til stregen, og indtast den i beregneren.",
+    "for_model": "Størrelsestabel for modellen: {{ model }}",
+    "choose_model": "Vælg model"
   },
   "sections": {
     "hero": {

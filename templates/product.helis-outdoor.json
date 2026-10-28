@@ -52,7 +52,9 @@
         "tabs"
       ],
       "settings": {
-        "sticky_atc": true
+        "sticky_atc": true,
+        "size_model": "Helis Outdoor",
+        "size_table": "19:122, 20:128, 21:135, 22:142, 23:148, 24:154, 25:161, 26:167, 27:173, 28:176, 29:182, 30:190, 31:195, 32:201, 33:211"
       }
     }
   },

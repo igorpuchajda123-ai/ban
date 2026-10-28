@@ -233,7 +233,9 @@
     "step3_title": "Zmierz obie stopy",
     "step3_text": "Stopy często minimalnie się różnią – zawsze bierz pod uwagę wynik dłuższej.",
     "step4_title": "Wpisz wynik w milimetrach",
-    "step4_text": "Zmierz odległość od krawędzi kartki do kreski i wpisz ją w kalkulatorze."
+    "step4_text": "Zmierz odległość od krawędzi kartki do kreski i wpisz ją w kalkulatorze.",
+    "for_model": "Rozmiarówka modelu: {{ model }}",
+    "choose_model": "Wybierz model"
   },
   "sections": {
     "hero": {

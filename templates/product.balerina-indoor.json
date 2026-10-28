@@ -52,7 +52,9 @@
         "tabs"
       ],
       "settings": {
-        "sticky_atc": true
+        "sticky_atc": true,
+        "size_model": "Balerina Indoor",
+        "size_table": "25:162, 26:168, 27:175, 28:182, 29:188, 30:195"
       }
     }
   },

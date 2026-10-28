@@ -135,7 +135,7 @@
     {% sections 'footer-group' %}
 
     {% section 'cart-drawer' %}
-    {% render 'size-guide-modal' %}
+    {%- unless request.page_type == 'product' -%}{% render 'size-guide-modal' %}{%- endunless -%}
 
     <div class="toast" role="status" aria-live="polite" hidden data-toast></div>
 

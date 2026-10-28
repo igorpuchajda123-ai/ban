@@ -24,7 +24,67 @@
         "eyebrow": "Dobór rozmiaru",
         "heading": "Kalkulator <em>rozmiaru</em>",
         "text": "Wpisz długość stopy dziecka w milimetrach – podświetlimy rozmiar z odpowiednim zapasem na wzrost."
-      }
+      },
+      "blocks": {
+        "m_helis": {
+          "type": "model",
+          "settings": {
+            "model": "Helis Indoor",
+            "table": "19:125, 20:130, 21:140, 22:145, 23:151, 24:157, 25:162, 26:168, 27:177, 28:182, 29:188, 30:195, 31:201, 32:207, 33:211"
+          }
+        },
+        "m_helis_wide_indoor": {
+          "type": "model",
+          "settings": {
+            "model": "Helis WIDE",
+            "table": "19:130, 20:135, 21:140, 22:145, 23:155, 24:160, 25:168, 26:177, 27:182, 28:188, 29:192, 30:200, 31:207, 32:215, 33:211"
+          }
+        },
+        "m_helis_outdoor": {
+          "type": "model",
+          "settings": {
+            "model": "Helis Outdoor",
+            "table": "19:122, 20:128, 21:135, 22:142, 23:148, 24:154, 25:161, 26:167, 27:173, 28:176, 29:182, 30:190, 31:195, 32:201, 33:211"
+          }
+        },
+        "m_balerina_indoor": {
+          "type": "model",
+          "settings": {
+            "model": "Balerina Indoor",
+            "table": "25:162, 26:168, 27:175, 28:182, 29:188, 30:195"
+          }
+        },
+        "m_balerina_outdoor": {
+          "type": "model",
+          "settings": {
+            "model": "Balerina Outdoor",
+            "table": "25:162, 26:168, 27:177, 28:182, 29:188, 30:195"
+          }
+        },
+        "m_loko_i_toby": {
+          "type": "model",
+          "settings": {
+            "model": "Loko / Toby",
+            "table": "20:138, 21:144, 22:150, 23:156, 24:162, 25:168, 26:174"
+          }
+        },
+        "m_bliz_i_frizo": {
+          "type": "model",
+          "settings": {
+            "model": "Bliz / Frizo",
+            "table": "19:122, 20:130, 21:135, 22:142, 23:150, 24:159, 25:166, 26:172"
+          }
+        }
+      },
+      "block_order": [
+        "m_helis",
+        "m_helis_wide_indoor",
+        "m_helis_outdoor",
+        "m_balerina_indoor",
+        "m_balerina_outdoor",
+        "m_loko_i_toby",
+        "m_bliz_i_frizo"
+      ]
     },
     "measure": {
       "type": "image-text",
