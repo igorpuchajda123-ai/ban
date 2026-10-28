@@ -523,6 +523,12 @@
       });
     }
 
+    // Bieżący kolor widoczny w przewijanym pasku miniaturek (telefon)
+    $$('.swatches', root).forEach((row) => {
+      const cur = $('[aria-current="true"]', row);
+      if (cur && row.scrollWidth > row.clientWidth) row.scrollLeft = cur.getBoundingClientRect().left - row.getBoundingClientRect().left - row.clientWidth / 2 + cur.clientWidth / 2;
+    });
+
     // Gallery dots (mobile)
     const gallery = $('[data-gallery]', root);
     const dots = $$('[data-gallery-dots] span', root);
