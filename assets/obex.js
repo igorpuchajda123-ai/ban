@@ -737,7 +737,7 @@
     });
   }
 
-  /* ---------- Reels: lekkie pliki w miniaturze, max 2 naraz, pełny ekran z dźwiękiem ---------- */
+  /* ---------- Reels: lekkie pliki w miniaturze, wszystkie widoczne grają naraz, pełny ekran z dźwiękiem ---------- */
   $$('[data-reels]').forEach((list) => {
     const vids = $$('video', list);
     const ratio = new Map();
@@ -754,11 +754,11 @@
       v.playsInline = true; v.setAttribute('playsinline', '');
       v.addEventListener('canplay', () => { if (!fullscreen && v.dataset.active && v.paused) play(v); });
     });
-    // grają filmy widoczne w min. 40% kadru – najwyżej dwa naraz (lekkie pliki 480p)
-    const MAX = 2;
+    // grają naraz wszystkie filmy widoczne choć w części (lekkie pliki 480p)
+    const MAX = 6;
     const sync = () => {
       if (fullscreen || !ready || document.hidden) { vids.forEach((v) => v.pause()); return; }
-      const on = vids.filter((v) => (ratio.get(v) || 0) >= 0.4)
+      const on = vids.filter((v) => (ratio.get(v) || 0) >= 0.15)
         .sort((a, b) => (ratio.get(b) || 0) - (ratio.get(a) || 0)).slice(0, MAX);
       vids.forEach((v) => {
         if (on.includes(v)) { v.dataset.active = '1'; load(v); if (v.paused) play(v); }
@@ -769,13 +769,22 @@
       const io = new IntersectionObserver((entries) => {
         entries.forEach((en) => ratio.set(en.target, en.isIntersecting ? en.intersectionRatio : 0));
         sync();
-      }, { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] });
-      vids.forEach((v) => io.observe(v));
-    } else if (vids[0]) ratio.set(vids[0], 1);
-    // start po wczytaniu strony, ale nie później niż 2 s – zdjęcia mają pierwszeństwo
-    const start = () => { if (ready) return; ready = true; sync(); };
-    if (document.readyState === 'complete') setTimeout(start, 200);
-    else { window.addEventListener('load', () => setTimeout(start, 200), { once: true }); setTimeout(start, 2000); }
+      }, { threshold: [0, 0.15, 0.4, 0.7, 1] });
+      // wczytuj z wyprzedzeniem – zanim film wjedzie na ekran (także sąsiedni w pasku)
+      const pre = new IntersectionObserver((entries) => entries.forEach((en) => {
+        if (en.isIntersecting && ready) { load(en.target); en.target.preload = 'auto'; }
+      }), { rootMargin: '400px 300px' });
+      vids.forEach((v) => { io.observe(v); pre.observe(v); });
+      list.addEventListener('scroll', () => { if (ready) vids.forEach((v) => { const r = v.getBoundingClientRect(); if (r.left < innerWidth + 300 && r.right > -300) load(v); }); }, { passive: true });
+    } else vids.slice(0, MAX).forEach((v) => ratio.set(v, 1));
+    // start po wczytaniu strony, najpóźniej po 1 s – zdjęcia mają pierwszeństwo
+    const start = () => {
+      if (ready) return; ready = true;
+      vids.forEach((v) => { const r = v.getBoundingClientRect(); if (r.top < innerHeight + 400 && r.bottom > -400 && r.left < innerWidth + 300) load(v); });
+      sync();
+    };
+    if (document.readyState === 'complete') setTimeout(start, 100);
+    else { window.addEventListener('load', () => setTimeout(start, 100), { once: true }); setTimeout(start, 1000); }
     document.addEventListener('visibilitychange', sync);
     window.addEventListener('pageshow', sync);
 
