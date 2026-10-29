@@ -75,7 +75,7 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 | Duplikat `/pages/contact-1` | usunięty, przekierowanie na `/pages/contact` |
 | Stare duńskie linki | nieudostępniane – bez przekierowań |
 | Wygląd strony | kolory: granat i len (granatowe przyciski i stopka, jasnoniebieskie tła); czcionka: Jost w nagłówkach i tekście (ustalone 29.10) |
-| Filmy (Reels) | sekcja „Zobacz na żywo” na każdej karcie produktu; filmy w Zawartość → Metaobiekty → „Filmy (Reels)”. Pole „Produkt” = film tego koloru (pokazuje się pierwszy), pole „Model” = film tylko przy kolorach tego modelu, bez modelu = przy wszystkich butach. 29.10 wgrane: Bliz Czekoladowy, Frizo Rudy, Helis Srebrne, Helis jasny szary, Helis moro, Helis metaliczny róż + złoty, Helis panterka + zebra |
+| Filmy (Reels) | sekcja „Zobacz na żywo” na każdej karcie produktu; filmy w Zawartość → Metaobiekty → „Filmy (Reels)”. Pole „Produkt” = film tego koloru (pokazuje się pierwszy), pole „Model” = film tylko przy kolorach tego modelu, bez modelu = przy wszystkich butach. 29.10 wgrane: Bliz Czekoladowy, Frizo Rudy, Helis Indoor: Srebrne, Popielate, Moro, Metaliczny róż (+ złoty), Panterkowe (+ zebra) – wszystkie podpięte pod swój kolor |
 | Publikacja | jutro (29.10); obaj sprawdzają na żywo – lista w `docs/checkout-instrukcja.md` |
 
 ## Co trzeba poprawić na stronie w związku z odpowiedziami
