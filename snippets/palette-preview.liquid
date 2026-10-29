@@ -21,7 +21,8 @@
       granat: { name: '1. Granat i len', bg: '#F6F4F0', surface: '#E8EDF2', surface2: '#D6E0EA', text: '#16212E', accent: '#1F3B5C', honey: '#C49A6C', sage: '#7F9C93', sale: '#B4532A', dark: '#14202E', fh: 'Lora', fhw: 500, fb: 'Nunito Sans', q: 'family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@400;500;600;700' },
       szalwia: { name: '2. Szałwia i terakota', bg: '#F5F2EA', surface: '#E6E8DC', surface2: '#D5DCC7', text: '#26291F', accent: '#4C5E43', honey: '#C2734B', sage: '#8DA27C', sale: '#B4532A', dark: '#2B3427', fh: 'Playfair Display', fhw: 500, fb: 'Karla', q: 'family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Karla:wght@400;500;600;700' },
       malina: { name: '3. Malina i miód', bg: '#FCF7F4', surface: '#F7E6DF', surface2: '#F0D5CA', text: '#2F1E24', accent: '#8E3B4C', honey: '#DFA24F', sage: '#93B29A', sale: '#C2412D', dark: '#3B2229', fh: 'Quicksand', fhw: 700, fb: 'Work Sans', q: 'family=Quicksand:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700' },
-      lawenda: { name: '4. Lawenda i złoto', bg: '#F8F6FA', surface: '#EEE9F5', surface2: '#E1D8EE', text: '#241F30', accent: '#5D4A8A', honey: '#D3A464', sage: '#9AB3A0', sale: '#B4532A', dark: '#2A2238', fh: 'EB Garamond', fhw: 500, fb: 'Mulish', q: 'family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Mulish:wght@400;500;600;700' }
+      lawenda: { name: '4. Lawenda (jak Alia)', bg: '#FCFAFE', surface: '#F3ECFA', surface2: '#E7DAF4', text: '#2A2338', accent: '#8B6AB4', honey: '#C9A9DC', sage: '#9AB3A0', sale: '#B4532A', dark: '#3E3352', fh: 'EB Garamond', fhw: 500, fb: 'Mulish', q: 'family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Mulish:wght@400;500;600;700',
+        extra: '.btn:not(.btn--outline):not(.btn--light):not(.btn--ghost-light){--btn-bg:#C9A9DC;--btn-bd:#C9A9DC;--btn-fg:#2A2338}.btn:not(.btn--outline):not(.btn--light):not(.btn--ghost-light):hover{--btn-bg:#B48FD2;--btn-bd:#B48FD2}.newsletter__badge,.cart-count,.steps li::before{background:#C9A9DC;color:#2A2338}.announcement,.announcement-bar{background:#C9A9DC;color:#2A2338}' }
     };
     var KEY = 'obex:paleta';
     var store = { get: function () { try { return sessionStorage.getItem(KEY); } catch (e) { return null; } }, set: function (v) { try { sessionStorage.setItem(KEY, v); } catch (e) {} } };
@@ -34,6 +35,8 @@
     function apply(id) {
       var p = P[id] || P.obecna;
       root.style.cssText = initial;
+      var ex = document.getElementById('pal-extra'); if (!ex) { ex = document.createElement('style'); ex.id = 'pal-extra'; document.head.appendChild(ex); }
+      ex.textContent = p.extra || '';
       if (!p.bg) return;
       var s = root.style;
       s.setProperty('--c-bg', p.bg); s.setProperty('--c-surface', p.surface); s.setProperty('--c-surface-2', p.surface2);
