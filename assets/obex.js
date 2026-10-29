@@ -737,7 +737,7 @@
     });
   }
 
-  /* ---------- Reels: jeden film naraz, lekkie pliki w miniaturze, pełny ekran z dźwiękiem ---------- */
+  /* ---------- Reels: lekkie pliki w miniaturze, max 2 naraz, pełny ekran z dźwiękiem ---------- */
   $$('[data-reels]').forEach((list) => {
     const vids = $$('video', list);
     const ratio = new Map();
@@ -754,13 +754,14 @@
       v.playsInline = true; v.setAttribute('playsinline', '');
       v.addEventListener('canplay', () => { if (!fullscreen && v.dataset.active && v.paused) play(v); });
     });
-    // gra tylko najbardziej widoczny film (min. 40% kadru)
+    // grają filmy widoczne w min. 40% kadru – najwyżej dwa naraz (lekkie pliki 480p)
+    const MAX = 2;
     const sync = () => {
       if (fullscreen || !ready || document.hidden) { vids.forEach((v) => v.pause()); return; }
-      let best = null; let bestR = 0.4;
-      vids.forEach((v) => { const r = ratio.get(v) || 0; if (r >= bestR) { best = v; bestR = r; } });
+      const on = vids.filter((v) => (ratio.get(v) || 0) >= 0.4)
+        .sort((a, b) => (ratio.get(b) || 0) - (ratio.get(a) || 0)).slice(0, MAX);
       vids.forEach((v) => {
-        if (v === best) { v.dataset.active = '1'; load(v); if (v.paused) play(v); }
+        if (on.includes(v)) { v.dataset.active = '1'; load(v); if (v.paused) play(v); }
         else { delete v.dataset.active; if (!v.paused) v.pause(); }
       });
     };
@@ -771,9 +772,10 @@
       }, { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] });
       vids.forEach((v) => io.observe(v));
     } else if (vids[0]) ratio.set(vids[0], 1);
-    const start = () => { ready = true; sync(); };
-    if (document.readyState === 'complete') setTimeout(start, 300);
-    else window.addEventListener('load', () => setTimeout(start, 300), { once: true });
+    // start po wczytaniu strony, ale nie później niż 2 s – zdjęcia mają pierwszeństwo
+    const start = () => { if (ready) return; ready = true; sync(); };
+    if (document.readyState === 'complete') setTimeout(start, 200);
+    else { window.addEventListener('load', () => setTimeout(start, 200), { once: true }); setTimeout(start, 2000); }
     document.addEventListener('visibilitychange', sync);
     window.addEventListener('pageshow', sync);
 
