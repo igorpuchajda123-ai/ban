@@ -71,11 +71,14 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 | Plan Shopify | Basic – wygląd checkoutu tylko przez Ustawienia → Checkout → Dostosuj |
 | Aplikacje | Loox Reviews (opinie), Forms (newsletter), Messaging (czat), Geolocation GLC, Multifeeds, Mollie MobilePay, GLS Polska, Search & Discovery, Flow |
 | Wishlist | Swym do odinstalowania; w motywie własne „Ulubione” bez logowania (strona `/pages/ulubione`) |
-| Modele w kropki | wycofane, może wrócą – zostają zarchiwizowane |
+| Modele w kropki | wycofane na stałe (nie wrócą) – 3 produkty zarchiwizowane, nie pokazują się w sklepie |
 | Duplikat `/pages/contact-1` | usunięty, przekierowanie na `/pages/contact` |
 | Stare duńskie linki | nieudostępniane – bez przekierowań |
 | Wygląd strony | kolory: granat i len (granatowe przyciski i stopka, jasnoniebieskie tła); czcionka: Jost w nagłówkach i tekście (ustalone 29.10) |
 | Filmy (Reels) | sekcja „Zobacz na żywo” na każdej karcie produktu; filmy w Zawartość → Metaobiekty → „Filmy (Reels)”. Pole „Produkt” = film tego koloru (pokazuje się pierwszy), pole „Model” = film tylko przy kolorach tego modelu, bez modelu = przy wszystkich butach. 29.10 wgrane: Bliz Czekoladowy, Frizo Rudy, Helis Indoor: Srebrne, Popielate, Moro, Metaliczny róż (+ złoty), Panterkowe (+ zebra) – wszystkie podpięte pod swój kolor |
+| Google Ads / Shopping | reklamy prowadzą na obexshoes.it i obexshoes.dk; Google Shopping działa też w IT i DK – feed bierze włoskie i duńskie nazwy produktów (oryginały, nie zmieniać) |
+| Dane firmy w stopce | Firma Handlowa FLASHTRADE Oliwier Oczkowski, 34-130 Kalwaria Zebrzydowska – oficjalny resseler na PL/IT/DK (nazwisko zgodne z dokumentami); firmy ojca nie dodajemy |
+| TikTok | brak – w stopce tylko Instagram i Facebook |
 | Publikacja | jutro (29.10); obaj sprawdzają na żywo – lista w `docs/checkout-instrukcja.md` |
 
 ## Co trzeba poprawić na stronie w związku z odpowiedziami
@@ -92,5 +95,4 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 
 ## ❓ Wciąż bez odpowiedzi
 
-- Czy Google Shopping działa w IT i DK (feed przez Google & YouTube czy Multifeeds)?
-- Filmy butów – mają być podesłane 29.10.
+- (brak – wszystko wyjaśnione 29.10)
