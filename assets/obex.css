@@ -512,7 +512,7 @@ p { margin: 0 0 1em; }
 .materials__tab:hover { color: var(--c-accent); }
 .materials__panel { min-height: 9rem; color: var(--c-muted); max-width: 32rem; animation: fadeUp .45s ease; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-.materials__images { position: relative; aspect-ratio: 4 / 3; width: 100%; max-width: 480px; justify-self: center; }
+.materials__images { position: relative; aspect-ratio: 3 / 4; width: 100%; max-width: 420px; justify-self: center; }
 .materials__img { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; transition: opacity .6s ease, transform .8s ease; transform: scale(.97); }
 .materials__img.is-active { opacity: 1; transform: none; }
 /* Zdjęcie w całości i w swoich proporcjach – bez przycinania i bez powiększania ponad oryginał */

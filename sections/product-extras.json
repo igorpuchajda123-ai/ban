@@ -61,7 +61,7 @@
           "type": "material",
           "settings": {
             "preset": "leather",
-            "image": "shopify://shop_images/IMG_5084.png",
+            "image": "shopify://shop_images/obex-material-skora.jpg",
             "title": "Skóra naturalna",
             "text": "Nasze obuwie tworzymy z naturalnej skóry – miękkiej i elastycznej, dzięki czemu dopasowuje się do stopy i pozwala jej oddychać. Skórzane wnętrze w połączeniu z amortyzującą wkładką chroni przed otarciami i daje dziecku pełen komfort oraz naturalne odczucie chodzenia boso."
           }
@@ -70,7 +70,7 @@
           "type": "material",
           "settings": {
             "preset": "rubber",
-            "image": "shopify://shop_images/IMG_5085.jpg",
+            "image": "shopify://shop_images/obex-material-podeszwa.jpg",
             "title": "Termokauczuk",
             "text": "Modele Outdoor mają ultraelastyczną podeszwę z termokauczuku o grubości 3 mm. Łączy trwałość z miękkością, zapewniając stopom naturalną swobodę ruchu. Wysoka odporność na ścieranie i dobra przyczepność dają bezpieczeństwo podczas zabawy, a materiał pozostaje lekki."
           }

@@ -32,7 +32,7 @@
               {%- comment -%} Nie powiększamy ponad oryginał – małe zdjęcia zostają ostre {%- endcomment -%}
               {%- assign img_w = block.settings.image.width | at_most: 1200 -%}
               {%- assign img_h = img_w | times: 1.0 | divided_by: block.settings.image.aspect_ratio | round -%}
-              {{ block.settings.image | image_url: width: img_w | image_tag: width: img_w, height: img_h, sizes: '(min-width: 990px) 480px, 90vw', loading: 'lazy', alt: block.settings.image.alt }}
+              {{ block.settings.image | image_url: width: img_w | image_tag: width: img_w, height: img_h, sizes: '(min-width: 990px) 420px, 90vw', loading: 'lazy', alt: block.settings.image.alt }}
             {%- else -%}
               {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
