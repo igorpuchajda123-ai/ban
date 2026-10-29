@@ -21,7 +21,9 @@
     "color_honey": "#C49A6C",
     "color_sage": "#7F9C93",
     "color_sale": "#B4532A",
-    "color_dark": "#14202E"
+    "color_dark": "#14202E",
+    "type_header_font": "jost_n5",
+    "type_body_font": "jost_n4"
   },
   "presets": {
     "Default": {}

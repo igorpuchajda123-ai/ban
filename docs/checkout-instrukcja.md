@@ -16,15 +16,15 @@ Nazwy przycisków w panelu mogą się trochę różnić od tych poniżej – Sho
 ## 3. Kolory
 | Pole w edytorze | Wartość | Po co |
 |---|---|---|
-| Tło głównej części (Main area / Background) | `#F7F3EE` | ciepła kremowa biel, jak na stronie |
-| Tło podsumowania zamówienia (Order summary) | `#EFE8DF` | beż z sekcji „Materiały” |
-| Akcent (Accent – linki, zaznaczenia) | `#5C4332` | brąz OBEX |
-| Przyciski (Buttons) | `#5C4332` | „Zapłać teraz” w kolorze marki |
+| Tło głównej części (Main area / Background) | `#F6F4F0` | jasne, ciepłe tło – jak na stronie |
+| Tło podsumowania zamówienia (Order summary) | `#E8EDF2` | jasnoniebieskie tło sekcji ze strony |
+| Akcent (Accent – linki, zaznaczenia) | `#1F3B5C` | granat OBEX |
+| Przyciski (Buttons) | `#1F3B5C` | „Zapłać teraz” w kolorze marki |
 | Błędy (Errors) | `#B4532A` | ciepła czerwień, ta sama co w koszyku |
 
 ## 4. Czcionki (Typography)
-- **Nagłówki:** `Fraunces` – jeśli nie ma jej na liście, wybierz `Lora` albo `Playfair Display`.
-- **Tekst:** `DM Sans` – jeśli nie ma, wybierz `Inter` albo `Work Sans`.
+- **Nagłówki:** `Jost` – ta sama czcionka co na stronie (jeśli nie ma jej na liście, wybierz `Futura` albo `Montserrat`).
+- **Tekst:** `Jost` – jeśli nie ma, wybierz `Inter`.
 
 ## 5. Zaokrąglenia i tło (jeśli edytor je pokazuje)
 - **Zaokrąglenie rogów (Corner radius):** duże / pełne – przyciski na stronie są owalne.

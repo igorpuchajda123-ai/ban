@@ -74,6 +74,7 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 | Modele w kropki | wycofane, może wrócą – zostają zarchiwizowane |
 | Duplikat `/pages/contact-1` | usunięty, przekierowanie na `/pages/contact` |
 | Stare duńskie linki | nieudostępniane – bez przekierowań |
+| Wygląd strony | kolory: granat i len (granatowe przyciski i stopka, jasnoniebieskie tła); czcionka: Jost w nagłówkach i tekście (ustalone 29.10) |
 | Publikacja | jutro (29.10); obaj sprawdzają na żywo – lista w `docs/checkout-instrukcja.md` |
 
 ## Co trzeba poprawić na stronie w związku z odpowiedziami
