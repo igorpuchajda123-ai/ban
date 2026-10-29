@@ -65,11 +65,11 @@
   </div>
 
   {%- unless hide_measure -%}
-  <div class="sizer" id="{{ uid }}-measure" role="tabpanel" aria-labelledby="{{ uid }}-tab-measure" hidden>
+  <div class="sizer sizer--measure" id="{{ uid }}-measure" role="tabpanel" aria-labelledby="{{ uid }}-tab-measure" hidden>
     <div>
       {%- if settings.size_guide_image != blank -%}
         <div class="media" style="aspect-ratio: {{ settings.size_guide_image.aspect_ratio | default: 1.333 }};">
-          {{ settings.size_guide_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '(min-width: 750px) 40vw, 90vw', alt: '' }}
+          {{ settings.size_guide_image | image_url: width: 1340 | image_tag: loading: 'lazy', widths: '450, 700, 900, 1340', sizes: '(min-width: 990px) 900px, 92vw', alt: '' }}
         </div>
       {%- endif -%}
     </div>
