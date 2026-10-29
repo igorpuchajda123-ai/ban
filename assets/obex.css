@@ -977,3 +977,22 @@ p { margin: 0 0 1em; }
 .select--sm { padding-block: .6rem; font-size: .9rem; }
 .newsletter__badge { display: table; margin: .25rem 0 .9rem; padding: .35rem .85rem; border-radius: 999px; background: var(--c-accent); color: var(--c-accent-contrast); font-size: .8rem; font-weight: 600; letter-spacing: .04em; }
 body:has(.sticky-atc.is-visible) .footer { padding-bottom: 5.5rem; }
+
+/* ---------- Reels ---------- */
+.reels__list { --slide-w: 62%; }
+@media (min-width: 750px) { .reels__list { --slide-w: calc((100% - 3rem) / 4); --gap: 1rem; } }
+@media (min-width: 1200px) { .reels__list { --slide-w: calc((100% - 4rem) / 5); } }
+.reel { margin: 0; display: flex; flex-direction: column; gap: .6rem; min-width: 0; }
+.reel__media { position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; padding: 0; border: 0; border-radius: var(--radius); overflow: hidden; background: var(--c-surface); cursor: pointer; }
+.reel__media video, .reel__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.reel__sound { position: absolute; right: .6rem; bottom: .6rem; width: 2.25rem; height: 2.25rem; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.88); color: var(--c-text); box-shadow: 0 4px 14px -6px rgba(var(--c-text-rgb), .45); }
+.reel__sound .icon { width: .95rem; height: .95rem; margin-left: 2px; }
+.reel__caption { display: flex; flex-direction: column; gap: .2rem; font-size: .88rem; line-height: 1.3; }
+.reel__title { font-weight: 500; }
+.reel__link { display: inline-flex; align-items: center; gap: .35rem; color: var(--c-accent); font-size: .82rem; text-decoration: none; }
+.reel__link .icon { width: .85rem; height: .85rem; }
+.reel-player { background: rgba(10,14,20,.94); }
+.reel-player.is-open { display: grid; place-items: center; }
+.reel-player__stage { width: min(100%, calc(92vh * 9 / 16)); max-height: 92vh; display: grid; place-items: center; }
+.reel-player__stage video { width: 100%; max-height: 92vh; border-radius: var(--radius); background: #000; }
+.reel-player__close { position: absolute; top: max(1rem, env(safe-area-inset-top)); right: 1rem; z-index: 2; background: rgba(255,255,255,.92); color: #111; }

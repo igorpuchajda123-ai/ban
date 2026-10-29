@@ -299,6 +299,12 @@
     "media_strip": {
       "eyebrow": "Da vicino",
       "heading_html": "Guarda <em>come sono fatte</em>"
+    },
+    "reels": {
+      "eyebrow": "Dal vivo",
+      "heading_html": "OBEX <em>in movimento</em>",
+      "play": "Riproduci il video con audio",
+      "see_product": "Vedi questo modello"
     }
   },
   "usp": {

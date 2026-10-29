@@ -305,6 +305,12 @@
     "media_strip": {
       "eyebrow": "Z bliska",
       "heading_html": "Zobacz <em>jak są zrobione</em>"
+    },
+    "reels": {
+      "eyebrow": "Zobacz na żywo",
+      "heading_html": "OBEX <em>w ruchu</em>",
+      "play": "Odtwórz film z dźwiękiem",
+      "see_product": "Zobacz ten model"
     }
   },
   "usp": {

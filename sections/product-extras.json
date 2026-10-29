@@ -227,21 +227,22 @@
         "heading": "Może Ci się <em>spodobać</em>"
       }
     },
-    "closeup": {
-      "type": "media-strip",
+    "reels": {
+      "type": "video-reels",
       "settings": {
         "eyebrow": "",
         "heading": "",
+        "show_all": true,
         "product_videos": true,
-        "columns": 4,
+        "limit": 12,
         "surface": false,
-        "padding_top": 80,
+        "padding_top": 72,
         "padding_bottom": 40
       }
     }
   },
   "order": [
-    "closeup",
+    "reels",
     "features",
     "materials",
     "reviews",

@@ -299,6 +299,12 @@
     "media_strip": {
       "eyebrow": "Tæt på",
       "heading_html": "Se, <em>hvordan de er lavet</em>"
+    },
+    "reels": {
+      "eyebrow": "Se dem live",
+      "heading_html": "OBEX <em>i bevægelse</em>",
+      "play": "Afspil video med lyd",
+      "see_product": "Se denne model"
     }
   },
   "usp": {

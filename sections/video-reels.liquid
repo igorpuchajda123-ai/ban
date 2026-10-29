@@ -1,0 +1,126 @@
+{%- comment -%}
+  „Zobacz na żywo” – pionowe filmy w stylu Reels na karcie produktu.
+  Źródło: Zawartość → Metaobiekty → „Filmy (Reels)” (typ obex_reel) oraz filmy z mediów produktu.
+  Kolejność: film tego koloru → filmy tego modelu → pozostałe.
+  Wpis z wybranym „modelem” pokazuje się tylko przy kolorach tego modelu.
+{%- endcomment -%}
+{%- liquid
+  assign d_eyebrow = 'sections.reels.eyebrow' | t
+  assign d_heading = 'sections.reels.heading_html' | t
+  assign family = blank
+  if product
+    assign family = product.metafields.custom.rodzina_produktow.value
+  endif
+
+  assign own = ''
+  assign same_model = ''
+  assign rest = ''
+  for reel in shop.metaobjects.obex_reel.values
+    assign video = reel.film.value
+    if video == blank or video.media_type != 'video'
+      continue
+    endif
+    assign r_model = reel.model.value
+    assign r_product = reel.produkt.value
+    assign r_family = blank
+    if r_product
+      assign r_family = r_product.metafields.custom.rodzina_produktow.value
+    endif
+    if r_model != blank
+      unless family != blank and r_model.id == family.id
+        continue
+      endunless
+    endif
+    if product and r_product and r_product.id == product.id
+      assign own = own | append: reel.system.handle | append: ','
+    elsif family != blank and r_model != blank
+      assign same_model = same_model | append: reel.system.handle | append: ','
+    elsif family != blank and r_family != blank and r_family.id == family.id
+      assign same_model = same_model | append: reel.system.handle | append: ','
+    elsif section.settings.show_all
+      assign rest = rest | append: reel.system.handle | append: ','
+    endif
+  endfor
+  assign handles = own | append: same_model | append: rest | split: ','
+
+  assign product_videos = ''
+  if product and section.settings.product_videos
+    assign product_videos = product.media | where: 'media_type', 'video'
+  endif
+  assign total = handles.size
+  if product_videos != ''
+    assign total = total | plus: product_videos.size
+  endif
+-%}
+{%- if total > 0 -%}
+  <section class="section reels{% if section.settings.surface %} section--surface{% endif %}" style="--pad-top: {{ section.settings.padding_top }}px; --pad-bottom: {{ section.settings.padding_bottom }}px;" {{ section.shopify_attributes }}>
+    <div class="container container--wide">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">{{ section.settings.eyebrow | default: d_eyebrow }}</p>
+          <h2>{{ section.settings.heading | default: d_heading }}</h2>
+        </div>
+        <div class="slider-nav">
+          <button type="button" data-slider-prev="Slider-{{ section.id }}" aria-label="{{ 'general.previous' | t }}">{% render 'icon', name: 'arrow' %}</button>
+          <button type="button" data-slider-next="Slider-{{ section.id }}" aria-label="{{ 'general.next' | t }}">{% render 'icon', name: 'arrow' %}</button>
+        </div>
+      </div>
+      <div class="slider slider--bleed reels__list" id="Slider-{{ section.id }}" data-reels>
+        {%- if product_videos != '' -%}
+          {%- for media in product_videos limit: section.settings.limit -%}
+            <figure class="reel">
+              <button type="button" class="reel__media" data-reel-open aria-label="{{ 'sections.reels.play' | t }}">
+                {{ media | video_tag: muted: true, loop: true, playsinline: true, controls: false, preload: 'none', image_size: '540x' }}
+                <span class="reel__sound" aria-hidden="true">{% render 'icon', name: 'play' %}</span>
+              </button>
+            </figure>
+          {%- endfor -%}
+        {%- endif -%}
+        {%- for handle in handles limit: section.settings.limit -%}
+          {%- assign reel = shop.metaobjects.obex_reel[handle] -%}
+          {%- assign r_product = reel.produkt.value -%}
+          {%- capture caption -%}
+            {%- if r_product -%}{%- render 'short-title', title: r_product.title -%}{%- elsif request.locale.iso_code == 'pl' -%}{{ reel.podpis.value }}{%- endif -%}
+          {%- endcapture -%}
+          {%- assign caption = caption | strip -%}
+          <figure class="reel">
+            <button type="button" class="reel__media" data-reel-open aria-label="{{ 'sections.reels.play' | t }}{% if caption != blank %}: {{ caption | escape }}{% endif %}">
+              {{ reel.film.value | video_tag: muted: true, loop: true, playsinline: true, controls: false, preload: 'none', image_size: '540x' }}
+              <span class="reel__sound" aria-hidden="true">{% render 'icon', name: 'play' %}</span>
+            </button>
+            {%- if caption != blank or r_product -%}
+              <figcaption class="reel__caption">
+                {%- if caption != blank -%}<span class="reel__title">{{ caption }}</span>{%- endif -%}
+                {%- if r_product and r_product.id != product.id -%}
+                  <a class="reel__link" href="{{ r_product.url }}">{{ 'sections.reels.see_product' | t }} {% render 'icon', name: 'arrow' %}</a>
+                {%- endif -%}
+              </figcaption>
+            {%- endif -%}
+          </figure>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="lightbox reel-player" data-reel-player aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{ 'sections.reels.play' | t }}">
+      <button type="button" class="icon-btn reel-player__close" data-reel-close aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
+      <div class="reel-player__stage" data-reel-stage></div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Filmy (Reels)",
+  "settings": [
+    { "type": "paragraph", "content": "Filmy dodajesz w Zawartość → Metaobiekty → „Filmy (Reels)”. Wpis bez modelu pokazuje się przy wszystkich butach, z modelem – tylko przy kolorach tego modelu. Film konkretnego koloru (pole „Produkt”) jest zawsze pierwszy." },
+    { "type": "text", "id": "eyebrow", "label": "Nadtytuł" },
+    { "type": "inline_richtext", "id": "heading", "label": "Nagłówek" },
+    { "type": "checkbox", "id": "show_all", "label": "Pokazuj też filmy innych modeli", "default": true, "info": "Wyłącz, gdy każdy model będzie miał własne filmy." },
+    { "type": "checkbox", "id": "product_videos", "label": "Dodaj filmy z mediów produktu", "default": true },
+    { "type": "range", "id": "limit", "label": "Maks. liczba filmów", "min": 2, "max": 16, "step": 1, "default": 12 },
+    { "type": "checkbox", "id": "surface", "label": "Tło sekcji", "default": false },
+    { "type": "range", "id": "padding_top", "label": "Odstęp górny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Odstęp dolny", "min": 0, "max": 160, "step": 8, "unit": "px", "default": 40 }
+  ],
+  "presets": [{ "name": "Filmy (Reels)" }]
+}
+{% endschema %}

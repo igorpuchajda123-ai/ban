@@ -738,6 +738,41 @@
   }
 
   /* ---------- Footer accordions on mobile ---------- */
+  /* ---------- Reels: odtwarzanie w kadrze + pełny ekran z dźwiękiem ---------- */
+  $$('[data-reels]').forEach((list) => {
+    const vids = $$('video', list);
+    const play = (v) => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+        if (en.isIntersecting && en.intersectionRatio > 0.55) play(en.target); else en.target.pause();
+      }), { threshold: [0, 0.55, 1] });
+      vids.forEach((v) => { v.muted = true; io.observe(v); });
+    } else {
+      vids.forEach((v) => { v.muted = true; v.preload = 'metadata'; });
+    }
+    const section = list.closest('section');
+    const player = section && $('[data-reel-player]', section);
+    if (!player) return;
+    const stage = $('[data-reel-stage]', player);
+    const close = () => { const v = $('video', stage); if (v) v.pause(); stage.innerHTML = ''; closeLayer(player); vids.forEach((x) => { if (x.dataset.wasPlaying) { delete x.dataset.wasPlaying; play(x); } }); };
+    list.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-reel-open]');
+      if (!btn) return;
+      const src = $('video', btn);
+      if (!src) return;
+      vids.forEach((x) => { if (!x.paused) x.dataset.wasPlaying = '1'; x.pause(); });
+      const v = src.cloneNode(true);
+      v.removeAttribute('preload');
+      v.muted = false; v.controls = true; v.loop = true; v.playsInline = true;
+      stage.innerHTML = ''; stage.appendChild(v);
+      openLayer(player);
+      v.currentTime = 0; play(v);
+    });
+    $('[data-reel-close]', player).addEventListener('click', close);
+    player.addEventListener('click', (e) => { if (e.target === player || e.target === stage) close(); });
+    new MutationObserver(() => { if (!player.classList.contains('is-open') && stage.firstChild) close(); }).observe(player, { attributes: true, attributeFilter: ['class'] });
+  });
+
   const mq = window.matchMedia('(max-width: 989px)');
   const syncFooter = () => $$('[data-footer-details]').forEach((d) => { d.open = !mq.matches; });
   syncFooter();
