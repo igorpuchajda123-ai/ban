@@ -11,7 +11,17 @@
     "company_details": "Firma Handlowa FLASHTRADE Oliwier Oczkowski\nul. Jagiellońska 60g, 34-130 Kalwaria Zebrzydowska, Polska\nNIP (VAT UE): PL5512670953 · REGON: 541122840",
     "wishlist_enabled": true,
     "show_language_selector": false,
-    "wishlist_page": "ulubione"
+    "wishlist_page": "ulubione",
+    "color_background": "#F6F4F0",
+    "color_surface": "#E8EDF2",
+    "color_surface_alt": "#D6E0EA",
+    "color_text": "#16212E",
+    "color_accent": "#1F3B5C",
+    "color_accent_contrast": "#FFFFFF",
+    "color_honey": "#C49A6C",
+    "color_sage": "#7F9C93",
+    "color_sale": "#B4532A",
+    "color_dark": "#14202E"
   },
   "presets": {
     "Default": {}
