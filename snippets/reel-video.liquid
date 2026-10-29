@@ -1,0 +1,22 @@
+{%- comment -%}
+  Film do paska Reels: w miniaturze najmniejsze MP4 (ok. 480p, wczytywane dopiero przez obex.js),
+  na pełnym ekranie wersja do 720p (data-full).
+  Użycie: {% render 'reel-video', video: media %}
+{%- endcomment -%}
+{%- liquid
+  assign mp4s = video.sources | where: 'format', 'mp4' | sort: 'height'
+  assign small = mp4s | first
+  assign full = small
+  for s in mp4s
+    if s.height <= 720
+      assign full = s
+    endif
+  endfor
+-%}
+{%- if small -%}
+  <video muted loop playsinline webkit-playsinline preload="none" poster="{{ video.preview_image | image_url: width: 540 }}" data-full="{{ full.url }}">
+    <source data-src="{{ small.url }}" type="video/mp4">
+  </video>
+{%- else -%}
+  {{ video | video_tag: muted: true, loop: true, playsinline: true, controls: false, preload: 'none', image_size: '540x' }}
+{%- endif -%}

@@ -737,63 +737,76 @@
     });
   }
 
-  /* ---------- Footer accordions on mobile ---------- */
-  /* ---------- Reels: odtwarzanie w kadrze + pełny ekran z dźwiękiem ---------- */
+  /* ---------- Reels: jeden film naraz, lekkie pliki w miniaturze, pełny ekran z dźwiękiem ---------- */
   $$('[data-reels]').forEach((list) => {
     const vids = $$('video', list);
-    // iOS odtwarza sam tylko film wyciszony już w atrybutach, z playsinline
+    const ratio = new Map();
+    let fullscreen = false;
+    let ready = false; // filmy ruszają dopiero, gdy strona (zdjęcia) się wczyta
+    const play = (v) => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    const load = (v) => {
+      const s = v.querySelector('source[data-src]');
+      if (s) { s.src = s.dataset.src; s.removeAttribute('data-src'); v.load(); }
+    };
+    // iOS odtwarza sam tylko film wyciszony w atrybutach, z playsinline
     vids.forEach((v) => {
       v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
-      v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
-      // gdy dane dojdą później, a film nadal ma grać – spróbuj ponownie
-      v.addEventListener('canplay', () => { if (!fullscreen && v.dataset.want && v.paused) play(v); });
+      v.playsInline = true; v.setAttribute('playsinline', '');
+      v.addEventListener('canplay', () => { if (!fullscreen && v.dataset.active && v.paused) play(v); });
     });
-    const play = (v) => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
-    let fullscreen = false;
-    const sync = () => !fullscreen && vids.forEach((v) => { if (v.dataset.want) { if (v.paused) play(v); } else if (!v.paused) v.pause(); });
+    // gra tylko najbardziej widoczny film (min. 40% kadru)
+    const sync = () => {
+      if (fullscreen || !ready || document.hidden) { vids.forEach((v) => v.pause()); return; }
+      let best = null; let bestR = 0.4;
+      vids.forEach((v) => { const r = ratio.get(v) || 0; if (r >= bestR) { best = v; bestR = r; } });
+      vids.forEach((v) => {
+        if (v === best) { v.dataset.active = '1'; load(v); if (v.paused) play(v); }
+        else { delete v.dataset.active; if (!v.paused) v.pause(); }
+      });
+    };
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => {
-        entries.forEach((en) => {
-          const v = en.target;
-          if (en.isIntersecting && en.intersectionRatio >= 0.4) {
-            v.dataset.want = '1';
-            if (v.preload === 'none') v.preload = 'auto';
-          } else delete v.dataset.want;
-        });
+        entries.forEach((en) => ratio.set(en.target, en.isIntersecting ? en.intersectionRatio : 0));
         sync();
       }, { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] });
       vids.forEach((v) => io.observe(v));
-    } else {
-      vids.forEach((v) => { v.preload = 'metadata'; v.dataset.want = '1'; });
-      sync();
-    }
-    // po powrocie do karty / aplikacji przeglądarka sama zatrzymuje filmy
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) sync(); });
+    } else if (vids[0]) ratio.set(vids[0], 1);
+    const start = () => { ready = true; sync(); };
+    if (document.readyState === 'complete') setTimeout(start, 300);
+    else window.addEventListener('load', () => setTimeout(start, 300), { once: true });
+    document.addEventListener('visibilitychange', sync);
     window.addEventListener('pageshow', sync);
+
     const section = list.closest('section');
     const player = section && $('[data-reel-player]', section);
     if (!player) return;
     const stage = $('[data-reel-stage]', player);
-    const close = () => { const v = $('video', stage); if (v) v.pause(); stage.innerHTML = ''; closeLayer(player); fullscreen = false; sync(); };
+    const close = () => {
+      const v = $('video', stage);
+      if (v) { v.pause(); v.removeAttribute('src'); v.load(); }
+      stage.innerHTML = ''; closeLayer(player); fullscreen = false; sync();
+    };
     list.addEventListener('click', (e) => {
       const btn = e.target.closest('[data-reel-open]');
       if (!btn) return;
       const src = $('video', btn);
       if (!src) return;
-      fullscreen = true;
-      vids.forEach((x) => x.pause());
-      const v = src.cloneNode(true);
-      v.removeAttribute('preload'); v.removeAttribute('muted');
-      v.muted = false; v.controls = true; v.loop = true; v.playsInline = true;
+      fullscreen = true; sync();
+      const s = src.querySelector('source');
+      const url = src.dataset.full || (s && (s.src || s.dataset.src)) || src.currentSrc;
+      const v = document.createElement('video');
+      v.src = url; v.poster = src.poster || '';
+      v.controls = true; v.loop = true; v.playsInline = true; v.setAttribute('playsinline', '');
       stage.innerHTML = ''; stage.appendChild(v);
       openLayer(player);
-      v.currentTime = 0; play(v);
+      play(v);
     });
     $('[data-reel-close]', player).addEventListener('click', close);
     player.addEventListener('click', (e) => { if (e.target === player || e.target === stage) close(); });
     new MutationObserver(() => { if (!player.classList.contains('is-open') && stage.firstChild) close(); }).observe(player, { attributes: true, attributeFilter: ['class'] });
   });
 
+  /* ---------- Footer accordions on mobile ---------- */
   const mq = window.matchMedia('(max-width: 989px)');
   const syncFooter = () => $$('[data-footer-details]').forEach((d) => { d.open = !mq.matches; });
   syncFooter();

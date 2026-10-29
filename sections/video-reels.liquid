@@ -70,7 +70,7 @@
           {%- for media in product_videos limit: section.settings.limit -%}
             <figure class="reel">
               <button type="button" class="reel__media" data-reel-open aria-label="{{ 'sections.reels.play' | t }}">
-                {{ media | video_tag: muted: true, loop: true, playsinline: true, controls: false, preload: 'none', image_size: '540x' }}
+                {%- render 'reel-video', video: media -%}
                 <span class="reel__sound" aria-hidden="true">{% render 'icon', name: 'play' %}</span>
               </button>
             </figure>
@@ -85,7 +85,7 @@
           {%- assign caption = caption | strip -%}
           <figure class="reel">
             <button type="button" class="reel__media" data-reel-open aria-label="{{ 'sections.reels.play' | t }}{% if caption != blank %}: {{ caption | escape }}{% endif %}">
-              {{ reel.film.value | video_tag: muted: true, loop: true, playsinline: true, controls: false, preload: 'none', image_size: '540x' }}
+              {%- render 'reel-video', video: reel.film.value -%}
               <span class="reel__sound" aria-hidden="true">{% render 'icon', name: 'play' %}</span>
             </button>
             {%- if caption != blank or r_product -%}
