@@ -27,7 +27,7 @@
       </div>
       <div class="materials__images reveal" data-delay="1">
         {%- for block in section.blocks -%}
-          <div class="materials__img{% if forloop.first %} is-active{% endif %}" data-panel-img="{{ forloop.index0 }}">
+          <div class="materials__img{% if forloop.first %} is-active{% endif %}{% if block.settings.image.width >= 800 %} materials__img--fill{% endif %}" data-panel-img="{{ forloop.index0 }}">
             {%- if block.settings.image != blank -%}
               {%- comment -%} Nie powiększamy ponad oryginał – małe zdjęcia zostają ostre {%- endcomment -%}
               {%- assign img_w = block.settings.image.width | at_most: 1200 -%}
