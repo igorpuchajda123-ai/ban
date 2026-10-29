@@ -741,28 +741,49 @@
   /* ---------- Reels: odtwarzanie w kadrze + pełny ekran z dźwiękiem ---------- */
   $$('[data-reels]').forEach((list) => {
     const vids = $$('video', list);
+    // iOS odtwarza sam tylko film wyciszony już w atrybutach, z playsinline
+    vids.forEach((v) => {
+      v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
+      v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
+      // gdy dane dojdą później, a film nadal ma grać – spróbuj ponownie
+      v.addEventListener('canplay', () => { if (!fullscreen && v.dataset.want && v.paused) play(v); });
+    });
     const play = (v) => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    let fullscreen = false;
+    const sync = () => !fullscreen && vids.forEach((v) => { if (v.dataset.want) { if (v.paused) play(v); } else if (!v.paused) v.pause(); });
     if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => entries.forEach((en) => {
-        if (en.isIntersecting && en.intersectionRatio > 0.55) play(en.target); else en.target.pause();
-      }), { threshold: [0, 0.55, 1] });
-      vids.forEach((v) => { v.muted = true; io.observe(v); });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          const v = en.target;
+          if (en.isIntersecting && en.intersectionRatio >= 0.4) {
+            v.dataset.want = '1';
+            if (v.preload === 'none') v.preload = 'auto';
+          } else delete v.dataset.want;
+        });
+        sync();
+      }, { threshold: [0, 0.2, 0.4, 0.6, 0.8, 1] });
+      vids.forEach((v) => io.observe(v));
     } else {
-      vids.forEach((v) => { v.muted = true; v.preload = 'metadata'; });
+      vids.forEach((v) => { v.preload = 'metadata'; v.dataset.want = '1'; });
+      sync();
     }
+    // po powrocie do karty / aplikacji przeglądarka sama zatrzymuje filmy
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) sync(); });
+    window.addEventListener('pageshow', sync);
     const section = list.closest('section');
     const player = section && $('[data-reel-player]', section);
     if (!player) return;
     const stage = $('[data-reel-stage]', player);
-    const close = () => { const v = $('video', stage); if (v) v.pause(); stage.innerHTML = ''; closeLayer(player); vids.forEach((x) => { if (x.dataset.wasPlaying) { delete x.dataset.wasPlaying; play(x); } }); };
+    const close = () => { const v = $('video', stage); if (v) v.pause(); stage.innerHTML = ''; closeLayer(player); fullscreen = false; sync(); };
     list.addEventListener('click', (e) => {
       const btn = e.target.closest('[data-reel-open]');
       if (!btn) return;
       const src = $('video', btn);
       if (!src) return;
-      vids.forEach((x) => { if (!x.paused) x.dataset.wasPlaying = '1'; x.pause(); });
+      fullscreen = true;
+      vids.forEach((x) => x.pause());
       const v = src.cloneNode(true);
-      v.removeAttribute('preload');
+      v.removeAttribute('preload'); v.removeAttribute('muted');
       v.muted = false; v.controls = true; v.loop = true; v.playsInline = true;
       stage.innerHTML = ''; stage.appendChild(v);
       openLayer(player);
