@@ -550,8 +550,8 @@ p { margin: 0 0 1em; }
 .accordion summary .summary-label .icon { width: 1.2rem; height: 1.2rem; color: var(--c-accent); }
 
 /* ---------- Newsletter ---------- */
-.newsletter { display: grid; gap: 2rem; align-items: center; }
-@media (min-width: 990px) { .newsletter { grid-template-columns: 1.1fr 1fr; gap: 5rem; } }
+.newsletter { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: center; }
+@media (min-width: 990px) { .newsletter { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 5rem; } }
 .newsletter__form { display: flex; gap: .5rem; padding: .4rem; border-radius: 999px; background: var(--c-bg); border: 1px solid var(--c-line); }
 .section--dark .newsletter__form { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18); }
 .newsletter__form input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 0 1.1rem; outline: none; }
