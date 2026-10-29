@@ -40,7 +40,7 @@ Nazwy przycisków w panelu mogą się trochę różnić od tych poniżej – Sho
 # Jutro – publikacja nowego motywu (lista kontrolna)
 
 **Przed publikacją**
-1. **Odinstaluj Swym:** Aplikacje → Swym Wishlist → Odinstaluj. Nowy motyw ma własne „Ulubione” (serduszka), a stara strona `/pages/swym-wishlist` przekierowuje już na `/pages/ulubione`.
+1. **Swym:** nie jest zainstalowany (sprawdzone 29.10) – nic nie trzeba robić. Nowy motyw ma własne „Ulubione” (serduszka), a stara strona `/pages/swym-wishlist` przekierowuje na `/pages/ulubione`.
 2. Panel → **Sklep internetowy → Motywy** → przy „OBEX Atelier (PL/IT/DK)” kliknij **Opublikuj**. Stary motyw zostaje w bibliotece – w razie problemu można do niego wrócić jednym kliknięciem.
 
 **Zaraz po publikacji – w edytorze motywu (Dostosuj → ikona aplikacji „Osadzone aplikacje / App embeds”)**

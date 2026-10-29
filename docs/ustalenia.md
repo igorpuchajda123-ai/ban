@@ -70,7 +70,7 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 | Shop Pay na karcie produktu | wyłączony (prośba z 28.10) |
 | Plan Shopify | Basic – wygląd checkoutu tylko przez Ustawienia → Checkout → Dostosuj |
 | Aplikacje | Loox Reviews (opinie), Forms (newsletter), Messaging (czat), Geolocation GLC, Multifeeds, Mollie MobilePay, GLS Polska, Search & Discovery, Flow |
-| Wishlist | Swym do odinstalowania; w motywie własne „Ulubione” bez logowania (strona `/pages/ulubione`) |
+| Wishlist | Swym nie jest zainstalowany (sprawdzone 29.10); w motywie własne „Ulubione” bez logowania (strona `/pages/ulubione`) |
 | Modele w kropki | wycofane na stałe (nie wrócą) – 3 produkty zarchiwizowane, nie pokazują się w sklepie |
 | Duplikat `/pages/contact-1` | usunięty, przekierowanie na `/pages/contact` |
 | Stare duńskie linki | nieudostępniane – bez przekierowań |
