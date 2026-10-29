@@ -81,7 +81,7 @@ Pozycje oznaczone ❓ wciąż czekają na odpowiedź – lista na końcu.
 | TikTok | brak – w stopce tylko Instagram i Facebook |
 | Publikacja | jutro (29.10); obaj sprawdzają na żywo – lista w `docs/checkout-instrukcja.md` |
 
-## Co trzeba poprawić na stronie w związku z odpowiedziami
+## Co trzeba poprawić na stronie w związku z odpowiedziami (zrobione do 29.10, poza pkt 7 – Loox po publikacji)
 
 1. **„Podeszwa 3 mm z termokauczuku”** jest teraz pisane przy wszystkich butach (wyróżniki, FAQ, opisy kolekcji kapci). Trzeba to zawęzić do modeli Outdoor, a przy kapciach Indoor pisać ogólnie: „cienka, elastyczna, antypoślizgowa podeszwa”.
 2. **Darmowa dostawa** ma być wszędzie mocno widoczna: pasek ogłoszeń, karta produktu, koszyk, FAQ. Usuwamy też zdanie „koszt wysyłki obliczymy przy kasie”.
