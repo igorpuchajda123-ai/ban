@@ -69,7 +69,7 @@
     <div>
       {%- if settings.size_guide_image != blank -%}
         <div class="media" style="aspect-ratio: {{ settings.size_guide_image.aspect_ratio | default: 1.333 }};">
-          {{ settings.size_guide_image | image_url: width: 1340 | image_tag: loading: 'lazy', widths: '450, 700, 900, 1340', sizes: '(min-width: 990px) 900px, 92vw', alt: '' }}
+          {{ settings.size_guide_image | image_url: width: 1340 | image_tag: loading: 'lazy', widths: '450, 700, 900, 1340', sizes: '(min-width: 800px) 704px, 92vw', alt: '' }}
         </div>
       {%- endif -%}
     </div>
