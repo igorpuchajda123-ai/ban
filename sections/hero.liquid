@@ -29,7 +29,7 @@
     </div>
   </section>
 {%- else -%}
-  <section class="hero{% if layout == 'center' %} hero--center{% endif %}" {{ section.shopify_attributes }}
+  <section class="hero{% if layout == 'center' %} hero--center{% endif %}{% if section.settings.blur_mobile %} hero--blur-mobile{% endif %}" {{ section.shopify_attributes }}
     style="--hero-h: {{ section.settings.height }}vh; --hero-h-mobile: {{ section.settings.height_mobile }}vh; --overlay: {{ section.settings.overlay | divided_by: 100.0 }}; --v-align: {{ section.settings.v_align }};">
     <div class="hero__media" style="--focal: {{ section.settings.image.presentation.focal_point | default: 'center' }};">
       {%- if section.settings.image != blank -%}
@@ -80,6 +80,7 @@
     ], "default": "overlay" },
     { "type": "image_picker", "id": "image", "label": "Zdjęcie" },
     { "type": "image_picker", "id": "image_mobile", "label": "Zdjęcie na telefon (opcjonalnie, pionowe)" },
+    { "type": "checkbox", "id": "blur_mobile", "label": "Rozmycie od dołu na telefonie", "default": false, "info": "Góra zdjęcia ostra, dół rozmyty – tekst i przyciski są czytelne." },
     { "type": "header", "content": "Treść", "info": "Puste pola = gotowe teksty w języku odwiedzającego (PL/IT/DA). Własny tekst przetłumacz w Translate & Adapt." },
     { "type": "text", "id": "eyebrow", "label": "Nadtytuł" },
     { "type": "inline_richtext", "id": "heading", "label": "Nagłówek", "info": "Kursywa wyróżni słowo kolorem." },

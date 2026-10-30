@@ -341,6 +341,9 @@ p { margin: 0 0 1em; }
   .hero__inner { min-height: var(--hero-h-mobile, 82vh); }
   .hero__media::after { background: linear-gradient(0deg, rgba(var(--c-text-rgb), calc(var(--overlay, .45) + .15)) 0%, rgba(var(--c-text-rgb), calc(var(--overlay, .45) * .4)) 60%, transparent 100%); }
   .hero__actions .btn { flex: 1 1 auto; }
+  .hero--blur-mobile .hero__inner { z-index: 3; }
+  .hero--blur-mobile .hero__media::before { content: ""; position: absolute; inset: 0; z-index: 1; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); -webkit-mask-image: linear-gradient(to top, #000 0%, #000 55%, transparent 82%); mask-image: linear-gradient(to top, #000 0%, #000 55%, transparent 82%); }
+  .hero--blur-mobile .hero__media::after { z-index: 2; }
 }
 
 /* Split hero */

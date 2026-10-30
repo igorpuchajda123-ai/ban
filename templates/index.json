@@ -16,7 +16,9 @@
         "heading": "Pierwsze kroki <em>jak boso</em>",
         "text": "Miękka skóra naturalna, cienka, elastyczna podeszwa i szeroki nosek. Szyte ręcznie z myślą o zdrowym rozwoju małych stóp.",
         "button_1": "Zobacz kolekcję",
-        "button_2": "Nasza historia"
+        "button_2": "Nasza historia",
+        "image_mobile": "shopify://shop_images/obex-hero-telefon.jpg",
+        "blur_mobile": true
       }
     },
     "usp": {
