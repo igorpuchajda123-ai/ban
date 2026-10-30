@@ -4,7 +4,7 @@
       "type": "hero",
       "settings": {
         "layout": "overlay",
-        "image": "shopify://shop_images/IMG_5139.jpg",
+        "image": "shopify://shop_images/obex-hero-komputer.jpg",
         "link_1": "shopify://collections/rodzina-helis",
         "link_2": "shopify://pages/historia-marki",
         "show_badges": true,
@@ -18,7 +18,8 @@
         "button_1": "Zobacz kolekcję",
         "button_2": "Nasza historia",
         "image_mobile": "shopify://shop_images/obex-hero-telefon.jpg",
-        "blur_mobile": true
+        "blur_mobile": true,
+        "blur_desktop": true
       }
     },
     "usp": {
