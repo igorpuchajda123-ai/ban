@@ -96,7 +96,7 @@
           "type": "collection",
           "settings": {
             "collection": "buty-outdoor",
-            "image": "shopify://shop_images/IMG_5158.jpg",
+            "image": "shopify://shop_images/obex-outdoor-sandalki.jpg",
             "title": ""
           }
         },
@@ -180,7 +180,7 @@
         "p3"
       ],
       "settings": {
-        "image": "shopify://shop_images/Gemini_Generated_Image_unt8s8unt8s8unt8.jpg",
+        "image": "shopify://shop_images/obex-spacer-za-reke.jpg",
         "media_position": "left",
         "ratio": "4 / 5",
         "shape": "rounded",
@@ -594,6 +594,62 @@
         "padding_top": 96,
         "padding_bottom": 96
       }
+    },
+    "lookbook": {
+      "type": "media-strip",
+      "blocks": {
+        "g0": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/obex-galeria-murek.jpg",
+            "caption": ""
+          }
+        },
+        "g1": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/obex-galeria-raczki.jpg",
+            "caption": ""
+          }
+        },
+        "g2": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/obex-galeria-trawa.jpg",
+            "caption": ""
+          }
+        },
+        "g3": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/obex-galeria-nozki.jpg",
+            "caption": ""
+          }
+        },
+        "g4": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/obex-galeria-krok.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "product_videos": false,
+        "columns": 4,
+        "surface": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -602,6 +658,7 @@
     "usp",
     "tiles",
     "bestsellers",
+    "lookbook",
     "story",
     "trust",
     "features",
